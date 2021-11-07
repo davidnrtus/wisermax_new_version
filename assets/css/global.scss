@@ -1,0 +1,56 @@
+.mg-common, .tu-section {
+  padding-left: 21px;
+  padding-right: 21px;
+  @media (min-width: 688px) and (max-width: 1200px) {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  @media (max-width: 687px) {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.tu-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  &-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+    text-align: center;
+    color: #333;
+  }
+}
+
+@media (min-width: 777.98px) and (max-width: 1024px) {
+  .tu-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &-title {
+      font-size: 2.5rem;
+    }
+  }
+}
+@media (min-width: 477.98px) and (max-width: 777px) {
+  .tu-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    &-title {
+      font-size: 2rem;
+    }
+  }
+}
+@media (max-width: 477px) {
+  .tu-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    &-title {
+      font-size: 1.5rem;
+    }
+  }
+}

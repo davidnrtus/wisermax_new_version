@@ -1,7 +1,18 @@
 <template>
-  <Tutorial/>
+  <div>
+    <TuBanner />
+    <TuProductOverview />
+  </div>
 </template>
 
 <script>
-export default {}
+import TuBanner from '@/components/common/Banner'
+import TuProductOverview from '@/components/home/ProductOverview'
+
+export default {
+  components: {
+    TuBanner,
+    TuProductOverview
+  }
+}
 </script>
