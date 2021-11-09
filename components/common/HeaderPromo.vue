@@ -12,8 +12,10 @@
       </div>
       <div class="content">
         <i class="el-icon-location-outline" />
-        No. 729, Nguyen Duc Thuan Street, Dang Xa Commune, Gia Lam District, Hanoi, Vietnam
+        No. 729, Nguyen Duc Thuan Street, Dang Xa Commune, Gia Lam District,
+        Hanoi, Vietnam
       </div>
+      <div>Vietnam</div>
     </div>
   </div>
 </template>
@@ -23,7 +25,7 @@
   height: 41px;
   width: 100%;
   position: relative;
-  background: #323232;
+  background: #00174f; //323232
   &_bg {
     position: absolute;
     top: 0;
