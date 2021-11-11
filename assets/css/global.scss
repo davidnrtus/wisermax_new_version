@@ -15,6 +15,13 @@
   position: fixed;
 }
 
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+
 .tu-section {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -26,6 +33,14 @@
     color: #00174f;
     margin-top: 1rem;
     margin-bottom: 2rem;
+  }
+}
+
+.ca {
+  text-decoration: none;
+  color: #00174f;
+  &:hover {
+    text-decoration: underline;
   }
 }
 
