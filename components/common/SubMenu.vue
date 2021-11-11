@@ -1,7 +1,7 @@
 <template>
   <div class="tu-drawer">
     <div class="tu-drawer-row">
-      <div v-for="menu in headerData" :key="menu.key" class="tu-drawer-col">
+      <div v-for="menu in subHeaders" :key="menu.key" class="tu-drawer-col">
         <div class="tu-drawer-title" style="font-weight: 700">{{ menu.title }}</div>
         <div v-if="menu.childrens" class="tu-drawer-list">
           <ul>
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import headerData from '@/data/header'
+import {subHeaders} from '@/data/header'
 
 export default {
   data() {
     return {
-      headerData,
+      subHeaders,
     }
   },
 }

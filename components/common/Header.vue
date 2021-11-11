@@ -15,23 +15,16 @@
       <span></span>
     </div>
     <div class="tu-header-menu">
-      <div class="tu-header-menu_link">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div class="tu-header-menu_link trigger">
-        <router-link to="/products">Products</router-link>
-        <div class="submenu">
+      <div
+        v-for="header in headers"
+        :key="header.key"
+        :class="header.key === 'products' && 'trigger'"
+        class="tu-header-menu_link"
+      >
+        <router-link :to="header.url">{{ header.title }}</router-link>
+        <div v-if="header.key === 'products'" class="submenu">
           <TuSubMenu />
         </div>
-      </div>
-      <div class="tu-header-menu_link">
-        <router-link to="/customers">Customers</router-link>
-      </div>
-      <div class="tu-header-menu_link">
-        <router-link to="/about-us">About us</router-link>
-      </div>
-      <div class="tu-header-menu_link">
-        <router-link to="/contacts">Contacts</router-link>
       </div>
     </div>
     <TuMenuMobile v-if="active" />
@@ -40,15 +33,17 @@
 
 <script>
 import TuSubMenu from './SubMenu'
-import TuMenuMobile from './MenuMobile.vue'
+import TuMenuMobile from './MenuMobile'
+import { headers } from '@/data/header'
 
 export default {
   components: {
     TuSubMenu,
-    TuMenuMobile
+    TuMenuMobile,
   },
   data() {
     return {
+      headers,
       scrolling: false,
       active: false,
     }

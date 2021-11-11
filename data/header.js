@@ -1,4 +1,4 @@
-const headers = [
+export const subHeaders = [
   {
     title: 'Menswear',
     key: 'menswear',
@@ -195,4 +195,30 @@ const headers = [
   },
 ]
 
-export default headers
+export const headers = [
+  {
+    title: 'Home',
+    key: 'home',
+    url: '/',
+  },
+  {
+    title: 'Products',
+    key: 'products',
+    url: '/products',
+  },
+  {
+    title: 'Customers',
+    key: 'customers',
+    url: '/customers',
+  },
+  {
+    title: 'About Wiser Max',
+    key: 'about-us',
+    url: '/about-us',
+  },
+  {
+    title: 'Contacts',
+    key: 'contacts',
+    url: '/contacts',
+  },
+]

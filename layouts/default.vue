@@ -3,17 +3,20 @@
     <TuHeaderPromo />
     <TuHeader />
     <Nuxt />
+    <TuFooter /> 
   </div>
 </template>
 
 <script>
 import TuHeaderPromo from '@/components/common/HeaderPromo'
 import TuHeader from '@/components/common/Header'
+import TuFooter from '@/components/common/Footer'
 
 export default {
   components: {
     TuHeaderPromo,
-    TuHeader
+    TuHeader,
+    TuFooter
   }
 }
 </script>

@@ -25,7 +25,7 @@
   height: 41px;
   width: 100%;
   position: relative;
-  background: #00174f; //323232
+  background: #1b3472; //323232
   &_bg {
     position: absolute;
     top: 0;

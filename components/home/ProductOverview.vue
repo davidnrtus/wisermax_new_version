@@ -10,7 +10,7 @@
               :alt="product.name"
             />
             <div class="tu-product-card_content">
-              new
+              <router-link to="/">View more</router-link>
             </div>
           </div>
         </el-col>
@@ -52,6 +52,7 @@ export default {
   overflow: hidden;
   padding-bottom: 135%;
   cursor: pointer;
+  margin-bottom: 1rem;
   img {
     position: absolute;
     width: 100%;
@@ -59,11 +60,21 @@ export default {
     object-fit: cover;
   }
   &_content {
-    color: #fff;
     position: absolute;
-    bottom: 0;
+    bottom: 7%;
     left: 0;
     width: 100%;
+    text-align: center;
+    a {
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 27px;
+      &:hover {
+        text-decoration: underline;
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
   }
 }
 </style>
