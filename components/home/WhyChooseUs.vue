@@ -6,7 +6,7 @@
           Why choose us
         </div>
         <div class="tu-section-content">
-          <el-row>
+          <el-row :gutter="32">
             <el-col
               v-for="(item, index) in reasons"
               :key="index"
@@ -69,7 +69,7 @@ export default {
   display: flex;
   padding: 30px 16px;
   background: #e8f5fc;
-  margin: 16px;
+  margin: 16px 0;
   border-radius: 12px;
   &_img {
     width: 82px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="tu-section" style="background: #f7fdff">
+  <div class="tu-section" style="background: #f7fdff; margin-top: 4rem">
     <div class="tu-section-label">
       Cooperate with more than 20 companies around the world
     </div>

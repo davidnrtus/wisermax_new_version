@@ -26,10 +26,16 @@
   align-self: center;
   justify-content: center;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.text-bold {
+  font-weight: bold;
+}
 
 .tu-section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   &-title {
     font-size: 3rem;
     font-weight: 800;
