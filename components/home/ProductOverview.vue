@@ -10,7 +10,7 @@
               :alt="product.name"
             />
             <div class="tu-product-card_content">
-              <router-link to="/">View more</router-link>
+              <router-link to="/products">View more</router-link>
             </div>
           </div>
         </el-col>

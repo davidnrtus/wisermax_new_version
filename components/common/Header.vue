@@ -48,6 +48,13 @@ export default {
       active: false,
     }
   },
+  watch: {
+    $route (){
+      if (this.active) {
+        this.active = false
+      }
+    }
+  },
   // mounted() {
   //   window.addEventListener('scroll', this.handleScroll)
   // },
@@ -69,7 +76,10 @@ export default {
 .tu-header {
   display: flex;
   align-items: center;
+  // flex-direction: row;
   flex-direction: column;
+  // padding-top: 1.5rem;
+  // padding-bottom: 1.5rem;
   padding-top: 8px;
   top: 0;
   left: 0;
@@ -78,6 +88,7 @@ export default {
   position: relative;
 
   &-logo {
+    // width: 47px;
     width: 77px;
     height: auto;
   }
@@ -102,6 +113,7 @@ export default {
         text-decoration: none;
         color: #00174f;
         font-weight: 600;
+        position: relative;
       }
     }
     .submenu {
@@ -198,8 +210,17 @@ export default {
 <style lang="scss">
 .tu-header {
   &-menu_link {
-    .nuxt-link-active {
+    .nuxt-link-exact-active {
       font-weight: 700 !important;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #00174f;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+      }
     }
   }
 }

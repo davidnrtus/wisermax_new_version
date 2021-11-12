@@ -4,12 +4,12 @@
       <el-carousel :interval="7000" :autoplay="false" trigger="click" arrow="hover">
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_1.png" alt="banner" >
+            <img src="~/assets/images/banners/banner_2.png" alt="banner" >
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_2.png" alt="banner" >
+            <img src="~/assets/images/banners/banner_1.png" alt="banner" >
           </div>
         </el-carousel-item>
       </el-carousel>

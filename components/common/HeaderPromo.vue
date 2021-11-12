@@ -2,23 +2,56 @@
   <div class="tu-header-promo">
     <!-- <img src="~/assets/images/backgrounds/bg-header-promo.jpg" class="tu-header-promo_bg" alt="bg-header-promo"> -->
     <div class="tu-header-promo_info">
-      <div class="content space-no-wrap">
-        <i class="el-icon-phone-outline" />
-        +84-974-806625
+      <div class="mg-common w-full centeral">
+        <div class="tu-header-promo_info-left">
+          <div class="content space-no-wrap">
+            <i class="el-icon-phone-outline" />
+            +84-974-806625
+          </div>
+          <div class="content space-no-wrap">
+            <i class="el-icon-message" />
+            helen@wiser.vn / sale@wiser.vn
+          </div>
+          <div class="content">
+            <i class="el-icon-location-outline" />
+            No. 729, Nguyen Duc Thuan Street, Dang Xa Commune, Gia Lam District,
+            Hanoi, Vietnam
+          </div>
+        </div>
+        <div>
+          <div class="flag" @click="changeLocale">
+            {{ currentLocale ? 'China' : 'English' }}
+            <img
+              v-if="currentLocale"
+              src="~/assets/images/icons/flag-china.png"
+              alt="china flag"
+            />
+            <img
+              v-else
+              src="~/assets/images/icons/flag-england.png"
+              alt="england flag"
+            />
+          </div>
+        </div>
       </div>
-      <div class="content space-no-wrap">
-        <i class="el-icon-message" />
-        helen@wiser.vn / sale@wiser.vn
-      </div>
-      <div class="content">
-        <i class="el-icon-location-outline" />
-        No. 729, Nguyen Duc Thuan Street, Dang Xa Commune, Gia Lam District,
-        Hanoi, Vietnam
-      </div>
-      <div>Vietnam</div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentLocale: false,
+    }
+  },
+  methods: {
+    changeLocale() {
+      this.currentLocale = !this.currentLocale
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .tu-header-promo {
@@ -45,10 +78,23 @@
     background: transparent;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-size: 0.8rem;
+    &-left {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
     .content {
-      margin: 0 3rem;
+      margin-right: 3rem;
+    }
+  }
+  .flag {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    img {
+      width: 27px;
+      margin-left: 0.5rem;
     }
   }
 }

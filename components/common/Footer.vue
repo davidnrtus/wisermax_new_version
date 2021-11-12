@@ -46,7 +46,7 @@
               :key="header.key"
               class="tu-footer-item"
             >
-              <router-link :to="header.key">{{ header.title }}</router-link>
+              <router-link :to="header.url">{{ header.title }}</router-link>
             </div>
           </el-col>
           <el-col :xs="24" :sm="24" :md="6">
