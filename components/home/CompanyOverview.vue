@@ -4,7 +4,7 @@
       <div class="tu-co-padding">
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="20" :lg="16">
-            <el-row :gutter="32">
+            <el-row>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
                   <div class="tu-co-data_value">4+</div>
@@ -43,6 +43,7 @@
 }
 .tu-co-data {
   text-align: center;
+  padding: 0 16px;
   &_value {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;

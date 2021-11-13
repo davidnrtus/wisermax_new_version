@@ -7,7 +7,7 @@
             <h3 class="tu-section-title">What we can do?</h3>
           </el-col>
           <el-col :xs="24">
-            <el-row :gutter="32" type="flex" justify="center" class="flex-wrap">
+            <el-row type="flex" justify="center" class="flex-wrap">
               <el-col
                 v-for="(item, i) in services"
                 :key="i"
@@ -69,6 +69,7 @@ export default {
 <style lang="scss" scoped>
 .tu-so-card {
   margin-bottom: 1rem;
+  padding: 0 8px;
   &_img {
     padding-bottom: 65%;
     position: relative;
