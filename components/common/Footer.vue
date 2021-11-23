@@ -3,7 +3,7 @@
     <el-row type="flex" justify="center">
       <el-col :xs="24" :sm="20">
         <el-row :gutter="20">
-          <el-col :xs="24" :sm="24" :md="10">
+          <el-col :xs="24" :sm="24" :md="12">
             <div class="tu-footer-title">Information</div>
             <div class="tu-footer-content">
               <h4>WISER MAX HN COMPANY LIMITED</h4>
@@ -82,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 .tu-footer {
   padding: 60px 21px;
-  background: #1b3472;
+  background: $blue_lighter;
   color: #fff;
   &-title {
     text-transform: uppercase;

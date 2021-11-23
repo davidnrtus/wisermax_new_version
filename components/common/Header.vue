@@ -1,10 +1,5 @@
 <template>
-  <div class="tu-header mg-common" :class="scrolling && 'fixed'">
-    <img
-      src="~/assets/images/logo/logo.svg"
-      alt="logo.svg"
-      class="tu-header-logo"
-    />
+  <div class="tu-header mg-common hfixed">
     <div
       class="thi tu-header-imenu"
       :class="active && 'thia'"
@@ -14,6 +9,11 @@
       <span></span>
       <span></span>
     </div>
+    <img
+      src="~/assets/images/logo/logo-wisermaxvn.svg"
+      alt="logo.svg"
+      class="tu-header-logo"
+    />
     <div class="tu-header-menu">
       <div
         v-for="header in headers"
@@ -25,6 +25,21 @@
         <div v-if="header.key === 'products'" class="submenu">
           <TuSubMenu />
         </div>
+      </div>
+    </div>
+    <div class="flag centeral" @click="changeLocale">
+      <img
+        v-if="currentLocale"
+        src="~/assets/images/icons/flag-china.svg"
+        alt="china flag"
+      />
+      <img
+        v-else
+        src="~/assets/images/icons/flag-uk.svg"
+        alt="england flag"
+      />
+      <div class="flag-name">
+        {{ currentLocale ? 'China' : 'English' }}
       </div>
     </div>
     <TuMenuMobile v-if="active" />
@@ -46,6 +61,14 @@ export default {
       headers,
       scrolling: false,
       active: false,
+      currentLocale: false,
+    }
+  },
+  computed: {
+    isMobile() {
+      if (window)
+        return window.innerWidth < 575
+      return true
     }
   },
   watch: {
@@ -63,33 +86,39 @@ export default {
   // },
   methods: {
     // handleScroll() {
-    //   this.scrolling = window.top.scrollY > 41
+    //   const r = this.isMobile ? 7 : 41
+    //   this.scrolling = window.top.scrollY > r
     // },
     openHeader() {
       this.active = !this.active
+    },
+    changeLocale() {
+      this.currentLocale = !this.currentLocale
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.hfixed {
+  border-bottom: 1px solid $blue_lighter;
+  width: calc(100% - 42px);
+  position: fixed !important;
+}
 .tu-header {
   display: flex;
   align-items: center;
-  // flex-direction: row;
-  flex-direction: column;
-  // padding-top: 1.5rem;
-  // padding-bottom: 1.5rem;
-  padding-top: 8px;
+  flex-direction: row;
   top: 0;
   left: 0;
   z-index: 11;
   background: #fff;
   position: relative;
+  height: $header_height_desktop;
 
   &-logo {
     // width: 47px;
-    width: 77px;
+    width: 147px;
     height: auto;
   }
   &-imenu {
@@ -103,15 +132,19 @@ export default {
     flex-wrap: nowrap;
     padding: 0 30px;
     width: 100%;
-    position: relative;
-    perspective: 1000px;
+    height: 100%;
+    // position: relative;
+    // perspective: 1000px;
     z-index: 100;
     &_link {
-      padding: 12px 16px;
+      padding: 0 18px;
+      height: 100%;
+      display: flex;
+      align-items: center;
       a {
         font-size: 0.95rem;
         text-decoration: none;
-        color: #00174f;
+        color: $blue;
         font-weight: 600;
         position: relative;
       }
@@ -119,7 +152,7 @@ export default {
     .submenu {
       display: none;
       position: absolute;
-      top: 100%;
+      top: calc(100% - 1.5rem);
       left: 0;
       perspective: 1000px;
       z-index: -1;
@@ -139,7 +172,32 @@ export default {
     }
   }
 }
-
+.flag {
+  cursor: pointer;
+  font-size: 0.875rem;
+  &-name {
+    margin-left: 0.5rem;
+    @media (max-width: $header_breakpoint) {
+      display: none;
+    }
+  }
+}
+@media (max-width: $header_breakpoint) {
+  .tu-header {
+    justify-content: space-between;
+    width: calc(100% - 22px);
+    height: $header_height_mobile;
+    &-logo {
+      width: 97px;
+    }
+    &-imenu {
+      display: block;
+    }
+    &-menu {
+      display: none;
+    }
+  }
+}
 // humberger icon css
 .thi {
   position: relative;
@@ -153,7 +211,7 @@ export default {
   left: 0;
   height: 3px;
   width: 100%;
-  background: #00174f;
+  background: $blue;
   border-radius: 10px;
   transition: 350ms cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
@@ -187,23 +245,7 @@ export default {
   cursor: pointer;
 }
 .thia span {
-  background: #00174f;
-}
-@media (max-width: 574px) {
-  .tu-header {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding-bottom: 8px;
-    &-logo {
-      width: 37px;
-    }
-    &-imenu {
-      display: block;
-    }
-    &-menu {
-      display: none;
-    }
-  }
+  background: $blue;
 }
 </style>
 
@@ -216,7 +258,7 @@ export default {
         content: '';
         width: 100%;
         height: 2px;
-        background: #00174f;
+        background: $blue;
         position: absolute;
         bottom: -3px;
         left: 0;

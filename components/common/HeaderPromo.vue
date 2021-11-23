@@ -18,47 +18,17 @@
             Hanoi, Vietnam
           </div>
         </div>
-        <div>
-          <div class="flag" @click="changeLocale">
-            {{ currentLocale ? 'China' : 'English' }}
-            <img
-              v-if="currentLocale"
-              src="~/assets/images/icons/flag-china.png"
-              alt="china flag"
-            />
-            <img
-              v-else
-              src="~/assets/images/icons/flag-england.png"
-              alt="england flag"
-            />
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      currentLocale: false,
-    }
-  },
-  methods: {
-    changeLocale() {
-      this.currentLocale = !this.currentLocale
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .tu-header-promo {
   height: 41px;
   width: 100%;
   position: relative;
-  background: #1b3472; //323232
+  background: $blue_lighter; //323232
   &_bg {
     position: absolute;
     top: 0;

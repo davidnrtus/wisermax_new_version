@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TuHeaderPromo />
+    <!-- <TuHeaderPromo /> -->
     <TuHeader />
     <Nuxt />
     <TuFooter /> 
@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import TuHeaderPromo from '@/components/common/HeaderPromo'
+// import TuHeaderPromo from '@/components/common/HeaderPromo'
 import TuHeader from '@/components/common/Header'
 import TuFooter from '@/components/common/Footer'
 
 export default {
   components: {
-    TuHeaderPromo,
+    // TuHeaderPromo,
     TuHeader,
     TuFooter
   }
@@ -22,11 +22,12 @@ export default {
 </script>
 
 <style lang="scss">
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
-  color: #00174f;
+  color: $blue;
 }
 .space-no-wrap {
   white-space: nowrap;

@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="clearfixed">
     <TuBanner />
     <TuCompanyOverview />
     <TuServiceOverview />
-    <TuWhyChooseUs />
     <TuProductOverview />
+    <TuWhyChooseUs />
     <TuPartnerOverview />
   </div>
 </template>

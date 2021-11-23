@@ -212,7 +212,7 @@ export const headers = [
     url: '/customers',
   },
   {
-    title: 'About Wiser Max',
+    title: 'About',
     key: 'about-us',
     url: '/about-us',
   },
