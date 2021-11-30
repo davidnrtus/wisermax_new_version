@@ -10,7 +10,7 @@
       <span></span>
     </div>
     <img
-      src="~/assets/images/logo/logo-wisermaxvn.svg"
+      src="~/assets/images/logo/logo-v3.svg"
       alt="logo.svg"
       class="tu-header-logo"
     />
@@ -101,7 +101,7 @@ export default {
 
 <style lang="scss" scoped>
 .hfixed {
-  border-bottom: 1px solid $blue_lighter;
+  // border-bottom: 1px solid $blue_lighter;
   width: calc(100% - 42px);
   position: fixed !important;
 }
@@ -118,7 +118,7 @@ export default {
 
   &-logo {
     // width: 47px;
-    width: 147px;
+    width: 117px;
     height: auto;
   }
   &-imenu {
@@ -175,8 +175,12 @@ export default {
 .flag {
   cursor: pointer;
   font-size: 0.875rem;
+  img {
+    height: 28px;
+  }
   &-name {
     margin-left: 0.5rem;
+    min-width: 47px;
     @media (max-width: $header_breakpoint) {
       display: none;
     }

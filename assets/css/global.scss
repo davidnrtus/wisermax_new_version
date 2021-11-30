@@ -20,6 +20,12 @@
     margin-top: calc($header_height_mobile + 1rem);
   }
 }
+.clearpt {
+  padding-top: 0 !important;
+}
+.clearpb {
+  padding-bottom: 0 !important;
+}
 
 .h-full {
   height: 100%;
@@ -85,6 +91,9 @@
   height: 100%;
 }
 
+.mt4 {
+  margin-top: 4rem;
+}
 @media (min-width: 777.98px) and (max-width: 1440px) {
   .tu-section {
     padding-top: 3rem;
@@ -92,6 +101,9 @@
     &-title {
       font-size: 2.5rem;
     }
+  }
+  .mt4 {
+    margin-top: 3rem;
   }
 }
 @media (min-width: 477.98px) and (max-width: 777px) {
@@ -102,6 +114,9 @@
       font-size: 2rem;
     }
   }
+  .mt4 {
+    margin-top: 2rem;
+  }
 }
 @media (max-width: 477px) {
   .tu-section {
@@ -110,5 +125,8 @@
     &-title {
       font-size: 1.5rem;
     }
+  }
+  .mt4 {
+    margin-top: 1rem;
   }
 }
