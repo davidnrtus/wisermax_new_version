@@ -7,7 +7,7 @@
             <el-row>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
-                  <div class="tu-co-data_value">4+</div>
+                  <div class="tu-co-data_value">6+</div>
                   <div class="tu-co-data_txt">Years experience</div>
                 </div>
               </el-col>

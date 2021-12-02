@@ -4,7 +4,7 @@
       <el-col :md="24" :lg="20">
         <el-row type="flex" justify="center" class="flex-wrap">
           <el-col :xs="24">
-            <h3 class="tu-section-title">What we can do?</h3>
+            <h3 class="tu-section-title">Business Areas</h3>
           </el-col>
           <el-col :xs="24">
             <el-row type="flex" justify="center" class="flex-wrap">
@@ -19,7 +19,7 @@
                 <div class="tu-so-card">
                   <div class="tu-so-card_img">
                     <img
-                      :src="require(`~/assets/images/temp/${item.img}`)"
+                      :src="require(`~/assets/images${item.img}`)"
                       alt="service"
                     />
                   </div>
@@ -46,19 +46,25 @@ export default {
           title: 'Design',
           description:
             'We are a quality oriented professional clothing manufacturer exporter brand which focus on Women clothing, Man clothing, children wear.',
-          img: 'so-design.jpg',
+          img: '/temp/so-design.jpg',
         },
         {
           title: 'OEM, ODM service',
           description:
             'We offer OEM, ODM service and design/manufacture as per clothes design and requirements.',
-          img: 'so-ewo.jpg',
+          img: '/temp/so-ewo.jpg',
+        },
+        {
+          title: 'Sản xuất may mặc',
+          description:
+            'We offer OEM, ODM service and design/manufacture as per clothes design and requirements.',
+          img: '/about/service-1.jpg',
         },
         {
           title: 'Mass production',
           description:
             'Factory base in vietnam, As for the production capability, we can produce 500,000 pieces monthly. In the year of 2019 we provide total 3000 000 pieces for US, Canada market.',
-          img: 'so-production.jpg',
+          img: '/temp/so-production.jpg',
         },
       ],
     }

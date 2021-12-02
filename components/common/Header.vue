@@ -141,6 +141,7 @@ export default {
       height: 100%;
       display: flex;
       align-items: center;
+      cursor: pointer;
       a {
         font-size: 0.95rem;
         text-decoration: none;

@@ -1,13 +1,13 @@
 <template>
   <div>
     <TuIntroduction />
+    <TuServices />
     <TuFactoryPartners />
-    <TuCompanyData />
   </div>
 </template>
 
 <script>
-import TuCompanyData from '@/components/about/CompanyData'
+import TuServices from '@/components/about/Services'
 import TuFactoryPartners from '@/components/about/FactoryPartners'
 import TuIntroduction from '@/components/about/Introduction'
 
@@ -15,7 +15,7 @@ export default {
   components: {
     TuFactoryPartners,
     TuIntroduction,
-    TuCompanyData,
+    TuServices,
   },
 }
 </script>

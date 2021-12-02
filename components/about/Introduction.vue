@@ -1,75 +1,55 @@
 <template>
   <div class="tu-section clearfixed clearpt">
-    <!-- <div class="centeral">
-      <img
-        src="~/assets/images/backgrounds/bg-about-us-intro.jpeg"
-        alt="bg-about-us"
-      />
-      <div class="tu-section-title underline">About</div>
-    </div> -->
     <el-row type="flex" justify="center">
       <el-col :xl="16" :lg="20" :md="22" :sm="24" :xs="24">
-        <el-row :gutter="32">
-          <el-col :lg="10" :xl="12">
-            <div class="tu-img-cover tu-about-bg">
-              <img
-                src="~/assets/images/about/bg-intro.jpg"
-                alt="bg-about-us"
-              />
-            </div>
-          </el-col>
-          <el-col :lg="14" :xl="12">
-            <h2>Introduction</h2>
-            <p class="tu-text-p">
-              We are a quality oriented professional clothing manufacturer
-              exporter brand which focus on Women clothing, Man clothing,
-              children wear. Factory base in vietnam, As for the production
-              capability, we can produce 500,000 pieces monthly. In the year of
-              2019, we provide total 3000 000 pieces for US, Canada market. We
-              offer OEM, ODM service and design/manufacture as per clothes
-              design and requirements.
-            </p>
-            <p class="tu-text-p">
-              We have a skilled team of experts with a real working passion and
-              dedication to make buyer’s fashion dream come true. We always
-              focusing on providing fast, precise service for all customers "We
-              are committed to high quality and innovation and a process that
-              SAFETY and FAIR creating clothes you can trust and your customers
-              want to wear". Any inquiry please feel free to contact us
-            </p>
-          </el-col>
-        </el-row>
+        <div class="tu-section-title_sm underline">Introduction</div>
+        <p class="tu-text-p">
+          We are a quality oriented professional clothing manufacturer exporter
+          brand which focus on Women clothing, Man clothing,. children wear.
+          Factory base in vietnam, As for the production capability, we can
+          produce 500,000 pieces monthly. In the year of 2019, we provide total
+          3000 000 pieces for US, Canada market. We offer OEM, ODM service and
+          design/manufacture as per clothes design and requirements.
+        </p>
+        <p class="tu-text-p">
+          We have a skilled team of experts with a real working passion and
+          dedication to make buyer’s fashion dream come true. We always focusing
+          on providing fast, precise service for all customers "We are committed
+          to high quality and innovation and a process that SAFETY and FAIR
+          creating clothes you can trust and your customers want to wear". Any
+          inquiry please feel free to contact us
+        </p>
       </el-col>
     </el-row>
-    <el-row type="flex" justify="center" class="mt4">
-      <el-col :xl="16" :lg="20" :md="22" :sm="24" :xs="24">
-        <el-row :gutter="32">
-          <el-col :lg="10" :xl="12">
-            <div>
-              <h2>Factory Partners</h2>
-              <p class="tu-text-p">
-                With the goals of increasing the transparency of our supply
-                chain, taking on a greater responsibility to ensure good labor
-                conditions. Sewing factories represent factories where finished
-                products are manufactured and include both factories with our direct
-                and indirect business relationships.
-              </p>
-              <div class="fp-list">
-                <div v-for="(item, i) in partners" :key="i" class="fp-item">
-                  {{ item.title }}
-                </div>
-              </div>
+    <el-row type="flex" justify="center" class="tu-abu-num flex-wrap">
+      <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
+        <div class="bg-left">
+          <div class="centeral column pbx">
+            <h2 class="text-left w-full">Our capacity</h2>
+            <p class="tu-text-p">
+              Wisermax có đầy đủ khả năng sản xuất những mặt hàng: may gia công,
+              may thời trang, may đồng phục yêu cầu chất lượng cao, có thiết kế
+              phức tạp, kỹ thuật may hiện đại, hoàn thiện tỉ mỉ. Bên cạnh đó,
+              Xưởng luôn đầu tư trang bị hệ thống máy may tân tiến, công nghệ
+              cao với quy trình sản xuất gồm nhiều giai đoạn kế tiếp nhau để tạo
+              ra những sản phẩm chất lượng nhất đến tay khách hàng.
+            </p>
+          </div>
+        </div>
+      </el-col>
+      <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
+        <div class="bg-right">
+          <img src="~/assets/images/about/bg-nums.jpg" alt="" />
+          <div class="content">
+            <div
+              v-for="(item, index) in params"
+              :key="index"
+              class="content-item"
+            >
+              <span>{{ item.value }}</span> {{ item.text }}
             </div>
-          </el-col>
-          <el-col :lg="14" :xl="12">
-            <div class="tu-img-cover tu-about-bg">
-              <img
-                src="~/assets/images/backgrounds/bg-about-us-fp.png"
-                alt="bg-about-us"
-              />
-            </div>
-          </el-col>
-        </el-row>
+          </div>
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -79,15 +59,27 @@
 export default {
   data() {
     return {
-      partners: [
-        { title: 'PEARL VINA' },
-        { title: 'HUNG YEN JSC' },
-        { title: 'HOANG DUONG CO.,LTD' },
-        { title: 'TIEN HUNG JSC' },
-        { title: 'TNG' },
-        { title: 'MAY 10' },
-        { title: 'NHAN KHANG CO.,LTD' },
-        { title: 'HOA SEN PHU THO CO.,LTD' },
+      params: [
+        {
+          value: '12,000 PCS',
+          text: 'mỗi tháng',
+        },
+        {
+          value: '5,0000,000 PCS',
+          text: 'KNIT TOP / năm',
+        },
+        {
+          value: '1,0000,000 PCS',
+          text: 'KNIT DRESS / năm',
+        },
+        {
+          value: '500,000 PCS',
+          text: 'COAT & JACKET',
+        },
+        {
+          value: '500,000 PCS',
+          text: 'PANT / năm',
+        },
       ],
     }
   },
@@ -96,7 +88,7 @@ export default {
 
 <style lang="scss" scoped>
 .tu-text-p {
-  line-height: 2.3;
+  line-height: 30px;
 }
 .underline {
   position: relative;
@@ -111,18 +103,68 @@ export default {
     left: 0;
   }
 }
-.tu-about-bg {
-  padding-top: 60%;
-  margin-top: 1.75rem;
-  @media (max-width: 1199.98px) {
-    padding-top: 50%;
-    margin-top: 0.25rem;
+.tu-abu-num {
+  margin-top: 2rem;
+  .bg-left {
+    background: #e3e3e3;
+    height: 100%;
+    .pbx {
+      height: 100%;
+      padding: 0 1rem;
+    }
+  }
+  .bg-right {
+    padding-bottom: 60%;
+    position: relative;
+    img,
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      color: #fff;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      span {
+        font-size: 1.5rem;
+        margin-left: 2rem;
+        margin-right: 1rem;
+        font-weight: 600;
+        position: relative;
+        &::after {
+          content: '';
+          height: 2px;
+          width: 40px;
+          background: $second;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+        }
+      }
+      &-item {
+        padding: 1rem 0;
+        width: 100%;
+        text-align: left;
+      }
+    }
   }
 }
-.fp-list {
-  text-align: right;
-  @media (max-width: 1199.98px) {
-    text-align: left;
+@media (max-width: 687px) {
+  .tu-abu-num {
+    .bg-right {
+      padding-bottom: 100%;
+      .content {
+        span {
+          font-size: 1.25rem;
+        }
+      }
+    }
   }
 }
 </style>

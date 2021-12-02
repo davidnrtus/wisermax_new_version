@@ -1,36 +1,86 @@
 <template>
-  <div class="tu-section clearpt clearpb">
-    <div class="tu-section-content">
-      <!-- <el-row type="flex" justify="center" style="margin-top: 4rem">
-        <el-col :lg="18" :xl="20" :md="22" :sm="24" :xs="24">
-          <h2>Introduction</h2>
-          <p class="tu-text-p">
-            We are a quality oriented professional clothing manufacturer
-            exporter brand which focus on Women clothing, Man clothing,
-            children wear. Factory base in vietnam, As for the production
-            capability, we can produce 500,000 pieces monthly. In the year of
-            2019, we provide total 3000 000 pieces for US, Canada market. We
-            offer OEM, ODM service and design/manufacture as per clothes
-            design and requirements.
-          </p>
-          <p class="tu-text-p">
-            We have a skilled team of experts with a real working passion and
-            dedication to make buyer’s fashion dream come true. We always
-            focusing on providing fast, precise service for all customers "We
-            are committed to high quality and innovation and a process that
-            SAFETY and FAIR creating clothes you can trust and your customers
-            want to wear". Any inquiry please feel free to contact us
-          </p>
-        </el-col>
-        <el-col :lg="10" :xl="12">
-          <div class="tu-img-cover tu-about-bg">
-            <img
-              src="~/assets/images/backgrounds/bg-about-us.jpeg"
-              alt="bg-about-us"
-            />
-          </div>
-        </el-col>
-      </el-row> -->
-    </div>
+  <div class="tu-section clearpt">
+    <el-row type="flex" justify="center" class="mt4">
+      <el-col :xl="16" :lg="20" :md="22" :sm="24" :xs="24">
+        <el-row>
+          <el-col :lg="10" :xl="12" class="sp">
+            <div>
+              <h2>Factory Partners</h2>
+              <p class="tu-text-p">
+                With the goals of increasing the transparency of our supply
+                chain, taking on a greater responsibility to ensure good labor
+                conditions. Sewing factories represent factories where finished
+                products are manufactured and include both factories with our
+                direct and indirect business relationships.
+              </p>
+              <div class="fp-list">
+                <div v-for="(item, i) in partners" :key="i" class="fp-item">
+                  <i class="el-icon-caret-right" />{{ item.title }}
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col :lg="14" :xl="12" class="sp">
+            <div class="tu-img-cover tu-about-bg">
+              <img
+                src="~/assets/images/backgrounds/bg-about-us-fp.png"
+                alt="bg-about-us"
+              />
+            </div>
+          </el-col>
+        </el-row>
+      </el-col>
+    </el-row>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      partners: [
+        { title: 'Pearl Vina' },
+        { title: 'Hung Yen JSC' },
+        { title: 'Hoang Duong CO.,LTD' },
+        { title: 'Tien Hung JSC' },
+        { title: 'TNG' },
+        { title: 'May 10' },
+        { title: 'Nhan Khang CO.,LTD' },
+        { title: 'Hoa Sen Phu Tho CO.,LTD' },
+      ],
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.tu-text-p {
+  line-height: 2.3;
+}
+.sp {
+  padding: 0 12px;
+  @media (max-width: 687.98px) {
+    padding: 0;
+  }
+}
+.tu-about-bg {
+  padding-top: 60%;
+  margin-top: 1.75rem;
+  @media (max-width: 1199.98px) {
+    padding-top: 50%;
+    margin-top: 0.25rem;
+  }
+}
+.fp-list {
+  display: flex;
+  flex-wrap: wrap;
+  .fp-item {
+    margin-bottom: 0.5rem;
+    width: 50%;
+    font-weight: 500;
+    @media (max-width: 687.98px) {
+      width: 100%;
+    }
+  }
+}
+</style>
