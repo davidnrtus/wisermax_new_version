@@ -62,6 +62,7 @@ export default {
       scrolling: false,
       active: false,
       currentLocale: false,
+      isCollapsed: false
     }
   },
   computed: {
@@ -95,6 +96,9 @@ export default {
     changeLocale() {
       this.currentLocale = !this.currentLocale
     },
+    changeRoute() {
+      this.isCollapsed = false
+    }
   },
 }
 </script>
@@ -160,7 +164,7 @@ export default {
       background: #fff;
       width: 100vw;
       transform: translateY(100%);
-      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.15);
       animation: rotateMenu 400ms ease-in-out forwards;
       transform-origin: top center;
     }

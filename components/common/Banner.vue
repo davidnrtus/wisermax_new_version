@@ -17,25 +17,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.tu-banner {
-  .slider-container {
-    // height: 100%;
-    // width: 100%;
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-</style>
-
 <style lang="scss">
 .tu-banner {
   .el-carousel__container {

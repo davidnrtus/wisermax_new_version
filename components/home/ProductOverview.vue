@@ -45,36 +45,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.tu-product-card {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 135%;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  &_content {
-    position: absolute;
-    bottom: 7%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    a {
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      padding: 11px 27px;
-      &:hover {
-        text-decoration: underline;
-        background: rgba(0, 0, 0, 0.05);
-      }
-    }
-  }
-}
-</style>

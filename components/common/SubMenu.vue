@@ -2,11 +2,15 @@
   <div class="tu-drawer">
     <div class="tu-drawer-row">
       <div v-for="menu in subHeaders" :key="menu.key" class="tu-drawer-col">
-        <div class="tu-drawer-title" style="font-weight: 700">{{ menu.title }}</div>
+        <nuxt-link :to="`products?category=${menu.key}`">
+          <div class="tu-drawer-title" style="font-weight: 700">{{ menu.title }}</div>
+        </nuxt-link>
         <div v-if="menu.childrens" class="tu-drawer-list">
           <ul>
-            <li v-for="subMenu in menu.childrens" :key="subMenu.key" class="tu-drawer-title">
-              {{ subMenu.title }}
+            <li v-for="subMenu in menu.childrens" :key="subMenu.key">
+              <nuxt-link :to="`products?category=${menu.key}&type=${subMenu.key}`" class="tu-drawer-title">
+                {{ subMenu.title }}
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -16,7 +20,7 @@
 </template>
 
 <script>
-import {subHeaders} from '@/data/header'
+import { subHeaders } from '@/data/header'
 
 export default {
   data() {
