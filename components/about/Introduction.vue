@@ -90,19 +90,6 @@ export default {
 .tu-text-p {
   line-height: 30px;
 }
-.underline {
-  position: relative;
-  display: inline-block;
-  &::after {
-    content: '';
-    width: 100%;
-    height: 6px;
-    background: $blue;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-}
 .tu-abu-num {
   margin-top: 2rem;
   .bg-left {

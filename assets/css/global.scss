@@ -146,6 +146,19 @@ a {
     text-decoration: underline;
   }
 }
+.underline {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: $blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
 .underline-2 {
   position: relative;
   display: inline-block;
@@ -180,6 +193,22 @@ a {
 
 .mt4 {
   margin-top: 4rem;
+}
+.mt4 {
+  margin-bottom: 4rem;
+}
+.tu-input {
+  input {
+    // border-left: none;
+    // border-right: none;
+    // border-top: none;
+    // border-radius: 0;
+    // border-width: 2px;
+    &:focus {
+      border-color: $blue;
+      outline: 0;
+    }
+  }
 }
 @media (min-width: 777.98px) and (max-width: 1440px) {
   .tu-section {

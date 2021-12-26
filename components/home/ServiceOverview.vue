@@ -77,7 +77,7 @@ export default {
   margin-bottom: 1rem;
   padding: 0 8px;
   &_img {
-    padding-bottom: 65%;
+    padding-bottom: 72%;
     position: relative;
     background: #f7fdff;
     img {

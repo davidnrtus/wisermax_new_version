@@ -13,11 +13,11 @@
                 products are manufactured and include both factories with our
                 direct and indirect business relationships.
               </p>
-              <div class="fp-list">
+              <!-- <div class="fp-list">
                 <div v-for="(item, i) in partners" :key="i" class="fp-item">
                   <i class="el-icon-caret-right" />{{ item.title }}
                 </div>
-              </div>
+              </div> -->
             </div>
           </el-col>
           <el-col :lg="14" :xl="12" class="sp">

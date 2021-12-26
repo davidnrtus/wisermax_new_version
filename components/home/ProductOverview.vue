@@ -26,11 +26,11 @@ export default {
       products: [
         {
           name: 'product_overview_men',
-          img: 'product_overview_men.jpg',
+          img: 'product_overview_men_1.jpg',
         },
         {
           name: 'product_overview_women',
-          img: 'product_overview_women.jpg',
+          img: 'product_overview_women_1.jpg',
         },
         {
           name: 'product_overview_kid',

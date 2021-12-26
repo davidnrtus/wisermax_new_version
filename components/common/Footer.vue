@@ -6,36 +6,18 @@
           <el-col :xs="24" :sm="24" :md="12">
             <div class="tu-footer-title">Information</div>
             <div class="tu-footer-content">
-              <h4>WISER MAX HN COMPANY LIMITED</h4>
+              <h4>{{ info.company_name }}</h4>
               <div class="tu-footer-item">
                 <i class="el-icon-location-outline" />
-                <span class="txt"
-                  >No. 729, Nguyen Duc Thuan Street, Dang Xa Commune, Gia Lam
-                  District, Hanoi, Vietnam</span
-                >
+                <span class="txt">{{ info.address }}</span>
               </div>
               <div class="tu-footer-item">
                 <i class="el-icon-message" />
-                <span>helen@wiser.vn / sale@wiser.vn</span>
+                <span>{{ info.email }}</span>
               </div>
               <div class="tu-footer-item">
                 <i class="el-icon-phone-outline" />
-                <span>+84-974-806625</span>
-              </div>
-              <div class="tu-footer-item" style="margin-left: -8px">
-                <img
-                  src="~/assets/images/icons/icons8-whatsapp.svg"
-                  alt="whatsapp"
-                />
-                <img
-                  src="~/assets/images/icons/icons8-wechat.svg"
-                  alt="wechat"
-                />
-                <img
-                  src="~/assets/images/icons/icons8-kakaotalk.svg"
-                  alt="kakaotalk"
-                />
-                <img src="~/assets/images/icons/icons8-zalo.svg" alt="zalo" />
+                <span>{{ info.phone_number }}</span>
               </div>
             </div>
           </el-col>
@@ -69,11 +51,13 @@
 
 <script>
 import { headers } from '@/data/header'
+import info from '@/data/info'
 
 export default {
   data() {
     return {
       headers,
+      info
     }
   },
 }
