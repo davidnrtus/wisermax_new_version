@@ -22,9 +22,9 @@
         class="tu-header-menu_link"
       >
         <router-link :to="header.url">{{ header.title }}</router-link>
-        <div v-if="header.key === 'products'" class="submenu">
+        <!-- <div v-if="header.key === 'products'" class="submenu">
           <TuSubMenu />
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="flag centeral" @click="changeLocale">
@@ -47,13 +47,13 @@
 </template>
 
 <script>
-import TuSubMenu from './SubMenu'
+// import TuSubMenu from './SubMenu'
 import TuMenuMobile from './MenuMobile'
 import { headers } from '@/data/header'
 
 export default {
   components: {
-    TuSubMenu,
+    // TuSubMenu,
     TuMenuMobile,
   },
   data() {
