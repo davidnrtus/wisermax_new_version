@@ -24,6 +24,9 @@ a {
     margin-top: calc($header_height_mobile + 1rem);
   }
 }
+.clearfixed-fit {
+  margin-top: calc($header_height_desktop);
+}
 .clearpt {
   padding-top: 0 !important;
 }
