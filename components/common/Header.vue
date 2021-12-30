@@ -105,8 +105,6 @@ export default {
 
 <style lang="scss" scoped>
 .hfixed {
-  // border-bottom: 1px solid $blue_lighter;
-  width: calc(100% - 42px);
   position: fixed !important;
 }
 .tu-header {
