@@ -1,6 +1,6 @@
 <template>
   <div class="tu-img">
-    <img v-if="intersected" :src="srcImage" :style="imgStyles" alt="" />
+    <img v-if="intersected" :src="srcImage" :style="imgStyles" :class="imgClass" alt="" />
     <div v-else class="loading" />
   </div>
 </template>
@@ -20,6 +20,10 @@ export default {
     delay: {
       type: Number,
       default: 0,
+    },
+    imgClass: {
+      type: String,
+      default: '',
     },
     fit: {
       type: String,

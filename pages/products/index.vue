@@ -7,7 +7,7 @@
           <TuImage v-else :src="require(`~/assets/images/products/banners/banner_2_mb.png`)" />
         </div>
         <div class="tu-content">
-          <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_men_3.png`)" />
+          <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_men_2.png`)" />
           <TuImage v-else :src="require(`~/assets/images/products/banners/banner_men_2_mb.png`)" />
           <div class="tu-content-link">
             <router-link to="/products/men">View more</router-link>

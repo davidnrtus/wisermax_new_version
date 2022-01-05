@@ -86,9 +86,14 @@ a {
   text-align: left;
 }
 .text-white {
-  color: #fff;
+  color: #fff !important;
 }
-
+.text-black {
+  color: #222 !important;
+}
+.text-blue {
+  color: $blue !important;
+}
 .tu-section {
   padding-top: 2rem;
   padding-bottom: 2rem;
