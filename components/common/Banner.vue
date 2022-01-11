@@ -1,17 +1,22 @@
 <template>
   <div class="tu-banner mg-common">
     <div class="tu-banner-slider">
-      <el-carousel :interval="7000" :autoplay="false" trigger="click" arrow="hover">
+      <el-carousel :interval="3000" :autoplay="false" trigger="click" arrow="hover">
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_2.png" alt="banner" >
+            <img src="~/assets/images/banners/banner_4.png" alt="banner" >
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_1.png" alt="banner" >
+            <img src="~/assets/images/banners/banner_5.png" alt="banner" >
           </div>
         </el-carousel-item>
+        <!-- <el-carousel-item>
+          <div class="slider-container">
+            <img src="~/assets/images/banners/banner_6.png" alt="banner" >
+          </div>
+        </el-carousel-item> -->
       </el-carousel>
     </div>
   </div>
@@ -21,13 +26,13 @@
 .tu-banner {
   .el-carousel__container {
     height: unset !important;
-    padding-bottom: 44%;
+    padding-bottom: 52%;
     @media (min-width: 1024.98px) and (max-width: 1440px) {
-      padding-bottom: 48%;
+      padding-bottom: 52%;
     }
-    @media (max-width: 1024px) {
-      padding-bottom: 58%;
-    }
+    // @media (max-width: 1024px) {
+    //   padding-bottom: 50%;
+    // }
   }
 }
 </style>

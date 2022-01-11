@@ -3,8 +3,7 @@
     <div class="tu-section clearspacer">
       <div class="tu-section-content">
         <div class="tu-content">
-          <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_2.jpg`)" />
-          <TuImage v-else :src="require(`~/assets/images/products/banners/banner_2_mb.png`)" />
+          <TuImage :src="require(`~/assets/images/banners/banner_6.png`)" />
         </div>
         <div class="tu-content">
           <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_men_2.png`)" />
