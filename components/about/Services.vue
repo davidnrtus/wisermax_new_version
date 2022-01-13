@@ -16,7 +16,10 @@
         <div class="tu-card tu-img-cover">
           <img :src="require(`~/assets/images/about/${item.img}`)" alt="" />
           <div class="tu-card-content overlay centeral text-white">
-            <h2>{{ item.name }}</h2>
+            <div class="text-center">
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.text }}</p>
+            </div>
           </div>
         </div>
       </el-col>
@@ -29,10 +32,18 @@ export default {
   data() {
     return {
       services: [
-        { img: 'service-2.jpg', name: 'Thiết kế sản phẩm thời trang' },
+        { 
+          img: 'service-2.jpg', 
+          name: 'Thiết kế sản phẩm thời trang',
+          text: 'We invest strongly in design.'
+        },
+        { 
+          img: 'service-1.jpg', 
+          name: 'Sản xuất sản phẩm may mặc',
+          text: 'We control quality  base on AQL 1.0, 2.5. We seek manufacturing partners with great care, sometimes newcomers with whom we can build.'
+        },
         { img: 'service-1.jpg', name: 'Sản xuất sản phẩm may mặc' },
-        { img: 'service-1.jpg', name: 'San xuat may mac' },
-        { img: 'service-1.jpg', name: 'San xuat may mac' },
+        { img: 'service-1.jpg', name: 'Sản xuất sản phẩm may mặc' },
       ],
     }
   },
