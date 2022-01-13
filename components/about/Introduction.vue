@@ -62,15 +62,15 @@ export default {
       params: [
         {
           value: '12,000 PCS',
-          text: 'mỗi tháng',
+          text: 'per month',
         },
         {
           value: '5,0000,000 PCS',
-          text: 'KNIT TOP / năm',
+          text: 'KNIT TOP / year',
         },
         {
           value: '1,0000,000 PCS',
-          text: 'KNIT DRESS / năm',
+          text: 'KNIT DRESS / year',
         },
         {
           value: '500,000 PCS',
@@ -78,7 +78,7 @@ export default {
         },
         {
           value: '500,000 PCS',
-          text: 'PANT / năm',
+          text: 'PANT / year',
         },
       ],
     }
