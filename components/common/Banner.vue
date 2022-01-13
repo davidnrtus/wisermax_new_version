@@ -26,13 +26,13 @@
 .tu-banner {
   .el-carousel__container {
     height: unset !important;
-    padding-bottom: 52%;
+    padding-bottom: 48%;
     @media (min-width: 1024.98px) and (max-width: 1440px) {
       padding-bottom: 52%;
     }
-    // @media (max-width: 1024px) {
-    //   padding-bottom: 50%;
-    // }
+    @media (max-width: 1024px) {
+      padding-bottom: 50%;
+    }
   }
 }
 </style>
