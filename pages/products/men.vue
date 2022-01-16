@@ -10,6 +10,19 @@
         <h3 class="tu-section-title">Polo</h3>
         <div class="tu-content">
           <el-row type="flex" justify="center">
+            <el-col :xs="24" :sm="24" :md="18" :lg="12">
+              <p
+                class="text-center"
+                style="margin-bottom: 2rem; line-height: 2"
+              >
+                Áo Polo luôn là sản phẩm chủ đạo của Wisermax khi được kết tinh
+                từ vải LIQUÉ và được thiết kế, in ấn đặc biệt. Cảm giác chỉ
+                riêng của đàn ông, đơn giản, lịch thiệp và sang trọng gói gọn
+                trong chiếc áo Polo.
+              </p>
+            </el-col>
+          </el-row>
+          <el-row type="flex" justify="center">
             <el-col :xs="24" :sm="24" :md="20" :lg="16">
               <el-row type="flex" :gutter="isMobile ? 10 : 32">
                 <el-col :span="12">
@@ -48,7 +61,7 @@
             </el-col>
           </el-row>
         </div>
-        <div class="tu-content" style="margin-top: 3rem;">
+        <div class="tu-content" style="margin-top: 3rem">
           <TuImage
             v-if="!isMobile"
             :src="
@@ -63,8 +76,15 @@
           />
         </div>
         <div class="tu-section-title text-center">We can do more!</div>
-        <el-row :gutter="24" style="margin-bottom: 2rem;">
-          <el-col v-for="(item, i) in others" :key="i" :xs="12" :sm="12" :md="8" :lg="4">
+        <el-row :gutter="24" style="margin-bottom: 2rem">
+          <el-col
+            v-for="(item, i) in others"
+            :key="i"
+            :xs="12"
+            :sm="12"
+            :md="8"
+            :lg="4"
+          >
             <TuImage
               :src="require(`~/assets/images/products/men/${item.img}`)"
             />
