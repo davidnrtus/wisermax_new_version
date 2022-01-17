@@ -1,5 +1,5 @@
 <template>
-  <div class="clearfixed">
+  <div>
     <div class="tu-banner-wrapper">
       <img
         src="~/assets/images/banners/banner_contact_1.jpg"

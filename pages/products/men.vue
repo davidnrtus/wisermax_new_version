@@ -1,5 +1,5 @@
 <template>
-  <div class="clearfixed-fit">
+  <div>
     <div class="tu-section clearspacer">
       <div class="tu-section-content">
         <div class="tu-content">

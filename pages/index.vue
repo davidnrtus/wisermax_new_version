@@ -1,5 +1,5 @@
 <template>
-  <div class="clearfixed">
+  <div>
     <TuBanner />
     <TuCompanyOverview />
     <TuServiceOverview />

@@ -6,7 +6,7 @@
     <div class="tu-section-content">
       <el-row type="flex" justify="center" class="crow">
         <el-col :md="23" :lg="18">
-          <el-row>
+          <el-row type="flex" justify="center" class="flex-wrap">
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
                 <img src="~/assets/images/temp/ck.png" alt="ck" />
@@ -24,17 +24,12 @@
             </el-col>
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
-                <img src="~/assets/images/temp/ck.png" alt="ck" />
+                <img src="~/assets/images/customers/dkny.svg" alt="dkny" />
               </div>
             </el-col>
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
-                <img src="~/assets/images/temp/gucci.png" alt="ck" />
-              </div>
-            </el-col>
-            <el-col class="ccol-img" :xs="12" :sm="4">
-              <div class="center">
-                <img src="~/assets/images/temp/tommy.png" alt="ck" />
+                <img src="~/assets/images/customers/karl.png" alt="karl" />
               </div>
             </el-col>
           </el-row>

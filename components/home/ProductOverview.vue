@@ -10,7 +10,7 @@
               :alt="product.name"
             />
             <div class="tu-product-card_content">
-              <router-link to="/products">View more</router-link>
+              <router-link :to="`/products/${product.key}`">View more</router-link>
             </div>
           </div>
         </el-col>
@@ -26,19 +26,23 @@ export default {
       products: [
         {
           name: 'product_overview_men',
-          img: 'product_overview_men_1.jpg',
+          img: 'product_overview_men.jpeg',
+          key: 'men'
         },
         {
           name: 'product_overview_women',
-          img: 'product_overview_women_1.jpg',
+          img: 'product_overview_women.jpeg',
+          key: 'women'
         },
         {
           name: 'product_overview_kid',
-          img: 'product_overview_kid.jpg',
+          img: 'product_overview_kid.png',
+          key: 'kids'
         },
         {
           name: 'product_overview_socks',
           img: 'product_overview_socks.jpg',
+          key: 'accessories'
         },
       ]
     }
