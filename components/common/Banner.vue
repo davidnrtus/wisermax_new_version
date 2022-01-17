@@ -4,19 +4,14 @@
       <el-carousel :interval="3000" :autoplay="false" trigger="click" arrow="hover">
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_4.png" alt="banner" >
+            <img src="~/assets/images/banners/banner_5.png" alt="banner" >
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_5.png" alt="banner" >
+            <img src="~/assets/images/banners/banner_4.png" alt="banner" >
           </div>
         </el-carousel-item>
-        <!-- <el-carousel-item>
-          <div class="slider-container">
-            <img src="~/assets/images/banners/banner_6.png" alt="banner" >
-          </div>
-        </el-carousel-item> -->
       </el-carousel>
     </div>
   </div>

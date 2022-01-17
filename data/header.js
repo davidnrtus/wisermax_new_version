@@ -217,8 +217,8 @@ export const headers = [
     url: '/about-us',
   },
   {
-    title: 'Contacts',
-    key: 'contacts',
-    url: '/contacts',
+    title: 'Contact',
+    key: 'contact',
+    url: '/contact',
   },
 ]

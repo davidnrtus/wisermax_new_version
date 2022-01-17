@@ -147,7 +147,7 @@ export default {
       a {
         font-size: 0.95rem;
         text-decoration: none;
-        color: $blue;
+        color: $main;
         font-weight: 600;
         position: relative;
       }
@@ -218,7 +218,7 @@ export default {
   left: 0;
   height: 3px;
   width: 100%;
-  background: $blue;
+  background: $main;
   border-radius: 10px;
   transition: 350ms cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
@@ -252,7 +252,7 @@ export default {
   cursor: pointer;
 }
 .thia span {
-  background: $blue;
+  background: $main;
 }
 </style>
 
@@ -265,7 +265,7 @@ export default {
         content: '';
         width: 100%;
         height: 2px;
-        background: $blue;
+        background: $main;
         position: absolute;
         bottom: -3px;
         left: 0;

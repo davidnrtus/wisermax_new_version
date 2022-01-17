@@ -9,17 +9,17 @@
           <el-row type="flex" justify="center" class="flex-wrap">
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
-                <img src="~/assets/images/temp/ck.png" alt="ck" />
+                <img src="~/assets/images/customers/ck.png" alt="ck" />
               </div>
             </el-col>
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
-                <img src="~/assets/images/temp/gucci.png" alt="ck" />
+                <img src="~/assets/images/customers/gucci.png" alt="ck" />
               </div>
             </el-col>
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
-                <img src="~/assets/images/temp/tommy.png" alt="ck" />
+                <img src="~/assets/images/customers/tommy.png" alt="ck" />
               </div>
             </el-col>
             <el-col class="ccol-img" :xs="12" :sm="4">
@@ -30,6 +30,11 @@
             <el-col class="ccol-img" :xs="12" :sm="4">
               <div class="center">
                 <img src="~/assets/images/customers/karl.png" alt="karl" />
+              </div>
+            </el-col>
+            <el-col class="ccol-img" :xs="12" :sm="4">
+              <div class="center">
+                <img src="~/assets/images/customers/guess.svg" alt="guess" />
               </div>
             </el-col>
           </el-row>

@@ -78,19 +78,20 @@ export default {
       text-align: center;
       &_item {
         display: inline-block;
-        margin: 6px 8px 6px 8px;
+        margin: 6px 10px;
         a {
-          color: #1c1b1b;
+          color: #2c2c2c;
           font-size: 13px;
           font-family: Muli,sans-serif;
-          font-weight: 400;
+          font-weight: 600;
           font-style: normal;
           -webkit-transition: color .2s ease-in-out;
           transition: color .2s ease-in-out;
           letter-spacing: .2em;
           text-transform: uppercase;
           &:hover {
-            color: #6a6a6a;
+            // color: #6a6a6a;
+            font-weight: 700 !important;
           }
         }
       }
@@ -110,7 +111,7 @@ export default {
   left: 0;
   height: 3px;
   width: 100%;
-  background: $blue;
+  background: $main;
   border-radius: 10px;
   transition: 350ms cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
@@ -144,6 +145,14 @@ export default {
   cursor: pointer;
 }
 .thia span {
-  background: $blue;
+  background: $main;
+}
+</style>
+
+<style lang="scss">
+.tu-header1 {
+  .nuxt-link-exact-active {
+    font-weight: 700 !important;
+  }
 }
 </style>

@@ -47,7 +47,7 @@ export default {
       a {
         font-size: 0.95rem;
         text-decoration: none;
-        color: $blue;
+        color: $main;
         font-weight: 600;
       }
     }
