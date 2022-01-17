@@ -143,7 +143,7 @@ export default {
 }
 .tu-button {
   padding: 12px 52px;
-  background: $main_brown;
+  background: $main;
   color: #fff;
   font-weight: 500;
   letter-spacing: 1.5px;
