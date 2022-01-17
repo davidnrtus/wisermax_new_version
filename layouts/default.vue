@@ -28,7 +28,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
-  color: $blue;
+  color: $main;
 }
 .main {
   min-height: 100vh;

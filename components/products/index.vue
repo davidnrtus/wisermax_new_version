@@ -180,7 +180,7 @@ export default {
   a {
     text-decoration: none;
     font-size: 16px;
-    color: $blue;
+    color: $main;
     &:hover {
       font-weight: 500;
     }
@@ -240,7 +240,7 @@ export default {
 .tu-drawer {
   .el-collapse-item__header {
     font-size: 16px;
-    color: $blue;
+    color: $main;
   }
 }
 </style>

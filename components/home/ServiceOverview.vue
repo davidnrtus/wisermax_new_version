@@ -46,13 +46,13 @@ export default {
           title: 'Design',
           description:
             'We are a quality oriented professional clothing manufacturer exporter brand which focus on Women clothing, Man clothing, children wear.',
-          img: '/temp/so-design.jpg',
+          img: '/home/so-design.jpg',
         },
         {
           title: 'OEM, ODM service',
           description:
             'We offer OEM, ODM service and design/manufacture as per clothes design and requirements.',
-          img: '/temp/so-ewo.jpg',
+          img: '/home/so-ewo.jpg',
         },
         {
           title: 'Sản xuất may mặc',
@@ -64,7 +64,7 @@ export default {
           title: 'Mass production',
           description:
             'Factory base in vietnam, As for the production capability, we can produce 500,000 pieces monthly. In the year of 2019 we provide total 3000 000 pieces for US, Canada market.',
-          img: '/temp/so-production.jpg',
+          img: '/home/so-production.jpg',
         },
       ],
     }

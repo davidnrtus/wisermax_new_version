@@ -46,7 +46,7 @@ export default {
   }
   &-title {
     font-size: 0.95rem;
-    color: $blue;
+    color: $main;
     cursor: pointer;
     &:hover {
       text-decoration: underline;

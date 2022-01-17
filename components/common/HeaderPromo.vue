@@ -28,7 +28,7 @@
   height: 41px;
   width: 100%;
   position: relative;
-  background: $blue_lighter; //323232
+  background: $main_brown; //323232
   &_bg {
     position: absolute;
     top: 0;

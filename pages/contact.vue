@@ -102,7 +102,7 @@ export default {
   margin-bottom: 32px;
   display: flex;
   align-items: center;
-  color: $blue;
+  color: $main;
   i {
     font-size: 1.5rem;
     margin-right: 0.75rem;
@@ -143,7 +143,7 @@ export default {
 }
 .tu-button {
   padding: 12px 52px;
-  background: $blue;
+  background: $main;
   color: #fff;
   font-weight: 500;
   letter-spacing: 1.5px;

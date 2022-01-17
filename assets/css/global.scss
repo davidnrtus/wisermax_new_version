@@ -92,7 +92,7 @@ a {
   color: #222 !important;
 }
 .text-blue {
-  color: $blue !important;
+  color: $main !important;
 }
 .tu-section {
   padding-top: 2rem;
@@ -103,7 +103,7 @@ a {
     font-weight: 800;
     line-height: 2;
     text-align: center;
-    color: $blue;
+    color: $main;
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
@@ -112,7 +112,7 @@ a {
     font-weight: 700;
     line-height: 1.5;
     text-align: center;
-    color: $blue;
+    color: $main;
     margin-top: 0.75rem;
     margin-bottom: 1.5rem;
   }
@@ -165,7 +165,7 @@ a {
 }
 .ca {
   text-decoration: none;
-  color: $blue;
+  color: $main;
   &:hover {
     text-decoration: underline;
   }
@@ -177,7 +177,7 @@ a {
     content: '';
     width: 100%;
     height: 5px;
-    background: $blue;
+    background: $main;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -229,7 +229,7 @@ a {
     // border-radius: 0;
     // border-width: 2px;
     &:focus {
-      border-color: $blue;
+      border-color: $main;
       outline: 0;
     }
   }
