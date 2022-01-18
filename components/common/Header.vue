@@ -10,7 +10,7 @@
       <span></span>
     </div>
     <img
-      src="~/assets/images/logo/logo-v4.svg"
+      src="~/assets/images/logo/logo-v6.svg"
       alt="logo.svg"
       class="tu-header-logo"
     />
