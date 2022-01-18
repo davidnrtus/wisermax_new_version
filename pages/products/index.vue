@@ -3,26 +3,32 @@
     <div class="tu-section clearspacer">
       <div class="tu-section-content">
         <div class="tu-content">
-          <TuImage :src="require(`~/assets/images/banners/banner_6.png`)" />
+          <TuImage :src="require(`~/assets/images/products/banners/banner_2.png`)" />
         </div>
         <div class="tu-content">
           <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_men_2.png`)" />
-          <TuImage v-else :src="require(`~/assets/images/products/banners/banner_men_2_mb.png`)" />
-          <div class="tu-content-link">
+          <router-link v-else to="/products/men">
+            <TuImage :src="require(`~/assets/images/products/banners/banner_men_2_mb.png`)" />
+          </router-link>
+          <div v-if="!isMobile" class="tu-content-link">
             <router-link to="/products/men">View more</router-link>
           </div>
         </div>
         <div class="tu-content">
           <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_women_1.png`)" />
-          <TuImage v-else :src="require(`~/assets/images/products/banners/banner_women_mb.png`)" />
-          <div class="tu-content-link">
+          <router-link v-else to="/products/women">
+            <TuImage :src="require(`~/assets/images/products/banners/banner_women_mb.png`)" />
+          </router-link>
+          <div v-if="!isMobile" class="tu-content-link">
             <router-link to="/products/women">View more</router-link>
           </div>
         </div>
         <div class="tu-content">
           <TuImage v-if="!isMobile" :src="require(`~/assets/images/products/banners/banner_kids.png`)" />
-          <TuImage v-else :src="require(`~/assets/images/products/banners/banner_kids_mb.png`)" />
-          <div class="tu-content-link">
+          <router-link v-else to="/products/kids">
+            <TuImage :src="require(`~/assets/images/products/banners/banner_kids_mb.png`)" />
+          </router-link>
+          <div v-if="!isMobile" class="tu-content-link">
             <router-link to="/products/kids">View more</router-link>
           </div>
         </div>

@@ -1,16 +1,32 @@
 <template>
   <div class="tu-section">
-    <div class="tu-section-title">Featured Products</div>
+    <div class="tu-section-title mb-0">Our Products</div>
+    <el-row type="flex" justify="center">
+      <el-col :md="20" :lg="16">
+        <p class="text-center uppercase">
+          Currently, we manufacture apparel products such as men's, women's and
+          children's clothing, as well as accessories such as socks, underwear...
+        </p>
+      </el-col>
+    </el-row>
     <div class="tu-section-content">
       <el-row :gutter="10">
-        <el-col v-for="product in products" :key="product.name" :xs="24" :sm="12" :md="6">
+        <el-col
+          v-for="product in products"
+          :key="product.name"
+          :xs="24"
+          :sm="12"
+          :md="6"
+        >
           <div class="tu-product-card">
             <img
               :src="require(`~/assets/images/home/${product.img}`)"
               :alt="product.name"
             />
             <div class="tu-product-card_content">
-              <router-link :to="`/products/${product.key}`">View more</router-link>
+              <router-link :to="`/products/${product.key}`"
+                >View more</router-link
+              >
             </div>
           </div>
         </el-col>
@@ -27,25 +43,25 @@ export default {
         {
           name: 'product_overview_men',
           img: 'product_overview_men.jpeg',
-          key: 'men'
+          key: 'men',
         },
         {
           name: 'product_overview_women',
           img: 'product_overview_women.jpeg',
-          key: 'women'
+          key: 'women',
         },
         {
           name: 'product_overview_kid',
           img: 'product_overview_kid.png',
-          key: 'kids'
+          key: 'kids',
         },
         {
           name: 'product_overview_socks',
           img: 'product_overview_socks.jpg',
-          key: 'accessories'
+          key: 'accessories',
         },
-      ]
+      ],
     }
-  }
+  },
 }
 </script>

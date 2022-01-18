@@ -26,7 +26,8 @@ export default {
 <style lang="scss">
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
+  font-family: Muli,sans-serif;
   overflow-x: hidden;
   color: $main;
 }

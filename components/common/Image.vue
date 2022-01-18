@@ -149,6 +149,13 @@ export default {
     color: #ddd;
     font-size: 1.5rem;
     text-transform: uppercase;
+    text-align: center;
+    @media (min-width: 688px) and (max-width: 1200px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 687.98px) {
+      font-size: 0.75rem;
+    }
   }
   .blur {
     position: absolute;

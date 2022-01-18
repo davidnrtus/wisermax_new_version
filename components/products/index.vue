@@ -2,7 +2,7 @@
   <div class="clearfixed">
     <div class="tu-banner mg-common">
       <div class="slider-container">
-        <img src="~/assets/images/products/banners/banner_1.jpg" alt="banner" />
+        <!-- <img src="~/assets/images/products/banners/banner_1.jpg" alt="banner" /> -->
       </div>
     </div>
     <div class="tu-section tu-product-list">
