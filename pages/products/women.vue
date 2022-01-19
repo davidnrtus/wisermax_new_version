@@ -42,8 +42,8 @@
     <div class="tu-content">
       <el-row type="flex" justify="center">
         <el-col :xs="24" :sm="22" :md="18" :lg="16">
-          <div class="title-line">Overcoat</div>
-          <el-row type="flex" justify="center" class="flex-wrap" :gutter="32">
+          <div class="title-line-l">Overcoat</div>
+          <el-row type="flex" justify="center" class="flex-wrap" :gutter="24">
             <el-col :xs="24" :sm="20" :md="16" :lg="12">
               <p class="text-center">
                 We manufacture a variety of overcoat products for women. With
@@ -71,12 +71,13 @@
         </el-col>
       </el-row>
     </div>
-    <!-- <div class="tu-content">
+    <div class="tu-content">
       <TuImage :src="require(`~/assets/images/products/women/banner_do_lot.png`)" />
-    </div> -->
+    </div>
     <div class="tu-content">
       <el-row type="flex" justify="center">
         <el-col :xs="24" :sm="20" :md="14" :lg="10">
+          <div class="title-line-l">Dress</div>
           <TuImage :src="require(`~/assets/images/products/women/banner_dam_2.png`)" />
         </el-col>
       </el-row>
@@ -134,29 +135,5 @@ export default {
 <style lang="scss" scoped>
 .text-content {
   padding: 0 16px;
-}
-.tu-content {
-  margin: 2rem 0 3rem;
-}
-.title-line {
-  font-size: 1.5rem;
-  position: relative;
-  text-align: center;
-  margin-bottom: 1rem;
-  &::before,
-  &::after {
-    content: '';
-    height: 1px;
-    background: #e5e5e5;
-    position: absolute;
-    width: 42%;
-    top: calc(50% - 1px);
-  }
-  &::before {
-    left: 0;
-  }
-  &::after {
-    right: 0;
-  }
 }
 </style>

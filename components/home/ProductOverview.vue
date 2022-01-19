@@ -58,7 +58,7 @@ export default {
         {
           name: 'product_overview_socks',
           img: 'product_overview_socks.jpg',
-          key: 'accessories',
+          key: '',
         },
       ],
     }

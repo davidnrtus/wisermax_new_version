@@ -28,7 +28,9 @@ p {
   font-weight: 300;
   font-size: 16px;
 }
-
+.tu-content {
+  margin: 2rem 0 3rem;
+}
 .fixed {
   position: fixed !important;
 }
@@ -138,6 +140,58 @@ p {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+}
+
+.title-line, .title-line-l {
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+  &::before,
+  &::after {
+    content: '';
+    height: 1px;
+    background: #e5e5e5;
+    position: absolute;
+    width: 45%;
+    top: calc(50% - 1px);
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  @media (max-width: 687.98px) {
+    &::before,
+    &::after {
+      width: 34%;
+    }
+  }
+}
+.title-line {
+  &::before,
+  &::after {
+    width: 45%;
+  }
+  @media (max-width: 687.98px) {
+    &::before,
+    &::after {
+      width: 34%;
+    }
+  }
+}
+.title-line-l {
+  &::before,
+  &::after {
+    width: 40%;
+  }
+  @media (max-width: 687.98px) {
+    &::before,
+    &::after {
+      width: 18%;
     }
   }
 }

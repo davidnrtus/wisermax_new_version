@@ -98,6 +98,33 @@ export default {
     }
   }
 }
+@media (max-width: 687.98px) {
+  .tu-header1 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    .header-logo {
+      .header-center {
+        img {
+          width: 120px;
+        }
+      }
+    }
+    .header-menu {
+      .horizontal-list {
+        &_item {
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .header-right {
+      img {
+        width: 24px;
+      }
+    }
+  }
+}
 // humberger icon css
 .thi {
   position: relative;
