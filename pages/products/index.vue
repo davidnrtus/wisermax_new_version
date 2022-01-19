@@ -51,6 +51,16 @@
           </el-col>
         </el-row>
         <div class="tu-content title-line-l">Protective Clothing</div>
+        <el-row type="flex" justify="center">
+          <el-col :xs="24" :sm="22" :md="16" :lg="14">
+            <p class="text-center">
+              There are many varieties of protective clothing available for
+              specific hazards. Examples of the body/skin protection include
+              laboratory coats, coveralls, vests, jackets, aprons, surgical
+              gowns and full body suits.
+            </p>
+          </el-col>
+        </el-row>
         <div class="tu-content">
           <TuImage
             :src="
@@ -59,6 +69,10 @@
           />
         </div>
         <div class="tu-content title-line-l">Assessories</div>
+        <p class="text-center">
+          Accessories that are worn may include cravats, gloves, shawls, scarves,
+          lanyards, socks and stockings.
+        </p>
         <div class="tu-content">
           <TuImage
             :src="
@@ -116,10 +130,10 @@ export default {
       color: #fff;
       text-transform: uppercase;
       font-size: 13px;
-      padding: 6px 16px;
+      padding: 10px 16px 6px 16px;
       background: #363636;
       border-radius: 2px;
-      transition: transform .2s;
+      transition: transform 0.2s;
       &:hover {
         background: #707070;
       }
