@@ -7,13 +7,13 @@
           We are a quality oriented professional clothing manufacturer exporter
           brand which focus on Women clothing, Man clothing,. children wear.
           Factory base in vietnam, As for the production capability, we can
-          produce 500,000 pieces monthly. In the year of 2019, we provide total
-          3000 000 pieces for US, Canada market. We offer OEM, ODM service and
+          produce 500.000 pieces monthly. In the year of 2019, we provide total
+          3.000.000 pieces for US, Canada market. We offer OEM, ODM service and
           design/manufacture as per clothes design and requirements.
         </p>
         <p class="tu-text-p">
           We have a skilled team of experts with a real working passion and
-          dedication to make buyer’s fashion dream come true. We always focusing
+          dedication to make buyer's fashion dream come true. We always focusing
           on providing fast, precise service for all customers "We are committed
           to high quality and innovation and a process that SAFETY and FAIR
           creating clothes you can trust and your customers want to wear". Any

@@ -33,17 +33,25 @@ export default {
     return {
       services: [
         { 
-          img: 'service-2.jpg', 
+          img: 'service-3.jpeg', 
+          name: 'Nhận gia công các đơn hàng',
+          text: 'Chúng tôi nhận gia công các đơn hàng từ đơn giản đến khó.\nNhận các đơn hàng FOB từ khâu thiết kế, thu mua nguyên phụ liệu đến sản xuất'
+        },
+        { 
+          img: 'service-2.png', 
           name: 'Thiết kế sản phẩm thời trang',
           text: 'We invest strongly in design.'
+        },
+        { 
+          img: 'service-4.jpeg', 
+          name: 'Chọn vải và chất liệu phù hợp',
+          text: 'Chúng tôi sẽ lựa chọn nữa loại vải và chất liệu phù hợp, tốt nhất và hợp lí về các loại giá.'
         },
         { 
           img: 'service-1.jpg', 
           name: 'Sản xuất sản phẩm may mặc',
           text: 'We control quality  base on AQL 1.0, 2.5. We seek manufacturing partners with great care, sometimes newcomers with whom we can build.'
         },
-        { img: 'service-1.jpg', name: 'Sản xuất sản phẩm may mặc' },
-        { img: 'service-1.jpg', name: 'Sản xuất sản phẩm may mặc' },
       ],
     }
   },

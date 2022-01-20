@@ -66,7 +66,7 @@ export default {
 <style lang="scss" scoped>
 .tu-footer {
   padding: 60px 21px;
-  background: $main_brown;
+  background: $main_brown_footer;
   color: #fff;
   &-title {
     text-transform: uppercase;

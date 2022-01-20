@@ -7,23 +7,16 @@
             <div>
               <h2>Factory Partners</h2>
               <p class="tu-text-p">
-                With the goals of increasing the transparency of our supply
-                chain, taking on a greater responsibility to ensure good labor
-                conditions. Sewing factories represent factories where finished
-                products are manufactured and include both factories with our
-                direct and indirect business relationships.
+                Taking on a greater responsibility to ensure good labor conditions. Sewing factories represent factories where finished products are manufactured and include both factories with our direct and indirect business relationships.
+                <br />
+                So we are capable of producing large orders and any kind of items.
               </p>
-              <!-- <div class="fp-list">
-                <div v-for="(item, i) in partners" :key="i" class="fp-item">
-                  <i class="el-icon-caret-right" />{{ item.title }}
-                </div>
-              </div> -->
             </div>
           </el-col>
           <el-col :lg="14" :xl="12" class="sp">
             <div class="tu-img-cover tu-about-bg">
               <img
-                src="~/assets/images/backgrounds/bg-about-us-fp.png"
+                src="~/assets/images/about/bg-factory.jpeg"
                 alt="bg-about-us"
               />
             </div>

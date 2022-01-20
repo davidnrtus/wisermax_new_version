@@ -11,7 +11,10 @@
           <el-col :xl="10" :lg="10" :md="10" :sm="10">
             <div class="box">
               <div class="b-card">
-                <TuImage :src="require(`~/assets/images/members/ceo_helen.jpg`)" class="avt" />
+                <TuImage
+                  :src="require(`~/assets/images/members/ceo_helen.jpg`)"
+                  class="avt"
+                />
                 <div class="b-card-content">
                   <div class="name">Ms Helen</div>
                   <div class="position">CEO</div>
@@ -25,17 +28,11 @@
             </div>
           </el-col>
           <el-col :xl="10" :lg="10" :md="10" :sm="14">
-            <el-row>
-              <el-col v-for="i in 4" :key="i" :span="12">
+            <el-row type="flex" justify="center" class="flex-wrap">
+              <el-col v-for="(item, i) in teams" :key="i" :span="12" class="overflow-hidden">
                 <div class="s-card">
-                  <img
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                    alt=""
-                  />
-                  <div class="b-card-content">
-                    <div class="name">Ms Helen</div>
-                    <div class="position">CEO</div>
-                  </div>
+                  <h3 style="padding-top: 8px">{{ item.title }}</h3>
+                  <p>{{ item.des }}</p>
                 </div>
               </el-col>
             </el-row>
@@ -45,6 +42,33 @@
     </el-row>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      teams: [
+        {
+          title: 'Purchasing team',
+          des: 'Includes dynamic and meticulous workers who receive orders and technical documents then coordinate with technical & MD team to source out and order materials. ',
+        },
+        {
+          title: 'Technical team and sample room',
+          des: 'Includes creative and responsible workers who take charge of  design and development sessions.',
+        },
+        {
+          title: 'Merchandiser team and QC team',
+          des: 'Includes enthusiastic workers who follow production plans and handling problems arising during production process. QC team are responsible for garment quality ',
+        },
+        {
+          title: 'Shipping team',
+          des: 'Includes careful and meticulous workers who follow arrange and book vessels, submit related shipping docs.',
+        },
+      ],
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .tu-smember {
@@ -80,13 +104,12 @@
   }
   .s-card {
     text-align: center;
-    margin: 16px 6px;
-    img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
+    margin: 8px;
+    padding: 0 12px;
+    border-radius: 4px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.03);
   }
 }
 </style>
