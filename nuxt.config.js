@@ -12,7 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' },
+      { rel: 'icon', type: 'image/x-icon', href: '/logo1.svg' },
       {
         rel: 'preconnect',
         href: 'https://fonts.googleapis.com',

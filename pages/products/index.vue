@@ -130,7 +130,7 @@ export default {
       color: #fff;
       text-transform: uppercase;
       font-size: 13px;
-      padding: 10px 16px 6px 16px;
+      padding: 6px 16px 6px 16px;
       background: #363636;
       border-radius: 2px;
       transition: transform 0.2s;
