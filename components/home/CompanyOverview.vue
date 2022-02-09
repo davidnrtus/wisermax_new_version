@@ -7,26 +7,26 @@
             <el-row>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
-                  <div class="tu-co-data_value">6+</div>
-                  <div class="tu-co-data_txt">Years experience</div>
+                  <div class="tu-co-data_value">{{ info.years_experience }}</div>
+                  <div class="tu-co-data_txt">Years of experience</div>
                 </div>
               </el-col>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
-                  <div class="tu-co-data_value">300+</div>
-                  <div class="tu-co-data_txt">Products</div>
+                  <div class="tu-co-data_value">{{ info.products_per_year }}</div>
+                  <div class="tu-co-data_txt">Products Per Year</div>
                 </div>
               </el-col>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
-                  <div class="tu-co-data_value">20+</div>
-                  <div class="tu-co-data_txt">Trusted company</div>
+                  <div class="tu-co-data_value">{{ info.partners }}</div>
+                  <div class="tu-co-data_txt">Trusted Partners</div>
                 </div>
               </el-col>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
-                  <div class="tu-co-data_value">1.1k</div>
-                  <div class="tu-co-data_txt">World wide clients</div>
+                  <div class="tu-co-data_value">{{ info.buyers }}</div>
+                  <div class="tu-co-data_txt">Buyers</div>
                 </div>
               </el-col>
             </el-row>
@@ -36,6 +36,18 @@
     </div>
   </div>
 </template>
+
+<script>
+import info from '@/data/info'
+
+export default {
+  data() {
+    return {
+      info
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .tu-co-padding {

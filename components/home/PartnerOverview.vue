@@ -1,7 +1,7 @@
 <template>
   <div class="tu-section" style="background: #f7fdff; margin-top: 4rem">
     <div class="tu-section-label">
-      Cooperate with more than 20 companies around the world
+      With 12+ years of experience, all kind of item such as knit, woven.
     </div>
     <div class="tu-section-content">
       <el-row type="flex" justify="center" class="crow">
@@ -42,7 +42,7 @@
       </el-row>
     </div>
     <div class="tu-section-label">
-      <router-link to="/about-us" class="ca">...and many more.</router-link>
+      Main label: US and canada market: Calvin & Klein, Tommy, DKNY, Karlarfield, Guess..., Korea market: CJ home shoping.
     </div>
   </div>
 </template>
@@ -66,6 +66,7 @@
     text-align: center;
     font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.5;
   }
   .crow {
     margin: 3rem 0 1rem 0;

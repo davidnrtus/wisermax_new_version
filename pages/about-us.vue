@@ -2,7 +2,7 @@
   <div>
     <TuIntroduction />
     <TuServices />
-    <TuFactoryPartners />
+    <!-- <TuFactoryPartners /> -->
     <!-- <TuCertification /> -->
     <TuMembers />
   </div>
@@ -10,14 +10,14 @@
 
 <script>
 import TuServices from '@/components/about/Services'
-import TuFactoryPartners from '@/components/about/FactoryPartners'
+// import TuFactoryPartners from '@/components/about/FactoryPartners'
 import TuIntroduction from '@/components/about/Introduction'
 // import TuCertification from '@/components/about/Certification'
 import TuMembers from '@/components/about/Members'
 
 export default {
   components: {
-    TuFactoryPartners,
+    // TuFactoryPartners,
     TuIntroduction,
     TuServices,
     // TuCertification,

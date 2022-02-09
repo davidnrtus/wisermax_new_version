@@ -110,6 +110,9 @@ p {
 .uppercase {
   text-transform: uppercase;
 }
+.object-fit {
+  object-fit: cover;
+}
 .tu-section {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -333,7 +336,7 @@ p {
     margin-top: 2rem;
   }
 }
-@media (max-width: 477px) {
+@media (max-width: 477.98px) {
   .tu-section {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;

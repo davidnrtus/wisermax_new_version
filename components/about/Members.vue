@@ -18,6 +18,7 @@
                 <div class="b-card-content">
                   <div class="name">Ms Helen</div>
                   <div class="position">CEO</div>
+                  <div class="position">helen@wiser.vn / +84-974-806625</div>
                   <div class="description">
                     Với 10 năm kinh nghiệm trong lĩnh vực may mặc. Chúng tôi
                     luôn tự hào mang đến những sản phẩm chất lượng cao cho khách
@@ -29,6 +30,26 @@
           </el-col>
           <el-col :xl="10" :lg="10" :md="10" :sm="14">
             <el-row type="flex" justify="center" class="flex-wrap">
+              <el-col :span="12" class="overflow-hidden">
+                <div style="width: 70%; margin: 0 auto;">
+                  <TuImage
+                    :src="require(`~/assets/images/members/qr-ceo.svg`)"
+                    class="avt"
+                  />
+                </div>
+              </el-col>
+              <el-col :span="12" class="overflow-hidden">
+                <div style="width: 70%; margin: 0 auto;">
+                  <TuImage
+                    :src="require(`~/assets/images/members/qr-wechat.svg`)"
+                    class="avt"
+                  />
+                </div>
+              </el-col>
+            </el-row>
+          </el-col>
+          <!-- <el-col :xl="10" :lg="10" :md="10" :sm="14">
+            <el-row type="flex" justify="center" class="flex-wrap">
               <el-col v-for="(item, i) in teams" :key="i" :span="12" class="overflow-hidden">
                 <div class="s-card">
                   <h3 style="padding-top: 8px">{{ item.title }}</h3>
@@ -36,7 +57,7 @@
                 </div>
               </el-col>
             </el-row>
-          </el-col>
+          </el-col> -->
         </el-row>
       </el-col>
     </el-row>
@@ -89,6 +110,7 @@ export default {
   .b-card {
     text-align: center;
     margin: 16px 0;
+    line-height: 1.5;
     .avt {
       width: 180px;
       height: 180px;

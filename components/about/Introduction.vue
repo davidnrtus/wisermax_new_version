@@ -4,10 +4,17 @@
       <el-col :xl="16" :lg="20" :md="22" :sm="24" :xs="24">
         <div class="tu-section-title_sm underline">Introduction</div>
         <p class="tu-text-p">
+          WE ARE CONNECTED WITH OUR PEOPLE, WITH OUR CUSTOMERS AROUND THE GLOBE,
+          AND WITH OUR PRODUCTION PARTNERS IN ASIA AND US. WE HAVE CHOSEN THEM,
+          OR THEY HAVE FOUND US, BECAUSE WE SHARE VALUES AND VISION WE TAKE
+          ABSOLUTE RESPONSIBILITY FOR ALL PRODUCTS SUPPLIED TO CONSUMMERS, BRING
+          HAPPINESS TO EMPLOYEES, CUSTOMERS AND COMMUNITIES
+        </p>
+        <p class="tu-text-p">
           We are a quality oriented professional clothing manufacturer exporter
           brand which focus on Women clothing, Man clothing,. children wear.
           Factory base in vietnam, As for the production capability, we can
-          produce 500.000 pieces monthly. In the year of 2019, we provide total
+          produce 600.000 pieces monthly. In the year of 2019, we provide total
           3.000.000 pieces for US, Canada market. We offer OEM, ODM service and
           design/manufacture as per clothes design and requirements.
         </p>
@@ -24,15 +31,28 @@
     <el-row type="flex" justify="center" class="tu-abu-num flex-wrap">
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="bg-left">
-          <div class="centeral column pbx">
-            <h2 class="text-left w-full">Our capacity</h2>
-            <p class="tu-text-p">
-              Wisermax có đầy đủ khả năng sản xuất những mặt hàng: may gia công,
-              may thời trang, may đồng phục yêu cầu chất lượng cao, có thiết kế
-              phức tạp, kỹ thuật may hiện đại, hoàn thiện tỉ mỉ. Bên cạnh đó,
-              Xưởng luôn đầu tư trang bị hệ thống máy may tân tiến, công nghệ
-              cao với quy trình sản xuất gồm nhiều giai đoạn kế tiếp nhau để tạo
-              ra những sản phẩm chất lượng nhất đến tay khách hàng.
+          <img
+            src="~/assets/images/about/bg-employee.jpeg"
+            class="overlay object-fit"
+            alt=""
+          />
+          <div class="overlay" style="background: rgba(0, 0, 0, 0.45)"></div>
+          <div
+            class="centeral column overlay"
+            style="
+              align-items: flex-start;
+              justify-content: flex-start;
+              margin-top: 3.6rem;
+            "
+          >
+            <h2
+              class="text-left w-full"
+              style="margin-left: 2rem; margin-right: 1rem"
+            >
+              Factory Partners
+            </h2>
+            <p class="tu-text-p" style="margin-left: 2rem; margin-right: 1rem">
+              Our 20++ factory partner in north and middle of VietNam.
             </p>
           </div>
         </div>
@@ -41,6 +61,11 @@
         <div class="bg-right">
           <img src="~/assets/images/about/bg-nums.jpg" alt="" />
           <div class="content">
+            <h2 class="text-left" style="margin-left: 2rem">Our capacity</h2>
+            <p class="tu-text-p" style="margin-left: 2rem">
+              With 20+ factory partner, WISERMAX can do 6.000.000++ PCS per
+              year. Including knit, woven, Jacket, top, pant, dress, handmade...
+            </p>
             <div
               v-for="(item, index) in params"
               :key="index"
@@ -61,15 +86,15 @@ export default {
     return {
       params: [
         {
-          value: '12,000 PCS',
+          value: '6,000 PCS',
           text: 'per month',
         },
         {
-          value: '5,0000,000 PCS',
+          value: '50,000,000 PCS',
           text: 'KNIT TOP / year',
         },
         {
-          value: '1,0000,000 PCS',
+          value: '10,000,000 PCS',
           text: 'KNIT DRESS / year',
         },
         {
@@ -95,6 +120,8 @@ export default {
   .bg-left {
     background: #e3e3e3;
     height: 100%;
+    position: relative;
+    color: #fff;
     .pbx {
       height: 100%;
       padding: 0 1rem;
@@ -142,13 +169,32 @@ export default {
     }
   }
 }
-@media (max-width: 687px) {
+@media (max-width: 1199.98px) {
+  .tu-abu-num {
+    .bg-left {
+      height: 280px;
+    }
+  }
+}
+@media (min-width: 477.98px) and (max-width: 687px) {
   .tu-abu-num {
     .bg-right {
       padding-bottom: 100%;
       .content {
         span {
           font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 477.98px) {
+  .tu-abu-num {
+    .bg-right {
+      padding-bottom: 140%;
+      .content {
+        span {
+          font-size: 1rem;
         }
       }
     }

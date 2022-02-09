@@ -7,16 +7,14 @@
             <div>
               <h2>Factory Partners</h2>
               <p class="tu-text-p">
-                Taking on a greater responsibility to ensure good labor conditions. Sewing factories represent factories where finished products are manufactured and include both factories with our direct and indirect business relationships.
-                <br />
-                So we are capable of producing large orders and any kind of items.
+                Our 20++ factory partner in north and midle of VietNam 
               </p>
             </div>
           </el-col>
           <el-col :lg="14" :xl="12" class="sp">
             <div class="tu-img-cover tu-about-bg">
               <img
-                src="~/assets/images/about/bg-factory.jpeg"
+                src="~/assets/images/about/bg-employee.jpeg"
                 alt="bg-about-us"
               />
             </div>
