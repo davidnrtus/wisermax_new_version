@@ -61,7 +61,19 @@ export default {
     blur: {
       type: [Boolean, Number],
       default: false
-    }
+    },
+    imgWidth: {
+      type: String,
+      default: null,
+    },
+    roundedFull: {
+      type: Boolean,
+      default: false
+    },
+    center: {
+      type: Boolean,
+      default: false
+    },
   },
   data() {
     return {
@@ -76,8 +88,16 @@ export default {
       return this.intersected ? this.src : ''
     },
     imgStyles() {
+      const styles = {}
+      if (this.imgWidth) {
+        styles.width = this.imgWidth
+      }
+      if (this.roundedFull) {
+        styles.borderRadius = '50%'
+      }
       return {
         objectFit: this.fit,
+        ...styles,
       }
     },
     blurStyle() {
@@ -91,10 +111,15 @@ export default {
         const imgCover = {
           paddingBottom: `${this.paddingBottom}%`,
         }
+        const styles = {}
+        styles.left = this.center ? '50%' : 0;
+        if (this.center) {
+          styles.transform = 'translateX(-50%)'
+        }
         const img = {
           position: 'absolute',
           top: 0,
-          left: 0,
+          ...styles,
         }
         return { imgCover, img }
       }

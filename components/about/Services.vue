@@ -12,14 +12,15 @@
         :md="8"
         :sm="12"
         :xs="24"
+        style="margin: 12px 0;"
       >
-        <div class="tu-card tu-img-cover">
-          <img :src="require(`~/assets/images/about/${item.img}`)" alt="" />
-          <div class="tu-card-content overlay centeral text-white">
-            <div class="text-center">
-              <h3>{{ item.name }}</h3>
-              <p>{{ item.text }}</p>
-            </div>
+        <div class="tu-card">
+          <div class="tu-card-img tu-img-cover">
+            <img :src="require(`~/assets/images/about/${item.img}`)" alt="" />
+          </div>
+          <div class="text-center tu-card-content">
+            <h3 style="margin: 0.5rem 0">{{ item.name }}</h3>
+            <p>{{ item.text }}</p>
           </div>
         </div>
       </el-col>
@@ -33,24 +34,24 @@ export default {
     return {
       services: [
         { 
-          img: 'service-3.jpeg', 
-          name: 'Nhận gia công các đơn hàng',
-          text: 'Chúng tôi nhận gia công các đơn hàng từ đơn giản đến khó.\nNhận các đơn hàng FOB từ khâu thiết kế, thu mua nguyên phụ liệu đến sản xuất'
+          img: 'service-4.jpeg', 
+          name: 'Sourcing material',
+          text: 'We will select the most suitable, best and reasonable fabrics and materials.'
         },
         { 
           img: 'service-2.png', 
-          name: 'Thiết kế sản phẩm thời trang',
+          name: 'Design',
           text: 'We invest strongly in design.'
         },
         { 
-          img: 'service-4.jpeg', 
-          name: 'Chọn vải và chất liệu phù hợp',
-          text: 'Chúng tôi sẽ lựa chọn nữa loại vải và chất liệu phù hợp, tốt nhất và hợp lí về các loại giá.'
+          img: 'service-1.jpg', 
+          name: 'Production',
+          text: 'We control quality base on AQL 1.0, 2.5. We seek manufacturing partners with great care, sometimes newcomers with whom we can build.'
         },
         { 
-          img: 'service-1.jpg', 
-          name: 'Sản xuất sản phẩm may mặc',
-          text: 'We control quality  base on AQL 1.0, 2.5. We seek manufacturing partners with great care, sometimes newcomers with whom we can build.'
+          img: 'service-5.jpg', 
+          name: 'Shipping',
+          text: 'We carefully pack the products according to the requirements, then ship them to the customers.'
         },
       ],
     }
@@ -59,19 +60,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tu-card-content {
-  display: none;
-}
 .tu-card {
-  padding-bottom: 100%;
   box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.15);
-  margin: 6px 0;
+  height: 100%;
   cursor: pointer;
-  &:hover {
-    .tu-card-content {
-      display: flex;
-      background: rgba($color: $second, $alpha: 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  &-img {
+    padding-bottom: 100%;
+    img {
+      top: 4%;
+      left: 4%;
+      width: 92%;
+      height: 92%;
     }
+  }
+  &-content {
+    padding: 0 12px;
   }
 }
 </style>

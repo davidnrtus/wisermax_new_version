@@ -1,45 +1,53 @@
 <template>
-  <div class="tu-section tu-smember">
-    <div class="text-center mot">Meet Our Team</div>
-    <p style="margin-bottom: 2rem">
+  <div class="tu-section tu-smember text-center">
+    <h1 class="underline-2" style="margin-bottom: 4rem">Meet Our Director</h1>
+    <!-- <p style="margin-bottom: 2rem">
       We are a team of innovations, thinkers, and doers driven by the desire to
       challenge the status quo
-    </p>
+    </p> -->
     <el-row type="flex" justify="center">
       <el-col :xl="18" :lg="20" :md="24">
         <el-row type="flex" justify="center" class="flex-wrap">
-          <el-col :xl="10" :lg="10" :md="10" :sm="10">
-            <div class="box">
-              <div class="b-card">
-                <TuImage
-                  :src="require(`~/assets/images/members/ceo_helen.jpg`)"
-                  class="avt"
-                />
-                <div class="b-card-content">
-                  <div class="name">Ms Helen</div>
-                  <div class="position">CEO</div>
-                  <div class="position">helen@wiser.vn / +84-974-806625</div>
-                  <div class="description">
-                    Với 10 năm kinh nghiệm trong lĩnh vực may mặc. Chúng tôi
-                    luôn tự hào mang đến những sản phẩm chất lượng cao cho khách
-                    hàng...
-                  </div>
-                </div>
-              </div>
+          <el-col :xl="9" :lg="9" :md="9" :sm="10">
+            <div class="">
+              <TuImage
+                :src="require(`~/assets/images/members/ceo_helen.jpg`)"
+                :padding-bottom="60"
+                img-width="60%"
+                center
+                rounded-full
+              />
             </div>
           </el-col>
           <el-col :xl="10" :lg="10" :md="10" :sm="14">
-            <el-row type="flex" justify="center" class="flex-wrap">
-              <el-col :span="12" class="overflow-hidden">
-                <div style="width: 70%; margin: 0 auto;">
+            <el-row type="flex" justify="left" class="flex-wrap">
+              <el-col :span="24">
+                <div class="b-card-content text-left">
+                  <h2 class="mb4 text-primary">Ms Helen Hoang</h2>
+                  <div class="text-bold mb2 text-blue_lighter">CEO, Director</div>
+                  <div class="text-bold mb4">
+                    helen@wiser.vn / +84-974-806625
+                  </div>
+                  <div class="description mb4">
+                    With 10 years of experience in the garment industry. We are
+                    always proud to bring high quality products to our customers
+                  </div>
+                </div>
+              </el-col>
+              <el-col
+                :xl="18"
+                :lg="20"
+                :md="22"
+                :sm="22"
+                class="overflow-hidden"
+              >
+                <div class="text-left mb2">Feel free to meet our director!</div>
+                <div class="flex">
                   <TuImage
                     :src="require(`~/assets/images/members/qr-ceo.svg`)"
                     class="avt"
+                    style="margin-right: 1rem"
                   />
-                </div>
-              </el-col>
-              <el-col :span="12" class="overflow-hidden">
-                <div style="width: 70%; margin: 0 auto;">
                   <TuImage
                     :src="require(`~/assets/images/members/qr-wechat.svg`)"
                     class="avt"
@@ -48,16 +56,6 @@
               </el-col>
             </el-row>
           </el-col>
-          <!-- <el-col :xl="10" :lg="10" :md="10" :sm="14">
-            <el-row type="flex" justify="center" class="flex-wrap">
-              <el-col v-for="(item, i) in teams" :key="i" :span="12" class="overflow-hidden">
-                <div class="s-card">
-                  <h3 style="padding-top: 8px">{{ item.title }}</h3>
-                  <p>{{ item.des }}</p>
-                </div>
-              </el-col>
-            </el-row>
-          </el-col> -->
         </el-row>
       </el-col>
     </el-row>
@@ -92,46 +90,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mb2 {
+  margin-bottom: 0.5rem;
+}
+.mb4 {
+  margin-bottom: 1rem;
+}
+.description {
+  line-height: 2;
+}
 .tu-smember {
-  background: #ecf1ff;
-  text-align: center;
-  .mot {
-    font-size: 1.75rem;
-    line-height: 1.5;
-    font-weight: 500;
-  }
-  .box {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .b-card {
-    text-align: center;
-    margin: 16px 0;
-    line-height: 1.5;
-    .avt {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: auto;
-    }
-    .name {
-      font-weight: 600;
-      margin: 10px 0 5px;
-    }
-  }
-  .s-card {
-    text-align: center;
-    margin: 8px;
-    padding: 0 12px;
-    border-radius: 4px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.03);
-  }
+  // background: #ecf1ff;
+  background: #fff3e8;
 }
 </style>

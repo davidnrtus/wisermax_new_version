@@ -4,8 +4,8 @@
     <el-row type="flex" justify="center">
       <el-col :md="20" :lg="16">
         <p class="text-center uppercase">
-          Currently, we manufacture apparel products such as men's, women's and
-          children's clothing, as well as accessories such as socks, underwear...
+          Currently, we manufacture apparel products such as men's, women's,
+          children's, and protective clothing, as well as accessories such as socks, underwear...
         </p>
       </el-col>
     </el-row>
@@ -57,7 +57,7 @@ export default {
         },
         {
           name: 'product_overview_socks',
-          img: 'product_overview_socks.jpg',
+          img: 'product_overview_protective.jpg',
           key: '',
         },
       ],

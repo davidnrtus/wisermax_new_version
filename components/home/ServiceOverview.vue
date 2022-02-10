@@ -55,16 +55,10 @@ export default {
           img: '/home/so-ewo.jpg',
         },
         {
-          title: 'Sản xuất may mặc',
+          title: 'Garment production',
           description:
-            'We offer OEM, ODM service and design/manufacture as per clothes design and requirements.',
+            'Factory base in vietnam, As for the production capability, we can produce 600,000 pieces monthly. In the year of 2019 we provide total 3000 000 pieces for US, Canada market.',
           img: '/about/service-1.jpg',
-        },
-        {
-          title: 'Mass production',
-          description:
-            'Factory base in vietnam, As for the production capability, we can produce 500,000 pieces monthly. In the year of 2019 we provide total 3000 000 pieces for US, Canada market.',
-          img: '/home/so-production.jpg',
         },
       ],
     }
