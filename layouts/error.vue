@@ -1,9 +1,6 @@
 <template>
   <div class="clearfixed">
     <div class="tu-section text-center">
-      <!-- <div class="logo-error">
-        <img src="~/assets/images/logo/logo-v6.svg" />
-      </div> -->
       <div v-if="error.statusCode === 404" class="e404">
         <h1>Opps! Page not found</h1>
       </div>

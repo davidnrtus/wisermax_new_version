@@ -13,8 +13,8 @@
                 :key="i"
                 :xs="24"
                 :sm="8"
-                :md="6"
-                :xl="5"
+                :md="7"
+                :xl="6"
               >
                 <div class="tu-so-card">
                   <div class="tu-so-card_img">
@@ -52,7 +52,7 @@ export default {
           title: 'OEM, ODM service',
           description:
             'We offer OEM, ODM service and design/manufacture as per clothes design and requirements.',
-          img: '/home/so-ewo.jpg',
+          img: '/home/so-sampleroom.jpg',
         },
         {
           title: 'Garment production',

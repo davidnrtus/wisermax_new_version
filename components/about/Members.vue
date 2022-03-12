@@ -30,7 +30,7 @@
                   </div>
                   <div class="description mb4">
                     With 10 years of experience in the garment industry. We are
-                    always proud to bring high quality products to our customers
+                    always proud to bring high quality products to our customers.
                   </div>
                 </div>
               </el-col>

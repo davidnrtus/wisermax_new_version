@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <!-- <TuHeaderPromo /> -->
     <TuHeader />
     <div class="inner">
       <Nuxt />
@@ -10,13 +9,11 @@
 </template>
 
 <script>
-// import TuHeaderPromo from '@/components/common/HeaderPromo'
 import TuHeader from '@/components/common/Header1'
 import TuFooter from '@/components/common/Footer'
 
 export default {
   components: {
-    // TuHeaderPromo,
     TuHeader,
     TuFooter
   }
@@ -26,7 +23,6 @@ export default {
 <style lang="scss">
 body {
   margin: 0;
-  // font-family: 'Open Sans', sans-serif;
   font-family: Muli,sans-serif;
   overflow-x: hidden;
   color: $main;

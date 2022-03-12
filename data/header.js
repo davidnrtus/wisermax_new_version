@@ -212,7 +212,7 @@ export const headers = [
   //   url: '/customers',
   // },
   {
-    title: 'About',
+    title: 'About Us',
     key: 'about-us',
     url: '/about-us',
   },

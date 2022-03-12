@@ -34,22 +34,22 @@ export default {
     return {
       services: [
         { 
-          img: 'service-4.jpeg', 
+          img: 'service-41.jpg', 
           name: 'Sourcing material',
           text: 'We will select the most suitable, best and reasonable fabrics and materials.'
         },
         { 
-          img: 'service-2.png', 
-          name: 'Design',
+          img: 'service-21.jpg', 
+          name: 'Develop & Design',
           text: 'We invest strongly in design.'
         },
         { 
-          img: 'service-1.jpg', 
-          name: 'Production',
+          img: 'service-11.jpeg', 
+          name: 'Process',
           text: 'We control quality base on AQL 1.0, 2.5. We seek manufacturing partners with great care, sometimes newcomers with whom we can build.'
         },
         { 
-          img: 'service-5.jpg', 
+          img: 'service-51.jpg', 
           name: 'Shipping',
           text: 'We carefully pack the products according to the requirements, then ship them to the customers.'
         },

@@ -1,18 +1,20 @@
 <template>
   <div class="tu-section clearspacer">
     <div class="tu-section-content">
-      <TuImage
-        :src="require(`~/assets/images/products/men/banner_top.png`)"
-      />
+      <TuImage :src="require(`~/assets/images/products/men/banner_top.png`)" />
       <div class="tu-content title-line">Polo</div>
       <div class="tu-content">
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="18" :lg="12">
             <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              Áo Polo luôn là sản phẩm chủ đạo của Wisermax khi được kết tinh từ
+              <!-- Áo Polo luôn là sản phẩm chủ đạo của Wisermax khi được kết tinh từ
               vải LIQUÉ và được thiết kế, in ấn đặc biệt. Cảm giác chỉ riêng của
               đàn ông, đơn giản, lịch thiệp và sang trọng gói gọn trong chiếc áo
-              Polo.
+              Polo. -->
+              Polo shirt has always been Wisermax's main product when it is
+              crystallized from LIQUÉ fabric and specially designed and printed.
+              The feeling of only men, simple, elegant and luxurious
+              encapsulated in a Polo shirt.
             </p>
           </el-col>
         </el-row>
@@ -48,9 +50,9 @@
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="18" :lg="12">
             <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              Chất liệu vải nhập khẩu cao cấp không bai xù, nhăn co, màu sắc đa
-              dạng, độ bóng đẹp sắc nét. Áo vest được thiết kế cho các buổi tiệc
-              quan trọng, đi làm công sở hay đi chơi.
+              High-quality imported fabric, not ruffled, wrinkled, multi-color
+              shape, beautiful sharp luster. Vests designed for parties
+              important, go to work or go out.
             </p>
           </el-col>
         </el-row>

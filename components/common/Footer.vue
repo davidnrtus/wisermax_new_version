@@ -3,25 +3,25 @@
     <el-row type="flex" justify="center">
       <el-col :xs="24" :sm="20">
         <el-row :gutter="20">
-          <el-col :xs="24" :sm="24" :md="12">
+          <el-col :xs="24" :sm="24" :md="16">
             <div class="tu-footer-title">Information</div>
             <div class="tu-footer-content">
               <h4>{{ info.company_name }}</h4>
               <div class="tu-footer-item">
                 <i class="el-icon-location-outline" />
-                <span class="txt">{{ info.address }}</span>
+                <div class="txt">{{ info.address }}</div>
               </div>
               <div class="tu-footer-item">
                 <i class="el-icon-message" />
-                <span>{{ info.email }}</span>
+                <div>{{ info.email }}</div>
               </div>
               <div class="tu-footer-item">
                 <i class="el-icon-phone-outline" />
-                <span>{{ info.phone_number }}</span>
+                <div>{{ info.phone_number }}</div>
               </div>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="24" :md="6">
+          <el-col :xs="24" :sm="24" :md="8">
             <div class="tu-footer-title">Links</div>
             <div
               v-for="header in headers"
@@ -31,7 +31,7 @@
               <router-link :to="header.url">{{ header.title }}</router-link>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="24" :md="6">
+          <!-- <el-col :xs="24" :sm="24" :md="6">
             <div class="tu-footer-title">Help</div>
             <div class="tu-footer-item">
               <span>Returns</span>
@@ -42,7 +42,7 @@
             <div class="tu-footer-item">
               <span>Q&A</span>
             </div>
-          </el-col>
+          </el-col> -->
         </el-row>
       </el-col>
     </el-row>
@@ -88,6 +88,10 @@ export default {
     margin-bottom: 1.5rem;
     display: flex;
     align-content: center;
+    div {
+      display: flex;
+      align-items: center;
+    }
     i {
       font-size: 1.5rem;
       margin-right: 0.75rem;
