@@ -6,7 +6,7 @@
         :key="header.key"
         class="tu-header-menu_link"
       >
-        <router-link :to="header.url">{{ header.title }}</router-link>
+        <router-link :to="localePath(header.url)">{{ header.title }}</router-link>
       </div>
     </div>
   </div>

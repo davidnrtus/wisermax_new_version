@@ -11,7 +11,7 @@
                 "
               />
               <div class="card-content">
-                <router-link to="/products/women">
+                <router-link :to="localePath('/products/women')">
                   Women's clothing <i class="el-icon-right" />
                 </router-link>
               </div>
@@ -27,7 +27,7 @@
                     "
                   />
                   <div class="card-content">
-                    <router-link to="/products/men">
+                    <router-link :to="localePath('/products/men')">
                       Men's clothing <i class="el-icon-right" />
                     </router-link>
                   </div>
@@ -41,7 +41,7 @@
                     "
                   />
                   <div class="card-content">
-                    <router-link to="/products/kids">
+                    <router-link :to="localePath('/products/kids')">
                       Kids' clothing <i class="el-icon-right" />
                     </router-link>
                   </div>
@@ -89,6 +89,7 @@
 const breakpoint = 550.98
 
 export default {
+  name: 'ProductMain',
   data() {
     return {
       isMobile: false,

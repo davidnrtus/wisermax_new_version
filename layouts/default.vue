@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import TuHeader from '@/components/common/Header1'
+import TuHeader from '@/components/common/Header'
 import TuFooter from '@/components/common/Footer'
 
 export default {

@@ -60,7 +60,28 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js',
+        name: 'English',
+      },
+      {
+        code: 'cn',
+        file: 'cn-CN.js',
+        name: 'Chinese',
+      },
+    ],
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root', // recommended
+    },
+  },
   image: {
     dir: 'assets/images',
   },
