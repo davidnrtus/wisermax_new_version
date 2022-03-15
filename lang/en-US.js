@@ -1,18 +1,12 @@
 export default {
-  menu: {
-    home: 'Home',
-    products: 'Products',
-    about_us: 'About Us',
-    contact: 'Contact Us',
-  },
-  info: {
-    address: 'Trau Quy Ward, Gia Lam District, Ha Noi City',
-  },
-  type: {
-    women_clothing: `Women's clothing`,
-    men_clothing: `Men's clothing`,
-    kid_clothing: `Kids' clothing`,
-  },
+  home: 'Home',
+  products: 'Products',
+  about_us: 'About Us',
+  contact_us: 'Contact Us',
+  address: 'Trau Quy Ward, Gia Lam District, Ha Noi City',
+  women_clothing: `Women's clothing`,
+  men_clothing: `Men's clothing`,
+  kid_clothing: `Kids' clothing`,
   links: 'Links',
   informations: 'INFORMATIONS',
   years_of_experience: 'Years of experience',
@@ -67,6 +61,7 @@ export default {
   underwear: 'Underwear',
   men_page_description:
     'Discover fresh new styles from the most iconic menswear designers, including T-shirts, suits, coats, and jackets...',
+  polo: 'Polo',
   polo_description: `Polo shirt has always been Wisermax's main product when it is crystallized from LIQUÉ fabric and specially designed and printed. The feeling of  manly, simple, elegant and luxurious can be encapsulated in a Polo shirt.`,
   shirt_description:
     'Casual, formal style clothing design and higher quality production.',
@@ -118,7 +113,6 @@ export default {
   meet_our_director_feel: 'Feel free to meet our director!',
   certification: 'Certification',
   contact_description: `If you want to get in touch with us, feel free to call us any time as your convenience and we will get back to you soon!. Here's how you can reach us.`,
-  contact_us: 'Contact Us',
   feel_free_contact:
     'Feel free to contact us any time. We will get back to you as soon as we can!',
   name: 'Name',

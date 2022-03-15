@@ -30,7 +30,7 @@
       <nav>
         <ul class="horizontal-list">
           <li v-for="header in headers" :key="header.key" class="horizontal-list_item">
-            <router-link :to="localePath(header.url)">{{ header.title }}</router-link>
+            <router-link :to="localePath(header.url)">{{ $t(header.key) }}</router-link>
           </li>
         </ul>
       </nav>
@@ -42,7 +42,6 @@
 import { headers } from '@/data/header'
 
 export default {
-  
   data() {
     return {
       headers,
@@ -55,7 +54,7 @@ export default {
     currentLocale() {
       return this.$i18n.locales.filter((i) => i.code === this.$i18n.locale)[0]
     },
-  }
+  },
 }
 </script>
 

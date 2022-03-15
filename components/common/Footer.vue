@@ -4,12 +4,12 @@
       <el-col :xs="24" :sm="20">
         <el-row :gutter="20">
           <el-col :xs="24" :sm="24" :md="16">
-            <div class="tu-footer-title">Information</div>
+            <div class="tu-footer-title">{{ $t('informations') }}</div>
             <div class="tu-footer-content">
               <h4>{{ info.company_name }}</h4>
               <div class="tu-footer-item">
                 <i class="el-icon-location-outline" />
-                <div class="txt">{{ info.address }}</div>
+                <div class="txt">{{ $t('address') }}</div>
               </div>
               <div class="tu-footer-item">
                 <i class="el-icon-message" />
@@ -22,27 +22,15 @@
             </div>
           </el-col>
           <el-col :xs="24" :sm="24" :md="8">
-            <div class="tu-footer-title">Links</div>
+            <div class="tu-footer-title">{{ $t('links') }}</div>
             <div
               v-for="header in headers"
               :key="header.key"
               class="tu-footer-item"
             >
-              <router-link :to="localePath(header.url)">{{ header.title }}</router-link>
+              <router-link :to="localePath(header.url)">{{ $t(header.key) }}</router-link>
             </div>
           </el-col>
-          <!-- <el-col :xs="24" :sm="24" :md="6">
-            <div class="tu-footer-title">Help</div>
-            <div class="tu-footer-item">
-              <span>Returns</span>
-            </div>
-            <div class="tu-footer-item">
-              <span>Shipping</span>
-            </div>
-            <div class="tu-footer-item">
-              <span>Q&A</span>
-            </div>
-          </el-col> -->
         </el-row>
       </el-col>
     </el-row>

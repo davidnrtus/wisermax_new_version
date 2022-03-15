@@ -12,7 +12,7 @@
               />
               <div class="card-content">
                 <router-link :to="localePath('/products/women')">
-                  Women's clothing <i class="el-icon-right" />
+                  {{ $t('women_clothing') }} <i class="el-icon-right" />
                 </router-link>
               </div>
             </div>
@@ -28,7 +28,7 @@
                   />
                   <div class="card-content">
                     <router-link :to="localePath('/products/men')">
-                      Men's clothing <i class="el-icon-right" />
+                      {{ $t('men_clothing') }} <i class="el-icon-right" />
                     </router-link>
                   </div>
                 </div>
@@ -42,7 +42,7 @@
                   />
                   <div class="card-content">
                     <router-link :to="localePath('/products/kids')">
-                      Kids' clothing <i class="el-icon-right" />
+                      {{ $t('kid_clothing') }} <i class="el-icon-right" />
                     </router-link>
                   </div>
                 </div>
@@ -50,14 +50,11 @@
             </el-row>
           </el-col>
         </el-row>
-        <div class="tu-content title-line-l">Protective Clothing</div>
+        <div class="tu-content title-line-l">{{ $t('protective_clothing') }}</div>
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="22" :md="16" :lg="14">
             <p class="text-center">
-              There are many varieties of protective clothing available for
-              specific hazards. Examples of the body/skin protection include
-              laboratory coats, coveralls, vests, jackets, aprons, surgical
-              gowns and full body suits.
+              {{ $t('protective_clothing_content') }}
             </p>
           </el-col>
         </el-row>
@@ -68,10 +65,9 @@
             "
           />
         </div>
-        <div class="tu-content title-line-l">Assessories</div>
+        <div class="tu-content title-line-l">{{ $t('assessories') }}</div>
         <p class="text-center">
-          Accessories that are worn may include cravats, gloves, shawls, scarves,
-          lanyards, socks and stockings.
+          {{ $t('assessories_content') }}
         </p>
         <div class="tu-content">
           <TuImage

@@ -1,7 +1,7 @@
 <template>
   <div class="tu-section" style="background: #f7fdff; margin-top: 4rem">
     <div class="tu-section-label">
-      With 12+ years of experience, all kind of item such as knit, woven.
+      {{ $t('customer_1') }}
     </div>
     <div class="tu-section-content">
       <el-row type="flex" justify="center" class="crow">
@@ -42,7 +42,7 @@
       </el-row>
     </div>
     <div class="tu-section-label">
-      Main label: US and canada market: Calvin & Klein, Tommy, DKNY, Karlarfield, Guess..., Korea market: CJ home shoping.
+      {{ $t('customer_2') }}
     </div>
   </div>
 </template>

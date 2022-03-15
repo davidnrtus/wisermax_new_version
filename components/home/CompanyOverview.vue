@@ -8,25 +8,25 @@
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
                   <div class="tu-co-data_value">{{ info.years_experience }}</div>
-                  <div class="tu-co-data_txt">Years of experience</div>
+                  <div class="tu-co-data_txt">{{ $t('years_of_experience') }}</div>
                 </div>
               </el-col>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
                   <div class="tu-co-data_value">{{ info.products_per_year }}</div>
-                  <div class="tu-co-data_txt">Products Per Year</div>
+                  <div class="tu-co-data_txt">{{ $t('products_per_year') }}</div>
                 </div>
               </el-col>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
                   <div class="tu-co-data_value">{{ info.partners }}</div>
-                  <div class="tu-co-data_txt">Trusted Partners</div>
+                  <div class="tu-co-data_txt">{{ $t('trusted_partners') }}</div>
                 </div>
               </el-col>
               <el-col :xs="12" :sm="6">
                 <div class="tu-co-data">
                   <div class="tu-co-data_value">{{ info.buyers }}</div>
-                  <div class="tu-co-data_txt">Buyers</div>
+                  <div class="tu-co-data_txt">{{ $t('buyers') }}</div>
                 </div>
               </el-col>
             </el-row>

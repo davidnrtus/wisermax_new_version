@@ -1,11 +1,10 @@
 <template>
   <div class="tu-section">
-    <div class="tu-section-title mb-0">Our Products</div>
+    <div class="tu-section-title mb-0">{{ $t('our_products') }}</div>
     <el-row type="flex" justify="center">
       <el-col :md="20" :lg="16">
         <p class="text-center uppercase">
-          Currently, we manufacture apparel products such as men's, women's,
-          children's, and protective clothing, as well as accessories such as socks, underwear...
+          {{ $t('our_products_desc') }}
         </p>
       </el-col>
     </el-row>
@@ -25,7 +24,7 @@
             />
             <div class="tu-product-card_content">
               <router-link :to="localePath(`/products/${product.key}`)">
-                View more
+                {{ $t('view_more') }}
               </router-link>
             </div>
           </div>

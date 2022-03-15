@@ -2,19 +2,12 @@
   <div class="tu-section clearspacer">
     <div class="tu-section-content">
       <TuImage :src="require(`~/assets/images/products/men/banner_top.png`)" />
-      <div class="tu-content title-line">Polo</div>
+      <div class="tu-content title-line">{{ $t('polo') }}</div>
       <div class="tu-content">
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="18" :lg="12">
             <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              <!-- Áo Polo luôn là sản phẩm chủ đạo của Wisermax khi được kết tinh từ
-              vải LIQUÉ và được thiết kế, in ấn đặc biệt. Cảm giác chỉ riêng của
-              đàn ông, đơn giản, lịch thiệp và sang trọng gói gọn trong chiếc áo
-              Polo. -->
-              Polo shirt has always been Wisermax's main product when it is
-              crystallized from LIQUÉ fabric and specially designed and printed.
-              The feeling of only men, simple, elegant and luxurious
-              encapsulated in a Polo shirt.
+              {{ $t('polo_description') }}
             </p>
           </el-col>
         </el-row>
@@ -45,14 +38,12 @@
           :src="require(`~/assets/images/products/men/banner_shirt_mb.png`)"
         />
       </div>
-      <div class="tu-content title-line">Suit</div>
+      <div class="tu-content title-line">{{ $t('suit') }}</div>
       <div class="tu-content" style="margin-bottom: 2rem">
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="18" :lg="12">
             <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              High-quality imported fabric, not ruffled, wrinkled, multi-color
-              shape, beautiful sharp luster. Vests designed for parties
-              important, go to work or go out.
+              {{ $t('suit_description') }}
             </p>
           </el-col>
         </el-row>
@@ -64,7 +55,7 @@
           </el-col>
         </el-row>
       </div>
-      <div class="tu-section-title text-center">We can do more!</div>
+      <div class="tu-section-title text-center">{{ $t('we_can_do_more') }}</div>
       <el-row :gutter="24" style="margin-bottom: 2rem">
         <el-col
           v-for="(item, i) in others"
@@ -75,7 +66,7 @@
           :lg="4"
         >
           <TuImage :src="require(`~/assets/images/products/men/${item.img}`)" />
-          <div style="margin-bottom: 0.5rem">{{ item.name }}</div>
+          <div style="margin-bottom: 0.5rem">{{ $t(item.name) }}</div>
         </el-col>
       </el-row>
     </div>
@@ -92,27 +83,27 @@ export default {
       others: [
         {
           img: 'ao_gio.jpeg',
-          name: 'Coats',
+          name: 'coats',
         },
         {
           img: 'ao_len.jpeg',
-          name: 'Sweater',
+          name: 'sweater',
         },
         {
           img: 'ao-thun.jpeg',
-          name: 'T-shirt',
+          name: 'tshirt',
         },
         {
           img: 'shirt_short.jpeg',
-          name: 'Short-sleeved Shirt',
+          name: 'short_sleeved_shirt',
         },
         {
           img: 'quan-kaki.jpeg',
-          name: 'Kaki pant',
+          name: 'kaki_pant',
         },
         {
           img: 'quan-lot-nam.png',
-          name: 'Underpants',
+          name: 'underpants',
         },
       ],
     }

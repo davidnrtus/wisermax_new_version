@@ -4,7 +4,7 @@
       <el-col :md="24" :lg="20">
         <el-row type="flex" justify="center" class="flex-wrap">
           <el-col :xs="24">
-            <h3 class="tu-section-title">Business Areas</h3>
+            <h3 class="tu-section-title">{{ $t('business_areas') }}</h3>
           </el-col>
           <el-col :xs="24">
             <el-row type="flex" justify="center" class="flex-wrap">
@@ -24,8 +24,8 @@
                     />
                   </div>
                   <div class="tu-so-card_content">
-                    <div class="text-bold heading">{{ item.title }}</div>
-                    <span>{{ item.description }} </span>
+                    <div class="text-bold heading">{{ $t(item.title) }}</div>
+                    <span>{{ $t(item.description) }} </span>
                   </div>
                 </div>
               </el-col>
@@ -43,21 +43,18 @@ export default {
     return {
       services: [
         {
-          title: 'Design',
-          description:
-            'We are a quality oriented professional clothing manufacturer exporter brand which focus on Women clothing, Man clothing, children wear.',
+          title: 'design',
+          description: 'design_service_content',
           img: '/home/so-design.jpg',
         },
         {
-          title: 'OEM, ODM service',
-          description:
-            'We offer OEM, ODM service and design/manufacture as per clothes design and requirements.',
+          title: 'oem_odm_service',
+          description: 'oem_odm_service_content',
           img: '/home/so-sampleroom.jpg',
         },
         {
-          title: 'Garment production',
-          description:
-            'Factory base in vietnam, As for the production capability, we can produce 600,000 pieces monthly. In the year of 2019 we provide total 3000 000 pieces for US, Canada market.',
+          title: 'garment_production',
+          description: 'garment_production_content',
           img: '/about/service-1.jpg',
         },
       ],

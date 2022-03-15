@@ -75,6 +75,8 @@ export default {
         name: 'Chinese',
       },
     ],
+    lazy: true,
+    langDir: 'lang/',
     defaultLocale: 'en',
     detectBrowserLanguage: {
       useCookie: true,

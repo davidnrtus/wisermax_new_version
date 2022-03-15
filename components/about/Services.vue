@@ -1,7 +1,7 @@
 <template>
   <div class="tu-section clearpt">
     <div class="text-center" style="margin-bottom: 2rem">
-      <h1 class="underline-2">Our Services</h1>
+      <h1 class="underline-2">{{ $t('our_services') }}</h1>
     </div>
     <el-row type="flex" justify="center" class="flex-wrap" :gutter="24">
       <el-col
@@ -19,8 +19,8 @@
             <img :src="require(`~/assets/images/about/${item.img}`)" alt="" />
           </div>
           <div class="text-center tu-card-content">
-            <h3 style="margin: 0.5rem 0">{{ item.name }}</h3>
-            <p>{{ item.text }}</p>
+            <h3 style="margin: 0.5rem 0">{{ $t(item.name) }}</h3>
+            <p>{{ $t(item.text) }}</p>
           </div>
         </div>
       </el-col>
@@ -34,24 +34,24 @@ export default {
     return {
       services: [
         { 
-          img: 'service-41.jpg', 
-          name: 'Sourcing material',
-          text: 'We will select the most suitable, best and reasonable fabrics and materials.'
+          img: 'service-41.jpg',
+          name: 'sourcing_material',
+          text: 'sourcing_material_description'
         },
         { 
-          img: 'service-21.jpg', 
-          name: 'Develop & Design',
-          text: 'We invest strongly in design.'
+          img: 'service-21.jpg',
+          name: 'develop_design',
+          text: 'develop_design_description'
         },
         { 
-          img: 'service-11.jpeg', 
-          name: 'Process',
-          text: 'We control quality base on AQL 1.0, 2.5. We seek manufacturing partners with great care, sometimes newcomers with whom we can build.'
+          img: 'service-11.jpeg',
+          name: 'process',
+          text: 'process_description'
         },
         { 
-          img: 'service-51.jpg', 
-          name: 'Shipping',
-          text: 'We carefully pack the products according to the requirements, then ship them to the customers.'
+          img: 'service-51.jpg',
+          name: 'shipping',
+          text: 'shipping_description'
         },
       ],
     }

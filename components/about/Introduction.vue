@@ -2,30 +2,10 @@
   <div class="tu-section clearfixed clearpt">
     <el-row type="flex" justify="center">
       <el-col :xl="16" :lg="20" :md="22" :sm="24" :xs="24">
-        <div class="tu-section-title_sm underline">Introduction</div>
-        <p class="tu-text-p">
-          WE ARE CONNECTED WITH OUR PEOPLE, WITH OUR CUSTOMERS AROUND THE GLOBE,
-          AND WITH OUR PRODUCTION PARTNERS IN ASIA AND US. WE HAVE CHOSEN THEM,
-          OR THEY HAVE FOUND US, BECAUSE WE SHARE VALUES AND VISION WE TAKE
-          ABSOLUTE RESPONSIBILITY FOR ALL PRODUCTS SUPPLIED TO CONSUMMERS, BRING
-          HAPPINESS TO EMPLOYEES, CUSTOMERS AND COMMUNITIES
-        </p>
-        <p class="tu-text-p">
-          We are a quality oriented professional clothing manufacturer exporter
-          brand which focus on Women clothing, Man clothing,. children wear.
-          Factory base in vietnam, As for the production capability, we can
-          produce 600.000 pieces monthly. In the year of 2019, we provide total
-          3.000.000 pieces for US, Canada market. We offer OEM, ODM service and
-          design/manufacture as per clothes design and requirements.
-        </p>
-        <p class="tu-text-p">
-          We have a skilled team of experts with a real working passion and
-          dedication to make buyer's fashion dream come true. We always focusing
-          on providing fast, precise service for all customers "We are committed
-          to high quality and innovation and a process that SAFETY and FAIR
-          creating clothes you can trust and your customers want to wear". Any
-          inquiry please feel free to contact us
-        </p>
+        <div class="tu-section-title_sm underline">{{ $t('Introduction') }}</div>
+        <p class="tu-text-p">{{ $t('about_text_1') }}</p>
+        <p class="tu-text-p">{{ $t('about_text_2') }}</p>
+        <p class="tu-text-p">{{ $t('about_text_3') }}</p>
       </el-col>
     </el-row>
     <el-row type="flex" justify="center" class="tu-abu-num flex-wrap">
@@ -49,10 +29,10 @@
               class="text-left w-full"
               style="margin-left: 2rem; margin-right: 1rem"
             >
-              Factory Partners
+              {{ $t('factory_partners') }}
             </h2>
             <p class="tu-text-p" style="margin-left: 2rem; margin-right: 1rem">
-              Our 20++ factory partner in north and middle of VietNam.
+              {{ $t('factory_partners_content') }}
             </p>
           </div>
         </div>
@@ -61,17 +41,16 @@
         <div class="bg-right">
           <img src="~/assets/images/about/bg-nums.jpg" alt="" />
           <div class="content">
-            <h2 class="text-left" style="margin-left: 2rem">Our capacity</h2>
+            <h2 class="text-left" style="margin-left: 2rem">{{ $t('our_capacity') }}</h2>
             <p class="tu-text-p" style="margin-left: 2rem">
-              With 20+ factory partner, WISERMAX can do 6.000.000++ PCS per
-              year. Including knit, woven, Jacket, top, pant, dress, handmade...
+              {{ $t('our_capacity_description') }}
             </p>
             <div
               v-for="(item, index) in params"
               :key="index"
               class="content-item"
             >
-              <span>{{ item.value }}</span> {{ item.text }}
+              <span>{{ $t(item) }}</span>
             </div>
           </div>
         </div>
@@ -85,26 +64,11 @@ export default {
   data() {
     return {
       params: [
-        {
-          value: '6,000 PCS',
-          text: 'per month',
-        },
-        {
-          value: '50,000,000 PCS',
-          text: 'KNIT TOP / year',
-        },
-        {
-          value: '10,000,000 PCS',
-          text: 'KNIT DRESS / year',
-        },
-        {
-          value: '500,000 PCS',
-          text: 'COAT & JACKET',
-        },
-        {
-          value: '500,000 PCS',
-          text: 'PANT / year',
-        },
+        'pcs_per_month',
+        'pcs_knit_top_per_year',
+        'pcs_knit_dress_per_year',
+        'pcs_coat_jacket',
+        'pcs_pant',
       ],
     }
   },

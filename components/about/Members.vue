@@ -1,10 +1,6 @@
 <template>
   <div class="tu-section tu-smember text-center">
-    <h1 class="underline-2" style="margin-bottom: 4rem">Meet Our Director</h1>
-    <!-- <p style="margin-bottom: 2rem">
-      We are a team of innovations, thinkers, and doers driven by the desire to
-      challenge the status quo
-    </p> -->
+    <h1 class="underline-2" style="margin-bottom: 4rem">{{ $t('meet_our_director') }}</h1>
     <el-row type="flex" justify="center">
       <el-col :xl="18" :lg="20" :md="24">
         <el-row type="flex" justify="center" class="flex-wrap">
@@ -24,13 +20,11 @@
               <el-col :span="24">
                 <div class="b-card-content text-left">
                   <h2 class="mb4 text-primary">Ms Helen Hoang</h2>
-                  <div class="text-bold mb2 text-blue_lighter">CEO, Director</div>
                   <div class="text-bold mb4">
                     helen@wiser.vn / +84-974-806625
                   </div>
                   <div class="description mb4">
-                    With 10 years of experience in the garment industry. We are
-                    always proud to bring high quality products to our customers.
+                    {{ $t('meet_our_director_description') }}
                   </div>
                 </div>
               </el-col>
@@ -41,7 +35,7 @@
                 :sm="22"
                 class="overflow-hidden"
               >
-                <div class="text-left mb2">Feel free to meet our director!</div>
+                <div class="text-left mb2">{{ $t('meet_our_director_feel') }}</div>
                 <div class="flex">
                   <TuImage
                     :src="require(`~/assets/images/members/qr-ceo.svg`)"

@@ -206,19 +206,14 @@ export const headers = [
     key: 'products',
     url: '/products',
   },
-  // {
-  //   title: 'Customers',
-  //   key: 'customers',
-  //   url: '/customers',
-  // },
   {
     title: 'About Us',
-    key: 'about-us',
+    key: 'about_us',
     url: '/about-us',
   },
   {
     title: 'Contact',
-    key: 'contact',
+    key: 'contact_us',
     url: '/contact',
   },
 ]

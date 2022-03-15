@@ -1,18 +1,12 @@
 export default {
-  menu: {
-    home: '首页',
-    products: '产品',
-    about_us: '关于我们',
-    contact: '与我们联系',
-  },
-  info: {
-    address: 'Trau Quy Ward, Gia Lam District, Ha Noi City',
-  },
-  type: {
-    women_clothing: `女装`,
-    men_clothing: `男装`,
-    kid_clothing: `童装`,
-  },
+  home: '首页',
+  products: '产品',
+  about_us: '关于我们',
+  contact_us: '与我们联系',
+  address: '河内市，嘉林县，鄹夔镇',
+  women_clothing: `女装`,
+  men_clothing: `男装`,
+  kid_clothing: `童装`,
   links: '链接',
   informations: '信息',
   years_of_experience: '多年经验',
@@ -65,6 +59,7 @@ export default {
   underwear: '内衣',
   men_page_description:
     '探索最具标志性的男装设计师的全新款式，包括 T 恤、西装、外套和茄克衫……',
+  polo: 'Polo衫',
   polo_description: `网球衫一直是Wisermax的主打产品, 由 LIQUÉ 面料结晶而成，经过特殊设计和印花。`,
   shirt_description: '一般来说、正式风格的服装设计和更高质量的生产。',
   suit: '西装',
@@ -112,7 +107,6 @@ export default {
   meet_our_director_feel: '欢迎与我们的经理见面！',
   certification: '认证书',
   contact_description: `想与我们联系？ 我们很乐意听取您的意见。 您可以通过以下方式跟我们联系...`,
-  contact_us: '联系我们',
   feel_free_contact: '随时与我们联系。 我们会尽快回复您！',
   name: '姓名',
   email: '电子邮件',

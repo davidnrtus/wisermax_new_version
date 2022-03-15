@@ -8,7 +8,7 @@
       <div class="text-center content">
         <el-row type="flex" justify="center">
           <el-col :xl="14" :lg="18" :md="22" :sm="24">
-            Want to get in touch? We'd love to hear from you. Here's how you can reach us...
+            {{ $t('contact_description') }}
           </el-col>
         </el-row>
       </div>
@@ -17,42 +17,41 @@
         <el-col :xl="14" :lg="18" :md="22" :sm="24">
           <el-row type="flex" justify="center">
             <el-col :xl="14" :lg="14" :md="14" :sm="24" class="box">
-              <h1 class="underline-2">Contact Us</h1>
+              <h1 class="underline-2">{{ $t('contact_us') }}</h1>
               <p>
-                Feel free to contact us any time. We will get back to you as
-                soon as we can!
+                {{ $t('feel_free_contact') }}
               </p>
               <el-form :model="form">
                 <el-input
                   v-model="form.name"
-                  placeholder="Name"
+                  :placeholder="$t('name')"
                   name="name"
                   class="tu-input"
                 />
                 <el-input
                   v-model="form.email"
-                  placeholder="Email"
+                  :placeholder="$t('email')"
                   type="email"
                   name="email"
                   class="tu-input"
                 />
                 <el-input
                   v-model="form.phone"
-                  placeholder="Phone number"
+                  :placeholder="$t('phone_number')"
                   name="phone"
                   class="tu-input"
                 />
                 <el-input
                   v-model="form.content"
                   :autosize="{ minRows: 4 }"
+                  :placeholder="$t('content')"
                   clearable
                   type="textarea"
-                  placeholder="Content"
                   name="content"
                   class="tu-input"
                 />
                 <div class="text-center">
-                  <el-button class="tu-button">Send</el-button>
+                  <el-button class="tu-button">{{ $t('send') }}</el-button>
                 </div>
               </el-form>
             </el-col>
@@ -68,7 +67,7 @@
               </div>
               <div class="taki">
                 <i class="el-icon-location-outline" />
-                <span class="txt">{{ info.address }}</span>
+                <span class="txt">{{ $t('address') }}</span>
               </div>
             </el-col>
           </el-row>

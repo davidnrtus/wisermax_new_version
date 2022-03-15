@@ -3,7 +3,7 @@
     <el-row type="flex" justify="center">
       <el-col :xs="24" :sm="24" :md="18">
         <div class="tu-section-title" style="text-align: left">
-          Why choose us
+          {{ $t('why_choose_us') }}
         </div>
         <div class="tu-section-content">
           <el-row>
@@ -20,8 +20,8 @@
                   :alt="item.title"
                 />
                 <div class="tu-wcu-card_txt">
-                  <b>{{ item.title }}</b>
-                  <div>{{ item.description }}</div>
+                  <b>{{ $t(item.title) }}</b>
+                  <div>{{ $t(item.description) }}</div>
                 </div>
               </div>
             </el-col>
@@ -38,24 +38,23 @@ export default {
     return {
       reasons: [
         {
-          title: 'Quality',
-          description: '100% check one by one process',
+          title: 'quality',
+          description: 'quality_content',
           img: 'wcu-quality.png',
         },
         {
-          title: 'Help',
-          description: 'Design your idea and provide design solutions',
+          title: 'help',
+          description: 'help_content',
           img: 'wcu-cost.png',
         },
         {
-          title: 'Cost of products',
-          description:
-            'Help you get the best solution to meet your target price',
+          title: 'cost_of_products',
+          description: 'cost_of_products_content',
           img: 'wcu-services.png',
         },
         {
-          title: 'Flexibility',
-          description: 'Fast lead time, good price, selectable payment terms',
+          title: 'flexibility',
+          description: 'flexibility_content',
           img: 'wcu-flexibility.png',
         },
       ],
