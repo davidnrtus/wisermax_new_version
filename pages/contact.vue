@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tu-banner-wrapper">
+    <!-- <div class="tu-banner-wrapper">
       <img
         src="~/assets/images/banners/banner_contact_1.jpg"
         alt="banner_contact"
@@ -12,12 +12,20 @@
           </el-col>
         </el-row>
       </div>
-    </div>
-      <el-row type="flex" justify="center" class="mt4">
-        <el-col :xl="14" :lg="18" :md="22" :sm="24">
-          <el-row type="flex" justify="center">
-            <el-col :xl="14" :lg="14" :md="14" :sm="24" class="box">
-              <h1 class="underline-2">{{ $t('contact_us') }}</h1>
+    </div> -->
+    <TuImage
+      :src="require(`~/assets/images/banners/banner_contact_1.jpg`)"
+      :text="$t('contact_description')"
+      :text-width="70"
+      padding-bottom="33"
+      class="banner"
+    />
+    <el-row type="flex" justify="center" class="mt4">
+      <el-col :xl="14" :lg="18" :md="22" :sm="24">
+        <el-row type="flex" justify="center" class="flex-wrap">
+          <el-col :xl="14" :lg="14" :md="14" :sm="14" :xs="24">
+            <div class="box">
+                <h1 class="underline-2">{{ $t('contact_us') }}</h1>
               <p>
                 {{ $t('feel_free_contact') }}
               </p>
@@ -54,8 +62,10 @@
                   <el-button class="tu-button">{{ $t('send') }}</el-button>
                 </div>
               </el-form>
-            </el-col>
-            <el-col :xl="10" :lg="10" :md="10" :sm="24" class="box"> 
+            </div>
+          </el-col>
+          <el-col :xl="10" :lg="10" :md="10" :sm="10" :xs="24">
+            <div class="box">
               <h2>Info</h2>
               <div class="taki" style="margin-top: 46px">
                 <i class="el-icon-message" />
@@ -69,10 +79,11 @@
                 <i class="el-icon-location-outline" />
                 <span class="txt">{{ $t('address') }}</span>
               </div>
-            </el-col>
-          </el-row>
-        </el-col>
-      </el-row>
+            </div>
+          </el-col>
+        </el-row>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -110,35 +121,13 @@ export default {
 .clearfixed {
   margin-top: calc(54px + 1.5rem);
 }
-.tu-banner-wrapper {
-  padding-bottom: 32%;
-  position: relative;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    font-weight: 400;
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
 .box {
   padding: 18px;
   margin: 0 16px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.08);
+  height: 100%;
 }
 .tu-button {
   padding: 12px 52px;

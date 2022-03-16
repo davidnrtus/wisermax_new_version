@@ -9,7 +9,7 @@
     />
     <div v-else class="loading" />
     <div v-if="blur" class="blur" :style="blurStyle" />
-    <div v-if="text && intersected" class="text">{{ text }}</div>
+    <div v-if="text && intersected" class="text" :style="[textStyle]">{{ text }}</div>
   </div>
 </template>
 
@@ -28,6 +28,10 @@ export default {
     delay: {
       type: Number,
       default: 0,
+    },
+    textWidth: {
+      type: Number,
+      default: 100,
     },
     imgClass: {
       type: String,
@@ -106,6 +110,15 @@ export default {
       }
       return { backgroundColor: `rgba(0, 0, 0, ${this.blur/100})`}
     },
+    textStyle() {
+      if (this.textWidth < 100) {
+        return {
+          width: `${this.textWidth}%`,
+          left: `${(100 - this.textWidth) / 2}%`
+        }
+      }
+      return null;
+    },
     overlay() {
       if (this.paddingBottom) {
         const imgCover = {
@@ -175,6 +188,7 @@ export default {
     font-size: 1.5rem;
     text-transform: uppercase;
     text-align: center;
+    line-height: 1.5;
     @media (min-width: 688px) and (max-width: 1200px) {
       font-size: 1rem;
     }

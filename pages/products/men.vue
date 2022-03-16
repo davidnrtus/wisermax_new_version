@@ -1,7 +1,14 @@
 <template>
   <div class="tu-section clearspacer">
     <div class="tu-section-content">
-      <TuImage :src="require(`~/assets/images/products/men/banner_top.png`)" />
+      <TuImage
+        :src="require(`~/assets/images/products/men/banner_top.png`)"
+        :text="$t('men_page_description')"
+        :blur="30"
+        :text-width="60"
+        padding-bottom="40"
+        class="banner"
+      />
       <div class="tu-content title-line">{{ $t('polo') }}</div>
       <div class="tu-content">
         <el-row type="flex" justify="center">
@@ -13,7 +20,7 @@
         </el-row>
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="20" :lg="16">
-            <el-row type="flex" :gutter="isMobile ? 10 : 32">
+            <el-row type="flex" :gutter="32">
               <el-col :span="12">
                 <TuImage
                   :src="require(`~/assets/images/products/men/polo_1.1.jpeg`)"
@@ -28,15 +35,17 @@
           </el-col>
         </el-row>
       </div>
-      <div class="tu-content" style="margin-top: 3rem">
-        <TuImage
-          v-if="!isMobile"
-          :src="require(`~/assets/images/products/men/banner_shirt.png`)"
-        />
-        <TuImage
-          v-else
-          :src="require(`~/assets/images/products/men/banner_shirt_mb.png`)"
-        />
+      
+      <div class="tu-content title-line">{{ $t('shirt') }}</div>
+      <div class="tu-content">
+        <el-row type="flex" justify="center">
+          <el-col :xs="24" :sm="24" :md="18" :lg="12">
+            <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
+              {{ $t('shirt_description') }}
+            </p>
+          </el-col>
+        </el-row>
+        <TuImage :src="require(`~/assets/images/products/men/banner_shirt.png`)" />
       </div>
       <div class="tu-content title-line">{{ $t('suit') }}</div>
       <div class="tu-content" style="margin-bottom: 2rem">
@@ -74,12 +83,9 @@
 </template>
 
 <script>
-const breakpoint = 550.98
-
 export default {
   data() {
     return {
-      isMobile: false,
       others: [
         {
           img: 'ao_gio.jpeg',
@@ -107,20 +113,6 @@ export default {
         },
       ],
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.isMobile = window.innerWidth < breakpoint
-      window.addEventListener('resize', this.onResize)
-    })
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
-  },
-  methods: {
-    onResize() {
-      this.isMobile = window.innerWidth < breakpoint
-    },
   },
 }
 </script>

@@ -63,6 +63,7 @@ export default {
     'Discover fresh new styles from the most iconic menswear designers, including T-shirts, suits, coats, and jackets...',
   polo: 'Polo',
   polo_description: `Polo shirt has always been Wisermax's main product when it is crystallized from LIQUÉ fabric and specially designed and printed. The feeling of  manly, simple, elegant and luxurious can be encapsulated in a Polo shirt.`,
+  shirt: 'Shirt',
   shirt_description:
     'Casual, formal style clothing design and higher quality production.',
   suit: 'Suit',

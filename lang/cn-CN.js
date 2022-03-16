@@ -61,6 +61,7 @@ export default {
     '探索最具标志性的男装设计师的全新款式，包括 T 恤、西装、外套和茄克衫……',
   polo: 'Polo衫',
   polo_description: `网球衫一直是Wisermax的主打产品, 由 LIQUÉ 面料结晶而成，经过特殊设计和印花。`,
+  shirt: '衬衫',
   shirt_description: '一般来说、正式风格的服装设计和更高质量的生产。',
   suit: '西装',
   suit_description:
