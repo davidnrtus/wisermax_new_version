@@ -58,7 +58,15 @@
       </el-row>
     </div>
     <div class="tu-content">
-      <TuImage :src="require(`~/assets/images/products/women/banner_do_lot.png`)" />
+      <el-row type="flex" justify="center">
+        <el-col v-for="(item, i) in dl" :key="i" :span="8">
+          <div class="relative">
+            <TuImage :src="require(`~/assets/images/products/women/dl_${i+1}.png`)" />
+            <div class="vcax">{{ $t(item) }}</div>
+          </div>
+        </el-col>
+      </el-row>
+      <!-- <TuImage :src="require(`~/assets/images/products/women/banner_do_lot.png`)" /> -->
     </div>
     <div class="tu-content">
       <el-row type="flex" justify="center">
@@ -83,6 +91,12 @@ export default {
         'mangto_3.png',
         'mangto_4.jpg',
       ],
+      dl: [
+        'workout_clothes',
+        'pyjama',
+        'swimsuit',
+        'underwear',
+      ]
     }
   },
   mounted() {
@@ -105,5 +119,25 @@ export default {
 <style lang="scss" scoped>
 .text-content {
   padding: 0 16px;
+}
+.vcax {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  background: #F3F3F3;
+  color: #5C5C5C;
+  padding: 3% 6% 2% 6%;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  @media (min-width: 688px) and (max-width: 1200px) {
+    font-size: 0.75rem;
+    bottom: 4%;
+    left: 4%;
+  }
+  @media (max-width: 687.98px) {
+    font-size: 0.3rem;
+    bottom: 6%;
+    left: 6%;
+  }
 }
 </style>
