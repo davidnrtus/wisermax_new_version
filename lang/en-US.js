@@ -42,9 +42,9 @@ export default {
     'Main label: US and canada market: Calvin & Klein, Tommy, DKNY, Karlarfield, Guess..., Korea market: CJ home shoping.',
   protective_clothing: 'Protective Clothing',
   protective_clothing_content:
-    'We process many items, including knitting and woven products.\n Knitting products: we process dress, pant, blouse,… active wear, swimming suit, sleeping wear… \nWoven products: we process jacketa, down, padding, wellon, pant, shirt, blazer, suit, hand made …',
+    'We process many items, including knitting and woven products.\n Knitting products: we process dress, pant, blouse,… active wear, swimming suit, sleeping wear… \nWoven products: we process jacketa, down coat, padding, pants, shirt, blazer, suit, hand made …',
   assessories: 'Assessories',
-  assessories_content: 'We process bag, hat, shoes',
+  assessories_content: 'we process shoes, gloves, necktie, pantyhose',
   women_page_description:
     'EACH PIECE WE CREATE IS DESIGNED TO ACCENTUATE EVERY INDIVIDUALS BODY AND MAKE THEM FEEL EMPOWERED.',
   what_we_made: `Here's what we made`,
@@ -53,7 +53,7 @@ export default {
   design_youthful_moder: 'Design youthful, moder',
   overcoat: 'Overcoat',
   overcoat_description:
-    'We manufacture a variety of overcoat products for women. With high-quality materials such as Polyester, Wool, Viso... Felt fabric keeps warm, retains heat well, has high durability, fabric thickens to standard form, fleece vest should be dry cleaned to ensure.',
+    'We manufacture a variety of overcoat products for women. With high-quality materials such as Polyester, Wool, Viscose... Felt fabric keeps warm, retains heat well, has high durability, fabric thickens to standard form, fleece vest should be dry cleaned to ensure.',
   dress: 'Dress',
   workout_clothes: 'Workout clothes',
   pyjama: 'PYJAMA',
@@ -62,7 +62,7 @@ export default {
   men_page_description:
     'Discover fresh new styles from the most iconic menswear designers, including T-shirts, suits, coats, and jackets...',
   polo: 'Polo',
-  polo_description: `Polo shirt has always been Wisermax's main product when it is crystallized from LIQUÉ fabric and specially designed and printed. The feeling of  manly, simple, elegant and luxurious can be encapsulated in a Polo shirt.`,
+  polo_description: `Polo shirt has always been Wisermax's main product when it is crystallized from PIQUE fabric and specially designed and printed. The feeling of  manly, simple, elegant and luxurious can be encapsulated in a Polo shirt.`,
   shirt: 'Shirt',
   shirt_description:
     'Casual, formal style clothing design and higher quality production.',

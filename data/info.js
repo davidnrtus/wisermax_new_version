@@ -1,6 +1,6 @@
 export default {
   company_name: 'WISER MAX HN COMPANY LIMITED',
-  email: 'helen@wiser.vn / sale@wiser.vn',
+  email: 'helen@wiser.vn / info@wiser.vn',
   phone_number: '+84-974-806625',
   address: 'Trau Quy Ward, Gia Lam District, Ha Noi City',
   years_experience: '12+',

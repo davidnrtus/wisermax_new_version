@@ -1,18 +1,5 @@
 <template>
   <div>
-    <!-- <div class="tu-banner-wrapper">
-      <img
-        src="~/assets/images/banners/banner_contact_1.jpg"
-        alt="banner_contact"
-      />
-      <div class="text-center content">
-        <el-row type="flex" justify="center">
-          <el-col :xl="14" :lg="18" :md="22" :sm="24">
-            {{ $t('contact_description') }}
-          </el-col>
-        </el-row>
-      </div>
-    </div> -->
     <TuImage
       :src="require(`~/assets/images/banners/banner_contact_1.jpg`)"
       :text="$t('contact_description')"
@@ -23,7 +10,7 @@
     <el-row type="flex" justify="center" class="mt4">
       <el-col :xl="14" :lg="18" :md="22" :sm="24">
         <el-row type="flex" justify="center" class="flex-wrap">
-          <el-col :xl="14" :lg="14" :md="14" :sm="14" :xs="24">
+          <el-col :xl="14" :lg="14" :md="14" :sm="14" :xs="24" class="flex">
             <div class="box">
                 <h1 class="underline-2">{{ $t('contact_us') }}</h1>
               <p>
@@ -64,7 +51,7 @@
               </el-form>
             </div>
           </el-col>
-          <el-col :xl="10" :lg="10" :md="10" :sm="10" :xs="24">
+          <el-col :xl="10" :lg="10" :md="10" :sm="10" :xs="24" class="flex">
             <div class="box">
               <h2>Info</h2>
               <div class="taki" style="margin-top: 46px">
@@ -72,12 +59,29 @@
                 <span>{{ info.email }}</span>
               </div>
               <div class="taki">
-                <i class="el-icon-phone-outline" />
+                <i class="el-icon-location-outline" />
+                <span class="txt">{{ $t('address') }}</span>
+              </div>
+              <div class="taki">
+                <div class="flex centeral">
+                  <img src="~/assets/images/icons/wechat.png" class="wic" alt="wechat">
+                  <img src="~/assets/images/icons/whatsapp.png" class="wic" alt="whatsapp">
+                  <i class="el-icon-phone-outline" />
+                </div>
                 <span>{{ info.phone_number }}</span>
               </div>
               <div class="taki">
-                <i class="el-icon-location-outline" />
-                <span class="txt">{{ $t('address') }}</span>
+                <div class="flex">
+                  <TuImage
+                    :src="require(`~/assets/images/members/qr-ceo.svg`)"
+                    class="avt"
+                    style="margin-right: 1rem"
+                  />
+                  <TuImage
+                    :src="require(`~/assets/images/members/qr-wechat.svg`)"
+                    class="avt"
+                  />
+                </div>
               </div>
             </div>
           </el-col>
@@ -122,12 +126,11 @@ export default {
   margin-top: calc(54px + 1.5rem);
 }
 .box {
-  padding: 18px;
-  margin: 0 16px;
+  padding: 18px 18px 36px 18px;
+  margin: 0 16px 16px 16px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.08);
-  height: 100%;
 }
 .tu-button {
   padding: 12px 52px;
@@ -135,5 +138,10 @@ export default {
   color: #fff;
   font-weight: 500;
   letter-spacing: 1.5px;
+}
+.wic {
+  width: 26px;
+  height: 26px;
+  margin-right: 1rem;
 }
 </style>
