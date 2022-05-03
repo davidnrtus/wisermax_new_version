@@ -6,38 +6,13 @@
     <div class="tu-section-content">
       <el-row type="flex" justify="center" class="crow">
         <el-col :md="23" :lg="18">
-          <el-row type="flex" justify="center" class="flex-wrap">
-            <el-col class="ccol-img" :xs="12" :sm="4">
+          <div class="flex flex-wrap">
+            <div v-for="(cus, i) in customers" :key="i" :style="`width: calc(1/${customers.length} * 100%);`" class="img-wi ccol-img">
               <div class="center">
-                <img src="~/assets/images/customers/ck.png" alt="ck" />
+                <img :src="require(`~/assets/images/customers/${cus.img}`)" :alt="cus.img" />
               </div>
-            </el-col>
-            <el-col class="ccol-img" :xs="12" :sm="4">
-              <div class="center">
-                <img src="~/assets/images/customers/gucci.png" alt="ck" />
-              </div>
-            </el-col>
-            <el-col class="ccol-img" :xs="12" :sm="4">
-              <div class="center">
-                <img src="~/assets/images/customers/tommy.png" alt="ck" />
-              </div>
-            </el-col>
-            <el-col class="ccol-img" :xs="12" :sm="4">
-              <div class="center">
-                <img src="~/assets/images/customers/dkny.svg" alt="dkny" />
-              </div>
-            </el-col>
-            <el-col class="ccol-img" :xs="12" :sm="4">
-              <div class="center">
-                <img src="~/assets/images/customers/karl.png" alt="karl" />
-              </div>
-            </el-col>
-            <el-col class="ccol-img" :xs="12" :sm="4">
-              <div class="center">
-                <img src="~/assets/images/customers/guess.svg" alt="guess" />
-              </div>
-            </el-col>
-          </el-row>
+            </div>
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -46,6 +21,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      customers: [
+        { img: 'ck.png' },
+        { img: 'gucci.png' },
+        { img: 'tommy.png' },
+        { img: 'dkny.svg' },
+        { img: 'karl.png' },
+        { img: 'guess.svg' },
+        { img: 'huckberry.png' },
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .center {
@@ -75,6 +68,7 @@
     height: 80px;
     padding: 0 30px;
     margin: 16px 0;
+    box-sizing: border-box;
   }
 }
 @media (max-width: 768px) {
@@ -82,10 +76,14 @@
     margin: 1rem 0 1rem 0 !important;
   }
   .ccol-img {
+    margin: 8px 0;
     height: 50px !important;
   }
   .tu-section-label {
     font-size: 1rem;
+  }
+  .img-wi {
+    width: 50% !important;
   }
 }
 </style>

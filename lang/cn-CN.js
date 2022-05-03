@@ -38,6 +38,8 @@ export default {
   customer_1: '拥有12年以上的经验, 所有类型的项目, 如针织编织品。',
   customer_2:
     '主要标签。美国和加拿大市场: Calvin & Klein, Tommy, DKNY, Karlarfield, Guess..., 韩国市场: CJ家庭购物。',
+  jacket: '夹克衫',
+  jacket_content: '夹克衫',
   protective_clothing: '连体工作服',
   protective_clothing_content:
     '我们生产许多 产品，包括品针织和梭织品。\n针织品: 我们加工裙子、裤子、女式衬衫… 运动衣、泳衣、睡衣……\n梭织品: 我们加工夹克、羽绒服、衬料、人造棉、裤子、衬衣、西装外套、套装、手工制作……',

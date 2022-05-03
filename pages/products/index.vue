@@ -50,6 +50,21 @@
             </el-row>
           </el-col>
         </el-row>
+        <div class="tu-content title-line-l">{{ $t('jacket') }}</div>
+        <!-- <el-row type="flex" justify="center">
+          <el-col :xs="24" :sm="22" :md="16" :lg="14">
+            <p class="text-center">
+              {{ $t('protective_clothing_content') }}
+            </p>
+          </el-col>
+        </el-row> -->
+        <div class="tu-content">
+          <TuImage
+            :src="
+              require(`~/assets/images/products/banners/banner_jacket.png`)
+            "
+          />
+        </div>
         <div class="tu-content title-line-l">{{ $t('protective_clothing') }}</div>
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="22" :md="16" :lg="14">

@@ -40,6 +40,8 @@ export default {
     'With more than 12 years of experience, all kind of items such as knit, woven, etc.',
   customer_2:
     'Main label: US and canada market: Calvin & Klein, Tommy, DKNY, Karlarfield, Guess..., Korea market: CJ home shoping.',
+  jacket: 'Jacket',
+  jacket_content: 'Jacket',
   protective_clothing: 'Protective Clothing',
   protective_clothing_content:
     'We process many items, including knitting and woven products.\n Knitting products: we process dress, pant, blouse,… active wear, swimming suit, sleeping wear… \nWoven products: we process jacketa, down coat, padding, pants, shirt, blazer, suit, hand made …',
