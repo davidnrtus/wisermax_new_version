@@ -20,12 +20,14 @@
                 <el-input
                   v-model="form.name"
                   :placeholder="$t('name')"
+                  :class="isClick && !form.name ? 'error' : ''"
                   name="name"
                   class="tu-input"
                 />
                 <el-input
                   v-model="form.email"
                   :placeholder="$t('email')"
+                  :class="isClick && !form.email ? 'error' : ''"
                   type="email"
                   name="email"
                   class="tu-input"
@@ -33,6 +35,7 @@
                 <el-input
                   v-model="form.phone"
                   :placeholder="$t('phone_number')"
+                  :class="isClick && !form.phone ? 'error' : ''"
                   name="phone"
                   class="tu-input"
                 />
@@ -40,14 +43,16 @@
                   v-model="form.content"
                   :autosize="{ minRows: 4 }"
                   :placeholder="$t('content')"
+                  :class="isClick && !form.content ? 'error' : ''"
                   clearable
                   type="textarea"
                   name="content"
                   class="tu-input"
                 />
                 <div class="text-center">
-                  <el-button class="tu-button">{{ $t('send') }}</el-button>
+                  <el-button class="tu-button" :loading="loading" @click="sendMail">{{ $t('send') }}</el-button>
                 </div>
+                <h4 v-if="isSuccess" style="margin-top:2rem;color:#3b82f6">Sent successfully!</h4>
               </el-form>
             </div>
           </el-col>
@@ -102,9 +107,54 @@ export default {
         name: '',
         email: '',
         content: '',
+        phone: ''
       },
+      isClick: false,
+      loading: false,
+      isSuccess: false
     }
   },
+  computed: {
+    isEmpty() {
+      return !this.form.name || !this.form.email || !this.form.content || !this.form.phone
+    }
+  },
+  watch: {
+    form: {
+      deep: true,
+      handler() {
+        this.isClick = false
+      }
+    },
+    isSuccess: {
+      handler() {
+        setTimeout(() => {
+          this.isSuccess = false
+        }, 2500)
+      }
+    },
+  },
+  methods: {
+    async sendMail() {
+      this.loading = true
+      try {
+        if (this.isEmpty) {
+          this.isClick = true
+          this.loading = false
+          return
+        }
+        this.isClick = false
+        const response = await this.$axios.$post('https://wisermax-mail-server.vercel.app/sendMail', this.form)
+        if (response.code !== 200) {
+          this.isSuccess = true
+        }
+      } catch (error) {
+        this.isSuccess = false
+        console.log({ error });
+      }
+      this.loading = false
+    }
+  }
 }
 </script>
 
@@ -143,5 +193,13 @@ export default {
   width: 26px;
   height: 26px;
   margin-right: 1rem;
+}
+</style>
+
+<style lang="scss">
+.error {
+  input, textarea {
+    border-color: #ef4444;
+  }
 }
 </style>
