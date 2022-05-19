@@ -144,7 +144,7 @@ export default {
           return
         }
         this.isClick = false
-        const response = await this.$axios.$post('https://wisermax-mail-server.vercel.app/sendMail', this.form)
+        const response = await this.$axios.$post('/sendMail', this.form)
         if (response.code !== 200) {
           this.isSuccess = true
         }

@@ -88,7 +88,14 @@ export default {
     dir: 'assets/images',
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://wisermax-mailserver.herokuapp.com',
+    proxyHeaders: false,
+    credentials: false,
+    common: {
+      Accept: 'application/json, text/plain, */*',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
