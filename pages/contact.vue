@@ -49,10 +49,15 @@
                   name="content"
                   class="tu-input"
                 />
-                <div class="text-center">
+                <div class="text-center" style="margin-top:1.5rem">
                   <el-button class="tu-button" :loading="loading" @click="sendMail">{{ $t('send') }}</el-button>
                 </div>
-                <h4 v-if="isSuccess" style="margin-top:2rem;color:#3b82f6">Sent successfully!</h4>
+                <h4
+                  style="margin-top:2rem;margin-bottom:0;color:#2563eb;"
+                  :style="{ visibility: isSuccess ? 'visible' : 'hidden' }"
+                >
+                  Sent successfully
+                </h4>
               </el-form>
             </div>
           </el-col>
@@ -127,10 +132,12 @@ export default {
       }
     },
     isSuccess: {
-      handler() {
-        setTimeout(() => {
-          this.isSuccess = false
-        }, 2500)
+      handler(value) {
+        if (value) {
+          setTimeout(() => {
+            this.isSuccess = false
+          }, 2500)
+        }
       }
     },
   },
@@ -145,7 +152,7 @@ export default {
         }
         this.isClick = false
         const response = await this.$axios.$post('/sendMail', this.form)
-        if (response.code !== 200) {
+        if (response.code === 200) {
           this.isSuccess = true
         }
       } catch (error) {
