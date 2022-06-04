@@ -1,10 +1,8 @@
 <template>
   <div>
     <TuImage
-      :src="require(`~/assets/images/banners/banner_contact_1.jpg`)"
-      :text="$t('contact_description')"
-      :text-width="70"
-      padding-bottom="33"
+      :src="require(`~/assets/images/banners/banner_contact_2.png`)"
+      padding-bottom="40"
       class="banner"
     />
     <el-row type="flex" justify="center" class="mt4">
