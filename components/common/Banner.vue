@@ -1,7 +1,12 @@
 <template>
   <div class="tu-banner mg-common">
     <div class="tu-banner-slider">
-      <el-carousel :interval="3000" :autoplay="false" trigger="click" arrow="hover">
+      <el-carousel :interval="4000" :autoplay="true" trigger="click" arrow="hover">
+        <el-carousel-item>
+          <div class="slider-container">
+            <img src="~/assets/images/banners/banner_contact_2.png" alt="banner" >
+          </div>
+        </el-carousel-item>
         <el-carousel-item>
           <div class="slider-container">
             <img src="~/assets/images/banners/banner_2.png" alt="banner" >
