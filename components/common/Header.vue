@@ -5,7 +5,7 @@
       </div>
       <div class="header-center">
         <img
-          src="~/assets/images/logo/logo-v6.svg"
+          src="~/assets/images/logo/logo.png"
           alt="logo.svg"
           class="tu-header-logo"
         />
@@ -68,7 +68,7 @@ export default {
     margin-bottom: 10px;
     .header-center {
       img {
-        width: 170px;
+        width: 82px;
       }
     }
     .header-left, .header-right {
@@ -122,13 +122,6 @@ export default {
   .tu-header {
     padding-top: 12px;
     padding-bottom: 12px;
-    .header-logo {
-      .header-center {
-        img {
-          width: 120px;
-        }
-      }
-    }
     .header-menu {
       .horizontal-list {
         &_item {
@@ -150,7 +143,7 @@ export default {
     .header-logo {
       .header-center {
         img {
-          width: 100px;
+          width: 64px;
         }
       }
     }
