@@ -1,8 +1,7 @@
 <template>
   <div class="tu-header mg-common">
     <div class="header-logo">
-      <div class="header-left">
-      </div>
+      <div class="header-left"></div>
       <div class="header-center">
         <img
           src="~/assets/images/logo/logo.png"
@@ -11,26 +10,81 @@
         />
       </div>
       <div class="header-right">
-        <nuxt-link v-if="availableLocales" :to="switchLocalePath(availableLocales.code)" class="centeral lang-text">
-          <img
-            v-if="availableLocales && availableLocales.code === 'en'"
-            src="~/assets/images/icons/flag-uk.svg"
-            alt="england flag"
-          />
-          <img
-            v-if="availableLocales && availableLocales.code === 'cn'"
-            src="~/assets/images/icons/flag-china.svg"
-            alt="england flag"
-          />
-          {{ availableLocales.code }}
-        </nuxt-link>
+        <div v-click-outside="hide" class="dropdown">
+          <button
+            class="dropdown-button"
+            tabindex="0"
+            @click="isCollapsed = !isCollapsed"
+          >
+            <img
+              v-if="currentLocale && currentLocale.code === 'en'"
+              src="~/assets/images/icons/flag-uk.svg"
+              alt="england flag"
+            />
+            <img
+              v-if="currentLocale && currentLocale.code === 'cn'"
+              src="~/assets/images/icons/flag-china.svg"
+              alt="england flag"
+            />
+            <img
+              v-if="currentLocale && currentLocale.code === 'ko'"
+              src="~/assets/images/icons/flag-korean.svg"
+              alt="england flag"
+            />
+            {{ currentLocale.code }}
+          </button>
+          <transition name="slide">
+            <div
+              v-if="isCollapsed"
+              class="dropdown-content"
+            >
+              <ul>
+                <li
+                  v-for="(locale, i) in availableLocales"
+                  :key="i"
+                  :value="locale.code"
+                  class="dropdown-content-item"
+                >
+                  <nuxt-link
+                    :to="switchLocalePath(locale.code)"
+                    class="centeral lang-text"
+                    @click="hide"
+                  >
+                    <img
+                      v-if="locale && locale.code === 'en'"
+                      src="~/assets/images/icons/flag-uk.svg"
+                      alt="england flag"
+                    />
+                    <img
+                      v-if="locale && locale.code === 'cn'"
+                      src="~/assets/images/icons/flag-china.svg"
+                      alt="england flag"
+                    />
+                    <img
+                      v-if="locale && locale.code === 'ko'"
+                      src="~/assets/images/icons/flag-korean.svg"
+                      alt="england flag"
+                    />
+                    {{ locale.code }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </div>
+          </transition>
+        </div>
       </div>
     </div>
     <div class="header-menu">
       <nav>
         <ul class="horizontal-list">
-          <li v-for="header in headers" :key="header.key" class="horizontal-list_item">
-            <router-link :to="localePath(header.url)">{{ $t(header.key) }}</router-link>
+          <li
+            v-for="header in headers"
+            :key="header.key"
+            class="horizontal-list_item"
+          >
+            <router-link :to="localePath(header.url)">{{
+              $t(header.key)
+            }}</router-link>
           </li>
         </ul>
       </nav>
@@ -39,22 +93,40 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
 import { headers } from '@/data/header'
 
+
 export default {
+  directives: {
+    ClickOutside
+  },
   data() {
     return {
       headers,
+      isCollapsed: false,
     }
   },
   computed: {
     availableLocales() {
-      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)[0]
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
     currentLocale() {
       return this.$i18n.locales.filter((i) => i.code === this.$i18n.locale)[0]
     },
   },
+  watch: {
+    '$route': {
+      handler() {
+        this.hide()
+      }
+    }
+  },
+  methods: {
+    hide() {
+      this.isCollapsed = false
+    }
+  }
 }
 </script>
 
@@ -71,7 +143,8 @@ export default {
         width: 82px;
       }
     }
-    .header-left, .header-right {
+    .header-left,
+    .header-right {
       flex: 1;
     }
     .header-right {
@@ -79,8 +152,8 @@ export default {
       justify-content: flex-end;
       align-items: center;
       img {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
         margin-right: 0.5rem;
         cursor: pointer;
       }
@@ -102,12 +175,12 @@ export default {
         a {
           color: #2c2c2c;
           font-size: 13px;
-          font-family: Muli,sans-serif;
+          font-family: Muli, sans-serif;
           font-weight: 600;
           font-style: normal;
-          -webkit-transition: color .2s ease-in-out;
-          transition: color .2s ease-in-out;
-          letter-spacing: .2em;
+          -webkit-transition: color 0.2s ease-in-out;
+          transition: color 0.2s ease-in-out;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
           &:hover {
             // color: #6a6a6a;
@@ -171,5 +244,81 @@ export default {
   .nuxt-link-exact-active {
     font-weight: 700 !important;
   }
+}
+</style>
+
+<style scoped>
+.dropdown {
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-button {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  white-space: nowrap;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dropdown-content {
+  box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+  top: calc(100% + 8px);
+  transform-style: flat;
+  min-width: 100%;
+  background: #fff;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  transform-origin: top;
+  transform: scaleY(1);
+  z-index: 60;
+}
+
+.dropdown-content ul {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content-item {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content-item a {
+  padding: 8px 12px;
+}
+
+
+.dropdown-content-item:hover {
+  font-weight: 700;
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 0.2s all ease;
+}
+
+.slide-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.2s all ease;
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 0.2s all ease;
 }
 </style>

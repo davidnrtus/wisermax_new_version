@@ -74,6 +74,11 @@ export default {
         file: 'cn-CN.js',
         name: 'Chinese',
       },
+      {
+        code: 'ko',
+        file: 'ko-KO.js',
+        name: 'Korean',
+      },
     ],
     lazy: true,
     langDir: 'lang/',
