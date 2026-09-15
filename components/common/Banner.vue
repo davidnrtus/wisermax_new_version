@@ -4,17 +4,17 @@
       <el-carousel :interval="4000" :autoplay="true" trigger="click" arrow="hover">
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_contact_2.png" alt="banner" >
+            <NuxtImg src="/banners/banner_contact_2.png" alt="banner"  />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_2.png" alt="banner" >
+            <NuxtImg src="/banners/banner_2.png" alt="banner"  />
           </div>
         </el-carousel-item>
         <el-carousel-item>
           <div class="slider-container">
-            <img src="~/assets/images/banners/banner_4.png" alt="banner" >
+            <NuxtImg src="/banners/banner_4.png" alt="banner"  />
           </div>
         </el-carousel-item>
       </el-carousel>

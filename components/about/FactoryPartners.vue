@@ -13,10 +13,10 @@
           </el-col>
           <el-col :lg="14" :xl="12" class="sp">
             <div class="tu-img-cover tu-about-bg">
-              <img
-                src="~/assets/images/about/bg-employee.jpeg"
+              <NuxtImg
+                src="/about/bg-employee.jpeg"
                 alt="bg-about-us"
-              />
+               />
             </div>
           </el-col>
         </el-row>

@@ -7,7 +7,7 @@
           <el-col :xl="9" :lg="9" :md="9" :sm="10">
             <div class="">
               <TuImage
-                :src="require(`~/assets/images/members/ceo_helen.jpg`)"
+                :src="`/members/ceo_helen.jpg`"
                 :padding-bottom="60"
                 img-width="60%"
                 center
@@ -38,12 +38,12 @@
                 <div class="text-left mb2">{{ $t('meet_our_director_feel') }}</div>
                 <div class="flex">
                   <TuImage
-                    :src="require(`~/assets/images/members/qr-ceo.svg`)"
+                    :src="`/members/qr-ceo.svg`"
                     class="avt"
                     style="margin-right: 1rem"
                   />
                   <TuImage
-                    :src="require(`~/assets/images/members/qr-wechat.svg`)"
+                    :src="`/members/qr-wechat.svg`"
                     class="avt"
                   />
                 </div>

@@ -90,3 +90,8 @@ sw.*
 *.swp
 
 .vercel
+
+# Nuxt 3
+.output
+.data
+.nitro

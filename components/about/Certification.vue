@@ -6,7 +6,7 @@
           <h1 class="underline-2" style="margin-bottom: 2rem">{{ $t('certification') }}</h1>
         </div>
         <TuImage
-          :src="require(`~/assets/images/about/certification.png`)"
+          :src="`/about/certification.png`"
           class="avt"
         />   
       </el-col>

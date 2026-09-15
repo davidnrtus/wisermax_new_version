@@ -2,7 +2,7 @@
   <div class="tu-section clearspacer">
     <div class="tu-section-content">
       <TuImage
-        :src="require(`~/assets/images/products/men/banner_top.png`)"
+        :src="`/products/men/banner_top.png`"
         :text="$t('men_page_description')"
         :blur="30"
         :text-width="60"
@@ -23,12 +23,12 @@
             <el-row type="flex" :gutter="32">
               <el-col :span="12">
                 <TuImage
-                  :src="require(`~/assets/images/products/men/polo_1.1.jpeg`)"
+                  :src="`/products/men/polo_1.1.jpeg`"
                 />
               </el-col>
               <el-col :span="12">
                 <TuImage
-                  :src="require(`~/assets/images/products/men/polo_1.2.jpeg`)"
+                  :src="`/products/men/polo_1.2.jpeg`"
                 />
               </el-col>
             </el-row>
@@ -45,7 +45,7 @@
             </p>
           </el-col>
         </el-row>
-        <TuImage :src="require(`~/assets/images/products/men/banner_shirt.png`)" />
+        <TuImage :src="`/products/men/banner_shirt.png`" />
       </div>
       <div class="tu-content title-line">{{ $t('suit') }}</div>
       <div class="tu-content" style="margin-bottom: 2rem">
@@ -59,7 +59,7 @@
         <el-row type="flex" justify="center">
           <el-col :xs="24" :sm="24" :md="20" :lg="16">
             <TuImage
-              :src="require(`~/assets/images/products/men/vest_1.png`)"
+              :src="`/products/men/vest_1.png`"
             />
           </el-col>
         </el-row>
@@ -74,7 +74,7 @@
           :md="8"
           :lg="4"
         >
-          <TuImage :src="require(`~/assets/images/products/men/${item.img}`)" />
+          <TuImage :src="`/products/men/${item.img}`" />
           <div style="margin-bottom: 0.5rem">{{ $t(item.name) }}</div>
         </el-col>
       </el-row>

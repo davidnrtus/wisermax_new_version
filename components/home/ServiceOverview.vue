@@ -19,7 +19,7 @@
                 <div class="tu-so-card">
                   <div class="tu-so-card_img">
                     <img
-                      :src="require(`~/assets/images${item.img}`)"
+                      :src="item.img"
                       alt="service"
                     />
                   </div>

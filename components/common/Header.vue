@@ -3,11 +3,11 @@
     <div class="header-logo">
       <div class="header-left"></div>
       <div class="header-center">
-        <img
-          src="~/assets/images/logo/logo.png"
+        <NuxtImg
+          src="/logo/logo.png"
           alt="logo.svg"
           class="tu-header-logo"
-        />
+         />
       </div>
       <div class="header-right">
         <div v-click-outside="hide" class="dropdown">
@@ -16,21 +16,21 @@
             tabindex="0"
             @click="isCollapsed = !isCollapsed"
           >
-            <img
+            <NuxtImg
               v-if="currentLocale && currentLocale.code === 'en'"
-              src="~/assets/images/icons/flag-uk.svg"
+              src="/icons/flag-uk.svg"
               alt="england flag"
-            />
-            <img
+             />
+            <NuxtImg
               v-if="currentLocale && currentLocale.code === 'cn'"
-              src="~/assets/images/icons/flag-china.svg"
+              src="/icons/flag-china.svg"
               alt="england flag"
-            />
-            <img
+             />
+            <NuxtImg
               v-if="currentLocale && currentLocale.code === 'ko'"
-              src="~/assets/images/icons/flag-korean.svg"
+              src="/icons/flag-korean.svg"
               alt="england flag"
-            />
+             />
             {{ currentLocale.code }}
           </button>
           <transition name="slide">
@@ -50,21 +50,21 @@
                     class="centeral lang-text"
                     @click="hide"
                   >
-                    <img
+                    <NuxtImg
                       v-if="locale && locale.code === 'en'"
-                      src="~/assets/images/icons/flag-uk.svg"
+                      src="/icons/flag-uk.svg"
                       alt="england flag"
-                    />
-                    <img
+                     />
+                    <NuxtImg
                       v-if="locale && locale.code === 'cn'"
-                      src="~/assets/images/icons/flag-china.svg"
+                      src="/icons/flag-china.svg"
                       alt="england flag"
-                    />
-                    <img
+                     />
+                    <NuxtImg
                       v-if="locale && locale.code === 'ko'"
-                      src="~/assets/images/icons/flag-korean.svg"
+                      src="/icons/flag-korean.svg"
                       alt="england flag"
-                    />
+                     />
                     {{ locale.code }}
                   </nuxt-link>
                 </li>
@@ -93,14 +93,9 @@
 </template>
 
 <script>
-import ClickOutside from 'vue-click-outside'
 import { headers } from '@/data/header'
 
-
 export default {
-  directives: {
-    ClickOutside
-  },
   data() {
     return {
       headers,
@@ -108,11 +103,15 @@ export default {
     }
   },
   computed: {
+    _localesList() {
+      const l = this.$i18n.locales
+      return Array.isArray(l) ? l : (l && l.value) || []
+    },
     availableLocales() {
-      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+      return this._localesList.filter((i) => i.code !== this.$i18n.locale)
     },
     currentLocale() {
-      return this.$i18n.locales.filter((i) => i.code === this.$i18n.locale)[0]
+      return this._localesList.find((i) => i.code === this.$i18n.locale) || {}
     },
   },
   watch: {

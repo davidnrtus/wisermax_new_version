@@ -2,28 +2,20 @@
   <div class="main">
     <TuHeader />
     <div class="inner">
-      <Nuxt />
+      <slot />
     </div>
-    <TuFooter /> 
+    <TuFooter />
   </div>
 </template>
 
-<script>
-import TuHeader from '@/components/common/Header'
-import TuFooter from '@/components/common/Footer'
-
-export default {
-  components: {
-    TuHeader,
-    TuFooter
-  }
-}
+<script setup>
+// Header and Footer are auto-imported from components/common/*
 </script>
 
 <style lang="scss">
 body {
   margin: 0;
-  font-family: Muli,sans-serif;
+  font-family: Muli, sans-serif;
   overflow-x: hidden;
   color: $main;
 }

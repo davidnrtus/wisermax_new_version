@@ -19,7 +19,7 @@
         >
           <div class="tu-product-card">
             <img
-              :src="require(`~/assets/images/home/${product.img}`)"
+              :src="`/home/${product.img}`"
               :alt="product.name"
             />
             <div class="tu-product-card_content">

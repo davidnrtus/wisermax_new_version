@@ -11,11 +11,11 @@
     <el-row type="flex" justify="center" class="tu-abu-num flex-wrap">
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="bg-left">
-          <img
-            src="~/assets/images/about/bg-employee.jpeg"
+          <NuxtImg
+            src="/about/bg-employee.jpeg"
             class="overlay object-fit"
             alt=""
-          />
+           />
           <div class="overlay" style="background: rgba(0, 0, 0, 0.45)"></div>
           <div
             class="centeral column overlay"
@@ -39,7 +39,7 @@
       </el-col>
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="bg-right">
-          <img src="~/assets/images/about/bg-nums.jpg" alt="" />
+          <NuxtImg src="/about/bg-nums.jpg" alt=""  />
           <div class="content">
             <h2 class="text-left" style="margin-left: 2rem">{{ $t('our_capacity') }}</h2>
             <p class="tu-text-p" style="margin-left: 2rem">

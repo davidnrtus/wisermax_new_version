@@ -1,7 +1,7 @@
 <template>
   <div class="tu-section clearspacer">
     <TuImage
-      :src="require(`~/assets/images/products/women/banner.jpeg`)"
+      :src="`/products/women/banner.jpeg`"
       padding-bottom="33"
       :text="$t('women_page_description')"
       class="banner"
@@ -15,7 +15,7 @@
             <el-col :xs="24" :sm="22" :md="18" :lg="16">
               <TuImage
                 :src="
-                  require(`~/assets/images/products/women/banner_vay_dai.png`)
+                  `/products/women/banner_vay_dai.png`
                 "
               />
             </el-col>
@@ -29,7 +29,7 @@
       </el-row>
     </div>
     <div class="tu-content">
-      <TuImage :src="require(`~/assets/images/products/women/banner_vest.png`)" />
+      <TuImage :src="`/products/women/banner_vest.png`" />
     </div>
     <div class="tu-content">
       <el-row type="flex" justify="center">
@@ -50,7 +50,7 @@
               :lg="6"
             >
               <TuImage
-                :src="require(`~/assets/images/products/women/${item}`)"
+                :src="`/products/women/${item}`"
               />
             </el-col>
           </el-row>
@@ -61,18 +61,18 @@
       <el-row type="flex" justify="center">
         <el-col v-for="(item, i) in dl" :key="i" :span="8">
           <div class="relative">
-            <TuImage :src="require(`~/assets/images/products/women/dl_${i+1}.png`)" />
+            <TuImage :src="`/products/women/dl_${i+1}.png`" />
             <div class="vcax">{{ $t(item) }}</div>
           </div>
         </el-col>
       </el-row>
-      <!-- <TuImage :src="require(`~/assets/images/products/women/banner_do_lot.png`)" /> -->
+      <!-- <TuImage :src="`/products/women/banner_do_lot.png`" /> -->
     </div>
     <div class="tu-content">
       <el-row type="flex" justify="center">
         <el-col :xs="24" :sm="20" :md="14" :lg="10">
           <div class="title-line-l">{{ $t('dress') }}</div>
-          <TuImage :src="require(`~/assets/images/products/women/banner_dam_2.png`)" />
+          <TuImage :src="`/products/women/banner_dam_2.png`" />
         </el-col>
       </el-row>
     </div>

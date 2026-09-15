@@ -15,7 +15,7 @@
             >
               <div class="tu-wcu-card">
                 <img
-                  :src="require(`~/assets/images/icons/${item.img}`)"
+                  :src="`/icons/${item.img}`"
                   class="tu-wcu-card_img"
                   :alt="item.title"
                 />

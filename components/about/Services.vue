@@ -16,7 +16,7 @@
       >
         <div class="tu-card">
           <div class="tu-card-img tu-img-cover">
-            <img :src="require(`~/assets/images/about/${item.img}`)" alt="" />
+            <img :src="`/about/${item.img}`" alt="" />
           </div>
           <div class="text-center tu-card-content">
             <h3 style="margin: 0.5rem 0">{{ $t(item.name) }}</h3>

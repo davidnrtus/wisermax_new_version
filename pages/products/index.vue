@@ -7,12 +7,12 @@
             <div class="card-img">
               <TuImage
                 :src="
-                  require(`~/assets/images/products/banners/banner_top_women.png`)
+                  `/products/banners/banner_top_women.png`
                 "
               />
               <div class="card-content">
                 <router-link :to="localePath('/products/women')">
-                  {{ $t('women_clothing') }} <i class="el-icon-right" />
+                  {{ $t('women_clothing') }} <el-icon><Right /></el-icon>
                 </router-link>
               </div>
             </div>
@@ -23,12 +23,12 @@
                 <div class="card-img">
                   <TuImage
                     :src="
-                      require(`~/assets/images/products/banners/banner_top_men.png`)
+                      `/products/banners/banner_top_men.png`
                     "
                   />
                   <div class="card-content">
                     <router-link :to="localePath('/products/men')">
-                      {{ $t('men_clothing') }} <i class="el-icon-right" />
+                      {{ $t('men_clothing') }} <el-icon><Right /></el-icon>
                     </router-link>
                   </div>
                 </div>
@@ -37,12 +37,12 @@
                 <div class="card-img">
                   <TuImage
                     :src="
-                      require(`~/assets/images/products/banners/banner_top_kids.png`)
+                      `/products/banners/banner_top_kids.png`
                     "
                   />
                   <div class="card-content">
                     <router-link :to="localePath('/products/kids')">
-                      {{ $t('kid_clothing') }} <i class="el-icon-right" />
+                      {{ $t('kid_clothing') }} <el-icon><Right /></el-icon>
                     </router-link>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
         <div class="tu-content">
           <TuImage
             :src="
-              require(`~/assets/images/products/banners/banner_jacket.png`)
+              `/products/banners/banner_jacket.png`
             "
           />
         </div>
@@ -76,7 +76,7 @@
         <div class="tu-content">
           <TuImage
             :src="
-              require(`~/assets/images/products/banners/banner_protective.png`)
+              `/products/banners/banner_protective.png`
             "
           />
         </div>
@@ -87,7 +87,7 @@
         <div class="tu-content">
           <TuImage
             :src="
-              require(`~/assets/images/products/banners/banner_assessories.png`)
+              `/products/banners/banner_assessories.png`
             "
           />
         </div>

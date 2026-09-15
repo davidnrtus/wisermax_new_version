@@ -8,15 +8,15 @@
             <div class="tu-footer-content">
               <h4>{{ info.company_name }}</h4>
               <div class="tu-footer-item">
-                <i class="el-icon-location-outline" />
+                <el-icon><LocationInformation /></el-icon>
                 <div class="txt">{{ $t('address') }}</div>
               </div>
               <div class="tu-footer-item">
-                <i class="el-icon-message" />
+                <el-icon><Message /></el-icon>
                 <div>{{ info.email }}</div>
               </div>
               <div class="tu-footer-item">
-                <i class="el-icon-phone-outline" />
+                <el-icon><Phone /></el-icon>
                 <div>{{ info.phone_number }}</div>
               </div>
             </div>

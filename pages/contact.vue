@@ -1,7 +1,7 @@
 <template>
   <div>
     <TuImage
-      :src="require(`~/assets/images/banners/banner_contact_2.png`)"
+      :src="`/banners/banner_contact_2.png`"
       padding-bottom="40"
       class="banner"
     />
@@ -63,30 +63,30 @@
             <div class="box">
               <h2>Info</h2>
               <div class="taki" style="margin-top: 46px">
-                <i class="el-icon-message" />
+                <el-icon><Message /></el-icon>
                 <span>{{ info.email }}</span>
               </div>
               <div class="taki">
-                <i class="el-icon-location-outline" />
+                <el-icon><LocationInformation /></el-icon>
                 <span class="txt">{{ $t('address') }}</span>
               </div>
               <div class="taki">
                 <div class="flex centeral">
-                  <img src="~/assets/images/icons/wechat.png" class="wic" alt="wechat">
-                  <img src="~/assets/images/icons/whatsapp.png" class="wic" alt="whatsapp">
-                  <i class="el-icon-phone-outline" />
+                  <NuxtImg src="/icons/wechat.png" class="wic" alt="wechat" />
+                  <NuxtImg src="/icons/whatsapp.png" class="wic" alt="whatsapp" />
+                  <el-icon><Phone /></el-icon>
                 </div>
                 <span>{{ info.phone_number }}</span>
               </div>
               <div class="taki">
                 <div class="flex">
                   <TuImage
-                    :src="require(`~/assets/images/members/qr-ceo.svg`)"
+                    :src="`/members/qr-ceo.svg`"
                     class="avt"
                     style="margin-right: 1rem"
                   />
                   <TuImage
-                    :src="require(`~/assets/images/members/qr-wechat.svg`)"
+                    :src="`/members/qr-wechat.svg`"
                     class="avt"
                   />
                 </div>
@@ -149,7 +149,7 @@ export default {
           return
         }
         this.isClick = false
-        const response = await this.$axios.$post('/sendMail', this.form)
+        const response = await $fetch('/sendMail', { method: 'POST', body: this.form, baseURL: useRuntimeConfig().public.apiBase })
         if (response.code === 200) {
           this.isSuccess = true
         }
