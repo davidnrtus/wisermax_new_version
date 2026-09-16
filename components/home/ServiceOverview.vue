@@ -18,10 +18,10 @@
               >
                 <div class="tu-so-card">
                   <div class="tu-so-card_img">
-                    <img
+                    <NuxtImg
                       :src="item.img"
                       alt="service"
-                    />
+                     />
                   </div>
                   <div class="tu-so-card_content">
                     <div class="text-bold heading">{{ $t(item.title) }}</div>

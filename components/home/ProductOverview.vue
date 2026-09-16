@@ -18,10 +18,10 @@
           :md="6"
         >
           <div class="tu-product-card">
-            <img
+            <NuxtImg
               :src="`/home/${product.img}`"
               :alt="product.name"
-            />
+             />
             <div class="tu-product-card_content">
               <router-link :to="localePath(`/products/${product.key}`)">
                 {{ $t('view_more') }}

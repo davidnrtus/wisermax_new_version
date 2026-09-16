@@ -14,11 +14,11 @@
               :sm="12"
             >
               <div class="tu-wcu-card">
-                <img
+                <NuxtImg
                   :src="`/icons/${item.img}`"
                   class="tu-wcu-card_img"
                   :alt="item.title"
-                />
+                 />
                 <div class="tu-wcu-card_txt">
                   <b>{{ $t(item.title) }}</b>
                   <div>{{ $t(item.description) }}</div>

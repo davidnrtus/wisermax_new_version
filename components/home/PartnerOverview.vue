@@ -9,7 +9,7 @@
           <div class="flex flex-wrap">
             <div v-for="(cus, i) in customers" :key="i" :style="`width: calc(1/${customers.length} * 100%);`" class="img-wi ccol-img">
               <div class="center">
-                <img :src="`/customers/${cus.img}`" :alt="cus.img" />
+                <NuxtImg :src="`/customers/${cus.img}`" :alt="cus.img"  />
               </div>
             </div>
           </div>
