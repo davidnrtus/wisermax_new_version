@@ -1,12 +1,17 @@
 <template>
   <section class="plate">
     <div class="wrap">
-      <div
-        class="shot"
-        role="img"
-        :aria-label="alt"
-        :style="{ backgroundImage: `url('${image}')` }"
-      ></div>
+      <figure class="shot">
+        <NuxtImg
+          src="/about/service-1.jpg"
+          :alt="alt"
+          loading="eager"
+          fetchpriority="high"
+          format="webp"
+          sizes="sm:100vw md:1200px lg:1600px"
+          densities="x1 x2"
+        />
+      </figure>
       <div class="caption">
         <span><b>Plate&nbsp;I</b> · Cut &amp; sew line, partner factory</span>
         <span class="mid">Nam Dinh, Northern Vietnam — Autumn 2026</span>
@@ -17,8 +22,6 @@
 </template>
 
 <script setup>
-const img = useImage()
-const image = img('/about/service-1.jpg', { width: 1600 })
 const alt = 'Cut and sew production line at a Wisermax HN partner factory in Nam Dinh — Vietnam apparel manufacturer for US and EU brands'
 </script>
 
@@ -31,8 +34,16 @@ const alt = 'Cut and sew production line at a Wisermax HN partner factory in Nam
 
 .shot {
   aspect-ratio: 16 / 9;
-  background: var(--paper-2) center/cover no-repeat;
-  position: relative;
+  background: var(--paper-2);
+  margin: 0;
+  overflow: hidden;
+
+  :deep(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 .caption {

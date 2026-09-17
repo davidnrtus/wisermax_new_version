@@ -4,12 +4,16 @@
       <span>{{ specimen.plate }}</span>
       <b>{{ specimen.label }}</b>
     </div>
-    <div
-      class="shot"
-      role="img"
-      :aria-label="specimen.alt"
-      :style="{ backgroundImage: `url('${resolvedImage}')` }"
-    ></div>
+    <figure class="shot">
+      <NuxtImg
+        :src="specimen.image"
+        :alt="specimen.alt"
+        loading="lazy"
+        format="webp"
+        sizes="sm:100vw md:50vw lg:600px"
+        densities="x1 x2"
+      />
+    </figure>
     <h3>
       {{ specimen.title }} <em>{{ specimen.titleAccent }}</em><span v-if="specimen.titleSuffix">&nbsp;{{ specimen.titleSuffix }}</span>
     </h3>
@@ -27,17 +31,12 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-
-const props = defineProps({
+defineProps({
   specimen: {
     type: Object,
     required: true,
   },
 })
-
-const img = useImage()
-const resolvedImage = computed(() => img(props.specimen.image, { width: 900 }))
 </script>
 
 <style lang="scss" scoped>
@@ -75,8 +74,16 @@ const resolvedImage = computed(() => img(props.specimen.image, { width: 900 }))
 
 .shot {
   aspect-ratio: 4 / 3;
-  background: var(--paper-2) center/cover no-repeat;
-  margin-bottom: 26px;
+  background: var(--paper-2);
+  margin: 0 0 26px;
+  overflow: hidden;
+
+  :deep(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 h3 {
