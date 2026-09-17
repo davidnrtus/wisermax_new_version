@@ -1,15 +1,35 @@
-$primary: #764022;
-$second: #bd6636;
+// Wisermax HN — E-atelier design tokens
+// Palette
+$paper:   #F5F1E6;               // bone / undyed linen — main background
+$paper-2: #EFE9D8;               // slightly darker bone — clients / materials bg
+$card:    #FBF7EC;               // card / swatch background
+$ink:     #231F1A;               // warm dark ink — body text
+$mute:    #7A7368;               // secondary text, captions, labels
+$rule:    rgba(35,31,26,.14);    // dividers
+$hair:    rgba(35,31,26,.09);    // very subtle rules
+$rust:    #B7532F;               // accent — italic emphasis only
+$sage:    #7A886C;               // reserved secondary
 
-$blue: #00174f;
-$blue_lighter: #1b3472;
+// Fonts
+$serif: "Newsreader", "Times New Roman", serif;
+$sans:  "Inter", system-ui, sans-serif;
 
-$main: #2c2c2c;
-$main_brown: #764022;
-$main_brown_footer: #B05946;
+// Layout
+$maxw: 1320px;
+$gutter: clamp(24px, 4.5vw, 80px);
+$section-y: clamp(80px, 10vw, 144px);
 
-$red: #ee5240;
+// Header
+$header-height-desktop: 72px;
+$header-height-mobile: 60px;
+$header-breakpoint: 1000px;
 
-$header_height_desktop: 78px;
-$header_height_mobile: 48px;
-$header_breakpoint: 820px;
+// Legacy aliases (kept so old templates still compile until each page is redesigned)
+$primary: $rust;
+$second:  $rust;
+$blue:    $ink;
+$blue_lighter: $ink;
+$main:    $ink;
+$main_brown:  $rust;
+$main_brown_footer: $ink;
+$red:     $rust;
