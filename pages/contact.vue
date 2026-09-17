@@ -165,6 +165,11 @@ useHead({
   ],
   link: [{ rel: 'canonical', href: url }],
 })
+
+useBreadcrumb([
+  { name: 'Home', path: '/' },
+  { name: 'Contact', path: '/contact' },
+])
 </script>
 
 <style lang="scss" scoped>

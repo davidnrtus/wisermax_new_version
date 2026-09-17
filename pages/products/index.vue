@@ -98,6 +98,11 @@ useHead({
   link: [{ rel: 'canonical', href: url }],
 })
 
+useBreadcrumb([
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/products' },
+])
+
 const categories = [
   {
     slug: 'women',

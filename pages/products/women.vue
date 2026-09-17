@@ -22,4 +22,10 @@ useHead({
   ],
   link: [{ rel: 'canonical', href: url }],
 })
+
+useBreadcrumb([
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/products' },
+  { name: `Women's clothing`, path: '/products/women' },
+])
 </script>
