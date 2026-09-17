@@ -1,210 +1,360 @@
 <template>
-  <div>
-    <TuImage
-      :src="`/banners/banner_contact_2.png`"
-      padding-bottom="40"
-      class="banner"
-    />
-    <el-row type="flex" justify="center" class="mt4">
-      <el-col :xl="14" :lg="18" :md="22" :sm="24">
-        <el-row type="flex" justify="center" class="flex-wrap">
-          <el-col :xl="14" :lg="14" :md="14" :sm="14" :xs="24" class="flex">
-            <div class="box">
-                <h1 class="underline-2">{{ $t('contact_us') }}</h1>
-              <p>
-                {{ $t('feel_free_contact') }}
-              </p>
-              <el-form :model="form">
-                <el-input
-                  v-model="form.name"
-                  :placeholder="$t('name')"
-                  :class="isClick && !form.name ? 'error' : ''"
-                  name="name"
-                  class="tu-input"
-                />
-                <el-input
-                  v-model="form.email"
-                  :placeholder="$t('email')"
-                  :class="isClick && !form.email ? 'error' : ''"
-                  type="email"
-                  name="email"
-                  class="tu-input"
-                />
-                <el-input
-                  v-model="form.phone"
-                  :placeholder="$t('phone_number')"
-                  :class="isClick && !form.phone ? 'error' : ''"
-                  name="phone"
-                  class="tu-input"
-                />
-                <el-input
-                  v-model="form.content"
-                  :autosize="{ minRows: 4 }"
-                  :placeholder="$t('content')"
-                  :class="isClick && !form.content ? 'error' : ''"
-                  clearable
-                  type="textarea"
-                  name="content"
-                  class="tu-input"
-                />
-                <div class="text-center" style="margin-top:1.5rem">
-                  <el-button class="tu-button" :loading="loading" @click="sendMail">{{ $t('send') }}</el-button>
-                </div>
-                <h4
-                  style="margin-top:2rem;margin-bottom:0;color:#2563eb;"
-                  :style="{ visibility: isSuccess ? 'visible' : 'hidden' }"
-                >
-                  Sent successfully
-                </h4>
-              </el-form>
+  <div class="contact-page">
+    <!-- HERO -->
+    <section class="band contact-hero">
+      <div class="wrap">
+        <div class="hero-meta">
+          <span><b>Office</b> Trau Quy · Gia Lam · Hanoi</span>
+          <span><b>Hours</b> Mon–Sat <em>·</em> GMT+7</span>
+          <span><b>Response</b> One working day</span>
+          <span><b>Quote</b> Full FOB within five</span>
+        </div>
+
+        <h1>
+          Send a <em>tech pack.</em> We'll come back with a plan.
+        </h1>
+
+        <p class="lede">
+          PDF, Illustrator, Excel or photos of a reference garment.
+          A merchandiser replies within one working day with open questions,
+          and a full FOB costing within five.
+        </p>
+
+        <div class="cta">
+          <a
+            class="btn rust"
+            :href="`mailto:${info.email_primary}?subject=Tech%20pack%20—%20FOB%20Hai%20Phong`"
+          >Email {{ info.email_primary }}</a>
+          <a class="btn ghost" :href="`tel:${info.phone_href}`">Call {{ info.phone }}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT GRID -->
+    <section id="quote" class="band contact-grid">
+      <div class="wrap">
+        <div class="kicker">Contact channels</div>
+
+        <div class="channels">
+          <article class="channel">
+            <div class="channel-code">01</div>
+            <h2>Email a merchandiser</h2>
+            <p>
+              The fastest way to open a programme. Attach your tech pack, size chart or a reference garment.
+              A merchandiser reviews it and comes back with questions inside one working day.
+            </p>
+            <dl>
+              <dt>Primary</dt>
+              <dd>
+                <a :href="`mailto:${info.email_primary}?subject=Tech%20pack%20—%20FOB%20Hai%20Phong`">{{ info.email_primary }}</a>
+              </dd>
+              <dt>Director</dt>
+              <dd>
+                <a :href="`mailto:${info.email_secondary}`">{{ info.email_secondary }}</a>
+              </dd>
+            </dl>
+          </article>
+
+          <article class="channel">
+            <div class="channel-code">02</div>
+            <h2>Call, WhatsApp or WeChat</h2>
+            <p>
+              For a quick question about a running programme, a shipment or a payment,
+              phone and messaging land straight on Helen's desk. Mon–Sat, GMT+7.
+            </p>
+            <dl>
+              <dt>Phone &amp; WhatsApp</dt>
+              <dd><a :href="`tel:${info.phone_href}`">{{ info.phone }}</a></dd>
+              <dt>WeChat ID</dt>
+              <dd>{{ info.wechat_id }}</dd>
+              <dt>Office hours</dt>
+              <dd>{{ info.hours }}</dd>
+            </dl>
+          </article>
+
+          <article class="channel">
+            <div class="channel-code">03</div>
+            <h2>Visit the office</h2>
+            <p>
+              Our office and sample room sit in Trau Quy Ward, Gia Lam District,
+              a short drive from Noi Bai International Airport (HAN). Factory visits arranged on request.
+            </p>
+            <dl>
+              <dt>Company</dt>
+              <dd>{{ info.company_name }}</dd>
+              <dt>Address</dt>
+              <dd>{{ info.street }}, {{ info.city }}, {{ info.country }}</dd>
+              <dt>Port</dt>
+              <dd>FOB {{ info.port }} — {{ info.port_coords }}</dd>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR BAND -->
+    <section class="band qr-band">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <div class="kicker">Add us on WhatsApp / WeChat</div>
+            <h2>Scan and message <em>directly.</em></h2>
+          </div>
+          <p>
+            Both codes route straight to the director's phone.
+            For programme quotes, please still send the tech pack by email so
+            it's easier to track.
+          </p>
+        </div>
+
+        <div class="qr-grid">
+          <figure class="qr-card">
+            <div class="qr-frame">
+              <NuxtImg
+                src="/members/qr-ceo.svg"
+                width="220"
+                height="220"
+                alt="QR code to add Wisermax HN director on WhatsApp"
+                loading="lazy"
+              />
             </div>
-          </el-col>
-          <el-col :xl="10" :lg="10" :md="10" :sm="10" :xs="24" class="flex">
-            <div class="box">
-              <h2>Info</h2>
-              <div class="taki" style="margin-top: 46px">
-                <el-icon><Message /></el-icon>
-                <span>{{ info.email }}</span>
-              </div>
-              <div class="taki">
-                <el-icon><LocationInformation /></el-icon>
-                <span class="txt">{{ $t('address') }}</span>
-              </div>
-              <div class="taki">
-                <div class="flex centeral">
-                  <NuxtImg src="/icons/wechat.png" class="wic" alt="wechat" />
-                  <NuxtImg src="/icons/whatsapp.png" class="wic" alt="whatsapp" />
-                  <el-icon><Phone /></el-icon>
-                </div>
-                <span>{{ info.phone_number }}</span>
-              </div>
-              <div class="taki">
-                <div class="flex">
-                  <TuImage
-                    :src="`/members/qr-ceo.svg`"
-                    class="avt"
-                    style="margin-right: 1rem"
-                  />
-                  <TuImage
-                    :src="`/members/qr-wechat.svg`"
-                    class="avt"
-                  />
-                </div>
-              </div>
+            <figcaption>
+              <div class="qr-label">Q / 01</div>
+              <div class="qr-name">Add on WhatsApp</div>
+              <div class="qr-sub">{{ info.phone }}</div>
+            </figcaption>
+          </figure>
+          <figure class="qr-card">
+            <div class="qr-frame">
+              <NuxtImg
+                src="/members/qr-wechat.svg"
+                width="220"
+                height="220"
+                alt="QR code to add Wisermax HN on WeChat"
+                loading="lazy"
+              />
             </div>
-          </el-col>
-        </el-row>
-      </el-col>
-    </el-row>
+            <figcaption>
+              <div class="qr-label">Q / 02</div>
+              <div class="qr-name">Add on WeChat</div>
+              <div class="qr-sub">ID · {{ info.wechat_id }}</div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
-<script>
+<script setup>
 import info from '@/data/info'
 
-export default {
-  data() {
-    return {
-      info,
-      form: {
-        name: '',
-        email: '',
-        content: '',
-        phone: ''
-      },
-      isClick: false,
-      loading: false,
-      isSuccess: false
-    }
-  },
-  computed: {
-    isEmpty() {
-      return !this.form.name || !this.form.email || !this.form.content || !this.form.phone
-    }
-  },
-  watch: {
-    form: {
-      deep: true,
-      handler() {
-        this.isClick = false
-      }
-    },
-    isSuccess: {
-      handler(value) {
-        if (value) {
-          setTimeout(() => {
-            this.isSuccess = false
-          }, 2500)
-        }
-      }
-    },
-  },
-  methods: {
-    async sendMail() {
-      this.loading = true
-      try {
-        if (this.isEmpty) {
-          this.isClick = true
-          this.loading = false
-          return
-        }
-        this.isClick = false
-        const response = await $fetch('/sendMail', { method: 'POST', body: this.form, baseURL: useRuntimeConfig().public.apiBase })
-        if (response.code === 200) {
-          this.isSuccess = true
-        }
-      } catch (error) {
-        this.isSuccess = false
-        console.log({ error });
-      }
-      this.loading = false
-    }
-  }
-}
+const title = 'Contact Wisermax HN — Vietnam garment manufacturer, Hanoi'
+const description = 'Contact Wisermax HN, a Vietnam apparel manufacturer in Gia Lam, Hanoi. Email, phone, WhatsApp or WeChat — a merchandiser replies within one working day with a full FOB costing inside five.'
+const url = 'https://www.wisermaxhn.com/contact'
+
+useHead({
+  title,
+  meta: [
+    { hid: 'description', name: 'description', content: description },
+    { hid: 'og:title', property: 'og:title', content: title },
+    { hid: 'og:description', property: 'og:description', content: description },
+    { hid: 'og:url', property: 'og:url', content: url },
+    { hid: 'twitter:title', name: 'twitter:title', content: title },
+    { hid: 'twitter:description', name: 'twitter:description', content: description },
+  ],
+  link: [{ rel: 'canonical', href: url }],
+})
 </script>
 
 <style lang="scss" scoped>
-.tu-input {
-  margin: 16px 0;
+.contact-hero {
+  padding-top: clamp(48px, 6vw, 88px);
+  padding-bottom: clamp(48px, 6vw, 88px);
 }
-.taki {
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  color: $main;
-  i {
-    font-size: 1.5rem;
-    margin-right: 0.75rem;
-  }
-}
-.clearfixed {
-  margin-top: calc(54px + 1.5rem);
-}
-.box {
-  padding: 18px 18px 36px 18px;
-  margin: 0 16px 16px 16px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.08);
-}
-.tu-button {
-  padding: 12px 52px;
-  background: $main;
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-}
-.wic {
-  width: 26px;
-  height: 26px;
-  margin-right: 1rem;
-}
-</style>
 
-<style lang="scss">
-.error {
-  input, textarea {
-    border-color: #ef4444;
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  font: 500 12px/1 var(--sans);
+  color: var(--mute);
+  letter-spacing: .06em;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  b { color: var(--ink); font-weight: 600; margin-right: 4px; }
+  em { font-family: var(--serif); font-style: italic; color: var(--ink); }
+}
+
+h1 {
+  font-size: clamp(44px, 6.8vw, 108px);
+  line-height: .96;
+  margin: clamp(48px, 6vw, 80px) 0 24px;
+  max-width: 15ch;
+  font-variation-settings: "opsz" 72;
+
+  em { color: var(--rust); }
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(19px, 1.8vw, 24px);
+  line-height: 1.4;
+  color: #3a352e;
+  margin: 0 0 32px;
+  max-width: 60ch;
+  font-variation-settings: "opsz" 36;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-grid {
+  .kicker { margin-bottom: 32px; }
+}
+
+.channels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3.5vw, 56px);
+  border-top: 1px solid var(--ink);
+  padding-top: 40px;
+}
+
+.channel {
+  &-code {
+    font: 600 12px/1 var(--sans);
+    letter-spacing: .14em;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 20px;
   }
+
+  h2 {
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    max-width: 16ch;
+  }
+
+  p {
+    color: #3a352e;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 24px;
+    max-width: 40ch;
+  }
+
+  dl {
+    margin: 0;
+    padding: 18px 0 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    max-width: 42ch;
+
+    dt {
+      color: var(--mute);
+      font: 500 12px/1 var(--sans);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding-top: 3px;
+    }
+    dd {
+      margin: 0;
+      color: var(--ink);
+
+      a {
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 1px;
+        &:hover { color: var(--rust); border-color: var(--rust); }
+      }
+    }
+  }
+}
+
+.qr-band {
+  background: var(--paper-2);
+
+  .head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: 48px;
+
+    .kicker { margin-bottom: 16px; }
+    h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1; max-width: 18ch; em { color: var(--rust); } }
+    p { margin: 0; color: #3a352e; font-size: 15.5px; max-width: 44ch; justify-self: end; }
+  }
+}
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.qr-card {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: center;
+
+  .qr-frame {
+    background: #fff;
+    padding: 14px;
+    border: 1px solid var(--hair);
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :deep(img) { width: 100%; height: 100%; }
+  }
+
+  .qr-label {
+    font: 600 11px/1 var(--sans);
+    letter-spacing: .14em;
+    color: var(--rust);
+    text-transform: uppercase;
+  }
+
+  .qr-name {
+    font-family: var(--serif);
+    font-size: 24px;
+    margin: 10px 0 6px;
+    line-height: 1.1;
+  }
+
+  .qr-sub {
+    color: var(--mute);
+    font-size: 14px;
+    font-family: var(--serif);
+    font-style: italic;
+  }
+}
+
+@media (max-width: 1000px) {
+  .channels { grid-template-columns: 1fr; }
+  .qr-band .head { grid-template-columns: 1fr; p { justify-self: start; } }
+  .qr-grid { grid-template-columns: 1fr; }
+  .qr-card { grid-template-columns: 180px 1fr; gap: 24px; padding: 24px; .qr-frame { width: 180px; height: 180px; } }
+}
+
+@media (max-width: 540px) {
+  .qr-card { grid-template-columns: 1fr; text-align: left; }
 }
 </style>
