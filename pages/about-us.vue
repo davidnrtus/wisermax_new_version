@@ -2,26 +2,27 @@
   <div>
     <TuIntroduction />
     <TuServices />
-    <!-- <TuFactoryPartners /> -->
     <TuMembers />
     <TuCertification />
+    <TuFinalCTA />
   </div>
 </template>
 
-<script>
-import TuServices from '@/components/about/Services'
-// import TuFactoryPartners from '@/components/about/FactoryPartners'
-import TuIntroduction from '@/components/about/Introduction'
-import TuCertification from '@/components/about/Certification'
-import TuMembers from '@/components/about/Members'
+<script setup>
+const title = 'About Wisermax HN — Vietnam garment factory & OEM clothing manufacturer, Hanoi'
+const description = 'Founded 2014 in Gia Lam, Hanoi. Full package apparel manufacturing Vietnam across 20+ audited partner factories — OEM, ODM and private label clothing manufacturer for US and EU brands.'
+const url = 'https://www.wisermaxhn.com/about-us'
 
-export default {
-  components: {
-    // TuFactoryPartners,
-    TuIntroduction,
-    TuServices,
-    TuCertification,
-    TuMembers,
-  },
-}
+useHead({
+  title,
+  meta: [
+    { hid: 'description', name: 'description', content: description },
+    { hid: 'og:title', property: 'og:title', content: title },
+    { hid: 'og:description', property: 'og:description', content: description },
+    { hid: 'og:url', property: 'og:url', content: url },
+    { hid: 'twitter:title', name: 'twitter:title', content: title },
+    { hid: 'twitter:description', name: 'twitter:description', content: description },
+  ],
+  link: [{ rel: 'canonical', href: url }],
+})
 </script>

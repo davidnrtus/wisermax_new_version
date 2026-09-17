@@ -1,82 +1,203 @@
 <template>
-  <div class="tu-section clearpt">
-    <div class="text-center" style="margin-bottom: 2rem">
-      <h1 class="underline-2">{{ $t('our_services') }}</h1>
+  <section class="band about-services">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Services</div>
+        <h2>From sourcing to sea freight, under <em>one roof.</em></h2>
+        <p>
+          Full package apparel manufacturing Vietnam. We take responsibility for
+          the whole chain, so the buyer talks to one merchandiser — not four vendors.
+        </p>
+      </div>
+
+      <ol class="services-list">
+        <li v-for="(s, i) in services" :key="s.key" class="svc">
+          <div class="svc-media">
+            <NuxtImg
+              :src="`/about/${s.img}`"
+              :alt="s.alt"
+              loading="lazy"
+              format="webp"
+              densities="x1 x2"
+            />
+          </div>
+          <div class="svc-body">
+            <div class="svc-index">
+              {{ String(i + 1).padStart(2, '0') }} <span>/ 04</span>
+            </div>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.description }}</p>
+            <dl>
+              <template v-for="item in s.items" :key="item.term">
+                <dt>{{ item.term }}</dt>
+                <dd>{{ item.value }}</dd>
+              </template>
+            </dl>
+          </div>
+        </li>
+      </ol>
     </div>
-    <el-row type="flex" justify="center" class="flex-wrap" :gutter="24">
-      <el-col
-        v-for="(item, index) in services"
-        :key="index"
-        :xl="5"
-        :lg="6"
-        :md="8"
-        :sm="12"
-        :xs="24"
-        style="margin: 12px 0;"
-      >
-        <div class="tu-card">
-          <div class="tu-card-img tu-img-cover">
-            <NuxtImg :src="`/about/${item.img}`" alt=""  />
-          </div>
-          <div class="text-center tu-card-content">
-            <h3 style="margin: 0.5rem 0">{{ $t(item.name) }}</h3>
-            <p>{{ $t(item.text) }}</p>
-          </div>
-        </div>
-      </el-col>
-    </el-row>
-  </div>
+  </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      services: [
-        { 
-          img: 'service-41.jpg',
-          name: 'sourcing_material',
-          text: 'sourcing_material_description'
-        },
-        { 
-          img: 'service-21.jpg',
-          name: 'develop_design',
-          text: 'develop_design_description'
-        },
-        { 
-          img: 'service-11.jpeg',
-          name: 'process',
-          text: 'process_description'
-        },
-        { 
-          img: 'service-51.jpg',
-          name: 'shipping',
-          text: 'shipping_description'
-        },
-      ],
-    }
+<script setup>
+const services = [
+  {
+    key: 'sourcing',
+    img: 'service-41.jpg',
+    alt: 'Fabric sourcing and mill selection at a Vietnam apparel manufacturer — cotton, poplin, twill, viscose and technical shells',
+    title: 'Sourcing & material development',
+    description:
+      'We open every programme with a fabric conversation. Nominated mills for the buyer who has one; approved mills in Nam Dinh, Hung Yen and Hanoi for the buyer who does not. GOTS-certified cottons and recycled polyesters on request.',
+    items: [
+      { term: 'Mill relationships', value: 'Nominated & approved' },
+      { term: 'Certifications', value: 'GOTS · OEKO-TEX on request' },
+    ],
   },
-}
+  {
+    key: 'design',
+    img: 'service-21.jpg',
+    alt: 'Design and pattern room for a Vietnam garment factory — sampling knitwear, woven, outerwear and sportswear',
+    title: 'Development & sampling',
+    description:
+      'ODM apparel manufacturer for brands who want the design pushed forward, and a disciplined OEM sample room for brands who bring the tech pack. Pattern making, first proto, PP and shipment samples handled in our own room in Hanoi.',
+    items: [
+      { term: 'Turnaround', value: 'Proto in 10 working days' },
+      { term: 'Formats accepted', value: 'PDF · AI · Excel · reference garment' },
+    ],
+  },
+  {
+    key: 'production',
+    img: 'service-11.jpeg',
+    alt: 'Production line at an audited garment factory in Vietnam under AQL inspection — cut and sew for US and EU brands',
+    title: 'Production & quality',
+    description:
+      'Twenty audited partner factories across five Northern provinces. Each category has a dedicated line and QA lead. AQL 1.0 / 2.5 as required, 100% individual inspection before packing on kids and technical outerwear programmes.',
+    items: [
+      { term: 'AQL level', value: '1.0 · 2.5 · 100% pieces on request' },
+      { term: 'Ethical audits', value: 'BSCI / WRAP available on request' },
+    ],
+  },
+  {
+    key: 'shipping',
+    img: 'service-51.jpg',
+    alt: 'Finished garments packed in export cartons at FOB Hai Phong — Vietnam clothing manufacturer',
+    title: 'Finishing & shipping',
+    description:
+      'Retail-ready packing to buyer carton specification, labelling, GS1 barcodes, hangtags. FOB Hai Phong on weekly Trans-Pacific and Trans-Suez lanes. Air freight from Noi Bai (HAN) on request.',
+    items: [
+      { term: 'Standard term', value: 'FOB Hai Phong' },
+      { term: 'Also offered', value: 'FCA HAN · CIF · DDP on request' },
+    ],
+  },
+]
 </script>
 
 <style lang="scss" scoped>
-.tu-card {
-  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.15);
-  height: 100%;
-  cursor: pointer;
-  border-radius: 8px;
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.kicker { margin-bottom: 16px; }
+
+h2 {
+  font-size: clamp(34px, 4.4vw, 56px);
+  line-height: 1;
+  max-width: 16ch;
+
+  em { color: var(--rust); }
+}
+
+.head p {
+  margin: 0;
+  color: #3a352e;
+  font-size: 16px;
+  max-width: 44ch;
+  justify-self: end;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.svc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 5vw, 80px);
+  padding: 48px 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+
+  &:last-child { border-bottom: 1px solid var(--rule); }
+  &:nth-child(even) { direction: rtl; }
+  &:nth-child(even) > * { direction: ltr; }
+}
+
+.svc-media {
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  &-img {
-    padding-bottom: 100%;
-    img {
-      top: 4%;
-      left: 4%;
-      width: 92%;
-      height: 92%;
-    }
+  background: var(--paper-2);
+
+  img,
+  :deep(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  &-content {
-    padding: 0 12px;
+}
+
+.svc-index {
+  font: 600 12px/1 var(--sans);
+  letter-spacing: .14em;
+  color: var(--rust);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+
+  span { color: var(--mute); }
+}
+
+h3 {
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  max-width: 18ch;
+}
+
+.svc-body p {
+  color: #3a352e;
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  max-width: 42ch;
+}
+
+.svc-body dl {
+  margin: 0;
+  padding: 16px 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 13.5px;
+  max-width: 42ch;
+
+  dt { color: var(--mute); font-weight: 500; letter-spacing: .02em; }
+  dd { margin: 0; color: var(--ink); font-weight: 500; }
+}
+
+@media (max-width: 900px) {
+  .svc {
+    grid-template-columns: 1fr;
+    &:nth-child(even) { direction: ltr; }
   }
+  .head { grid-template-columns: 1fr; p { justify-self: start; } }
 }
 </style>

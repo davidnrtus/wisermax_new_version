@@ -1,167 +1,122 @@
 <template>
-  <div class="tu-section clearfixed clearpt">
-    <el-row type="flex" justify="center">
-      <el-col :xl="16" :lg="20" :md="22" :sm="24" :xs="24">
-        <div class="tu-section-title_sm underline">{{ $t('Introduction') }}</div>
-        <p class="tu-text-p">{{ $t('about_text_1') }}</p>
-        <p class="tu-text-p">{{ $t('about_text_2') }}</p>
-        <p class="tu-text-p">{{ $t('about_text_3') }}</p>
-      </el-col>
-    </el-row>
-    <el-row type="flex" justify="center" class="tu-abu-num flex-wrap">
-      <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
-        <div class="bg-left">
-          <NuxtImg
-            src="/about/bg-employee.jpeg"
-            class="overlay object-fit"
-            alt=""
-           />
-          <div class="overlay" style="background: rgba(0, 0, 0, 0.45)"></div>
-          <div
-            class="centeral column overlay"
-            style="
-              align-items: flex-start;
-              justify-content: flex-start;
-              margin-top: 3.6rem;
-            "
-          >
-            <h2
-              class="text-left w-full"
-              style="margin-left: 2rem; margin-right: 1rem"
-            >
-              {{ $t('factory_partners') }}
-            </h2>
-            <p class="tu-text-p" style="margin-left: 2rem; margin-right: 1rem">
-              {{ $t('factory_partners_content') }}
-            </p>
-          </div>
+  <section class="band about-intro">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">About Wisermax HN</div>
+        <h1>
+          A quiet Vietnam apparel <em>manufacturer</em> in Hanoi, sampling and shipping for US and EU brands since 2014.
+        </h1>
+      </div>
+
+      <div class="body">
+        <div class="prose">
+          <p>
+            Wiser Max HN Company Limited is a garment factory in Vietnam headquartered in
+            Trau Quy Ward, Gia Lam District, Hanoi. Founded in 2014, we run a full-package
+            programme across knitwear, woven, outerwear and sportswear — every category
+            merchandised in-house, produced across twenty audited partner factories in
+            five Northern provinces, and shipped FOB Hai Phong.
+          </p>
+          <p>
+            Our buyers are US and EU brand and department-store programmes.
+            We are a cut and sew manufacturer Vietnam for retail chains,
+            an OEM clothing factory for private-label programmes, and an
+            ODM apparel manufacturer for teams who want the design pushed forward.
+            One merchandising desk, one QA lead per category, one signature on
+            the container seal.
+          </p>
+          <p>
+            We are quality-oriented and detail-focused. Every garment is inspected
+            to AQL before packing. Every fabric roll is inspected before cutting.
+            Every tech pack is answered inside one working day.
+          </p>
         </div>
-      </el-col>
-      <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
-        <div class="bg-right">
-          <NuxtImg src="/about/bg-nums.jpg" alt=""  />
-          <div class="content">
-            <h2 class="text-left" style="margin-left: 2rem">{{ $t('our_capacity') }}</h2>
-            <p class="tu-text-p" style="margin-left: 2rem">
-              {{ $t('our_capacity_description') }}
-            </p>
-            <div
-              v-for="(item, index) in params"
-              :key="index"
-              class="content-item"
-            >
-              <span>{{ $t(item) }}</span>
-            </div>
+
+        <aside class="side">
+          <div class="side-block">
+            <div class="side-label">Company</div>
+            <div class="side-value">Wiser Max HN Company Limited</div>
           </div>
-        </div>
-      </el-col>
-    </el-row>
-  </div>
+          <div class="side-block">
+            <div class="side-label">Founded</div>
+            <div class="side-value">2014 · Gia Lam, Hanoi</div>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Position</div>
+            <div class="side-value">Full package · OEM · ODM · Private label</div>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Markets</div>
+            <div class="side-value">United States · Canada · European Union · South Korea</div>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Capacity</div>
+            <div class="side-value">6,000,000+ pcs / year across 20+ partner factories</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      params: [
-        'pcs_per_month',
-        'pcs_knit_top_per_year',
-        'pcs_knit_dress_per_year',
-        'pcs_coat_jacket',
-        'pcs_pant',
-      ],
-    }
-  },
-}
-</script>
-
 <style lang="scss" scoped>
-.tu-text-p {
-  line-height: 30px;
+.about-intro {
+  padding-top: clamp(56px, 8vw, 120px);
 }
-.tu-abu-num {
-  margin-top: 2rem;
-  .bg-left {
-    background: #e3e3e3;
-    height: 100%;
-    position: relative;
-    color: #fff;
-    .pbx {
-      height: 100%;
-      padding: 0 1rem;
-    }
+
+.kicker { margin-bottom: 24px; }
+
+.head h1 {
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.02;
+  max-width: 22ch;
+  font-variation-settings: "opsz" 60;
+
+  em { color: var(--rust); }
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+  margin-top: clamp(48px, 6vw, 80px);
+  padding-top: 40px;
+  border-top: 1px solid var(--hair);
+}
+
+.prose p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3a352e;
+  max-width: 60ch;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--rule);
+
+  .side-label {
+    font: 600 11px/1 var(--sans);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 8px;
   }
-  .bg-right {
-    padding-bottom: 60%;
-    position: relative;
-    img,
-    .content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      color: #fff;
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
-      span {
-        font-size: 1.5rem;
-        margin-left: 2rem;
-        margin-right: 1rem;
-        font-weight: 600;
-        position: relative;
-        &::after {
-          content: '';
-          height: 2px;
-          width: 40px;
-          background: $second;
-          bottom: 0;
-          left: 0;
-          position: absolute;
-        }
-      }
-      &-item {
-        padding: 1rem 0;
-        width: 100%;
-        text-align: left;
-      }
-    }
+
+  .side-value {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.35;
   }
 }
-@media (max-width: 1199.98px) {
-  .tu-abu-num {
-    .bg-left {
-      height: 280px;
-    }
-  }
-}
-@media (min-width: 477.98px) and (max-width: 687px) {
-  .tu-abu-num {
-    .bg-right {
-      padding-bottom: 100%;
-      .content {
-        span {
-          font-size: 1.25rem;
-        }
-      }
-    }
-  }
-}
-@media (max-width: 477.98px) {
-  .tu-abu-num {
-    .bg-right {
-      padding-bottom: 140%;
-      .content {
-        span {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
+
+@media (max-width: 900px) {
+  .body { grid-template-columns: 1fr; }
 }
 </style>
