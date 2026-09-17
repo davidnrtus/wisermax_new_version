@@ -95,3 +95,6 @@ sw.*
 .output
 .data
 .nitro
+
+# Local Claude Code tooling (preview launch config)
+.claude/
