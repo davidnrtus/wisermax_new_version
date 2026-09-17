@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cotton",
+    "code": "M / 01",
+    "name": "Cotton & blends",
+    "description": "Jersey, CVC, rib, French terry. Nominated cotton on request; approved mills in Nam Dinh & Hung Yen.",
+    "swatch": "linear-gradient(135deg,#E8DCC5 25%,#DCCFB5 25%,#DCCFB5 50%,#E8DCC5 50%,#E8DCC5 75%,#DCCFB5 75%)",
+    "swatchSize": "14px 14px"
+  },
+  {
+    "id": "woven",
+    "code": "M / 02",
+    "name": "Woven & shirting",
+    "description": "Poplin, oxford, twill, viscose and linen blends. GOTS-certified cottons on request.",
+    "swatch": "repeating-linear-gradient(90deg,#D8CFBB 0 2px,#C5BAA2 2px 4px,#D8CFBB 4px 6px)",
+    "swatchSize": "auto"
+  },
+  {
+    "id": "outerwear",
+    "code": "M / 03",
+    "name": "Outerwear shells",
+    "description": "Nylon and poly ripstop, softshell, down-proof lining. DWR and taped-seam finishing in-house.",
+    "swatch": "repeating-linear-gradient(45deg,#4A5F70 0 6px,#3E5262 6px 12px)",
+    "swatchSize": "auto"
+  },
+  {
+    "id": "trims",
+    "code": "M / 04",
+    "name": "Trims & finishing",
+    "description": "YKK zippers, custom labels, hangtags. Retail-ready packing to your carton specification.",
+    "swatch": "radial-gradient(circle at 30% 30%,#B7532F 3px,transparent 3px), radial-gradient(circle at 70% 70%,#B7532F 3px,transparent 3px), #EFE9D8",
+    "swatchSize": "14px 14px"
+  }
+]

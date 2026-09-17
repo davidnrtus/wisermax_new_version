@@ -1,0 +1,63 @@
+[
+  {
+    "id": "knit",
+    "plate": "Pl. I · Knit",
+    "label": "Knitwear factory",
+    "image": "/home/product_overview_men.jpeg",
+    "alt": "Knitwear production line — Vietnam apparel manufacturer specialising in custom t-shirts, polos and knit dresses",
+    "title": "Custom t-shirts, polos and",
+    "titleAccent": "knit dresses.",
+    "description": "Cotton jersey, CVC and French terry from approved mills. Bulk polo shirt manufacturer for retail programmes and sweatshirts for DTC labels.",
+    "specs": [
+      { "term": "Monthly capacity", "value": "250,000 pcs" },
+      { "term": "MOQ", "value": "500 pcs / style", "note": "colour splits from 200" },
+      { "term": "Typical fabrics", "value": "Cotton, CVC, French terry, rib" }
+    ]
+  },
+  {
+    "id": "woven",
+    "plate": "Pl. II · Woven",
+    "label": "Cut & sew woven",
+    "image": "/home/product_overview_women.jpeg",
+    "alt": "Woven cut and sew line — shirts, blouses and woven pants supplier Vietnam",
+    "title": "Shirts, blouses and",
+    "titleAccent": "woven pants.",
+    "description": "Woven pants supplier Vietnam. Poplin, oxford, twill, viscose and linen blends. Chinos, shorts, dresses and shirting for both direct-to-consumer and department-store programmes.",
+    "specs": [
+      { "term": "Monthly capacity", "value": "200,000 pcs" },
+      { "term": "MOQ", "value": "500 pcs / style" },
+      { "term": "Typical fabrics", "value": "Poplin, twill, viscose, linen blends" }
+    ]
+  },
+  {
+    "id": "outerwear",
+    "plate": "Pl. III · Outerwear",
+    "label": "Jacket manufacturer",
+    "image": "/home/product_overview_protective.jpg",
+    "alt": "Padded and waterproof outerwear on the finishing line — jacket manufacturer Vietnam with taped-seam construction",
+    "title": "Padded jackets and",
+    "titleAccent": "waterproof",
+    "titleSuffix": "shells.",
+    "description": "Waterproof jacket manufacturer with taped-seam construction. Padded and puffer jackets, wool and felt coats, vests. Down and synthetic fill on request, DWR finishes.",
+    "specs": [
+      { "term": "Monthly capacity", "value": "60,000 pcs" },
+      { "term": "MOQ", "value": "800 pcs / style" },
+      { "term": "Season", "value": "Autumn / Winter programmes" }
+    ]
+  },
+  {
+    "id": "kids-sport",
+    "plate": "Pl. IV · Kids & sport",
+    "label": "Kidswear & sportswear",
+    "image": "/home/product_overview_kid.png",
+    "alt": "Kidswear and sportswear programme — FOB sportswear manufacturer Vietnam with AQL inspection",
+    "title": "Full kids range and",
+    "titleAccent": "sportswear.",
+    "description": "Full kids range ages 2–14 to CPSIA and EN 14682. FOB sportswear manufacturer Vietnam with AQL inspection — team uniforms, activewear, uniform programmes.",
+    "specs": [
+      { "term": "Monthly capacity", "value": "90,000 pcs" },
+      { "term": "Compliance", "value": "CPSIA · EN 14682", "note": "drawstring rules applied at sampling" },
+      { "term": "MOQ", "value": "1,000 pcs / style" }
+    ]
+  }
+]
