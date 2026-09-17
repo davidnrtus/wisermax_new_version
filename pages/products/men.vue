@@ -1,132 +1,25 @@
 <template>
-  <div class="tu-section clearspacer">
-    <div class="tu-section-content">
-      <TuImage
-        :src="`/products/men/banner_top.png`"
-        :text="$t('men_page_description')"
-        :blur="30"
-        :text-width="60"
-        padding-bottom="40"
-        class="banner"
-      />
-      <div class="tu-content title-line">{{ $t('polo') }}</div>
-      <div class="tu-content">
-        <el-row type="flex" justify="center">
-          <el-col :xs="24" :sm="24" :md="18" :lg="12">
-            <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              {{ $t('polo_description') }}
-            </p>
-          </el-col>
-        </el-row>
-        <el-row type="flex" justify="center">
-          <el-col :xs="24" :sm="24" :md="20" :lg="16">
-            <el-row type="flex" :gutter="32">
-              <el-col :span="12">
-                <TuImage
-                  :src="`/products/men/polo_1.1.jpeg`"
-                />
-              </el-col>
-              <el-col :span="12">
-                <TuImage
-                  :src="`/products/men/polo_1.2.jpeg`"
-                />
-              </el-col>
-            </el-row>
-          </el-col>
-        </el-row>
-      </div>
-      
-      <div class="tu-content title-line">{{ $t('shirt') }}</div>
-      <div class="tu-content">
-        <el-row type="flex" justify="center">
-          <el-col :xs="24" :sm="24" :md="18" :lg="12">
-            <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              {{ $t('shirt_description') }}
-            </p>
-          </el-col>
-        </el-row>
-        <TuImage :src="`/products/men/banner_shirt.png`" />
-      </div>
-      <div class="tu-content title-line">{{ $t('suit') }}</div>
-      <div class="tu-content" style="margin-bottom: 2rem">
-        <el-row type="flex" justify="center">
-          <el-col :xs="24" :sm="24" :md="18" :lg="12">
-            <p class="text-center" style="margin-bottom: 2rem; line-height: 2">
-              {{ $t('suit_description') }}
-            </p>
-          </el-col>
-        </el-row>
-        <el-row type="flex" justify="center">
-          <el-col :xs="24" :sm="24" :md="20" :lg="16">
-            <TuImage
-              :src="`/products/men/vest_1.png`"
-            />
-          </el-col>
-        </el-row>
-      </div>
-      <div class="tu-section-title text-center">{{ $t('we_can_do_more') }}</div>
-      <el-row :gutter="24" style="margin-bottom: 2rem">
-        <el-col
-          v-for="(item, i) in others"
-          :key="i"
-          :xs="12"
-          :sm="12"
-          :md="8"
-          :lg="4"
-        >
-          <TuImage :src="`/products/men/${item.img}`" />
-          <div style="margin-bottom: 0.5rem">{{ $t(item.name) }}</div>
-        </el-col>
-      </el-row>
-    </div>
-  </div>
+  <ProductCategory :data="data" />
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      others: [
-        {
-          img: 'ao_gio.jpeg',
-          name: 'coats',
-        },
-        {
-          img: 'ao_len.jpeg',
-          name: 'sweater',
-        },
-        {
-          img: 'ao-thun.jpeg',
-          name: 'tshirt',
-        },
-        {
-          img: 'shirt_short.jpeg',
-          name: 'short_sleeved_shirt',
-        },
-        {
-          img: 'quan-kaki.jpeg',
-          name: 'kaki_pant',
-        },
-        {
-          img: 'quan-lot-nam.png',
-          name: 'underpants',
-        },
-      ],
-    }
-  },
-}
-</script>
+<script setup>
+import data from '@/data/products-men.json'
+import ProductCategory from '@/components/products/ProductCategory.vue'
 
-<style lang="scss" scoped>
-.img-mx {
-  img {
-    margin: 0 0.5rem;
-  }
-}
-.tu-section-title {
-  margin-top: 2rem;
-  margin-bottom: 0;
-  color: #3e3d3d;
-  font-weight: 500;
-}
-</style>
+const title = `Men's clothing manufacturer Vietnam — polos, shirting, suits & outerwear | Wisermax HN`
+const description = `Custom t-shirt factory Vietnam, bulk polo shirt manufacturer and woven pants supplier for men's retail programmes — OEM, ODM and private label from a Hanoi garment factory.`
+const url = 'https://www.wisermaxhn.com/products/men'
+
+useHead({
+  title,
+  meta: [
+    { hid: 'description', name: 'description', content: description },
+    { hid: 'og:title', property: 'og:title', content: title },
+    { hid: 'og:description', property: 'og:description', content: description },
+    { hid: 'og:url', property: 'og:url', content: url },
+    { hid: 'twitter:title', name: 'twitter:title', content: title },
+    { hid: 'twitter:description', name: 'twitter:description', content: description },
+  ],
+  link: [{ rel: 'canonical', href: url }],
+})
+</script>

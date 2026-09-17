@@ -1,32 +1,25 @@
 <template>
-  <div class="tu-section clearspacer">
-    <TuImage :src="`/products/kids/banner_top.png`" />
-    <TuImage :src="`/products/kids/banner_top2.png`" />
-    <div class="title-noline">{{ $t('baby_zip') }}</div>
-    <el-row type="flex" justify="center">
-      <el-col :xs="24" :sm="18" :md="12" :lg="10">
-        <TuImage :src="`/products/kids/baby_1.jpeg`" />
-      </el-col>
-    </el-row>
-    <div class="title-line">{{ $t('boys') }}</div>
-    <el-row type="flex" justify="center" class="flex-wrap" :gutter="6">
-      <el-col v-for="i in 4" :key="i" :xs="12" :sm="6" :md="6" :lg="6">
-        <TuImage :src="`/products/kids/boy_${i}.jpeg`" />
-      </el-col>
-    </el-row>
-    <div class="title-line">{{ $t('girls') }}</div>
-    <el-row type="flex" justify="center" class="flex-wrap" :gutter="6">
-      <el-col v-for="i in 4" :key="i" :xs="12" :sm="6" :md="6" :lg="6">
-        <TuImage :src="`/products/kids/girl_${i}.jpeg`" />
-      </el-col>
-    </el-row>
-    <br>
-    <br>
-  </div>
+  <ProductCategory :data="data" />
 </template>
 
-<style lang="scss" scoped>
-.title-noline, .title-line {
-  margin-top: 1.5rem;
-}
-</style>
+<script setup>
+import data from '@/data/products-kids.json'
+import ProductCategory from '@/components/products/ProductCategory.vue'
+
+const title = `Kids' clothing manufacturer Vietnam — CPSIA & EN 14682 compliant kidswear | Wisermax HN`
+const description = `Kidswear factory Vietnam ages 2–14 — baby zip sleepsuits, boys' and girls' ranges. Sampled to CPSIA and EN 14682, AQL inspection, from a Hanoi garment manufacturer.`
+const url = 'https://www.wisermaxhn.com/products/kids'
+
+useHead({
+  title,
+  meta: [
+    { hid: 'description', name: 'description', content: description },
+    { hid: 'og:title', property: 'og:title', content: title },
+    { hid: 'og:description', property: 'og:description', content: description },
+    { hid: 'og:url', property: 'og:url', content: url },
+    { hid: 'twitter:title', name: 'twitter:title', content: title },
+    { hid: 'twitter:description', name: 'twitter:description', content: description },
+  ],
+  link: [{ rel: 'canonical', href: url }],
+})
+</script>
