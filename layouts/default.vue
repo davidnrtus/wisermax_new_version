@@ -1,33 +1,27 @@
 <template>
-  <div class="main">
+  <div class="site-shell">
     <TuHeader />
-    <div class="inner">
+    <main class="site-main">
       <slot />
-    </div>
+    </main>
     <TuFooter />
   </div>
 </template>
 
 <script setup>
-// Header and Footer are auto-imported from components/common/*
+// Header and Footer auto-imported via components/common with the 'Tu' prefix.
 </script>
 
 <style lang="scss">
-body {
-  margin: 0;
-  font-family: Muli, sans-serif;
-  overflow-x: hidden;
-  color: $main;
-}
-.main {
+.site-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  .inner {
-    flex: 1;
-  }
+  background: var(--paper);
+  color: var(--ink);
 }
-.space-no-wrap {
-  white-space: nowrap;
+
+.site-main {
+  flex: 1;
 }
 </style>

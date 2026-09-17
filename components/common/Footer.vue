@@ -1,104 +1,154 @@
 <template>
-  <div class="tu-footer">
-    <el-row type="flex" justify="center">
-      <el-col :xs="24" :sm="20">
-        <el-row :gutter="20">
-          <el-col :xs="24" :sm="24" :md="16">
-            <div class="tu-footer-title">{{ $t('informations') }}</div>
-            <div class="tu-footer-content">
-              <h4>{{ info.company_name }}</h4>
-              <div class="tu-footer-item">
-                <el-icon><LocationInformation /></el-icon>
-                <div class="txt">{{ $t('address') }}</div>
-              </div>
-              <div class="tu-footer-item">
-                <el-icon><Message /></el-icon>
-                <div>{{ info.email }}</div>
-              </div>
-              <div class="tu-footer-item">
-                <el-icon><Phone /></el-icon>
-                <div>{{ info.phone_number }}</div>
-              </div>
-            </div>
-          </el-col>
-          <el-col :xs="24" :sm="24" :md="8">
-            <div class="tu-footer-title">{{ $t('links') }}</div>
-            <div
-              v-for="header in headers"
-              :key="header.key"
-              class="tu-footer-item"
-            >
-              <router-link :to="localePath(header.url)">{{ $t(header.key) }}</router-link>
-            </div>
-          </el-col>
-        </el-row>
-      </el-col>
-    </el-row>
-  </div>
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <div class="brand-line">
+          <span class="brand-name">Wisermax HN</span>
+          <span class="brand-dot">·</span>
+          <span class="brand-tagline">Vietnam apparel manufacturer</span>
+        </div>
+        <p class="foot-address">
+          {{ info.company_name }}<br>
+          {{ info.street }}, {{ info.city }}, {{ info.country }}
+        </p>
+        <p class="foot-contact">
+          <a :href="`mailto:${info.email_primary}`">{{ info.email_primary }}</a>
+          <span aria-hidden="true"> · </span>
+          <a :href="`tel:${info.phone_href}`">{{ info.phone }}</a>
+        </p>
+      </div>
+
+      <div class="foot-nav">
+        <div class="kicker">Explore</div>
+        <ul>
+          <li v-for="h in mainNav" :key="h.key">
+            <NuxtLink :to="h.url">{{ h.title }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
+
+      <div class="foot-cats">
+        <div class="kicker">Categories</div>
+        <ul>
+          <li v-for="c in productCategories" :key="c.key">
+            <NuxtLink :to="c.url">{{ c.title }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap foot-bottom">
+      <span>{{ info.legal_notice }}</span>
+      <span class="foot-tagline">{{ info.tagline }}</span>
+    </div>
+  </footer>
 </template>
 
-<script>
-import { headers } from '@/data/header'
+<script setup>
+import { headers, productCategories } from '@/data/header'
 import info from '@/data/info'
 
-export default {
-  data() {
-    return {
-      headers,
-      info
-    }
-  },
-}
+const mainNav = headers
 </script>
 
 <style lang="scss" scoped>
-.tu-footer {
-  padding: 60px 21px;
-  background: $main_brown_footer;
-  color: #fff;
-  &-title {
-    text-transform: uppercase;
-    font-size: 1.15rem;
-    font-weight: 600;
-    position: relative;
-    margin-bottom: 2rem;
-    &::after {
-      content: '';
-      width: 100%;
-      height: 1px;
-      background: #fff;
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-    }
-  }
-  &-item {
-    margin-bottom: 1.5rem;
+.site-footer {
+  background: var(--paper-2);
+  color: var(--ink);
+  border-top: 1px solid var(--hair);
+  padding: clamp(56px, 7vw, 96px) 0 32px;
+  font-family: var(--sans);
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--hair);
+}
+
+.foot-brand {
+  .brand-line {
     display: flex;
-    align-content: center;
-    div {
-      display: flex;
-      align-items: center;
-    }
-    i {
-      font-size: 1.5rem;
-      margin-right: 0.75rem;
-    }
-    span,
-    a {
-      font-size: 0.9rem;
-      color: #fff;
-      text-decoration: none;
-    }
-    a {
-      margin-left: 0;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    img {
-      margin: 8px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink);
+    letter-spacing: .02em;
+
+    .brand-dot { color: var(--mute); }
+    .brand-tagline {
+      font-style: italic;
+      color: var(--mute);
+      font-size: 15px;
     }
   }
+
+  .foot-address {
+    margin: 18px 0 0;
+    color: var(--mute);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .foot-contact {
+    margin: 12px 0 0;
+    font-size: 14px;
+
+    a {
+      color: var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+
+      &:hover { color: var(--rust); border-color: var(--rust); }
+    }
+
+    span { color: var(--mute); }
+  }
+}
+
+.foot-nav,
+.foot-cats {
+  .kicker { margin-bottom: 18px; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  a {
+    font-size: 14px;
+    color: var(--ink);
+    letter-spacing: .01em;
+
+    &:hover { color: var(--rust); }
+  }
+}
+
+.foot-bottom {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--mute);
+}
+
+.foot-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .foot-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 </style>

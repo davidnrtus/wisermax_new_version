@@ -1,323 +1,196 @@
 <template>
-  <div class="tu-header mg-common">
-    <div class="header-logo">
-      <div class="header-left"></div>
-      <div class="header-center">
-        <NuxtImg
-          src="/logo/logo.png"
-          alt="logo.svg"
-          class="tu-header-logo"
-         />
-      </div>
-      <div class="header-right">
-        <div v-click-outside="hide" class="dropdown">
-          <button
-            class="dropdown-button"
-            tabindex="0"
-            @click="isCollapsed = !isCollapsed"
-          >
-            <NuxtImg
-              v-if="currentLocale && currentLocale.code === 'en'"
-              src="/icons/flag-uk.svg"
-              alt="england flag"
-             />
-            <NuxtImg
-              v-if="currentLocale && currentLocale.code === 'cn'"
-              src="/icons/flag-china.svg"
-              alt="england flag"
-             />
-            <NuxtImg
-              v-if="currentLocale && currentLocale.code === 'ko'"
-              src="/icons/flag-korean.svg"
-              alt="england flag"
-             />
-            {{ currentLocale.code }}
-          </button>
-          <transition name="slide">
-            <div
-              v-if="isCollapsed"
-              class="dropdown-content"
-            >
-              <ul>
-                <li
-                  v-for="(locale, i) in availableLocales"
-                  :key="i"
-                  :value="locale.code"
-                  class="dropdown-content-item"
-                >
-                  <nuxt-link
-                    :to="switchLocalePath(locale.code)"
-                    class="centeral lang-text"
-                    @click="hide"
-                  >
-                    <NuxtImg
-                      v-if="locale && locale.code === 'en'"
-                      src="/icons/flag-uk.svg"
-                      alt="england flag"
-                     />
-                    <NuxtImg
-                      v-if="locale && locale.code === 'cn'"
-                      src="/icons/flag-china.svg"
-                      alt="england flag"
-                     />
-                    <NuxtImg
-                      v-if="locale && locale.code === 'ko'"
-                      src="/icons/flag-korean.svg"
-                      alt="england flag"
-                     />
-                    {{ locale.code }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </div>
-          </transition>
-        </div>
-      </div>
-    </div>
-    <div class="header-menu">
-      <nav>
-        <ul class="horizontal-list">
-          <li
-            v-for="header in headers"
-            :key="header.key"
-            class="horizontal-list_item"
-          >
-            <router-link :to="localePath(header.url)">{{
-              $t(header.key)
-            }}</router-link>
+  <header class="site-header">
+    <div class="wrap nav">
+      <NuxtLink to="/" class="brand" aria-label="Wisermax HN — Vietnam garment manufacturer, Hanoi">
+        <span class="brand-name">Wisermax HN</span>
+        <small>Hanoi</small>
+      </NuxtLink>
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li v-for="h in mainNav" :key="h.key">
+            <NuxtLink :to="h.url" active-class="is-active">{{ h.title }}</NuxtLink>
           </li>
         </ul>
       </nav>
+
+      <NuxtLink to="/contact#quote" class="btn nav-cta">Request a quote</NuxtLink>
+
+      <button
+        class="nav-toggle"
+        :aria-expanded="mobileOpen"
+        aria-controls="mobile-nav"
+        aria-label="Toggle navigation"
+        @click="mobileOpen = !mobileOpen"
+      >
+        <span :class="['bar', { open: mobileOpen }]"></span>
+        <span :class="['bar', { open: mobileOpen }]"></span>
+      </button>
     </div>
-  </div>
+
+    <transition name="fade">
+      <div v-if="mobileOpen" id="mobile-nav" class="mobile-nav">
+        <ul>
+          <li v-for="h in mainNav" :key="h.key">
+            <NuxtLink :to="h.url" @click="mobileOpen = false">{{ h.title }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/contact#quote" class="btn rust" @click="mobileOpen = false">Request a quote</NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </transition>
+  </header>
 </template>
 
-<script>
+<script setup>
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { headers } from '@/data/header'
 
-export default {
-  data() {
-    return {
-      headers,
-      isCollapsed: false,
-    }
-  },
-  computed: {
-    _localesList() {
-      const l = this.$i18n.locales
-      return Array.isArray(l) ? l : (l && l.value) || []
-    },
-    availableLocales() {
-      return this._localesList.filter((i) => i.code !== this.$i18n.locale)
-    },
-    currentLocale() {
-      return this._localesList.find((i) => i.code === this.$i18n.locale) || {}
-    },
-  },
-  watch: {
-    '$route': {
-      handler() {
-        this.hide()
-      }
-    }
-  },
-  methods: {
-    hide() {
-      this.isCollapsed = false
-    }
-  }
-}
+const mainNav = headers
+const mobileOpen = ref(false)
+const route = useRoute()
+
+watch(() => route.fullPath, () => {
+  mobileOpen.value = false
+})
 </script>
 
 <style lang="scss" scoped>
-.tu-header {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  .header-logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    .header-center {
-      img {
-        width: 82px;
-      }
-    }
-    .header-left,
-    .header-right {
-      flex: 1;
-    }
-    .header-right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      img {
-        width: 24px;
-        height: 24px;
-        margin-right: 0.5rem;
-        cursor: pointer;
-      }
-      .lang-text {
-        text-transform: uppercase;
-        color: $main;
-      }
-    }
-  }
-  .header-menu {
-    .horizontal-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-      &_item {
-        display: inline-block;
-        margin: 6px 10px;
-        a {
-          color: #2c2c2c;
-          font-size: 13px;
-          font-family: Muli, sans-serif;
-          font-weight: 600;
-          font-style: normal;
-          -webkit-transition: color 0.2s ease-in-out;
-          transition: color 0.2s ease-in-out;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          &:hover {
-            // color: #6a6a6a;
-            font-weight: 700 !important;
-          }
-        }
-      }
-    }
-  }
-}
-@media (min-width: 478px) and (max-width: 687.98px) {
-  .tu-header {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    .header-menu {
-      .horizontal-list {
-        &_item {
-          a {
-            font-size: 12px;
-          }
-        }
-      }
-    }
-    .header-right {
-      img {
-        width: 24px;
-      }
-    }
-  }
-}
-@media (max-width: 477.98px) {
-  .tu-header {
-    .header-logo {
-      .header-center {
-        img {
-          width: 64px;
-        }
-      }
-    }
-    .header-menu {
-      .horizontal-list {
-        &_item {
-          margin: 6px 4px;
-          a {
-            font-size: 10px !important;
-          }
-        }
-      }
-    }
-    .header-right {
-      img {
-        width: 20px;
-      }
-    }
-  }
-}
-</style>
-
-<style lang="scss">
-.tu-header {
-  .nuxt-link-exact-active {
-    font-weight: 700 !important;
-  }
-}
-</style>
-
-<style scoped>
-.dropdown {
-  height: fit-content;
-  display: inline-block;
-  position: relative;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(245, 241, 230, .92);
+  border-bottom: 1px solid var(--hair);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.dropdown-button {
-  min-width: 100px;
-  display: flex;
+.nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  outline: none;
-  white-space: nowrap;
-  padding: 0 12px;
-  border: none;
-  background: transparent;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
+  height: 72px;
+  gap: 24px;
 }
 
-.dropdown-content {
-  box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-  top: calc(100% + 8px);
-  transform-style: flat;
-  min-width: 100%;
-  background: #fff;
-  position: absolute;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  transform-origin: top;
-  transform: scaleY(1);
-  z-index: 60;
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: .02em;
+  color: var(--ink);
+
+  small {
+    color: var(--mute);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: .06em;
+  }
 }
 
-.dropdown-content ul {
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-content-item {
-  cursor: pointer;
+.nav-list {
+  display: flex;
+  gap: 32px;
   list-style: none;
-  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #4a443c;
+  justify-content: center;
+
+  a {
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color .15s, border-color .15s;
+
+    &:hover,
+    &.is-active {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+  }
+}
+
+.nav-cta {
+  justify-self: end;
+}
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  justify-self: end;
+  flex-direction: column;
+  gap: 6px;
   align-items: center;
+  justify-content: center;
+
+  .bar {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform .2s, opacity .2s;
+
+    &.open:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+    &.open:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
+  }
 }
 
-.dropdown-content-item a {
-  padding: 8px 12px;
+.mobile-nav {
+  border-top: 1px solid var(--hair);
+  background: var(--paper);
+  padding: 12px 0 24px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--g);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  a {
+    display: block;
+    padding: 12px 0;
+    font: 500 15px/1 var(--sans);
+    color: var(--ink);
+    letter-spacing: .01em;
+    border-bottom: 1px solid var(--hair);
+
+    &.btn {
+      margin-top: 8px;
+      border-bottom: 1px solid var(--rust);
+    }
+  }
 }
 
+.fade-enter-from,
+.fade-leave-to { opacity: 0; }
+.fade-enter-active,
+.fade-leave-active { transition: opacity .2s; }
 
-.dropdown-content-item:hover {
-  font-weight: 700;
-}
+@media (max-width: 1000px) {
+  .nav {
+    grid-template-columns: 1fr auto;
+    height: 60px;
+  }
 
-.slide-enter {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: 0.2s all ease;
-}
+  .nav-list,
+  .nav-cta { display: none; }
 
-.slide-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-  transition: 0.2s all ease;
-}
-
-.slide-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: 0.2s all ease;
+  .nav-toggle { display: flex; }
 }
 </style>
