@@ -1,35 +1,44 @@
-// Wisermax HN — E-atelier design tokens
-// Palette
-$paper:   #F5F1E6;               // bone / undyed linen — main background
-$paper-2: #EFE9D8;               // slightly darker bone — clients / materials bg
-$card:    #FBF7EC;               // card / swatch background
-$ink:     #231F1A;               // warm dark ink — body text
-$mute:    #7A7368;               // secondary text, captions, labels
-$rule:    rgba(35,31,26,.14);    // dividers
-$hair:    rgba(35,31,26,.09);    // very subtle rules
-$rust:    #B7532F;               // accent — italic emphasis only
-$sage:    #7A886C;               // reserved secondary
+// Wisermax HN — A · Editorial design tokens (SCSS mirror)
+// Runtime styling reads the CSS custom properties in tokens.css.
+// These exist because this file is injected into every SCSS block
+// (see vite.css.preprocessorOptions in nuxt.config.ts).
 
-// Fonts
-$serif: "Newsreader", "Times New Roman", serif;
-$sans:  "Inter", system-ui, sans-serif;
+// Palette
+$paper:    #FBFAF7;   // bleached cotton — main background
+$muslin:   #EFEBE3;   // raw undyed — image placeholders, alt panels
+$thread:   #8B8F8A;   // grey thread — secondary text, captions
+$ink:      #1B1E23;   // deep ink — body text
+$indigo:   #22385C;   // rope-dyed denim — primary brand
+$selvedge: #C1352E;   // the red selvedge line — structural accent only
+$rule:     #D9D4C9;   // dividers
+
+// Fonts — one family, both axes
+$font: "Archivo", system-ui, sans-serif;
 
 // Layout
 $maxw: 1320px;
-$gutter: clamp(24px, 4.5vw, 80px);
-$section-y: clamp(80px, 10vw, 144px);
+$gutter: clamp(20px, 4vw, 56px);
+$section-y: clamp(64px, 9vw, 128px);
 
 // Header
-$header-height-desktop: 72px;
+$header-height-desktop: 68px;
 $header-height-mobile: 60px;
-$header-breakpoint: 1000px;
+$header-breakpoint: 820px;
 
-// Legacy aliases (kept so old templates still compile until each page is redesigned)
-$primary: $rust;
-$second:  $rust;
+// Legacy aliases (kept so unported templates still compile)
+$paper-2: $muslin;
+$card:    $paper;
+$mute:    $thread;
+$hair:    $rule;
+$rust:    $indigo;
+$sage:    $thread;
+$serif:   $font;
+$sans:    $font;
+$primary: $indigo;
+$second:  $indigo;
 $blue:    $ink;
 $blue_lighter: $ink;
 $main:    $ink;
-$main_brown:  $rust;
+$main_brown:  $indigo;
 $main_brown_footer: $ink;
-$red:     $rust;
+$red:     $selvedge;

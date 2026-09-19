@@ -1,9 +1,9 @@
 <template>
   <header class="site-header">
     <div class="wrap nav">
-      <NuxtLink to="/" class="brand" aria-label="Wisermax HN — Vietnam garment manufacturer, Hanoi">
-        <span class="brand-name">Wisermax HN</span>
-        <small>Hanoi</small>
+      <NuxtLink to="/" class="logo" aria-label="Wisermax HN — Vietnam garment manufacturer, Hanoi">
+        <b>Wisermax HN</b>
+        <span>Hanoi</span>
       </NuxtLink>
 
       <nav aria-label="Primary">
@@ -14,17 +14,16 @@
         </ul>
       </nav>
 
-      <NuxtLink to="/contact#quote" class="btn nav-cta">Request a quote</NuxtLink>
+      <NuxtLink to="/contact#quote" class="btn sm nav-cta">Request a quote</NuxtLink>
 
       <button
-        class="nav-toggle"
+        class="burger"
         :aria-expanded="mobileOpen"
         aria-controls="mobile-nav"
         aria-label="Toggle navigation"
         @click="mobileOpen = !mobileOpen"
       >
-        <span :class="['bar', { open: mobileOpen }]"></span>
-        <span :class="['bar', { open: mobileOpen }]"></span>
+        Menu
       </button>
     </div>
 
@@ -35,7 +34,7 @@
             <NuxtLink :to="h.url" @click="mobileOpen = false">{{ h.title }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact#quote" class="btn rust" @click="mobileOpen = false">Request a quote</NuxtLink>
+            <NuxtLink to="/contact#quote" class="btn sm" @click="mobileOpen = false">Request a quote</NuxtLink>
           </li>
         </ul>
       </div>
@@ -62,36 +61,38 @@ watch(() => route.fullPath, () => {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(245, 241, 230, .92);
-  border-bottom: 1px solid var(--hair);
+  background: rgba(251, 250, 247, .86);
+  border-bottom: 1px solid var(--rule);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  height: 72px;
+  justify-content: space-between;
+  height: 68px;
   gap: 24px;
 }
 
-.brand {
+/* Brand sits at the extended end of the width axis. */
+.logo {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 19px;
-  letter-spacing: .02em;
-  color: var(--ink);
 
-  small {
-    color: var(--mute);
-    font-family: var(--sans);
-    font-weight: 400;
-    font-size: 12px;
+  b {
+    font-weight: 800;
+    font-stretch: 112%;
     letter-spacing: .06em;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  span {
+    color: var(--thread);
+    font-size: 13px;
   }
 }
 
@@ -101,12 +102,11 @@ watch(() => route.fullPath, () => {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  color: #4a443c;
-  justify-content: center;
 
   a {
-    padding-bottom: 2px;
+    font-size: 15px;
+    color: #3a3e44;
+    padding: 6px 0;
     border-bottom: 1px solid transparent;
     transition: color .15s, border-color .15s;
 
@@ -118,45 +118,27 @@ watch(() => route.fullPath, () => {
   }
 }
 
-.nav-cta {
-  justify-self: end;
-}
-
-.nav-toggle {
+.burger {
   display: none;
-  width: 40px;
-  height: 40px;
   background: none;
-  border: none;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink);
   cursor: pointer;
-  padding: 8px;
-  justify-self: end;
-  flex-direction: column;
-  gap: 6px;
-  align-items: center;
-  justify-content: center;
-
-  .bar {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--ink);
-    transition: transform .2s, opacity .2s;
-
-    &.open:nth-child(1) { transform: translateY(4px) rotate(45deg); }
-    &.open:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
-  }
 }
 
 .mobile-nav {
-  border-top: 1px solid var(--hair);
+  border-top: 1px solid var(--rule);
   background: var(--paper);
   padding: 12px 0 24px;
 
   ul {
     list-style: none;
     margin: 0;
-    padding: 0 var(--g);
+    padding: 0 var(--gutter);
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -165,14 +147,16 @@ watch(() => route.fullPath, () => {
   a {
     display: block;
     padding: 12px 0;
-    font: 500 15px/1 var(--sans);
+    font-weight: 500;
+    font-size: 15px;
     color: var(--ink);
-    letter-spacing: .01em;
-    border-bottom: 1px solid var(--hair);
+    border-bottom: 1px solid var(--rule);
 
     &.btn {
-      margin-top: 8px;
-      border-bottom: 1px solid var(--rust);
+      margin-top: 12px;
+      width: fit-content;
+      border: 1px solid var(--indigo);
+      color: #fff;
     }
   }
 }
@@ -182,15 +166,12 @@ watch(() => route.fullPath, () => {
 .fade-enter-active,
 .fade-leave-active { transition: opacity .2s; }
 
-@media (max-width: 1000px) {
-  .nav {
-    grid-template-columns: 1fr auto;
-    height: 60px;
-  }
+@media (max-width: 820px) {
+  .nav { height: 60px; }
 
   .nav-list,
   .nav-cta { display: none; }
 
-  .nav-toggle { display: flex; }
+  .burger { display: inline-flex; }
 }
 </style>

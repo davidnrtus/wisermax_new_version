@@ -89,7 +89,7 @@ export default defineNuxtConfig({
         { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..800;1,62..125,300..800&display=swap',
         },
       ],
       script: [
@@ -193,6 +193,7 @@ export default defineNuxtConfig({
   },
 
   css: [
+    '~/assets/css/tokens.css',
     '~/assets/css/global.scss',
     '~/assets/css/animations.scss',
   ],

@@ -1,45 +1,46 @@
 <template>
   <footer class="site-footer">
-    <div class="wrap foot-grid">
-      <div class="foot-brand">
-        <div class="brand-line">
-          <span class="brand-name">Wisermax HN</span>
-          <span class="brand-dot">·</span>
-          <span class="brand-tagline">Vietnam apparel manufacturer</span>
+    <div class="wrap">
+      <div class="foot">
+        <div class="foot-brand">
+          <div class="logo">
+            <b>Wisermax HN</b>
+            <span>Hanoi</span>
+          </div>
+          <p class="foot-tagline">{{ info.tagline }}</p>
+          <p class="foot-address">
+            {{ info.company_name }}<br>
+            {{ info.street }}, {{ info.city }}, {{ info.country }}
+          </p>
         </div>
-        <p class="foot-address">
-          {{ info.company_name }}<br>
-          {{ info.street }}, {{ info.city }}, {{ info.country }}
-        </p>
-        <p class="foot-contact">
-          <a :href="`mailto:${info.email_primary}`">{{ info.email_primary }}</a>
-          <span aria-hidden="true"> · </span>
-          <a :href="`tel:${info.phone_href}`">{{ info.phone }}</a>
-        </p>
-      </div>
 
-      <div class="foot-nav">
-        <div class="kicker">Explore</div>
-        <ul>
-          <li v-for="h in mainNav" :key="h.key">
-            <NuxtLink :to="h.url">{{ h.title }}</NuxtLink>
-          </li>
+        <nav aria-label="Footer">
+          <ul>
+            <li v-for="h in mainNav" :key="h.key">
+              <NuxtLink :to="h.url">{{ h.title }}</NuxtLink>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Product categories">
+          <ul>
+            <li v-for="c in productCategories" :key="c.key">
+              <NuxtLink :to="c.url">{{ c.title }}</NuxtLink>
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="foot-contact">
+          <li><a :href="`mailto:${info.email_primary}`">{{ info.email_primary }}</a></li>
+          <li><a :href="`tel:${info.phone_href}`">{{ info.phone }}</a></li>
+          <li><span class="small">{{ info.hours }}</span></li>
         </ul>
       </div>
 
-      <div class="foot-cats">
-        <div class="kicker">Categories</div>
-        <ul>
-          <li v-for="c in productCategories" :key="c.key">
-            <NuxtLink :to="c.url">{{ c.title }}</NuxtLink>
-          </li>
-        </ul>
+      <div class="copy">
+        <span>{{ info.legal_notice }}</span>
+        <span>{{ info.address_full }}</span>
       </div>
-    </div>
-
-    <div class="wrap foot-bottom">
-      <span>{{ info.legal_notice }}</span>
-      <span class="foot-tagline">{{ info.tagline }}</span>
     </div>
   </footer>
 </template>
@@ -53,102 +54,88 @@ const mainNav = headers
 
 <style lang="scss" scoped>
 .site-footer {
-  background: var(--paper-2);
-  color: var(--ink);
-  border-top: 1px solid var(--hair);
-  padding: clamp(56px, 7vw, 96px) 0 32px;
-  font-family: var(--sans);
+  border-top: 1px solid var(--rule);
+  padding: 56px 0 40px;
+  font-size: 14px;
+  color: #3a3e44;
 }
 
-.foot-grid {
+.foot {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: clamp(28px, 4vw, 64px);
-  align-items: start;
-  padding-bottom: 48px;
-  border-bottom: 1px solid var(--hair);
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
 }
 
-.foot-brand {
-  .brand-line {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 10px;
-    font-family: var(--serif);
-    font-size: 22px;
+.foot ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.foot a {
+  color: #3a3e44;
+  border-bottom: 1px solid transparent;
+  transition: color .15s, border-color .15s;
+
+  &:hover {
     color: var(--ink);
-    letter-spacing: .02em;
-
-    .brand-dot { color: var(--mute); }
-    .brand-tagline {
-      font-style: italic;
-      color: var(--mute);
-      font-size: 15px;
-    }
-  }
-
-  .foot-address {
-    margin: 18px 0 0;
-    color: var(--mute);
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .foot-contact {
-    margin: 12px 0 0;
-    font-size: 14px;
-
-    a {
-      color: var(--ink);
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 1px;
-
-      &:hover { color: var(--rust); border-color: var(--rust); }
-    }
-
-    span { color: var(--mute); }
+    border-bottom-color: var(--ink);
   }
 }
 
-.foot-nav,
-.foot-cats {
-  .kicker { margin-bottom: 18px; }
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  a {
-    font-size: 14px;
+  b {
+    font-weight: 800;
+    font-stretch: 112%;
+    letter-spacing: .06em;
+    font-size: 17px;
+    text-transform: uppercase;
     color: var(--ink);
-    letter-spacing: .01em;
+  }
 
-    &:hover { color: var(--rust); }
+  span {
+    color: var(--thread);
+    font-size: 13px;
   }
 }
 
-.foot-bottom {
-  padding-top: 24px;
+.foot-tagline {
+  margin: 0;
+  max-width: 32em;
+}
+
+.foot-address {
+  margin: 14px 0 0;
+  color: var(--thread);
+  line-height: 1.6;
+}
+
+.foot-contact .small {
+  color: var(--thread);
+}
+
+.copy {
+  margin-top: 48px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+  color: var(--thread);
   font-size: 13px;
-  color: var(--mute);
 }
 
-.foot-tagline {
-  font-family: var(--serif);
-  font-style: italic;
+@media (max-width: 1024px) {
+  .foot { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 720px) {
-  .foot-grid { grid-template-columns: 1fr; gap: 40px; }
+@media (max-width: 820px) {
+  .foot { grid-template-columns: 1fr; }
 }
 </style>
