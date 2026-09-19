@@ -1,9 +1,0 @@
-[
-  { "code": "LAX", "place": "Los Angeles, USA",       "sub": "Direct via Trans-Pacific",     "via": "Direct",       "freq": "Weekly",       "days": "25–35" },
-  { "code": "LGB", "place": "Long Beach, USA",        "sub": "Direct via Trans-Pacific",     "via": "Direct",       "freq": "Weekly",       "days": "25–35" },
-  { "code": "NYC", "place": "New York / New Jersey",  "sub": "Via Panama Canal",             "via": "1 transit",    "freq": "Bi-weekly",    "days": "35–45" },
-  { "code": "YVR", "place": "Vancouver, Canada",      "sub": "Trans-Pacific",                "via": "Direct",       "freq": "Weekly",       "days": "20–25" },
-  { "code": "RTM", "place": "Rotterdam, Netherlands", "sub": "Via Singapore / Suez",         "via": "Transhipment", "freq": "Weekly",       "days": "35–40" },
-  { "code": "HAM", "place": "Hamburg, Germany",       "sub": "Via Singapore / Suez",         "via": "Transhipment", "freq": "Weekly",       "days": "35–40" },
-  { "code": "PUS", "place": "Busan, South Korea",     "sub": "Direct",                       "via": "Direct",       "freq": "Twice weekly", "days": "5–7"   }
-]

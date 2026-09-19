@@ -1,14 +1,13 @@
 <template>
   <div>
     <TuHeroBrief />
-    <TuHeroPlate />
-    <TuManifestoBand />
-    <TuSpecimenGrid />
-    <TuMaterialsStrip />
-    <TuFiguresBlock />
-    <TuLanesBoard />
     <TuClientsBand />
-    <TuFinalCTA />
+    <TuCapabilityList />
+    <TuProcessSteps />
+    <TuProductsGrid />
+    <TuQualityBand />
+    <TuFactoryNetwork />
+    <TuRfqSection />
   </div>
 </template>
 

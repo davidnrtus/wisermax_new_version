@@ -4,7 +4,7 @@
     <TuServices />
     <TuMembers />
     <TuCertification />
-    <TuFinalCTA />
+    <TuRfqSection />
   </div>
 </template>
 
