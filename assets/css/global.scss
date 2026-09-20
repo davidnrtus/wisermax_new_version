@@ -42,10 +42,18 @@ img { display: block; max-width: 100%; }
   border-top: 1px solid var(--rule);
 }
 
+/* The thread sits 10px to the left of the text column. The reference measures
+   that from the viewport edge, which only holds while the viewport is narrower
+   than --maxw; past that .wrap picks up a centring margin the thread ignored,
+   and by 1920 it stranded the thread ~300px from the text. Adding the centring
+   margin back keeps the 10px relationship at every width, and the max() leaves
+   narrow viewports exactly where the reference put them. */
 .band::before {
   content: "";
   position: absolute;
-  left: calc(var(--gutter) - 10px);
+  /* max() stays outside calc(): the CSS minifier cannot parse a comma-separated
+     function nested inside calc(). */
+  left: max(calc(var(--gutter) - 10px), calc((100% - var(--maxw)) / 2 + var(--gutter) - 10px));
   top: 0;
   bottom: 0;
   width: 2px;
