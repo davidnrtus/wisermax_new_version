@@ -17,17 +17,19 @@
           </div>
         </div>
 
-        <dl class="spec atelier-up delay-2" aria-label="Factory at a glance">
-          <div v-for="row in spec" :key="row.term" class="spec-row">
-            <dt>{{ row.term }}</dt>
-            <dd>
-              {{ row.value }}<small v-if="row.unit">{{ row.unit }}</small>
-            </dd>
-          </div>
+        <div class="spec-sheet atelier-up delay-2">
+          <dl class="spec" aria-label="Factory at a glance">
+            <div v-for="row in spec" :key="row.term" class="spec-row">
+              <dt>{{ row.term }}</dt>
+              <dd>
+                {{ row.value }}<small v-if="row.unit">{{ row.unit }}</small>
+              </dd>
+            </div>
+          </dl>
           <p class="spec-foot">
             Figures are typical for FOB Hai Phong orders. Lead time excludes fabric development.
           </p>
-        </dl>
+        </div>
       </div>
 
       <div class="hero-visual">

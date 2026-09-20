@@ -1,7 +1,9 @@
 <template>
   <header class="site-header">
     <div class="wrap nav">
-      <NuxtLink to="/" class="logo" aria-label="Wisermax HN — Vietnam garment manufacturer, Hanoi">
+      <!-- No aria-label: the visible text is the accessible name, so it cannot
+           drift out of sync with what a sighted user reads. -->
+      <NuxtLink to="/" class="logo">
         <b>Wisermax HN</b>
         <span>Hanoi</span>
       </NuxtLink>
