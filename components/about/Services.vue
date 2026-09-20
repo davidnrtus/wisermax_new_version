@@ -18,6 +18,7 @@
               :alt="s.alt"
               loading="lazy"
               format="webp"
+              sizes="sm:100vw md:50vw lg:600px"
               densities="x1 x2"
             />
           </div>

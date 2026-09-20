@@ -21,6 +21,7 @@
             alt="Ms Helen Hoang, founder of Wisermax HN — Vietnam apparel manufacturer in Hanoi"
             loading="lazy"
             format="webp"
+            sizes="sm:100vw md:50vw lg:520px"
           />
         </div>
         <div class="info">

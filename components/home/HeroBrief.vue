@@ -51,6 +51,7 @@
               alt="In-house sample room — cut and sew manufacturer Vietnam making proto and fit samples"
               sizes="sm:100vw md:33vw lg:440px"
               format="webp"
+              loading="lazy"
             />
             <span class="cap">Sample room</span>
           </div>
@@ -60,6 +61,7 @@
               alt="Pattern making and design desk — OEM clothing factory Vietnam handling tech pack development"
               sizes="sm:100vw md:33vw lg:440px"
               format="webp"
+              loading="lazy"
             />
             <span class="cap">Pattern &amp; design</span>
           </div>

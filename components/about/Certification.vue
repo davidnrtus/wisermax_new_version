@@ -26,6 +26,8 @@
           src="/about/certification.png"
           alt="Certifications held by Wisermax HN partner factories in Vietnam — BSCI, WRAP, OEKO-TEX and buyer-specific audits"
           loading="lazy"
+          format="webp"
+          sizes="sm:100vw md:720px"
         />
         <figcaption>
           Certificates provided per programme on request. New audits arranged

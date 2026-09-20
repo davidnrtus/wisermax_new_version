@@ -7,6 +7,7 @@
           alt="Bulk production floor at a partner factory — high capacity garment manufacturer Vietnam across Northern and Central provinces"
           sizes="sm:100vw md:50vw lg:560px"
           format="webp"
+          loading="lazy"
         />
       </div>
       <div>

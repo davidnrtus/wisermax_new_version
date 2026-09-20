@@ -83,15 +83,14 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/site.webmanifest' },
         // SEO
         { rel: 'canonical', href: SITE_URL },
-        // Fonts
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
+        // Fonts — self-hosted, see assets/css/fonts.css. Preloading the latin
+        // subset lets the hero headline paint without waiting on a CDN chain.
         {
-          rel: 'stylesheet',
-          // Roman only: the A-editorial port uses no italic anywhere, so the
-          // italic half of the family is dead weight in the served CSS.
-          href: 'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap',
+          rel: 'preload',
+          as: 'font',
+          type: 'font/woff2',
+          href: '/fonts/archivo-latin.woff2',
+          crossorigin: 'anonymous',
         },
       ],
       script: [
@@ -195,6 +194,7 @@ export default defineNuxtConfig({
   },
 
   css: [
+    '~/assets/css/fonts.css',
     '~/assets/css/tokens.css',
     '~/assets/css/global.scss',
     '~/assets/css/animations.scss',

@@ -45,7 +45,7 @@
               <b>{{ c.label }}</b>
             </div>
             <div class="cat-media">
-              <NuxtImg :src="c.image" :alt="c.alt" loading="lazy" format="webp" />
+              <NuxtImg :src="c.image" :alt="c.alt" loading="lazy" format="webp" sizes="sm:100vw md:50vw lg:400px" />
             </div>
             <h3>
               {{ c.title }} <em>{{ c.titleAccent }}</em>
@@ -70,7 +70,7 @@
             <div class="cross-code">{{ c.code }}</div>
             <h3>{{ c.title }}</h3>
             <p>{{ c.description }}</p>
-            <NuxtImg :src="c.image" :alt="c.alt" loading="lazy" format="webp" />
+            <NuxtImg :src="c.image" :alt="c.alt" loading="lazy" format="webp" sizes="sm:100vw md:50vw lg:430px" />
           </article>
         </div>
       </div>

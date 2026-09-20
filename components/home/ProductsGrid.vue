@@ -11,6 +11,7 @@
               :alt="p.alt"
               sizes="sm:100vw md:50vw lg:320px"
               format="webp"
+              loading="lazy"
             />
           </div>
           <h3>{{ p.title }}</h3>

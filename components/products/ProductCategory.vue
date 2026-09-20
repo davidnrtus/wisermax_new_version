@@ -97,6 +97,7 @@
               :alt="`${m.name} — Vietnam apparel manufacturer`"
               loading="lazy"
               format="webp"
+              sizes="sm:100vw md:50vw lg:430px"
             />
             <figcaption>{{ m.name }}</figcaption>
           </figure>
