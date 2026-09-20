@@ -16,7 +16,7 @@
 
         <div class="pc-hero-layout">
           <p class="lede">{{ data.lede }}</p>
-          <a class="btn rust" href="/contact#quote">Request a quote</a>
+          <a class="btn" href="/contact#quote">Request a quote</a>
         </div>
       </div>
     </section>
@@ -135,14 +135,14 @@ function mediaClass(count) {
   justify-content: space-between;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--rule);
-  font: 500 12px/1 var(--sans);
-  color: var(--mute);
+  font: 500 12px/1 var(--f);
+  color: var(--thread);
   letter-spacing: .06em;
   flex-wrap: wrap;
   gap: 16px;
 
   b { color: var(--ink); font-weight: 600; margin-right: 4px; }
-  em { font-family: var(--serif); font-style: italic; color: var(--ink); }
+  em { font-style: normal; color: var(--thread); }
 }
 
 h1 {
@@ -150,9 +150,11 @@ h1 {
   line-height: .96;
   margin: clamp(48px, 6vw, 80px) 0 0;
   max-width: 12ch;
-  font-variation-settings: "opsz" 72;
+  font-weight: 500;
+  font-stretch: 78%;
+  letter-spacing: -.025em;
 
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 
 .pc-hero-layout {
@@ -164,14 +166,13 @@ h1 {
 }
 
 .lede {
-  font-family: var(--serif);
+  font-family: var(--f);
   font-weight: 400;
-  font-size: clamp(19px, 1.8vw, 24px);
-  line-height: 1.4;
-  color: #3a352e;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.45;
+  color: #3a3e44;
   margin: 0;
   max-width: 42ch;
-  font-variation-settings: "opsz" 36;
 }
 
 .plate {
@@ -181,7 +182,7 @@ h1 {
     aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: cover;
-    background: var(--paper-2);
+    background: var(--muslin);
   }
   :deep(.shot) {
     aspect-ratio: 16 / 9;
@@ -194,16 +195,16 @@ h1 {
     grid-template-columns: 1fr auto 1fr;
     gap: 24px;
     align-items: center;
-    font: 500 12px/1.4 var(--sans);
-    color: var(--mute);
+    font: 500 12px/1.4 var(--f);
+    color: var(--thread);
     letter-spacing: .02em;
     padding-top: 14px;
     border-top: 1px solid var(--rule);
 
     b { color: var(--ink); font-weight: 600; }
     .mid {
-      font-family: var(--serif);
-      font-style: italic;
+      font-family: var(--f);
+      font-style: normal;
       font-size: 14px;
       color: var(--ink);
       text-align: center;
@@ -228,15 +229,15 @@ h1 {
     max-width: 900px;
 
     dt {
-      color: var(--mute);
-      font: 500 12px/1 var(--sans);
+      color: var(--thread);
+      font: 500 12px/1 var(--f);
       letter-spacing: .14em;
       text-transform: uppercase;
       padding-top: 4px;
     }
     dd {
       margin: 0;
-      font-family: var(--serif);
+      font-family: var(--f);
       font-size: 19px;
       color: var(--ink);
       line-height: 1.35;
@@ -259,7 +260,7 @@ h2 {
   line-height: 1;
   max-width: 18ch;
 
-  em { color: var(--rust); font-style: italic; }
+  em { font-style: normal; color: inherit; }
 }
 
 .feature-list {
@@ -279,14 +280,14 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font: 500 11px/1 var(--sans);
+    font: 500 11px/1 var(--f);
     letter-spacing: .14em;
     text-transform: uppercase;
     margin-bottom: 16px;
   }
 
-  &-code { color: var(--rust); }
-  &-idx { color: var(--mute); }
+  &-code { color: var(--selvedge); }
+  &-idx { color: var(--thread); }
 
   h3 {
     font-size: clamp(24px, 2.6vw, 34px);
@@ -296,7 +297,7 @@ h2 {
   }
 
   p {
-    color: #3a352e;
+    color: #3a3e44;
     font-size: 16px;
     line-height: 1.65;
     margin: 0 0 28px;
@@ -307,7 +308,7 @@ h2 {
     display: grid;
     gap: 12px;
 
-    figure { margin: 0; overflow: hidden; background: var(--paper-2); }
+    figure { margin: 0; overflow: hidden; background: var(--muslin); }
     figure :deep(img) {
       width: 100%;
       height: 100%;
@@ -323,7 +324,7 @@ h2 {
 }
 
 .more {
-  background: var(--paper-2);
+  background: var(--muslin);
 
   .kicker { margin-bottom: 16px; }
   .more-title {
@@ -338,8 +339,7 @@ h2 {
     gap: 12px;
     figure {
       margin: 0;
-      background: var(--card);
-      border: 1px solid var(--hair);
+      background: var(--muslin);
       overflow: hidden;
     }
     figure :deep(img) {
@@ -350,8 +350,8 @@ h2 {
     }
     figcaption {
       padding: 12px 16px 18px;
-      font-family: var(--serif);
-      font-style: italic;
+      font-family: var(--f);
+      font-style: normal;
       font-size: 15px;
       color: var(--ink);
     }

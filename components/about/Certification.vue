@@ -77,12 +77,12 @@ h2 {
   line-height: 1;
   max-width: 16ch;
 
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 
 .head p {
   margin: 0;
-  color: #3a352e;
+  color: #3a3e44;
   font-size: 16px;
   max-width: 44ch;
   justify-self: end;
@@ -91,24 +91,28 @@ h2 {
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 0;
   margin-bottom: 56px;
 }
 
+/* Ruled columns, not cards — the A-editorial idiom. */
 .cert-card {
-  padding: 24px 22px 28px;
-  background: var(--card);
-  border: 1px solid var(--hair);
+  padding: 20px 24px 0 0;
+  border-top: 1px solid var(--ink);
+  border-right: 1px solid var(--rule);
+  margin-right: 24px;
+
+  &:last-child { border-right: 0; margin-right: 0; }
 
   .cert-code {
-    font: 600 11px/1 var(--sans);
+    font: 600 11px/1 var(--f);
     letter-spacing: .14em;
-    color: var(--rust);
+    color: var(--selvedge);
     text-transform: uppercase;
   }
 
   h3 {
-    font-family: var(--serif);
+    font-family: var(--f);
     font-size: 22px;
     margin: 12px 0 10px;
     line-height: 1.1;
@@ -116,7 +120,7 @@ h2 {
 
   p {
     margin: 0;
-    color: var(--mute);
+    color: var(--thread);
     font-size: 13.5px;
     line-height: 1.55;
   }
@@ -124,7 +128,7 @@ h2 {
 
 .cert-figure {
   margin: 0;
-  border-top: 1px solid var(--hair);
+  border-top: 1px solid var(--rule);
   padding-top: 32px;
   text-align: center;
 
@@ -135,9 +139,9 @@ h2 {
 
   figcaption {
     margin: 24px auto 0;
-    font-family: var(--serif);
-    font-style: italic;
-    color: var(--mute);
+    font-family: var(--f);
+    font-style: normal;
+    color: var(--thread);
     font-size: 14px;
     max-width: 60ch;
   }

@@ -70,9 +70,11 @@
   font-size: clamp(38px, 5vw, 72px);
   line-height: 1.02;
   max-width: 22ch;
-  font-variation-settings: "opsz" 60;
+  font-weight: 500;
+  font-stretch: 80%;
+  letter-spacing: -.022em;
 
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 
 .body {
@@ -82,14 +84,14 @@
   align-items: start;
   margin-top: clamp(48px, 6vw, 80px);
   padding-top: 40px;
-  border-top: 1px solid var(--hair);
+  border-top: 1px solid var(--rule);
 }
 
 .prose p {
   margin: 0 0 20px;
   font-size: 17px;
   line-height: 1.7;
-  color: #3a352e;
+  color: #3a3e44;
   max-width: 60ch;
 }
 
@@ -101,15 +103,15 @@
   border-top: 1px solid var(--rule);
 
   .side-label {
-    font: 600 11px/1 var(--sans);
+    font: 600 11px/1 var(--f);
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--mute);
+    color: var(--thread);
     margin-bottom: 8px;
   }
 
   .side-value {
-    font-family: var(--serif);
+    font-family: var(--f);
     font-size: 18px;
     color: var(--ink);
     line-height: 1.35;

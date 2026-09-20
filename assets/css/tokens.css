@@ -18,20 +18,3 @@
   --gutter: clamp(20px, 4vw, 56px);
 }
 
-/* --------------------------------------------
-   Legacy aliases — E-atelier token names mapped onto the
-   A-editorial palette. 21 components still reference these;
-   they are deleted as each section is ported. Do not add new uses.
-   -------------------------------------------- */
-
-:root {
-  --paper-2: var(--muslin);
-  --card:    var(--paper);
-  --mute:    var(--thread);
-  --hair:    var(--rule);
-  --rust:    var(--indigo);  /* old accent → brand indigo, never selvedge red */
-  --sage:    var(--thread);
-  --serif:   var(--f);
-  --sans:    var(--f);
-  --g:       var(--gutter);
-}

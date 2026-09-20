@@ -109,12 +109,12 @@ h2 {
   line-height: 1;
   max-width: 16ch;
 
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 
 .head p {
   margin: 0;
-  color: #3a352e;
+  color: #3a3e44;
   font-size: 16px;
   max-width: 44ch;
   justify-self: end;
@@ -144,7 +144,7 @@ h2 {
 .svc-media {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--paper-2);
+  background: var(--muslin);
 
   img,
   :deep(img) {
@@ -155,13 +155,13 @@ h2 {
 }
 
 .svc-index {
-  font: 600 12px/1 var(--sans);
+  font: 600 12px/1 var(--f);
   letter-spacing: .14em;
-  color: var(--rust);
+  color: var(--selvedge);
   text-transform: uppercase;
   margin-bottom: 16px;
 
-  span { color: var(--mute); }
+  span { color: var(--thread); }
 }
 
 h3 {
@@ -172,7 +172,7 @@ h3 {
 }
 
 .svc-body p {
-  color: #3a352e;
+  color: #3a3e44;
   font-size: 16px;
   line-height: 1.65;
   margin: 0 0 20px;
@@ -189,7 +189,7 @@ h3 {
   font-size: 13.5px;
   max-width: 42ch;
 
-  dt { color: var(--mute); font-weight: 500; letter-spacing: .02em; }
+  dt { color: var(--thread); font-weight: 500; letter-spacing: .02em; }
   dd { margin: 0; color: var(--ink); font-weight: 500; }
 }
 

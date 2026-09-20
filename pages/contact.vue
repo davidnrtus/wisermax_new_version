@@ -22,7 +22,7 @@
 
         <div class="cta">
           <a
-            class="btn rust"
+            class="btn"
             :href="`mailto:${info.email_primary}?subject=Tech%20pack%20—%20FOB%20Hai%20Phong`"
           >Email {{ info.email_primary }}</a>
           <a class="btn ghost" :href="`tel:${info.phone_href}`">Call {{ info.phone }}</a>
@@ -183,14 +183,14 @@ useBreadcrumb([
   justify-content: space-between;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--rule);
-  font: 500 12px/1 var(--sans);
-  color: var(--mute);
+  font: 500 12px/1 var(--f);
+  color: var(--thread);
   letter-spacing: .06em;
   flex-wrap: wrap;
   gap: 16px;
 
   b { color: var(--ink); font-weight: 600; margin-right: 4px; }
-  em { font-family: var(--serif); font-style: italic; color: var(--ink); }
+  em { font-style: normal; color: var(--thread); }
 }
 
 h1 {
@@ -198,19 +198,20 @@ h1 {
   line-height: .96;
   margin: clamp(48px, 6vw, 80px) 0 24px;
   max-width: 15ch;
-  font-variation-settings: "opsz" 72;
+  font-weight: 500;
+  font-stretch: 78%;
+  letter-spacing: -.025em;
 
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 
 .lede {
-  font-family: var(--serif);
-  font-size: clamp(19px, 1.8vw, 24px);
-  line-height: 1.4;
-  color: #3a352e;
+  font-family: var(--f);
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.45;
+  color: #3a3e44;
   margin: 0 0 32px;
   max-width: 60ch;
-  font-variation-settings: "opsz" 36;
 }
 
 .cta {
@@ -233,9 +234,9 @@ h1 {
 
 .channel {
   &-code {
-    font: 600 12px/1 var(--sans);
+    font: 600 12px/1 var(--f);
     letter-spacing: .14em;
-    color: var(--rust);
+    color: var(--selvedge);
     text-transform: uppercase;
     margin-bottom: 20px;
   }
@@ -248,7 +249,7 @@ h1 {
   }
 
   p {
-    color: #3a352e;
+    color: #3a3e44;
     font-size: 15px;
     line-height: 1.6;
     margin: 0 0 24px;
@@ -266,8 +267,8 @@ h1 {
     max-width: 42ch;
 
     dt {
-      color: var(--mute);
-      font: 500 12px/1 var(--sans);
+      color: var(--thread);
+      font: 500 12px/1 var(--f);
       letter-spacing: .06em;
       text-transform: uppercase;
       padding-top: 3px;
@@ -279,14 +280,14 @@ h1 {
       a {
         border-bottom: 1px solid var(--ink);
         padding-bottom: 1px;
-        &:hover { color: var(--rust); border-color: var(--rust); }
+        &:hover { color: var(--indigo); border-color: var(--indigo); }
       }
     }
   }
 }
 
 .qr-band {
-  background: var(--paper-2);
+  background: var(--muslin);
 
   .head {
     display: grid;
@@ -296,8 +297,8 @@ h1 {
     margin-bottom: 48px;
 
     .kicker { margin-bottom: 16px; }
-    h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1; max-width: 18ch; em { color: var(--rust); } }
-    p { margin: 0; color: #3a352e; font-size: 15.5px; max-width: 44ch; justify-self: end; }
+    h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1; max-width: 18ch; em { font-style: normal; color: inherit; } }
+    p { margin: 0; color: #3a3e44; font-size: 15.5px; max-width: 44ch; justify-self: end; }
   }
 }
 
@@ -309,8 +310,8 @@ h1 {
 
 .qr-card {
   margin: 0;
-  background: var(--card);
-  border: 1px solid var(--hair);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   padding: 32px;
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -320,7 +321,7 @@ h1 {
   .qr-frame {
     background: #fff;
     padding: 14px;
-    border: 1px solid var(--hair);
+    border: 1px solid var(--rule);
     width: 220px;
     height: 220px;
     display: flex;
@@ -331,24 +332,24 @@ h1 {
   }
 
   .qr-label {
-    font: 600 11px/1 var(--sans);
+    font: 600 11px/1 var(--f);
     letter-spacing: .14em;
-    color: var(--rust);
+    color: var(--selvedge);
     text-transform: uppercase;
   }
 
   .qr-name {
-    font-family: var(--serif);
+    font-family: var(--f);
     font-size: 24px;
     margin: 10px 0 6px;
     line-height: 1.1;
   }
 
   .qr-sub {
-    color: var(--mute);
+    color: var(--thread);
     font-size: 14px;
-    font-family: var(--serif);
-    font-style: italic;
+    font-family: var(--f);
+    font-style: normal;
   }
 }
 

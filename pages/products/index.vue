@@ -20,7 +20,7 @@
             programmes — knitwear, woven, outerwear and sportswear. Sampled in Gia Lam,
             produced across twenty audited partner factories, shipped FOB Hai Phong.
           </p>
-          <a class="btn rust" href="/contact#quote">Request a quote</a>
+          <a class="btn" href="/contact#quote">Request a quote</a>
         </div>
       </div>
     </section>
@@ -175,14 +175,14 @@ const cross = [
   justify-content: space-between;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--rule);
-  font: 500 12px/1 var(--sans);
-  color: var(--mute);
+  font: 500 12px/1 var(--f);
+  color: var(--thread);
   letter-spacing: .06em;
   flex-wrap: wrap;
   gap: 16px;
 
   b { color: var(--ink); font-weight: 600; margin-right: 4px; }
-  em { font-family: var(--serif); font-style: italic; color: var(--ink); }
+  em { font-style: normal; color: var(--thread); }
 }
 
 h1 {
@@ -190,9 +190,11 @@ h1 {
   line-height: .96;
   margin: clamp(48px, 6vw, 80px) 0 0;
   max-width: 15ch;
-  font-variation-settings: "opsz" 72;
+  font-weight: 500;
+  font-stretch: 78%;
+  letter-spacing: -.025em;
 
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 
 .pi-hero-layout {
@@ -204,13 +206,12 @@ h1 {
 }
 
 .lede {
-  font-family: var(--serif);
-  font-size: clamp(19px, 1.8vw, 24px);
-  line-height: 1.4;
-  color: #3a352e;
+  font-family: var(--f);
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.45;
+  color: #3a3e44;
   margin: 0;
   max-width: 44ch;
-  font-variation-settings: "opsz" 36;
 }
 
 .cat-grid .head {
@@ -225,7 +226,7 @@ h1 {
   font-size: clamp(32px, 4vw, 54px);
   line-height: 1;
   max-width: 18ch;
-  em { color: var(--rust); }
+  em { font-style: normal; color: inherit; }
 }
 .cat-grid .kicker { margin-bottom: 16px; }
 
@@ -244,21 +245,21 @@ h1 {
   transition: opacity .2s;
 
   &:hover { opacity: .85; }
-  &:hover .cat-cta { color: var(--rust); }
+  &:hover .cat-cta { color: var(--indigo); }
 
   &-hd {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 20px;
-    font: 500 12px/1 var(--sans);
-    color: var(--mute);
+    font: 500 12px/1 var(--f);
+    color: var(--thread);
     letter-spacing: .08em;
     text-transform: uppercase;
 
     b {
-      font-family: var(--serif);
-      font-style: italic;
+      font-family: var(--f);
+      font-style: normal;
       font-weight: 400;
       font-size: 16px;
       color: var(--ink);
@@ -269,7 +270,7 @@ h1 {
 
   &-media {
     aspect-ratio: 4 / 5;
-    background: var(--paper-2);
+    background: var(--muslin);
     margin-bottom: 24px;
     overflow: hidden;
 
@@ -281,18 +282,18 @@ h1 {
     line-height: 1.1;
     margin: 0 0 10px;
 
-    em { color: var(--rust); font-style: italic; }
+    em { font-style: normal; color: inherit; }
   }
 
   p {
-    color: #3a352e;
+    color: #3a3e44;
     font-size: 14.5px;
     line-height: 1.6;
     margin: 0 0 20px;
   }
 
   &-cta {
-    font: 600 12px/1 var(--sans);
+    font: 600 12px/1 var(--f);
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--ink);
@@ -301,11 +302,11 @@ h1 {
 }
 
 .cross {
-  background: var(--paper-2);
+  background: var(--muslin);
 
   .head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: end; margin-bottom: 48px; }
   .kicker { margin-bottom: 16px; }
-  h2 { font-size: clamp(32px, 4vw, 54px); line-height: 1; max-width: 18ch; em { color: var(--rust); } }
+  h2 { font-size: clamp(32px, 4vw, 54px); line-height: 1; max-width: 18ch; em { font-style: normal; color: inherit; } }
 
   &-grid {
     display: grid;
@@ -314,37 +315,34 @@ h1 {
   }
 
   &-card {
-    background: var(--card);
-    border: 1px solid var(--hair);
-    padding: 24px 22px 0;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--ink);
     display: flex;
     flex-direction: column;
 
     .cross-code {
-      font: 600 11px/1 var(--sans);
+      font: 600 11px/1 var(--f);
       letter-spacing: .14em;
-      color: var(--rust);
+      color: var(--selvedge);
       text-transform: uppercase;
     }
 
     h3 {
-      font-family: var(--serif);
+      font-family: var(--f);
       font-size: 22px;
       margin: 12px 0 10px;
       line-height: 1.15;
     }
 
     p {
-      color: var(--mute);
+      color: var(--thread);
       font-size: 13.5px;
       line-height: 1.55;
       margin: 0 0 20px;
     }
 
     :deep(img) {
-      width: calc(100% + 44px);
-      margin-left: -22px;
-      margin-right: -22px;
+      width: 100%;
       display: block;
     }
   }
