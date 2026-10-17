@@ -138,7 +138,7 @@ export default defineNuxtConfig({
                 '@type': 'ContactPoint',
                 telephone: '+84-974-806625',
                 contactType: 'sales',
-                email: 'info@wiser.vn',
+                email: 'ship@wiser.vn',
                 availableLanguage: ['English', 'Vietnamese'],
                 areaServed: ['US', 'CA', 'EU', 'KR'],
               },

@@ -212,7 +212,7 @@ Placeholders to confirm with the client before publishing:
 - Tax code (Vietnamese business ID)
 - Exact partner-factory count per province (currently a working guess)
 - Certifications actually held (BSCI / WRAP / OEKO-TEX — confirm before writing them)
-- Contact emails (`info@wiser.vn`, `helen@wiser.vn`) — confirm
+- Contact emails: `ship@wiser.vn` (primary) and `helen@wiser.vn` — confirmed, no others
 - Client logos permission (currently listed as text: Calvin Klein, Tommy Hilfiger, DKNY, Karl Lagerfeld, Guess, Huckberry, CJ Home Shopping)
 
 ---

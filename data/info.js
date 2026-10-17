@@ -5,7 +5,7 @@ export default {
   tagline: 'Made in Hanoi · Shipped FOB Hai Phong',
 
   // Contact
-  email_primary: 'info@wiser.vn',
+  email_primary: 'ship@wiser.vn',
   email_secondary: 'helen@wiser.vn',
   phone: '+84 974 806 625',
   phone_href: '+84974806625',
