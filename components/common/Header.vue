@@ -4,8 +4,14 @@
       <!-- No aria-label: the visible text is the accessible name, so it cannot
            drift out of sync with what a sighted user reads. -->
       <NuxtLink to="/" class="logo">
-        <b>Wisermax HN</b>
-        <span>Hanoi</span>
+        <svg class="logo-mark" viewBox="60 45 1690 1580" aria-hidden="true" focusable="false">
+          <path d="M73 944 L161 774 L306 1128 L421 810 L364 642 L548 642 C690.4 475.4 876.4 341.3 1092 290 C881.7 400.3 705.7 585.6 620 808 L737 1072 C877.4 604.3 1235.4 169 1728 60 C1198.8 321.1 982.4 916.9 837 1450 L679 1450 L511 1034 L386 1427 L259 1427 Z" />
+          <path d="M512 1372 C556.3 1903.4 1328.6 1372.8 1462 1074 C1255.3 1285.7 684.1 1789.9 512 1372 Z" />
+        </svg>
+        <span class="logo-text">
+          <b>Wisermax HN</b>
+          <span>Hanoi</span>
+        </span>
       </NuxtLink>
 
       <nav aria-label="Primary">
@@ -80,8 +86,22 @@ watch(() => route.fullPath, () => {
 /* Brand sits at the extended end of the width axis. */
 .logo {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
+
+  /* Cap height of the wordmark; 19×18 keeps the artwork's 1690×1580 ratio. */
+  .logo-mark {
+    flex: none;
+    width: 19px;
+    height: 18px;
+    fill: #7E3F20;
+  }
+
+  .logo-text {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
 
   b {
     font-weight: 800;

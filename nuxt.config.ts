@@ -75,11 +75,11 @@ export default defineNuxtConfig({
       link: [
         // Favicons
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'icon', type: 'image/svg+xml', href: '/logo1.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        { rel: 'mask-icon', href: '/logo1.svg', color: '#B7532F' },
+        { rel: 'mask-icon', href: '/favicon.svg', color: '#7E3F20' },
         { rel: 'manifest', href: '/site.webmanifest' },
         // SEO
         { rel: 'canonical', href: SITE_URL },
@@ -106,7 +106,7 @@ export default defineNuxtConfig({
             legalName: 'Wiser Max HN Company Limited',
             alternateName: ['Wiser Max HN', 'WISERMAX HN'],
             url: SITE_URL,
-            logo: `${SITE_URL}/logo1.svg`,
+            logo: `${SITE_URL}/icon-512.png`,
             image: `${SITE_URL}/og-image.jpg`,
             foundingDate: '2014',
             founders: [{ '@type': 'Person', name: 'Helen Hoang' }],
