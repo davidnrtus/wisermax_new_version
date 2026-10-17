@@ -158,8 +158,8 @@ const cross = [
     code: 'X / 03',
     title: 'Accessories & trims',
     description: 'Socks, gloves, neckties and pantyhose. YKK zippers, custom labels and hangtags — retail-ready packing to your carton specification.',
-    image: '/products/banners/banner_assessories.png',
-    alt: 'Apparel accessories — Vietnam garment factory for socks, gloves, neckties and pantyhose',
+    image: '/factory/trims-store.webp',
+    alt: 'Trims store with labelled cartons of elastic, labels and packaging — Vietnam garment factory sourcing accessories in-house',
   },
 ]
 </script>
@@ -341,9 +341,13 @@ h1 {
       margin: 0 0 20px;
     }
 
+    /* One frame for every card so photos of different shapes line up. */
     :deep(img) {
       width: 100%;
       display: block;
+      margin-top: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
     }
   }
 }
