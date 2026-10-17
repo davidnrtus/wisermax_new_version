@@ -1,7 +1,7 @@
 <template>
   <section id="capabilities" class="band">
     <div class="wrap split">
-      <div>
+      <div v-reveal:left>
         <h2>Development and fashion, made by us</h2>
         <p class="lede">
           We work the way a European atelier does: season by season, sample by sample, with the
@@ -10,7 +10,7 @@
         </p>
       </div>
       <ul class="list">
-        <li v-for="c in capabilities" :key="c.id">
+        <li v-for="(c, i) in capabilities" :key="c.id" v-reveal="i">
           <strong>{{ c.name }}</strong>
           <p>{{ c.description }}</p>
           <span>{{ c.tag }}</span>

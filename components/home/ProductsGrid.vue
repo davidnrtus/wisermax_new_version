@@ -1,11 +1,11 @@
 <template>
   <section id="products" class="band">
     <div class="wrap">
-      <h2>Collections we produce</h2>
-      <p class="lede">Women's, men's and kids' fashion, developed and made in Hanoi.</p>
+      <h2 v-reveal:blur>Collections we produce</h2>
+      <p v-reveal="1" class="lede">Women's, men's and kids' fashion, developed and made in Hanoi.</p>
       <div class="products">
         <article v-for="(p, i) in products" :key="p.id" class="product">
-          <div :class="['ph', { dark: i === products.length - 1 }]">
+          <div v-reveal:mask="i % 3" :class="['ph', { dark: i === products.length - 1 }]">
             <NuxtImg
               :src="p.image"
               :alt="p.alt"
@@ -14,9 +14,9 @@
               loading="lazy"
             />
           </div>
-          <h3>{{ p.title }}</h3>
-          <p>{{ p.blurb }}</p>
-          <NuxtLink class="go" :to="p.url">{{ p.linkLabel }}</NuxtLink>
+          <h3 v-reveal="i % 3 + 1">{{ p.title }}</h3>
+          <p v-reveal="i % 3 + 2">{{ p.blurb }}</p>
+          <NuxtLink v-reveal="i % 3 + 3" class="go" :to="p.url">{{ p.linkLabel }}</NuxtLink>
         </article>
       </div>
     </div>

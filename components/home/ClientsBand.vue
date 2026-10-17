@@ -1,9 +1,9 @@
 <template>
   <section class="clients">
     <div class="wrap">
-      <p>Produced for</p>
+      <p v-reveal:fade>Produced for</p>
       <ul>
-        <li v-for="name in clients" :key="name">{{ name }}</li>
+        <li v-for="(name, i) in clients" :key="name" v-reveal="i">{{ name }}</li>
       </ul>
     </div>
   </section>

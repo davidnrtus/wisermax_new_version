@@ -3,10 +3,10 @@
     <div class="wrap">
       <div class="split head">
         <div>
-          <div class="kicker">Our factory floor</div>
-          <h2>We are the factory, not a middleman.</h2>
+          <div v-reveal:fade class="kicker">Our factory floor</div>
+          <h2 v-reveal:blur>We are the factory, not a middleman.</h2>
         </div>
-        <div>
+        <div v-reveal="1">
           <p class="lede">
             Cutting, sewing, pressing, finishing and packing happen on our own floor, under our own
             supervisors. The people who sample your style are the people who build it in bulk —
@@ -22,8 +22,8 @@
       </div>
 
       <ol class="gallery">
-        <li v-for="s in floor" :key="s.id" class="shot">
-          <div class="ph">
+        <li v-for="(s, i) in floor" :key="s.id" class="shot">
+          <div v-reveal:mask="i % 3" class="ph">
             <NuxtImg
               :src="s.image"
               :alt="s.alt"
@@ -32,11 +32,11 @@
               loading="lazy"
             />
           </div>
-          <div class="meta">
+          <div v-reveal="i % 3 + 1" class="meta">
             <span>{{ s.step }}</span>
             <h3>{{ s.title }}</h3>
           </div>
-          <p>{{ s.caption }}</p>
+          <p v-reveal="i % 3 + 2">{{ s.caption }}</p>
         </li>
       </ol>
     </div>

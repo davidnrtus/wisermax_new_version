@@ -1,19 +1,19 @@
 <template>
   <section id="quality" class="band indigo quality">
     <div class="wrap">
-      <h2>Quality you can audit</h2>
-      <p class="lede">
+      <h2 v-reveal:blur>Quality you can audit</h2>
+      <p v-reveal="1" class="lede">
         Every piece is checked individually before it goes into the carton. Inspection reports,
         fabric test results and factory audit documents are shared with your team, not kept in a
         drawer — an audited clothing factory Vietnam setup EU buyers can verify.
       </p>
       <div class="facts">
-        <div v-for="f in facts" :key="f.value" class="fact">
-          <b>{{ f.value }}</b>
+        <div v-for="(f, i) in facts" :key="f.value" v-reveal="i" class="fact">
+          <b v-count>{{ f.value }}</b>
           <span>{{ f.label }}</span>
         </div>
       </div>
-      <p class="small">
+      <p v-reveal:fade="3" class="small">
         Social compliance and chemical certifications (e.g. BSCI, WRAP, OEKO-TEX) and their audit
         documents are available on request.
       </p>

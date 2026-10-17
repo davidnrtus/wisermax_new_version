@@ -2,14 +2,14 @@
   <section class="band about-intro">
     <div class="wrap">
       <div class="head">
-        <div class="kicker">About Wisermax HN</div>
-        <h1>
+        <div v-reveal:fade class="kicker">About Wisermax HN</div>
+        <h1 v-reveal:blur="1">
           A quiet Vietnam apparel <em>manufacturer</em> in Hanoi, sampling and shipping for US and EU brands since 2014.
         </h1>
       </div>
 
       <div class="body">
-        <div class="prose">
+        <div v-reveal:left="2" class="prose">
           <p>
             Wiser Max HN Company Limited is a garment factory in Vietnam headquartered in
             Trau Quy Ward, Gia Lam District, Hanoi. Founded in 2014, we run a full-package
@@ -32,7 +32,7 @@
           </p>
         </div>
 
-        <aside class="side">
+        <aside v-reveal:right="3" class="side">
           <div class="side-block">
             <div class="side-label">Company</div>
             <div class="side-value">Wiser Max HN Company Limited</div>

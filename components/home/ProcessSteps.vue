@@ -1,13 +1,13 @@
 <template>
   <section id="process" class="band">
     <div class="wrap">
-      <h2>How an order moves</h2>
-      <p class="lede">
+      <h2 v-reveal:blur>How an order moves</h2>
+      <p v-reveal="1" class="lede">
         Every order follows the same five stages. You get a named merchandiser and a shared timeline
         from day one.
       </p>
       <div class="steps">
-        <div v-for="step in steps" :key="step.n" class="step">
+        <div v-for="(step, i) in steps" :key="step.n" v-reveal:scale="i" class="step">
           <div class="n">{{ step.n }}</div>
           <h3>{{ step.title }}</h3>
           <p>{{ step.description }}</p>

@@ -3,10 +3,10 @@
     <div class="wrap">
       <div class="head">
         <div>
-          <div class="kicker">Compliance &amp; standards</div>
-          <h2>Audited factory Vietnam for <em>EU</em> and <em>US</em> buyers.</h2>
+          <div v-reveal:fade class="kicker">Compliance &amp; standards</div>
+          <h2 v-reveal:blur>Audited factory Vietnam for <em>EU</em> and <em>US</em> buyers.</h2>
         </div>
-        <p>
+        <p v-reveal="1">
           We run our own lines to the ethical and technical audits our buyers
           require, and arrange new ones where a programme calls for it.
           Certificates are provided on request as part of the vendor package.
@@ -14,14 +14,14 @@
       </div>
 
       <div class="cert-grid">
-        <article v-for="c in items" :key="c.code" class="cert-card">
+        <article v-for="(c, i) in items" :key="c.code" v-reveal:scale="i" class="cert-card">
           <div class="cert-code">{{ c.code }}</div>
           <h3>{{ c.name }}</h3>
           <p>{{ c.detail }}</p>
         </article>
       </div>
 
-      <figure class="cert-figure">
+      <figure v-reveal class="cert-figure">
         <NuxtImg
           src="/about/certification.png"
           alt="Certifications and audits at the Wisermax HN factory in Vietnam — BSCI, WRAP, OEKO-TEX and buyer-specific audits"

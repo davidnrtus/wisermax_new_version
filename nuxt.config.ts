@@ -41,6 +41,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: DEFAULT_TITLE,
       htmlAttrs: { lang: 'en' },
@@ -96,6 +97,14 @@ export default defineNuxtConfig({
         },
       ],
       script: [
+        // Scroll reveal: hide [data-reveal] before first paint so nothing
+        // flashes in and out at hydration (plugins/reveal.ts). If the app
+        // never boots, drop the class so the content shows anyway.
+        {
+          tagPosition: 'head',
+          innerHTML:
+            "(function(){try{var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;d.classList.add('reveal-on');setTimeout(function(){if(!d.classList.contains('reveal-ready'))d.classList.remove('reveal-on')},4000)}catch(e){}})()",
+        },
         {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({

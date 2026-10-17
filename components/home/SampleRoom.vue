@@ -3,10 +3,10 @@
     <div class="wrap">
       <div class="split head">
         <div>
-          <div class="kicker">From the sample room</div>
-          <h2>Recent development samples</h2>
+          <div v-reveal:fade class="kicker">From the sample room</div>
+          <h2 v-reveal:blur>Recent development samples</h2>
         </div>
-        <p class="lede">
+        <p v-reveal="1" class="lede">
           Every collection starts on a dress form in Hanoi. These are recent fit samples for
           European and US labels — French terry, fleece and jersey, patterned and sewn in-house
           before a single bulk metre is cut.
@@ -14,8 +14,8 @@
       </div>
 
       <div class="grid">
-        <figure v-for="s in samples" :key="s.id" class="sample">
-          <div class="ph">
+        <figure v-for="(s, i) in samples" :key="s.id" class="sample">
+          <div v-reveal:mask="i % 4" class="ph">
             <NuxtImg
               :src="s.image"
               :alt="s.alt"
@@ -24,7 +24,7 @@
               loading="lazy"
             />
           </div>
-          <figcaption>
+          <figcaption v-reveal="i % 4 + 1">
             <span>{{ s.code }}</span>
             <h3>{{ s.title }}</h3>
             <p>{{ s.fabric }}</p>

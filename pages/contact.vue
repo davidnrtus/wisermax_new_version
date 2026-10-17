@@ -3,24 +3,24 @@
     <!-- HERO -->
     <section class="band contact-hero">
       <div class="wrap">
-        <div class="hero-meta">
+        <div v-reveal:fade class="hero-meta">
           <span><b>Office</b> Trau Quy · Gia Lam · Hanoi</span>
           <span><b>Hours</b> Mon–Sat <em>·</em> GMT+7</span>
           <span><b>Response</b> One working day</span>
           <span><b>Quote</b> Full FOB within five</span>
         </div>
 
-        <h1>
+        <h1 v-reveal:blur="1">
           Send a <em>tech pack.</em> We'll come back with a plan.
         </h1>
 
-        <p class="lede">
+        <p v-reveal="2" class="lede">
           PDF, Illustrator, Excel or photos of a reference garment.
           A merchandiser replies within one working day with open questions,
           and a full FOB costing within five.
         </p>
 
-        <div class="cta">
+        <div v-reveal="3" class="cta">
           <a
             class="btn"
             :href="`mailto:${info.email_primary}?subject=Tech%20pack%20—%20FOB%20Hai%20Phong`"
@@ -33,10 +33,10 @@
     <!-- CONTACT GRID -->
     <section id="quote" class="band contact-grid">
       <div class="wrap">
-        <div class="kicker">Contact channels</div>
+        <div v-reveal:fade class="kicker">Contact channels</div>
 
         <div class="channels">
-          <article class="channel">
+          <article v-reveal="0" class="channel">
             <div class="channel-code">01</div>
             <h2>Email a merchandiser</h2>
             <p>
@@ -55,7 +55,7 @@
             </dl>
           </article>
 
-          <article class="channel">
+          <article v-reveal="1" class="channel">
             <div class="channel-code">02</div>
             <h2>Call, WhatsApp or WeChat</h2>
             <p>
@@ -72,7 +72,7 @@
             </dl>
           </article>
 
-          <article class="channel">
+          <article v-reveal="2" class="channel">
             <div class="channel-code">03</div>
             <h2>Visit the office</h2>
             <p>
@@ -97,10 +97,10 @@
       <div class="wrap">
         <div class="head">
           <div>
-            <div class="kicker">Add us on WhatsApp / WeChat</div>
-            <h2>Scan and message <em>directly.</em></h2>
+            <div v-reveal:fade class="kicker">Add us on WhatsApp / WeChat</div>
+            <h2 v-reveal:blur>Scan and message <em>directly.</em></h2>
           </div>
-          <p>
+          <p v-reveal="1">
             Both codes route straight to the director's phone.
             For programme quotes, please still send the tech pack by email so
             it's easier to track.
@@ -108,7 +108,7 @@
         </div>
 
         <div class="qr-grid">
-          <figure class="qr-card">
+          <figure v-reveal:scale="0" class="qr-card">
             <div class="qr-frame">
               <NuxtImg
                 src="/members/qr-ceo.svg"
@@ -124,7 +124,7 @@
               <div class="qr-sub">{{ info.phone }}</div>
             </figcaption>
           </figure>
-          <figure class="qr-card">
+          <figure v-reveal:scale="1" class="qr-card">
             <div class="qr-frame">
               <NuxtImg
                 src="/members/qr-wechat.svg"

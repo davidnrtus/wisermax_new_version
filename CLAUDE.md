@@ -59,7 +59,12 @@ Load only these weights to keep CSS light:
 
 - Hero entrance only: fade + translateY(16px) → 0, 0.9s ease. Stagger metadata → headline → layout.
 - `prefers-reduced-motion: reduce` disables all of it.
-- No scroll-triggered animations. No parallax. No hover-anywhere-else motion.
+- Scroll motion (added at owner's request), all pages — `plugins/reveal.ts`:
+  - `v-reveal[:variant]="i"` plays once on enter. Variants: `up` (default), `blur` (headings), `mask` (photo wipes up + image settles from zoom), `left`, `right`, `scale`, `fade`. `i` staggers siblings by 110ms (capped at 6).
+  - `v-count` counts the first number in an element up from 0 when visible.
+  - Hidden state gated on `html.reveal-on`, set pre-paint by an inline head script in `nuxt.config.ts`; it is removed after 4s if the app never boots, so no-JS output stays readable.
+  - Route changes cross-fade via `app.pageTransition`.
+- No parallax. No hover-anywhere-else motion.
 
 ---
 

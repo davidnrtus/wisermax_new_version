@@ -3,18 +3,18 @@
     <!-- HERO -->
     <section class="band pc-hero">
       <div class="wrap">
-        <div class="pc-hero-meta">
+        <div v-reveal:fade class="pc-hero-meta">
           <span><b>Category</b> {{ data.kicker }}</span>
           <span><b>Est.</b> 2014 <em>·</em> Gia Lam, Hanoi</span>
           <span><b>Trade</b> OEM <em>·</em> ODM <em>·</em> Private label</span>
           <span><b>Port</b> FOB Hai Phong</span>
         </div>
 
-        <h1>
+        <h1 v-reveal:blur="1">
           {{ data.title }} <em>{{ data.titleAccent }}</em><template v-if="data.titleSuffix">{{ data.titleSuffix }}</template>
         </h1>
 
-        <div class="pc-hero-layout">
+        <div v-reveal="2" class="pc-hero-layout">
           <p class="lede">{{ data.lede }}</p>
           <a class="btn" href="/contact#quote">Request a quote</a>
         </div>
@@ -24,6 +24,7 @@
     <!-- PHOTO PLATE — only for programmes with a banner of their own -->
     <section v-if="data.hero" class="plate">
       <div class="wrap">
+        <div v-reveal:mask="3" class="shot-wrap">
         <NuxtImg
           :src="data.hero"
           :alt="data.heroAlt"
@@ -32,7 +33,8 @@
           class="shot"
           sizes="100vw md:1200px"
         />
-        <div class="caption">
+        </div>
+        <div v-reveal:fade="4" class="caption">
           <span><b>Programme</b> · {{ data.kicker }}</span>
           <span class="mid">Sampled in Gia Lam · Made on our own lines</span>
           <span class="r"><b>Wisermax HN</b> · Hanoi</span>
@@ -43,8 +45,8 @@
     <!-- SPEC STRIP -->
     <section class="band spec-strip">
       <div class="wrap">
-        <div class="kicker">Programme specs</div>
-        <dl class="spec-list">
+        <div v-reveal:fade class="kicker">Programme specs</div>
+        <dl v-reveal class="spec-list">
           <template v-for="spec in data.specs" :key="spec.term">
             <dt>{{ spec.term }}</dt>
             <dd>{{ spec.value }}</dd>
@@ -57,20 +59,20 @@
     <section class="band features">
       <div class="wrap">
         <div class="features-head">
-          <div class="kicker">Feature runs</div>
-          <h2>Selected pieces from our <em>{{ data.slug }}</em> programme.</h2>
+          <div v-reveal:fade class="kicker">Feature runs</div>
+          <h2 v-reveal:blur>Selected pieces from our <em>{{ data.slug }}</em> programme.</h2>
         </div>
 
         <ol class="feature-list">
           <li v-for="(f, i) in data.features" :key="f.code" class="feature">
-            <div class="feature-hd">
+            <div v-reveal class="feature-hd">
               <span class="feature-code">{{ f.code }}</span>
               <span class="feature-idx">{{ String(i + 1).padStart(2, '0') }} / {{ String(data.features.length).padStart(2, '0') }}</span>
             </div>
-            <h3>{{ f.title }}</h3>
-            <p>{{ f.description }}</p>
+            <h3 v-reveal:blur="1">{{ f.title }}</h3>
+            <p v-reveal="2">{{ f.description }}</p>
             <div :class="['feature-media', mediaClass(f.images.length)]">
-              <figure v-for="img in f.images" :key="img.src">
+              <figure v-for="(img, j) in f.images" :key="img.src" v-reveal:mask="j">
                 <NuxtImg
                   :src="img.src"
                   :alt="img.alt"
@@ -88,10 +90,10 @@
     <!-- MORE GRID -->
     <section v-if="data.more && data.more.length" class="band more">
       <div class="wrap">
-        <div class="kicker">And we can do more</div>
-        <h2 class="more-title">Beyond the featured runs.</h2>
+        <div v-reveal:fade class="kicker">And we can do more</div>
+        <h2 v-reveal:blur class="more-title">Beyond the featured runs.</h2>
         <div class="more-grid">
-          <figure v-for="m in data.more" :key="m.img">
+          <figure v-for="(m, i) in data.more" :key="m.img" v-reveal:scale="i % 4">
             <NuxtImg
               :src="m.img"
               :alt="`${m.name} — Vietnam apparel manufacturer`"
@@ -179,7 +181,9 @@ h1 {
 .plate {
   padding: 0 0 clamp(48px, 6vw, 80px);
   .wrap { position: relative; }
+  .shot-wrap { overflow: hidden; }
   .shot {
+    display: block;
     aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: cover;

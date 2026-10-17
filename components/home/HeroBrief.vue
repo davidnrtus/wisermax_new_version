@@ -22,7 +22,7 @@
           <dl class="spec" aria-label="Factory at a glance">
             <div v-for="row in spec" :key="row.term" class="spec-row">
               <dt>{{ row.term }}</dt>
-              <dd>
+              <dd v-count>
                 {{ row.value }}<small v-if="row.unit">{{ row.unit }}</small>
               </dd>
             </div>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="hero-visual">
-        <div class="ph">
+        <div v-reveal:mask="2" class="ph">
           <NuxtImg
             src="/about/service-1.jpg"
             alt="Sewing line on the Wisermax factory floor — garment factory in Vietnam running full package production"
@@ -46,7 +46,7 @@
           <span class="cap">Sewing line, our factory floor</span>
         </div>
         <div class="col">
-          <div class="ph">
+          <div v-reveal:mask="3" class="ph">
             <NuxtImg
               src="/home/so-sampleroom.jpg"
               alt="In-house sample room — cut and sew manufacturer Vietnam making proto and fit samples"
@@ -56,7 +56,7 @@
             />
             <span class="cap">Sample room</span>
           </div>
-          <div class="ph">
+          <div v-reveal:mask="4" class="ph">
             <NuxtImg
               src="/factory/cutting-room.webp"
               alt="Cutting room with fabric spreading table — OEM clothing factory Vietnam cutting in-house"

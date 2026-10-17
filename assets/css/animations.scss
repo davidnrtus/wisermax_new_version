@@ -20,3 +20,72 @@
   }
   html { scroll-behavior: auto; }
 }
+
+/* Scroll reveal — see plugins/reveal.ts. Hidden state is gated on
+   html.reveal-on (set pre-paint by an inline head script) so SSG output reads
+   fine without JS. */
+$reveal-ease: cubic-bezier(.16, 1, .3, 1);
+$reveal-step: 110ms;
+
+[data-reveal] {
+  transition:
+    opacity 1s $reveal-ease,
+    transform 1.2s $reveal-ease,
+    filter 1s $reveal-ease,
+    clip-path 1.4s $reveal-ease;
+  transition-delay: calc(var(--reveal-i, 0) * #{$reveal-step});
+}
+
+.reveal-on [data-reveal]:not(.is-in) { opacity: 0; }
+.reveal-on [data-reveal="up"]:not(.is-in) { transform: translateY(56px); }
+.reveal-on [data-reveal="left"]:not(.is-in) { transform: translateX(-64px); }
+.reveal-on [data-reveal="right"]:not(.is-in) { transform: translateX(64px); }
+.reveal-on [data-reveal="scale"]:not(.is-in) { transform: translateY(32px) scale(.92); }
+.reveal-on [data-reveal="blur"]:not(.is-in) {
+  transform: translateY(36px);
+  filter: blur(12px);
+}
+
+/* Photo plate: wipes up from the bottom edge while the image settles from
+   a slight zoom. The clip sits on the children — a fully clipped target
+   never counts as intersecting, so the observer would never fire. */
+[data-reveal="mask"] {
+  overflow: hidden;
+
+  > * {
+    transition:
+      clip-path 1.4s $reveal-ease,
+      transform 1.8s $reveal-ease;
+    transition-delay: calc(var(--reveal-i, 0) * #{$reveal-step});
+  }
+}
+.reveal-on [data-reveal="mask"]:not(.is-in) {
+  opacity: 1;
+
+  > * { clip-path: inset(100% 0 0 0); }
+  > img { transform: scale(1.25); }
+}
+
+[data-count] { font-variant-numeric: tabular-nums; }
+
+/* Route change — short cross-fade between pages. */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .35s ease, transform .35s ease;
+}
+.page-enter-from { opacity: 0; transform: translateY(12px); }
+.page-leave-to { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal] > *,
+  .page-enter-active,
+  .page-leave-active { transition: none; }
+  .reveal-on [data-reveal]:not(.is-in),
+  .reveal-on [data-reveal]:not(.is-in) > * {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
+  }
+}

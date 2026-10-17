@@ -1,7 +1,7 @@
 <template>
   <section id="rfq" class="band rfq">
     <div class="wrap split">
-      <div>
+      <div v-reveal:left>
         <h2>Send us your tech pack</h2>
         <p class="lede">
           Attach a tech pack, sketch or reference garment. A merchandiser replies within one working
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <form novalidate @submit.prevent="submit">
+      <form v-reveal:right="1" novalidate @submit.prevent="submit">
         <label>
           Name
           <input v-model.trim="form.name" type="text" name="name" autocomplete="name" required>

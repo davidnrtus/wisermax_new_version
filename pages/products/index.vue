@@ -3,7 +3,7 @@
     <!-- HERO -->
     <section class="band pi-hero">
       <div class="wrap">
-        <div class="pi-meta">
+        <div v-reveal:fade class="pi-meta">
           <!-- One line: Vue drops whitespace that contains a newline between tags. -->
           <span><b>Collections</b> <NuxtLink to="/products/men">Menswear</NuxtLink> <em>·</em> <NuxtLink to="/products/women">Womenswear</NuxtLink> <em>·</em> <NuxtLink to="/products/kids">Kidswear</NuxtLink></span>
           <span><b>Category lines</b> Jersey <em>·</em> Fleece <em>·</em> Woven fashion</span>
@@ -11,11 +11,11 @@
           <span><b>Port</b> FOB Hai Phong</span>
         </div>
 
-        <h1>
+        <h1 v-reveal:blur="1">
           Every category, one <em>merchandising</em> desk.
         </h1>
 
-        <div class="pi-hero-layout">
+        <div v-reveal="2" class="pi-hero-layout">
           <p class="lede">
             Full package apparel manufacturing Vietnam across women's, men's and kids'
             fashion — jersey, fleece and woven. Developed in our own sample room, made on
@@ -30,29 +30,29 @@
     <section class="band cat-grid">
       <div class="wrap">
         <div class="head">
-          <div class="kicker">Programmes</div>
-          <h2>Three category programmes, run through one <em>merchandiser</em>.</h2>
+          <div v-reveal:fade class="kicker">Programmes</div>
+          <h2 v-reveal:blur>Three category programmes, run through one <em>merchandiser</em>.</h2>
         </div>
 
         <div class="grid">
           <NuxtLink
-            v-for="c in categories"
+            v-for="(c, i) in categories"
             :key="c.slug"
             :to="c.url"
             class="cat"
           >
-            <div class="cat-hd">
+            <div v-reveal="i" class="cat-hd">
               <span>{{ c.tag }}</span>
               <b>{{ c.label }}</b>
             </div>
-            <div class="cat-media">
+            <div v-reveal:mask="i" class="cat-media">
               <NuxtImg :src="c.image" :alt="c.alt" loading="lazy" format="webp" sizes="sm:100vw md:50vw lg:400px" />
             </div>
-            <h3>
+            <h3 v-reveal="i + 1">
               {{ c.title }} <em>{{ c.titleAccent }}</em>
             </h3>
-            <p>{{ c.blurb }}</p>
-            <span class="cat-cta">See programme →</span>
+            <p v-reveal="i + 2">{{ c.blurb }}</p>
+            <span v-reveal="i + 3" class="cat-cta">See programme →</span>
           </NuxtLink>
         </div>
       </div>
@@ -62,12 +62,12 @@
     <section class="band cross">
       <div class="wrap">
         <div class="head">
-          <div class="kicker">Cross-category lines</div>
-          <h2>And the development work we're <em>known for.</em></h2>
+          <div v-reveal:fade class="kicker">Cross-category lines</div>
+          <h2 v-reveal:blur>And the development work we're <em>known for.</em></h2>
         </div>
 
         <div class="cross-grid">
-          <article v-for="c in cross" :key="c.title" class="cross-card">
+          <article v-for="(c, i) in cross" :key="c.title" v-reveal="i % 3" class="cross-card">
             <div class="cross-code">{{ c.code }}</div>
             <h3>{{ c.title }}</h3>
             <p>{{ c.description }}</p>

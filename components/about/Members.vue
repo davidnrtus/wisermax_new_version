@@ -3,10 +3,10 @@
     <div class="wrap">
       <div class="head">
         <div>
-          <div class="kicker">Meet our director</div>
-          <h2>Every order arrives at <em>Helen's</em> desk first.</h2>
+          <div v-reveal:fade class="kicker">Meet our director</div>
+          <h2 v-reveal:blur>Every order arrives at <em>Helen's</em> desk first.</h2>
         </div>
-        <p>
+        <p v-reveal="1">
           Ten years leading full-package programmes for US and EU brands.
           A merchandiser first and a business owner second — every quote,
           tech pack response and shipment sample crosses her desk
@@ -15,7 +15,7 @@
       </div>
 
       <div class="director">
-        <div class="portrait">
+        <div v-reveal:mask class="portrait">
           <NuxtImg
             src="/members/ceo_helen.jpg"
             alt="Ms Helen Hoang, founder of Wisermax HN — Vietnam apparel manufacturer in Hanoi"
@@ -24,7 +24,7 @@
             sizes="sm:100vw md:50vw lg:520px"
           />
         </div>
-        <div class="info">
+        <div v-reveal:right="1" class="info">
           <div class="kicker">Founder &amp; Director</div>
           <h3>Ms Helen Hoang</h3>
           <p class="lede">
@@ -68,7 +68,7 @@
       </div>
 
       <div class="teams">
-        <div class="team" v-for="t in teams" :key="t.title">
+        <div v-for="(t, i) in teams" :key="t.title" v-reveal="i" class="team">
           <div class="team-idx">{{ t.idx }}</div>
           <h4>{{ t.title }}</h4>
           <p>{{ t.des }}</p>

@@ -2,9 +2,9 @@
   <section class="band about-services">
     <div class="wrap">
       <div class="head">
-        <div class="kicker">Services</div>
-        <h2>From sourcing to sea freight, under <em>one roof.</em></h2>
-        <p>
+        <div v-reveal:fade class="kicker">Services</div>
+        <h2 v-reveal:blur>From sourcing to sea freight, under <em>one roof.</em></h2>
+        <p v-reveal="1">
           Full package apparel manufacturing Vietnam. We take responsibility for
           the whole chain, so the buyer talks to one merchandiser — not four vendors.
         </p>
@@ -12,7 +12,7 @@
 
       <ol class="services-list">
         <li v-for="(s, i) in services" :key="s.key" class="svc">
-          <div class="svc-media">
+          <div v-reveal:mask class="svc-media">
             <NuxtImg
               :src="s.img"
               :alt="s.alt"
@@ -22,7 +22,7 @@
               densities="x1 x2"
             />
           </div>
-          <div class="svc-body">
+          <div v-reveal="1" class="svc-body">
             <div class="svc-index">
               {{ String(i + 1).padStart(2, '0') }} <span>/ 04</span>
             </div>
