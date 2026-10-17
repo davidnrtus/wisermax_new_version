@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cutting",
+    "step": "01",
+    "title": "Cutting",
+    "caption": "Fabric is relaxed, spread and cut in-house.",
+    "image": "/factory/cutting-room.webp",
+    "alt": "Fabric spreading and cutting room — garment factory in Vietnam cutting jersey for a fashion programme"
+  },
+  {
+    "id": "line-2",
+    "step": "02",
+    "title": "Sewing, line 2",
+    "caption": "Each line runs one style at a time, with its own QC table.",
+    "image": "/factory/sewing-line-2.webp",
+    "alt": "Sewing line 2 at the Wisermax factory — cut and sew manufacturer Vietnam producing knit tops"
+  },
+  {
+    "id": "line-3",
+    "step": "03",
+    "title": "Sewing, line 3",
+    "caption": "Bundles are checked inline before they move on.",
+    "image": "/factory/sewing-line-3.webp",
+    "alt": "Sewing line 3 with inline quality checks — Vietnam apparel manufacturer for European and US brands"
+  },
+  {
+    "id": "line-4",
+    "step": "04",
+    "title": "Sewing, line 4",
+    "caption": "Woven and printed fashion runs alongside jersey.",
+    "image": "/factory/sewing-line-4.webp",
+    "alt": "Sewing line 4 producing a printed polka-dot fashion style — contract garment manufacturer Vietnam"
+  },
+  {
+    "id": "pressing",
+    "step": "05",
+    "title": "Pressing",
+    "caption": "Steam pressing on vacuum tables, piece by piece.",
+    "image": "/factory/pressing.webp",
+    "alt": "Pressing area with vacuum ironing tables — OEM clothing factory Vietnam finishing knit garments"
+  },
+  {
+    "id": "finishing",
+    "step": "06",
+    "title": "Finishing & packing",
+    "caption": "Every piece is inspected, tagged and packed to your carton spec.",
+    "image": "/factory/finishing-packing.webp",
+    "alt": "Finishing and packing room — every garment inspected before packing at a garment factory in Vietnam"
+  }
+]

@@ -21,8 +21,8 @@
       </div>
     </section>
 
-    <!-- PHOTO PLATE -->
-    <section class="plate">
+    <!-- PHOTO PLATE — only for programmes with a banner of their own -->
+    <section v-if="data.hero" class="plate">
       <div class="wrap">
         <NuxtImg
           :src="data.hero"
@@ -318,7 +318,13 @@ h2 {
     }
   }
 
-  .grid-1 { grid-template-columns: 1fr; figure :deep(img) { aspect-ratio: 16 / 9; } }
+  /* A single image keeps its own proportions — cropping it to a fixed ratio
+     cut the garment off on portrait and square shots. */
+  .grid-1 {
+    grid-template-columns: 1fr;
+    figure { background: none; }
+    figure :deep(img) { aspect-ratio: auto; height: auto; object-fit: contain; display: block; }
+  }
   .grid-2 { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }

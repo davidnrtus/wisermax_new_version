@@ -4,12 +4,12 @@
       <div class="hero-grid">
         <div>
           <h1 class="display atelier-up">
-            Apparel manufacturing in Vietnam for brands that ship to the US and Europe.
+            A garment manufacturer in Hanoi, developing fashion collections for European labels.
           </h1>
           <p class="lede atelier-up delay-1">
-            Knit, woven, outerwear and kidswear, produced across our network of partner factories in
-            Northern and Central Vietnam. Send us a tech pack and we come back with a costed sample
-            plan within five working days.
+            Jersey, fleece, woven fashion and kidswear — developed in our own sample room, then cut,
+            sewn, pressed and packed on our own lines. Send a sketch or a tech pack and we come back
+            with a costed sample plan within five working days.
           </p>
           <div class="hero-cta atelier-up delay-2">
             <a class="btn" href="#rfq">Send a tech pack</a>
@@ -55,15 +55,15 @@
             />
             <span class="cap">Sample room</span>
           </div>
-          <div class="ph dark">
+          <div class="ph">
             <NuxtImg
-              src="/home/so-design.jpg"
-              alt="Pattern making and design desk — OEM clothing factory Vietnam handling tech pack development"
+              src="/factory/cutting-room.webp"
+              alt="Cutting room with fabric spreading table — OEM clothing factory Vietnam cutting in-house"
               sizes="sm:100vw md:33vw lg:440px"
               format="webp"
               loading="lazy"
             />
-            <span class="cap">Pattern &amp; design</span>
+            <span class="cap">Cutting room</span>
           </div>
         </div>
       </div>
@@ -150,13 +150,21 @@ import spec from '@/data/hero-spec.json'
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 10px;
+  grid-template-rows: minmax(0, 1fr);
   height: clamp(320px, 46vw, 620px);
 
   .col {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
     gap: 10px;
+    min-height: 0;
   }
+
+  /* Pin images to their panel so a portrait photo cannot stretch the row
+     past the fixed height and spill over the next section. */
+  .ph { min-height: 0; }
+
+  .ph :deep(img) { position: absolute; inset: 0; }
 }
 
 @media (max-width: 820px) {
@@ -164,6 +172,7 @@ import spec from '@/data/hero-spec.json'
 
   .hero-visual {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
     height: auto;
 
     .ph { height: 260px; }

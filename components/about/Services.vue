@@ -14,7 +14,7 @@
         <li v-for="(s, i) in services" :key="s.key" class="svc">
           <div class="svc-media">
             <NuxtImg
-              :src="`/about/${s.img}`"
+              :src="s.img"
               :alt="s.alt"
               loading="lazy"
               format="webp"
@@ -45,8 +45,8 @@
 const services = [
   {
     key: 'sourcing',
-    img: 'service-41.jpg',
-    alt: 'Fabric sourcing and mill selection at a Vietnam apparel manufacturer — cotton, poplin, twill, viscose and technical shells',
+    img: '/about/service-41.jpg',
+    alt: 'Fabric sourcing and mill selection at a Vietnam apparel manufacturer — cotton, poplin, twill, viscose and French terry',
     title: 'Sourcing & material development',
     description:
       'We open every programme with a fabric conversation. Nominated mills for the buyer who has one; approved mills in Nam Dinh, Hung Yen and Hanoi for the buyer who does not. GOTS-certified cottons and recycled polyesters on request.',
@@ -57,8 +57,8 @@ const services = [
   },
   {
     key: 'design',
-    img: 'service-21.jpg',
-    alt: 'Design and pattern room for a Vietnam garment factory — sampling knitwear, woven, outerwear and sportswear',
+    img: '/factory/cutting-room.webp',
+    alt: 'Cutting room with fabric spreading table — Vietnam garment factory sampling and cutting jersey, fleece and woven fashion in-house',
     title: 'Development & sampling',
     description:
       'ODM apparel manufacturer for brands who want the design pushed forward, and a disciplined OEM sample room for brands who bring the tech pack. Pattern making, first proto, PP and shipment samples handled in our own room in Hanoi.',
@@ -69,11 +69,11 @@ const services = [
   },
   {
     key: 'production',
-    img: 'service-11.jpeg',
+    img: '/about/service-11.jpeg',
     alt: 'Production line at an audited garment factory in Vietnam under AQL inspection — cut and sew for US and EU brands',
     title: 'Production & quality',
     description:
-      'Twenty audited partner factories across five Northern provinces. Each category has a dedicated line and QA lead. AQL 1.0 / 2.5 as required, 100% individual inspection before packing on kids and technical outerwear programmes.',
+      'Twenty audited partner factories across five Northern provinces. Each category has a dedicated line and QA lead. AQL 1.0 / 2.5 as required, 100% individual inspection before packing on kids and premium fashion programmes.',
     items: [
       { term: 'AQL level', value: '1.0 · 2.5 · 100% pieces on request' },
       { term: 'Ethical audits', value: 'BSCI / WRAP available on request' },
@@ -81,7 +81,7 @@ const services = [
   },
   {
     key: 'shipping',
-    img: 'service-51.jpg',
+    img: '/about/service-51.jpg',
     alt: 'Finished garments packed in export cartons at FOB Hai Phong — Vietnam clothing manufacturer',
     title: 'Finishing & shipping',
     description:

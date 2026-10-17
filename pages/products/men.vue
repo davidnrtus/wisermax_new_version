@@ -6,7 +6,7 @@
 import data from '@/data/products-men.json'
 import ProductCategory from '@/components/products/ProductCategory.vue'
 
-const title = `Men's clothing manufacturer Vietnam — polos, shirting, suits & outerwear | Wisermax HN`
+const title = `Men's clothing manufacturer Vietnam — polos, shirting, suits & jersey | Wisermax HN`
 const description = `Custom t-shirt factory Vietnam, bulk polo shirt manufacturer and woven pants supplier for men's retail programmes — OEM, ODM and private label from a Hanoi garment factory.`
 const url = 'https://www.wisermaxhn.com/products/men'
 

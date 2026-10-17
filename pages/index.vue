@@ -3,24 +3,25 @@
     <TuHeroBrief />
     <TuClientsBand />
     <TuCapabilityList />
+    <TuSampleRoom />
+    <TuFactoryFloor />
     <TuProcessSteps />
     <TuProductsGrid />
     <TuQualityBand />
-    <TuFactoryNetwork />
     <TuRfqSection />
   </div>
 </template>
 
 <script setup>
-const title = 'WISERMAX HN — Vietnam apparel manufacturer & garment factory, Hanoi'
-const description = 'A Vietnam garment manufacturer in Hanoi running full package OEM, ODM and private label for US and EU brands — knitwear, woven, outerwear and sportswear. Cut and sew, FOB Hai Phong, audited factories.'
+const title = 'WISERMAX HN — Garment factory in Vietnam for European fashion labels'
+const description = 'Vietnam apparel manufacturer in Hanoi developing fashion collections for EU and US labels. Own sample room and sewing lines — OEM, ODM, FOB Hai Phong.'
 const url = 'https://www.wisermaxhn.com/'
 
 useHead({
   title,
   meta: [
     { hid: 'description', name: 'description', content: description },
-    { hid: 'keywords', name: 'keywords', content: 'Vietnam apparel manufacturer, garment factory in Vietnam, clothing manufacturer Vietnam, cut and sew manufacturer Vietnam, FOB garment manufacturer Vietnam, OEM clothing factory Vietnam, ODM apparel manufacturer, full package apparel manufacturing Vietnam, private label clothing manufacturer Vietnam, jacket manufacturer Vietnam, custom t-shirt factory Vietnam, bulk polo shirt manufacturer, knit dress manufacturer Vietnam, woven pants supplier Vietnam, waterproof jacket manufacturer, outerwear factory Vietnam, FOB sportswear manufacturer Vietnam' },
+    { hid: 'keywords', name: 'keywords', content: 'Vietnam apparel manufacturer, garment factory in Vietnam, clothing manufacturer Vietnam, cut and sew manufacturer Vietnam, FOB garment manufacturer Vietnam, OEM clothing factory Vietnam, ODM apparel manufacturer, full package apparel manufacturing Vietnam, private label clothing manufacturer Vietnam, custom t-shirt factory Vietnam, bulk polo shirt manufacturer, knit dress manufacturer Vietnam, woven pants supplier Vietnam, fashion garment manufacturer Vietnam, apparel product development Vietnam' },
     { hid: 'og:title', property: 'og:title', content: title },
     { hid: 'og:description', property: 'og:description', content: description },
     { hid: 'og:url', property: 'og:url', content: url },

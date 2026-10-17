@@ -5,7 +5,7 @@
       <div class="wrap">
         <div class="pi-meta">
           <span><b>Programmes</b> Menswear <em>·</em> Womenswear <em>·</em> Kidswear</span>
-          <span><b>Category lines</b> Knit <em>·</em> Woven <em>·</em> Outerwear <em>·</em> Sport</span>
+          <span><b>Category lines</b> Jersey <em>·</em> Fleece <em>·</em> Woven fashion</span>
           <span><b>Trade</b> OEM <em>·</em> ODM <em>·</em> Private label</span>
           <span><b>Port</b> FOB Hai Phong</span>
         </div>
@@ -17,8 +17,8 @@
         <div class="pi-hero-layout">
           <p class="lede">
             Full package apparel manufacturing Vietnam across women's, men's and kids'
-            programmes — knitwear, woven, outerwear and sportswear. Sampled in Gia Lam,
-            produced across twenty audited partner factories, shipped FOB Hai Phong.
+            fashion — jersey, fleece and woven. Developed in our own sample room, made on
+            our own lines, shipped FOB Hai Phong to Europe and the US.
           </p>
           <a class="btn" href="/contact#quote">Request a quote</a>
         </div>
@@ -57,12 +57,12 @@
       </div>
     </section>
 
-    <!-- CROSS-CATEGORY: outerwear, sport, trims -->
+    <!-- CROSS-CATEGORY: development, jersey & fleece, trims -->
     <section class="band cross">
       <div class="wrap">
         <div class="head">
           <div class="kicker">Cross-category lines</div>
-          <h2>And the technical runs we're <em>known for.</em></h2>
+          <h2>And the development work we're <em>known for.</em></h2>
         </div>
 
         <div class="cross-grid">
@@ -82,7 +82,7 @@
 
 <script setup>
 const title = 'Products & programmes — Vietnam apparel manufacturer | Wisermax HN'
-const description = `Women's, men's and kids' clothing programmes from a Vietnam garment factory in Hanoi. Knitwear, woven, outerwear and sportswear — OEM, ODM and private label, FOB Hai Phong.`
+const description = `Women's, men's and kids' clothing programmes from a Vietnam garment factory in Hanoi. Jersey, fleece and woven fashion — OEM, ODM and private label, FOB Hai Phong.`
 const url = 'https://www.wisermaxhn.com/products'
 
 useHead({
@@ -111,9 +111,9 @@ const categories = [
     url: '/products/women',
     image: '/products/banners/banner_top_women.png',
     alt: `Women's clothing programme — knit dress manufacturer Vietnam and woven blouses supplier`,
-    title: `Knit dresses, blouses, coats and`,
-    titleAccent: `activewear.`,
-    blurb: `Knit dress manufacturer Vietnam. Blouses in viscose and linen blends, tailored coats, activewear and sleepwear across full retail programmes.`,
+    title: `Knit dresses, blouses and`,
+    titleAccent: `loungewear.`,
+    blurb: `Knit dress manufacturer Vietnam. Blouses in viscose and linen blends, fashion dresses, loungewear and sleepwear for seasonal collections.`,
   },
   {
     slug: 'men',
@@ -123,8 +123,8 @@ const categories = [
     image: '/products/banners/banner_top_men.png',
     alt: `Men's clothing programme — bulk polo shirt manufacturer and woven pants supplier Vietnam`,
     title: `Polos, shirting, suits and`,
-    titleAccent: `outerwear.`,
-    blurb: `Custom t-shirt factory Vietnam and bulk polo shirt manufacturer. Cut and sew woven shirts, tailored vests and suiting, chinos and outerwear.`,
+    titleAccent: `jersey.`,
+    blurb: `Custom t-shirt factory Vietnam and bulk polo shirt manufacturer. Cut and sew woven shirts, tailored vests and suiting, chinos and sweatshirts.`,
   },
   {
     slug: 'kids',
@@ -142,17 +142,17 @@ const categories = [
 const cross = [
   {
     code: 'X / 01',
-    title: 'Jackets & outerwear',
-    description: 'Jacket manufacturer Vietnam for padded and puffer jackets, wool and felt coats, softshell and waterproof shells with taped seams. Down and synthetic fill on request.',
-    image: '/products/banners/banner_jacket.png',
-    alt: 'Jacket manufacturer Vietnam — padded and waterproof outerwear on the finishing line',
+    title: 'Product development',
+    description: 'ODM apparel manufacturer for design teams: pattern making, grading to EU and US size charts, proto, fit and salesman samples from our own sample room.',
+    image: '/samples/raglan-crew-sweatshirt.webp',
+    alt: 'Raglan sweatshirt fit sample — apparel product development at a Vietnam garment factory',
   },
   {
     code: 'X / 02',
-    title: 'Protective & technical wear',
-    description: 'Waterproof jacket manufacturer with DWR finishing. Knitting and woven programmes — activewear, swimwear, sleepwear, workwear on dedicated lines.',
-    image: '/products/banners/banner_protective.png',
-    alt: 'Technical protective clothing — Vietnam apparel manufacturer with AQL inspection',
+    title: 'Jersey & fleece fashion',
+    description: 'French terry, loopback and brushed fleece for sweatshirts, hoodies and lounge sets. Capsules from 200 pieces per colour, scaled on the same lines.',
+    image: '/samples/sleeveless-hoodie.webp',
+    alt: 'Sleeveless fleece hoodie sample — private label clothing manufacturer Vietnam for fashion labels',
   },
   {
     code: 'X / 03',

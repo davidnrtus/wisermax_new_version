@@ -13,7 +13,7 @@
           <p>
             Wiser Max HN Company Limited is a garment factory in Vietnam headquartered in
             Trau Quy Ward, Gia Lam District, Hanoi. Founded in 2014, we run a full-package
-            programme across knitwear, woven, outerwear and sportswear — every category
+            programme across jersey, fleece and woven fashion — every category
             merchandised in-house, produced across twenty audited partner factories in
             five Northern provinces, and shipped FOB Hai Phong.
           </p>

@@ -1,15 +1,15 @@
 <template>
   <section id="products" class="band">
     <div class="wrap">
-      <h2>Recent work</h2>
-      <p class="lede">A selection from the last three seasons.</p>
+      <h2>Collections we produce</h2>
+      <p class="lede">Women's, men's and kids' fashion, developed and made in Hanoi.</p>
       <div class="products">
         <article v-for="(p, i) in products" :key="p.id" class="product">
           <div :class="['ph', { dark: i === products.length - 1 }]">
             <NuxtImg
               :src="p.image"
               :alt="p.alt"
-              sizes="sm:100vw md:50vw lg:320px"
+              sizes="sm:100vw md:50vw lg:430px"
               format="webp"
               loading="lazy"
             />
@@ -30,7 +30,7 @@ import products from '@/data/home-products.json'
 <style lang="scss" scoped>
 .products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 44px;
 }

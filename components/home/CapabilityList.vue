@@ -2,11 +2,11 @@
   <section id="capabilities" class="band">
     <div class="wrap split">
       <div>
-        <h2>What we make</h2>
+        <h2>Development and fashion, made by us</h2>
         <p class="lede">
-          One point of contact from first sketch to shipped carton. We handle sourcing, sampling,
-          bulk production and packing so your team works with one vendor, not six — full package
-          apparel manufacturing Vietnam brands can audit end to end.
+          We work the way a European atelier does: season by season, sample by sample, with the
+          design team in the loop. One point of contact from first sketch to shipped carton —
+          full package apparel manufacturing Vietnam brands can audit end to end.
         </p>
       </div>
       <ul class="list">

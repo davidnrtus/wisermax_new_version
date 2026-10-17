@@ -2,7 +2,7 @@
 const SITE_URL = 'https://www.wisermaxhn.com'
 const SITE_NAME = 'Wisermax HN'
 const DEFAULT_TITLE = 'WISERMAX HN — Garment manufacturer & ODM atelier, Hanoi'
-const DEFAULT_DESCRIPTION = 'A Vietnam apparel manufacturer in Hanoi producing knitwear, woven, outerwear and sportswear for US and EU brands. Full package OEM, ODM and private label — FOB Hai Phong.'
+const DEFAULT_DESCRIPTION = 'A Vietnam apparel manufacturer in Hanoi developing and producing fashion collections for EU and US labels. Full package OEM, ODM and private label — FOB Hai Phong.'
 
 // Trau Quy Ward, Gia Lam, Hanoi — approximate office coordinates.
 // Replace with the exact lat/lng once confirmed with the client.
@@ -153,10 +153,12 @@ export default defineNuxtConfig({
             ],
             sameAs: [],
             areaServed: [
+              { '@type': 'Country', name: 'Germany' },
+              { '@type': 'Country', name: 'France' },
+              { '@type': 'Country', name: 'Netherlands' },
+              { '@type': 'Country', name: 'United Kingdom' },
               { '@type': 'Country', name: 'United States' },
               { '@type': 'Country', name: 'Canada' },
-              { '@type': 'Country', name: 'Germany' },
-              { '@type': 'Country', name: 'Netherlands' },
               { '@type': 'Country', name: 'South Korea' },
             ],
             knowsAbout: [
@@ -170,8 +172,8 @@ export default defineNuxtConfig({
               'FOB Hai Phong shipping',
               'Knitwear manufacturing',
               'Woven apparel manufacturing',
-              'Outerwear manufacturing',
-              'Waterproof jacket production',
+              'Apparel product development and sampling',
+              'Fashion collection manufacturing',
               'Kidswear manufacturing (CPSIA / EN 14682)',
               'Sportswear manufacturing with AQL inspection',
             ],
@@ -184,7 +186,7 @@ export default defineNuxtConfig({
               { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bulk polo shirt manufacturing', areaServed: 'Worldwide' } },
               { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Knit dress manufacturing', areaServed: 'Worldwide' } },
               { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Woven pants manufacturing', areaServed: 'Worldwide' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Waterproof jacket manufacturing', areaServed: 'Worldwide' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Apparel product development and sampling', areaServed: 'Worldwide' } },
               { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kids apparel manufacturing (CPSIA / EN 14682)', areaServed: 'Worldwide' } },
             ],
           }),

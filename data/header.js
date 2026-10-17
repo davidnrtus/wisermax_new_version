@@ -8,10 +8,10 @@ export const headers = [
 // Anchor nav rendered only on the homepage
 export const homeAnchors = [
   { title: 'Capabilities', href: '#capabilities' },
-  { title: 'How we work', href: '#process' },
-  { title: 'Products', href: '#products' },
-  { title: 'Quality', href: '#quality' },
+  { title: 'Samples', href: '#samples' },
   { title: 'Factory', href: '#factory' },
+  { title: 'How we work', href: '#process' },
+  { title: 'Quality', href: '#quality' },
 ]
 
 // Category quick-links kept for programmatic use (product landing / footer)
