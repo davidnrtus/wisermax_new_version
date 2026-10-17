@@ -4,7 +4,8 @@
     <section class="band pi-hero">
       <div class="wrap">
         <div class="pi-meta">
-          <span><b>Programmes</b> Menswear <em>·</em> Womenswear <em>·</em> Kidswear</span>
+          <!-- One line: Vue drops whitespace that contains a newline between tags. -->
+          <span><b>Collections</b> <NuxtLink to="/products/men">Menswear</NuxtLink> <em>·</em> <NuxtLink to="/products/women">Womenswear</NuxtLink> <em>·</em> <NuxtLink to="/products/kids">Kidswear</NuxtLink></span>
           <span><b>Category lines</b> Jersey <em>·</em> Fleece <em>·</em> Woven fashion</span>
           <span><b>Trade</b> OEM <em>·</em> ODM <em>·</em> Private label</span>
           <span><b>Port</b> FOB Hai Phong</span>
@@ -183,6 +184,14 @@ const cross = [
 
   b { color: var(--ink); font-weight: 600; margin-right: 4px; }
   em { font-style: normal; color: var(--thread); }
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+
+    &:hover { color: var(--indigo); border-bottom-color: var(--indigo); }
+  }
 }
 
 h1 {

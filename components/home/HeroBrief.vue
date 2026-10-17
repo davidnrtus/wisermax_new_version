@@ -2,10 +2,11 @@
   <section class="band hero">
     <div class="wrap">
       <div class="hero-grid">
-        <div>
-          <h1 class="display atelier-up">
-            A garment manufacturer in Hanoi, developing fashion collections for European labels.
-          </h1>
+        <h1 class="hero-head display atelier-up">
+          A garment manufacturer in Hanoi, developing fashion collections for European labels.
+        </h1>
+
+        <div class="hero-sub">
           <p class="lede atelier-up delay-1">
             Jersey, fleece, woven fashion and kidswear — developed in our own sample room, then cut,
             sewn, pressed and packed on our own lines. Send a sketch or a tech pack and we come back
@@ -84,9 +85,19 @@ import spec from '@/data/hero-spec.json'
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, .85fr);
-  gap: clamp(40px, 6vw, 96px);
-  align-items: end;
+  grid-template-areas:
+    "head spec"
+    "sub  .";
+  column-gap: clamp(40px, 6vw, 96px);
+  align-items: start;
 }
+
+/* The spec sheet's foot lines up with the headline's last line. Aligning it
+   to the whole left column (headline + lede + buttons) pushed it below the
+   fold on a laptop screen. */
+.hero-head { grid-area: head; align-self: end; }
+.spec-sheet { grid-area: spec; align-self: end; }
+.hero-sub { grid-area: sub; }
 
 .hero :deep(.display) { max-width: 15ch; }
 
@@ -168,7 +179,12 @@ import spec from '@/data/hero-spec.json'
 }
 
 @media (max-width: 820px) {
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "head" "sub" "spec";
+  }
+
+  .spec-sheet { margin-top: 48px; }
 
   .hero-visual {
     grid-template-columns: 1fr;

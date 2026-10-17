@@ -31,7 +31,10 @@
         aria-label="Toggle navigation"
         @click="mobileOpen = !mobileOpen"
       >
-        Menu
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <path v-if="mobileOpen" d="M5 5l12 12M17 5L5 17" />
+          <path v-else d="M3 6h16M3 11h16M3 16h16" />
+        </svg>
       </button>
     </div>
 
@@ -142,14 +145,23 @@ watch(() => route.fullPath, () => {
 
 .burger {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -11px;
   background: none;
-  border: 1px solid var(--ink);
-  border-radius: 2px;
-  padding: 8px 12px;
-  font: inherit;
-  font-size: 14px;
+  border: 0;
+  padding: 0;
   color: var(--ink);
   cursor: pointer;
+
+  svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+  }
 }
 
 .mobile-nav {
