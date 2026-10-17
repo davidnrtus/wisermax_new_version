@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'node:url'
+
 const SITE_URL = 'https://www.wisermaxhn.com'
 const SITE_NAME = 'Wisermax HN'
 const DEFAULT_TITLE = 'WISERMAX HN — Garment manufacturer & ODM atelier, Hanoi'
@@ -260,6 +262,13 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    // image.dir is assets/images, which IPX reads locally but is not part of
+    // the static output. On Vercel, @nuxt/image switches to the vercel
+    // provider (/_vercel/image?url=/factory/...), which fetches the source
+    // from the deployed site — so the folder must be served as public files.
+    publicAssets: [
+      { dir: fileURLToPath(new URL('./assets/images', import.meta.url)), baseURL: '/', maxAge: 60 * 60 * 24 * 30 },
+    ],
     prerender: {
       crawlLinks: true,
       routes: ['/', '/about-us', '/products', '/products/men', '/products/women', '/products/kids', '/contact'],
