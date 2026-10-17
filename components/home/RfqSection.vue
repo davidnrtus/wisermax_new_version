@@ -41,20 +41,14 @@
           />
         </label>
 
-        <label class="upload">
-          <b>Choose files</b> to attach — PDF, AI, XLSX, images up to 25 MB
-          <input type="file" name="files" multiple @change="pickFiles">
-          <span v-if="fileNames.length" class="picked">{{ fileNames.join(' · ') }}</span>
-        </label>
-
         <p v-if="error" class="err" role="alert">{{ error }}</p>
 
         <button class="btn" type="submit">Send tech pack</button>
 
         <p class="note" aria-live="polite">
           {{ sent
-            ? 'Your mail client should have opened with the details filled in — attach the files there and send.'
-            : 'Submitting opens your mail client with these details filled in, addressed to ' + info.email_primary + '.' }}
+            ? 'Your mail client should have opened with the details filled in — attach your tech pack there and send.'
+            : 'Submitting opens your mail client with these details filled in, addressed to ' + info.email_primary + '. Attach your tech pack in that email.' }}
         </p>
       </form>
     </div>
@@ -66,13 +60,8 @@ import { ref, reactive } from 'vue'
 import info from '@/data/info'
 
 const form = reactive({ name: '', company: '', email: '', qty: '', msg: '' })
-const fileNames = ref([])
 const error = ref('')
 const sent = ref(false)
-
-function pickFiles(e) {
-  fileNames.value = Array.from(e.target.files || []).map(f => f.name)
-}
 
 // The site is prerendered with no mail backend, so the form composes a
 // prefilled message rather than posting to an endpoint that does not exist.
@@ -94,10 +83,6 @@ function submit() {
     `Estimated quantity: ${form.qty || '—'}`,
     '',
     form.msg,
-    '',
-    fileNames.value.length
-      ? `Files to attach: ${fileNames.value.join(', ')}`
-      : 'No files selected.',
   ].join('\n')
 
   const subject = `Tech pack — ${form.company || form.name}`
@@ -151,36 +136,6 @@ textarea {
 
 textarea { min-height: 120px; resize: vertical; }
 
-.upload {
-  grid-column: 1 / -1;
-  border: 1px dashed #b9b3a6;
-  padding: 22px;
-  text-align: center;
-  color: #3a3e44;
-  font-size: 15px;
-  border-radius: 2px;
-  background: #fff;
-  cursor: pointer;
-
-  b { font-weight: 600; }
-
-  input[type="file"] {
-    border: 0;
-    padding: 0;
-    margin: 10px auto 0;
-    background: none;
-    font-size: 14px;
-    width: fit-content;
-  }
-
-  .picked {
-    display: block;
-    margin-top: 8px;
-    font-size: 13px;
-    color: var(--thread);
-  }
-}
-
 .err {
   grid-column: 1 / -1;
   margin: 0;
@@ -204,7 +159,6 @@ form .btn {
 @media (max-width: 820px) {
   form { grid-template-columns: 1fr; }
   label.full,
-  .upload,
   form .btn { grid-column: auto; }
 }
 </style>
