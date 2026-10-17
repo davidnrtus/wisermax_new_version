@@ -143,14 +143,14 @@ const cross = [
   {
     code: 'X / 01',
     title: 'Product development',
-    description: 'ODM apparel manufacturer for design teams: pattern making, grading to EU and US size charts, proto, fit and salesman samples from our own sample room.',
+    description: 'ODM apparel manufacturer for design teams: pattern making, grading to your own size chart, proto, fit and salesman samples from our own sample room.',
     image: '/samples/raglan-crew-sweatshirt.webp',
     alt: 'Raglan sweatshirt fit sample — apparel product development at a Vietnam garment factory',
   },
   {
     code: 'X / 02',
     title: 'Jersey & fleece fashion',
-    description: 'French terry, loopback and brushed fleece for sweatshirts, hoodies and lounge sets. Capsules from 200 pieces per colour, scaled on the same lines.',
+    description: 'French terry, loopback and brushed fleece for sweatshirts, hoodies and lounge sets. 500 pieces per style with colour splits from 200, scaled on the same lines.',
     image: '/samples/sleeveless-hoodie.webp',
     alt: 'Sleeveless fleece hoodie sample — private label clothing manufacturer Vietnam for fashion labels',
   },

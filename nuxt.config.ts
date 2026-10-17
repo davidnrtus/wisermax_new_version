@@ -154,9 +154,7 @@ export default defineNuxtConfig({
             sameAs: [],
             areaServed: [
               { '@type': 'Country', name: 'Germany' },
-              { '@type': 'Country', name: 'France' },
               { '@type': 'Country', name: 'Netherlands' },
-              { '@type': 'Country', name: 'United Kingdom' },
               { '@type': 'Country', name: 'United States' },
               { '@type': 'Country', name: 'Canada' },
               { '@type': 'Country', name: 'South Korea' },

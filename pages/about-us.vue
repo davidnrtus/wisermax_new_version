@@ -10,7 +10,7 @@
 
 <script setup>
 const title = 'About Wisermax HN — Vietnam garment factory & OEM clothing manufacturer, Hanoi'
-const description = 'Founded 2014 in Gia Lam, Hanoi. Full package apparel manufacturing Vietnam across 20+ audited partner factories — OEM, ODM and private label clothing manufacturer for US and EU brands.'
+const description = 'Founded 2014 in Gia Lam, Hanoi. Full package apparel manufacturing Vietnam on our own sewing lines — OEM, ODM and private label clothing manufacturer for US and EU brands.'
 const url = 'https://www.wisermaxhn.com/about-us'
 
 useHead({

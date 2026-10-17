@@ -7,9 +7,9 @@
           <h2>Audited factory Vietnam for <em>EU</em> and <em>US</em> buyers.</h2>
         </div>
         <p>
-          We work only with partner factories that hold, or are willing to hold,
-          the ethical and technical audits our buyers require. Certificates are
-          provided on request as part of the vendor package.
+          We run our own lines to the ethical and technical audits our buyers
+          require, and arrange new ones where a programme calls for it.
+          Certificates are provided on request as part of the vendor package.
         </p>
       </div>
 
@@ -24,7 +24,7 @@
       <figure class="cert-figure">
         <NuxtImg
           src="/about/certification.png"
-          alt="Certifications held by Wisermax HN partner factories in Vietnam — BSCI, WRAP, OEKO-TEX and buyer-specific audits"
+          alt="Certifications and audits at the Wisermax HN factory in Vietnam — BSCI, WRAP, OEKO-TEX and buyer-specific audits"
           loading="lazy"
           format="webp"
           sizes="sm:100vw md:720px"
@@ -43,7 +43,7 @@ const items = [
   {
     code: 'C / 01',
     name: 'BSCI',
-    detail: 'Business Social Compliance Initiative — ethical audit held by partner factories on request.',
+    detail: 'Business Social Compliance Initiative — ethical audit, documents provided on request.',
   },
   {
     code: 'C / 02',

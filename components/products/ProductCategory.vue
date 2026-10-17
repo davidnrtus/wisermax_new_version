@@ -34,7 +34,7 @@
         />
         <div class="caption">
           <span><b>Programme</b> · {{ data.kicker }}</span>
-          <span class="mid">Sampled in Gia Lam · Produced across audited partners</span>
+          <span class="mid">Sampled in Gia Lam · Made on our own lines</span>
           <span class="r"><b>Wisermax HN</b> · Hanoi</span>
         </div>
       </div>

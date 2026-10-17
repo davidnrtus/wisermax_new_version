@@ -25,7 +25,6 @@ export default {
   years_experience: '12+',
   products_per_year: '6M',
   products_per_year_full: '6,000,000 pcs',
-  partner_factories: '20+',
   buyers: '7',
 
   // Trade

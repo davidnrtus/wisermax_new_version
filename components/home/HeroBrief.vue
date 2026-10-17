@@ -36,13 +36,13 @@
         <div class="ph">
           <NuxtImg
             src="/about/service-1.jpg"
-            alt="Sewing line at a partner factory in Nam Dinh — garment factory in Vietnam running full package production"
+            alt="Sewing line on the Wisermax factory floor — garment factory in Vietnam running full package production"
             sizes="sm:100vw md:66vw lg:880px"
             loading="eager"
             fetchpriority="high"
             format="webp"
           />
-          <span class="cap">Sewing line, partner factory, Nam Dinh</span>
+          <span class="cap">Sewing line, our factory floor</span>
         </div>
         <div class="col">
           <div class="ph">

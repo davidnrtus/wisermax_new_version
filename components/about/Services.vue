@@ -73,7 +73,7 @@ const services = [
     alt: 'Production line at an audited garment factory in Vietnam under AQL inspection — cut and sew for US and EU brands',
     title: 'Production & quality',
     description:
-      'Twenty audited partner factories across five Northern provinces. Each category has a dedicated line and QA lead. AQL 1.0 / 2.5 as required, 100% individual inspection before packing on kids and premium fashion programmes.',
+      'Cut, sewn, pressed and packed on our own lines in Vietnam. Each category has a dedicated line and QA lead. AQL 1.0 / 2.5 as required, 100% individual inspection before packing on kids and premium fashion programmes.',
     items: [
       { term: 'AQL level', value: '1.0 · 2.5 · 100% pieces on request' },
       { term: 'Ethical audits', value: 'BSCI / WRAP available on request' },

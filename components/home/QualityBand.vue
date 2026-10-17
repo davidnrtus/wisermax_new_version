@@ -14,8 +14,8 @@
         </div>
       </div>
       <p class="small">
-        Social compliance and chemical certifications (e.g. BSCI, WRAP, OEKO-TEX) are listed per
-        partner factory and available on request.
+        Social compliance and chemical certifications (e.g. BSCI, WRAP, OEKO-TEX) and their audit
+        documents are available on request.
       </p>
     </div>
   </section>

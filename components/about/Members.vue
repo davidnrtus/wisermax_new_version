@@ -93,7 +93,7 @@ const teams = [
   {
     idx: '03',
     title: 'Merchandising & QC',
-    des: 'Follows the production plan across partner factories, resolves issues on the floor, runs AQL inspection before packing.',
+    des: 'Follows the production plan on our lines, resolves issues on the floor, runs AQL inspection before packing.',
   },
   {
     idx: '04',

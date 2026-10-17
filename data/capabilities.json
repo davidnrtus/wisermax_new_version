@@ -2,7 +2,7 @@
   {
     "id": "development",
     "name": "Product development",
-    "description": "From mood board or sketch to an approved sample. Pattern making, grading to EU and US size charts, fabric and trim sourcing, proto, fit and salesman samples — an ODM apparel manufacturer for design teams who want the collection pushed forward.",
+    "description": "From mood board or sketch to an approved sample. Pattern making, grading to your own size chart, fabric and trim sourcing, proto, fit and salesman samples — an ODM apparel manufacturer for design teams who want the collection pushed forward.",
     "tag": "In-house sample room"
   },
   {
@@ -32,7 +32,7 @@
   {
     "id": "small-runs",
     "name": "Capsules & small runs",
-    "description": "Colour splits from 200 pieces, so a new silhouette can be tested in store before it is scaled. The same lines and QA as a full programme.",
+    "description": "500 pieces per style, split across colours from 200 each, so a new silhouette can be tested in store before it is scaled. The same lines and QA as a full programme.",
     "tag": "Development orders"
   }
 ]
