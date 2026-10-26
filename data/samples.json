@@ -5,7 +5,7 @@
     "title": "Raglan crew sweatshirt",
     "fabric": "Ecru French terry, rib cuffs and hem",
     "image": "/samples/raglan-crew-sweatshirt.webp",
-    "alt": "Raglan crew sweatshirt in ecru French terry on a dress form — fashion sample from a Vietnam garment factory"
+    "alt": "Raglan crew sweatshirt in ecru French terry worn on a fit model — fashion sample from a Vietnam garment factory"
   },
   {
     "id": "sleeveless-hoodie",
@@ -13,7 +13,7 @@
     "title": "Sleeveless hoodie",
     "fabric": "Grey marl fleece, flat drawcord, eyelets",
     "image": "/samples/sleeveless-hoodie.webp",
-    "alt": "Sleeveless hoodie in grey marl fleece — private label clothing manufacturer Vietnam development sample"
+    "alt": "Sleeveless hoodie in grey marl fleece worn on a fit model — private label clothing manufacturer Vietnam development sample"
   },
   {
     "id": "drawstring-short",
@@ -21,14 +21,14 @@
     "title": "Drawstring short",
     "fabric": "Grey marl French terry, raw-edge cord ends",
     "image": "/samples/french-terry-drawstring-short.webp",
-    "alt": "French terry drawstring short in grey marl — cut and sew manufacturer Vietnam sample room"
+    "alt": "French terry drawstring short in grey marl worn on a fit model — cut and sew manufacturer Vietnam sample room"
   },
   {
     "id": "lounge-short",
     "code": "S / 04",
     "title": "Lounge short",
     "fabric": "Powder-blue brushed fleece, elastic waist",
-    "image": "/samples/fleece-lounge-short.png",
-    "alt": "Women's lounge short in powder-blue brushed fleece — fashion loungewear sample made in Hanoi, Vietnam"
+    "image": "/samples/fleece-lounge-short.webp",
+    "alt": "Women's lounge short in powder-blue brushed fleece worn on a fit model — fashion loungewear sample made in Hanoi, Vietnam"
   }
 ]
