@@ -41,14 +41,27 @@
           />
         </label>
 
-        <p v-if="error" class="err" role="alert">{{ error }}</p>
+        <!-- Honeypot: hidden from people, filled in by bots. -->
+        <label class="hp" aria-hidden="true">
+          Website
+          <input v-model="form.website" type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
 
-        <button class="btn" type="submit">Send tech pack</button>
+        <p v-if="error" class="err" role="alert">
+          {{ error }}
+          <template v-if="failed">
+            <a :href="mailtoHref">Email it to {{ info.email_primary }} instead</a>.
+          </template>
+        </p>
 
-        <p class="note" aria-live="polite">
-          {{ sent
-            ? 'Your mail client should have opened with the details filled in — attach your tech pack there and send.'
-            : 'Submitting opens your mail client with these details filled in, addressed to ' + info.email_primary + '. Attach your tech pack in that email.' }}
+        <button class="btn" type="submit" :disabled="status === 'sending'">
+          {{ status === 'sending' ? 'Sending…' : 'Send tech pack' }}
+        </button>
+
+        <p class="note" :class="{ ok: status === 'sent' }" aria-live="polite">
+          {{ status === 'sent'
+            ? 'Thank you — your request is with our merchandisers. We reply from ' + info.email_primary + ' within one working day; send the tech pack files in reply to that email.'
+            : 'A merchandiser replies from ' + info.email_primary + ' within one working day. Tech pack files can go in your reply.' }}
         </p>
       </form>
     </div>
@@ -56,16 +69,32 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import info from '@/data/info'
 
-const form = reactive({ name: '', company: '', email: '', qty: '', msg: '' })
+const empty = { name: '', company: '', email: '', qty: '', msg: '', website: '' }
+const form = reactive({ ...empty })
 const error = ref('')
-const sent = ref(false)
+const failed = ref(false)
+const status = ref('idle') // idle | sending | sent
 
-// The site is prerendered with no mail backend, so the form composes a
-// prefilled message rather than posting to an endpoint that does not exist.
-function submit() {
+// Fallback when the endpoint is down: the same details as a prefilled email.
+const mailtoHref = computed(() => {
+  const body = [
+    `Name: ${form.name}`,
+    `Company: ${form.company || '—'}`,
+    `Work email: ${form.email}`,
+    `Estimated quantity: ${form.qty || '—'}`,
+    '',
+    form.msg,
+  ].join('\n')
+  const subject = `Tech pack — ${form.company || form.name}`
+  return `mailto:${info.email_primary}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+})
+
+// Posts to the Cloudflare Pages Function in functions/api/rfq.ts.
+async function submit() {
+  failed.value = false
   if (!form.name || !form.email || !form.msg) {
     error.value = 'Name, work email and a short brief are required.'
     return
@@ -75,20 +104,18 @@ function submit() {
     return
   }
   error.value = ''
+  status.value = 'sending'
 
-  const body = [
-    `Name: ${form.name}`,
-    `Company: ${form.company || '—'}`,
-    `Work email: ${form.email}`,
-    `Estimated quantity: ${form.qty || '—'}`,
-    '',
-    form.msg,
-  ].join('\n')
-
-  const subject = `Tech pack — ${form.company || form.name}`
-  window.location.href =
-    `mailto:${info.email_primary}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  sent.value = true
+  try {
+    // Give up after 15s so a stalled mail API falls back to the mailto link.
+    await $fetch('/api/rfq', { method: 'POST', body: { ...form }, timeout: 15000 })
+    Object.assign(form, empty)
+    status.value = 'sent'
+  } catch {
+    status.value = 'idle'
+    failed.value = true
+    error.value = 'Sorry, the form could not be sent just now.'
+  }
 }
 </script>
 
@@ -149,11 +176,25 @@ form .btn {
   margin-top: 6px;
 }
 
+.err a { border-bottom: 1px solid currentColor; }
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+form .btn[disabled] { opacity: .6; cursor: progress; }
+
 .note {
   grid-column: 1 / -1;
   margin: 0;
   font-size: 13px;
   color: var(--thread);
+
+  &.ok { color: var(--ink); font-size: 14px; }
 }
 
 @media (max-width: 820px) {

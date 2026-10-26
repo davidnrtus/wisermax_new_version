@@ -98,3 +98,7 @@ sw.*
 
 # Local Claude Code tooling (preview launch config)
 .claude/
+
+# Wrangler local secrets
+.dev.vars
+.wrangler
