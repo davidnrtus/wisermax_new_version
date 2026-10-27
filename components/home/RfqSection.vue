@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <form v-reveal:right="1" novalidate @submit.prevent="submit">
+      <form v-reveal:right="1" novalidate @submit.prevent="submit" @focusin.once="initCaptcha">
         <label>
           Name
           <input v-model.trim="form.name" type="text" name="name" autocomplete="name" required>
@@ -47,6 +47,9 @@
           <input v-model="form.website" type="text" name="website" tabindex="-1" autocomplete="off">
         </label>
 
+        <!-- Turnstile stays invisible unless Cloudflare wants a click. -->
+        <div v-if="siteKey" ref="captchaEl" class="captcha" />
+
         <p v-if="error" class="err" role="alert">
           {{ error }}
           <template v-if="failed">
@@ -69,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted, onBeforeUnmount } from 'vue'
 import info from '@/data/info'
 
 const empty = { name: '', company: '', email: '', qty: '', msg: '', website: '' }
@@ -77,6 +80,67 @@ const form = reactive({ ...empty })
 const error = ref('')
 const failed = ref(false)
 const status = ref('idle') // idle | sending | sent
+
+// Sent with the form so the server can drop instant, scripted posts.
+let openedAt = 0
+onMounted(() => { openedAt = Date.now() })
+
+// Cloudflare Turnstile. The script loads on the first focus inside the form,
+// so it costs nothing for visitors who never touch it.
+const siteKey = useRuntimeConfig().public.turnstileSiteKey
+const captchaEl = ref(null)
+let widgetId = null
+let token = ''
+let waiting = []
+
+function renderCaptcha() {
+  if (!captchaEl.value || widgetId !== null) return
+  widgetId = window.turnstile.render(captchaEl.value, {
+    sitekey: siteKey,
+    theme: 'light',
+    size: 'flexible',
+    appearance: 'interaction-only',
+    callback: (t) => {
+      token = t
+      waiting.splice(0).forEach((resolve) => resolve(t))
+    },
+    'expired-callback': () => { token = '' },
+    'error-callback': () => { token = '' },
+  })
+}
+
+function initCaptcha() {
+  if (!siteKey || widgetId !== null) return
+  if (window.turnstile) return renderCaptcha()
+  window.onTurnstileLoad = renderCaptcha
+  if (document.getElementById('cf-turnstile')) return
+  const s = document.createElement('script')
+  s.id = 'cf-turnstile'
+  s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad'
+  s.async = true
+  document.head.appendChild(s)
+}
+
+function captchaToken() {
+  if (!siteKey) return Promise.resolve('')
+  if (token) return Promise.resolve(token)
+  initCaptcha()
+  return new Promise((resolve, reject) => {
+    waiting.push(resolve)
+    setTimeout(() => reject(new Error('captcha timeout')), 10000)
+  })
+}
+
+// Tokens are single use.
+function resetCaptcha() {
+  token = ''
+  if (widgetId !== null) window.turnstile?.reset(widgetId)
+}
+
+onBeforeUnmount(() => {
+  if (widgetId !== null) window.turnstile?.remove(widgetId)
+  waiting = []
+})
 
 // Fallback when the endpoint is down: the same details as a prefilled email.
 const mailtoHref = computed(() => {
@@ -107,14 +171,21 @@ async function submit() {
   status.value = 'sending'
 
   try {
+    const body = { ...form, token: await captchaToken(), elapsed: Date.now() - openedAt }
     // Give up after 15s so a stalled mail API falls back to the mailto link.
-    await $fetch('/api/rfq', { method: 'POST', body: { ...form }, timeout: 15000 })
+    await $fetch('/api/rfq', { method: 'POST', body, timeout: 15000 })
     Object.assign(form, empty)
     status.value = 'sent'
-  } catch {
+  } catch (err) {
     status.value = 'idle'
-    failed.value = true
-    error.value = 'Sorry, the form could not be sent just now.'
+    if (err?.data?.error === 'too_many_links') {
+      error.value = 'Please keep it to three links or fewer — files and references can go in your reply to our email.'
+    } else {
+      failed.value = true
+      error.value = 'Sorry, the form could not be sent just now.'
+    }
+  } finally {
+    resetCaptcha()
   }
 }
 </script>
@@ -177,6 +248,8 @@ form .btn {
 }
 
 .err a { border-bottom: 1px solid currentColor; }
+
+.captcha { grid-column: 1 / -1; }
 
 .hp {
   position: absolute;

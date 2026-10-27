@@ -7,11 +7,15 @@
 //   RFQ_FROM        sender on a domain verified in Resend,
 //                   e.g. "Wisermax HN <rfq@wisermaxhn.com>"
 //   RFQ_TO          comma-separated recipients (default: ship@wiser.vn)
+//   TURNSTILE_SECRET  secret, optional — when set, every request must carry a
+//                   valid Cloudflare Turnstile token (pair it with the build
+//                   variable NUXT_PUBLIC_TURNSTILE_SITE_KEY)
 
 interface Env {
   RESEND_API_KEY?: string
   RFQ_FROM?: string
   RFQ_TO?: string
+  TURNSTILE_SECRET?: string
 }
 
 interface Context {
@@ -21,6 +25,10 @@ interface Context {
 
 const LIMITS = { name: 120, company: 160, email: 200, qty: 160, msg: 5000 }
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const LINK = /https?:\/\/|www\./gi
+// Nobody fills in the form this fast; scripts do.
+const MIN_FILL_MS = 3000
+const MAX_LINKS = 3
 
 function json(status: number, body: Record<string, unknown>) {
   return new Response(JSON.stringify(body), {
@@ -40,6 +48,28 @@ function escapeHtml(s: string) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
+}
+
+function countLinks(s: string) {
+  return s.match(LINK)?.length ?? 0
+}
+
+async function verifyTurnstile(secret: string, token: string, ip: string | null) {
+  const body = new FormData()
+  body.append('secret', secret)
+  body.append('response', token)
+  if (ip) body.append('remoteip', ip)
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body,
+    })
+    const out = (await res.json()) as { success?: boolean }
+    return out.success === true
+  } catch (err) {
+    console.error('rfq: turnstile verify failed', err)
+    return false
+  }
 }
 
 export async function onRequestPost({ request, env }: Context) {
@@ -67,6 +97,14 @@ export async function onRequestPost({ request, env }: Context) {
   // bots don't learn to skip it.
   if (clean(data.website, 200)) return json(200, { ok: true })
 
+  // The form reports how long it was open before submit. Missing or too
+  // short means a script posted it; drop it the same quiet way.
+  const elapsed = typeof data.elapsed === 'number' ? data.elapsed : 0
+  if (elapsed < MIN_FILL_MS) {
+    console.log('rfq: dropped, filled in', elapsed, 'ms')
+    return json(200, { ok: true })
+  }
+
   const form = {
     name: clean(data.name, LIMITS.name),
     company: clean(data.company, LIMITS.company),
@@ -80,6 +118,23 @@ export async function onRequestPost({ request, env }: Context) {
   }
   if (!EMAIL.test(form.email)) {
     return json(422, { ok: false, error: 'invalid_email' })
+  }
+
+  // Links in a name or company field are link spam, never a buyer.
+  if (countLinks(form.name) || countLinks(form.company)) {
+    console.log('rfq: dropped, link in name/company')
+    return json(200, { ok: true })
+  }
+  if (countLinks(form.msg) > MAX_LINKS) {
+    return json(422, { ok: false, error: 'too_many_links' })
+  }
+
+  if (env.TURNSTILE_SECRET) {
+    const token = clean(data.token, 2048)
+    const ip = request.headers.get('cf-connecting-ip')
+    if (!token || !(await verifyTurnstile(env.TURNSTILE_SECRET, token, ip))) {
+      return json(403, { ok: false, error: 'captcha_failed' })
+    }
   }
 
   if (!env.RESEND_API_KEY || !env.RFQ_FROM) {

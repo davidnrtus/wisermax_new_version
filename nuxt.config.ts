@@ -235,6 +235,9 @@ export default defineNuxtConfig({
         process.env.NUXT_PUBLIC_API_BASE ||
         'https://wisermax-mailserver.herokuapp.com',
       siteUrl: SITE_URL,
+      // Cloudflare Turnstile site key for the request form; empty turns the
+      // widget off. Set NUXT_PUBLIC_TURNSTILE_SITE_KEY at build time.
+      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
     },
   },
 
