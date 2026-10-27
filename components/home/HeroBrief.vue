@@ -58,8 +58,8 @@
           </div>
           <div v-reveal:mask="4" class="ph">
             <NuxtImg
-              src="/factory/cutting-room.webp"
-              alt="Cutting room with fabric spreading table — OEM clothing factory Vietnam cutting in-house"
+              src="/factory/cutting-and-pressing.webp"
+              alt="Cutting room with fabric spreading table and pressing area — OEM clothing factory Vietnam cutting and finishing in-house"
               sizes="sm:100vw md:33vw lg:440px"
               format="webp"
               loading="lazy"
