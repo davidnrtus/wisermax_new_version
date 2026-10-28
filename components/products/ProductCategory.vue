@@ -61,16 +61,30 @@
       <div class="wrap">
         <div class="sr-head">
           <div>
-            <div v-reveal:fade class="kicker">From our sample room</div>
-            <h2 v-reveal:blur>{{ samples.length }} {{ data.slug }}'s styles, <em>sewn in Hanoi</em>.</h2>
+            <div v-reveal:fade class="kicker">A selection from our sample room</div>
+            <h2 v-reveal:blur>A few of our {{ owner }} styles. <em>Not the limit</em> of what we make.</h2>
           </div>
           <p v-reveal="1">
-            Development samples cut and sewn in our own sample room, photographed as they come off
-            the table. Tap any piece to see it larger, or ask for a costing on a style like it.
+            These are some of the development samples we have cut and sewn recently: a showcase,
+            not a catalogue. Our sample room works from your sketch, tech pack or a reference
+            garment, so if the style, fabric or fit you need is not pictured here, we can still
+            develop and produce it.
           </p>
         </div>
         <EuSampleGrid :audience="data.slug" :limit="12" expandable />
-        <NuxtLink class="sr-more" to="/samples">See the full sample archive <span aria-hidden="true">→</span></NuxtLink>
+
+        <!-- Closing note: turns "not shown" into a reason to get in touch. -->
+        <div v-reveal class="sr-note">
+          <p>
+            <strong>Don't see your style?</strong> Our sample room develops new styles for buyers
+            all year, across knit, woven and fleece. Send a sketch or a photo and we'll come back
+            with a sample plan and a costing.
+          </p>
+          <div class="sr-actions">
+            <NuxtLink class="btn" to="/contact#quote">Send us your style <span aria-hidden="true">→</span></NuxtLink>
+            <NuxtLink class="sr-more" to="/samples">See the full sample archive <span aria-hidden="true">→</span></NuxtLink>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -79,7 +93,7 @@
       <div class="wrap">
         <div class="features-head">
           <div v-reveal:fade class="kicker">Feature runs</div>
-          <h2 v-reveal:blur>Selected pieces from our <em>{{ data.slug }}</em> programme.</h2>
+          <h2 v-reveal:blur>Selected pieces from our <em>{{ owner }}</em> programme.</h2>
         </div>
 
         <ol class="feature-list">
@@ -143,6 +157,9 @@ const props = defineProps({
 
 const samples = computed(() => archive.filter((s) => s.for.includes(props.data.slug)))
 
+// "women's", "men's", "kids'"
+const owner = computed(() => (props.data.slug.endsWith('s') ? `${props.data.slug}'` : `${props.data.slug}'s`))
+
 function mediaClass(count) {
   if (count >= 4) return 'grid-4'
   if (count === 3) return 'grid-3'
@@ -160,13 +177,40 @@ function mediaClass(count) {
     align-items: end;
     margin-bottom: clamp(32px, 4vw, 56px);
 
-    h2 { margin-top: 16px; max-width: 13em; }
+    h2 {
+      margin-top: 16px;
+      max-width: 13em;
+
+      /* The page's h2 rule flattens em; this heading keeps the accent. */
+      em { font-style: italic; color: var(--selvedge); }
+    }
     p { margin: 0; color: #4a453d; font-size: 16px; line-height: 1.6; max-width: 34em; }
+  }
+
+  .sr-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px 48px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: var(--muslin);
+    border-radius: 4px;
+
+    p { margin: 0; max-width: 40em; font-size: 16px; line-height: 1.6; color: #4a453d; }
+    strong { color: var(--ink); font-weight: 600; }
+  }
+
+  .sr-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px 28px;
+    flex-wrap: wrap;
   }
 
   .sr-more {
     display: inline-block;
-    margin-top: 40px;
     font-size: 15px;
     border-bottom: 1px solid var(--ink);
     padding-bottom: 2px;
