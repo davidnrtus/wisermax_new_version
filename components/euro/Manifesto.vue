@@ -1,10 +1,10 @@
 <template>
-  <section ref="root" class="manifesto">
+  <section class="manifesto">
     <div class="wrap">
       <p class="kicker">Not a middleman</p>
-      <!-- Words light up one by one as the section scrolls past. Without JS
+      <!-- Words light up one by one as the paragraph scrolls up. Without JS
            (or with reduced motion) the paragraph is simply fully inked. -->
-      <p class="statement" :class="{ live }">
+      <p ref="statement" class="statement" :class="{ live }">
         <span
           v-for="(w, i) in words"
           :key="i"
@@ -29,21 +29,23 @@ const words = TEXT.split(' ').map((t) => ({
   accent: t.startsWith('*'),
 }))
 
-const root = ref(null)
+const statement = ref(null)
 const live = ref(false)
 const lit = ref(words.length)
 let frame = 0
 
 function update() {
   frame = 0
-  const el = root.value
+  const el = statement.value
   if (!el) return
+  // Measured on the paragraph, not the section: the section's padding made
+  // the words trail the reader, half lit while the text sat mid-screen.
+  // 0 when the paragraph's top reaches 85% of the viewport, 1 when its
+  // bottom reaches 65% — fully inked by the time it is centred.
   const r = el.getBoundingClientRect()
   const vh = window.innerHeight
-  // 0 when the section's top reaches 80% of the viewport, 1 when its
-  // bottom reaches 55% — the paragraph is fully lit before it leaves.
-  const start = vh * 0.8
-  const end = vh * 0.55
+  const start = vh * 0.85
+  const end = vh * 0.65
   const p = (start - r.top) / (r.height + start - end)
   lit.value = Math.round(Math.min(Math.max(p, 0), 1) * words.length)
 }
@@ -81,7 +83,7 @@ onBeforeUnmount(() => {
   font-size: clamp(32px, 4.4vw, 66px);
   line-height: 1.08;
 
-  span { transition: opacity .35s ease, color .35s ease; }
+  span { transition: opacity .15s linear; }
   .accent { font-style: italic; color: var(--selvedge); }
 
   &.live span:not(.on) { opacity: .16; }
