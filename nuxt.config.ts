@@ -1,10 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 const SITE_URL = 'https://www.wisermaxhn.com'
 const SITE_NAME = 'Wisermax HN'
 const DEFAULT_TITLE = 'WISERMAX HN — Garment manufacturer & ODM atelier, Hanoi'
 const DEFAULT_DESCRIPTION = 'Vietnam garment manufacturer in Hanoi making fashion collections for European and US labels. Own sample room and sewing lines. OEM, ODM, FOB Hai Phong.'
+
+// Sample archive photos go into the sitemap as image entries for /samples.
+const SAMPLE_ARCHIVE: { image: string; alt: string }[] = JSON.parse(
+  readFileSync(new URL('./data/sample-archive.json', import.meta.url), 'utf8'),
+)
 
 // Trau Quy Ward, Gia Lam, Hanoi — approximate office coordinates.
 // Replace with the exact lat/lng once confirmed with the client.
@@ -270,6 +276,12 @@ export default defineNuxtConfig({
       },
       { loc: '/about-us',       priority: 0.8, changefreq: 'monthly' },
       { loc: '/products',       priority: 0.9, changefreq: 'weekly' },
+      {
+        loc: '/samples',
+        priority: 0.9,
+        changefreq: 'weekly',
+        images: SAMPLE_ARCHIVE.map((s) => ({ loc: `${SITE_URL}${s.image}`, caption: s.alt })),
+      },
       { loc: '/products/men',   priority: 0.8, changefreq: 'monthly' },
       { loc: '/products/women', priority: 0.8, changefreq: 'monthly' },
       { loc: '/products/kids',  priority: 0.8, changefreq: 'monthly' },
@@ -292,7 +304,7 @@ export default defineNuxtConfig({
     ],
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/about-us', '/products', '/products/men', '/products/women', '/products/kids', '/contact'],
+      routes: ['/', '/about-us', '/products', '/samples', '/products/men', '/products/women', '/products/kids', '/contact'],
     },
   },
 })

@@ -17,6 +17,7 @@
 ## Pages
 
 - [Home](https://www.wisermaxhn.com/): capabilities, factory floor, samples, shipping lanes, FAQ
+- [Sample archive](https://www.wisermaxhn.com/samples): 52 development samples (dresses, tops, activewear, jersey) with photos
 - [Products](https://www.wisermaxhn.com/products): women's, men's and kids' categories
 - [About](https://www.wisermaxhn.com/about-us): company, team, services
 - [Contact / request a quote](https://www.wisermaxhn.com/contact): send a tech pack

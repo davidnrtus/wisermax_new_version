@@ -4,34 +4,46 @@
       <div class="head">
         <div>
           <p class="kicker">From our sample room</p>
-          <h2 id="samples-title" v-reveal:blur>Private label clothing, <em>on the body</em>.</h2>
+          <h2 id="samples-title" v-reveal:blur>
+            {{ total }} styles, sewn in our <em>sample room</em>.
+          </h2>
         </div>
         <p v-reveal="1" class="lede">
-          Development samples cut and sewn in our own sample room, shown on fit models. This is
-          what your proto looks like two to three weeks after the brief.
+          Dresses, tops, tennis and activewear, jersey and outerwear: development samples cut and
+          sewn in Hanoi for European and US labels. This is what your proto looks like two to three
+          weeks after the brief.
         </p>
       </div>
 
-      <ul class="grid">
-        <li v-for="(s, i) in samples" :key="s.id" class="card">
-          <div v-reveal:mask="i" class="ph">
-            <NuxtImg :src="s.image" :alt="s.alt" sizes="sm:50vw md:25vw lg:320px" format="webp" loading="lazy" />
-          </div>
-          <div class="meta">
-            <span>{{ s.code }}</span>
-            <h3>{{ s.title }}</h3>
-            <p>{{ s.fabric }}</p>
-          </div>
+      <!-- Campaign plates: the three styled shots, set as an editorial
+           spread. The middle one rides a little lower. -->
+      <ul class="campaign">
+        <li v-for="(c, i) in campaign" :key="c.id" v-reveal:mask="i">
+          <NuxtImg
+            :src="c.image"
+            :alt="c.alt"
+            sizes="sm:80vw md:33vw lg:440px"
+            format="webp"
+            loading="lazy"
+          />
+          <span class="cap">Campaign · {{ c.title }}</span>
         </li>
       </ul>
 
-      <NuxtLink class="more" to="/products">See all product categories <span aria-hidden="true">→</span></NuxtLink>
+      <EuSampleGrid class="grid" :limit="8" exclude-campaign />
+
+      <NuxtLink class="more btn ghost" to="/samples">
+        Open the full archive · {{ total }} styles <span aria-hidden="true">→</span>
+      </NuxtLink>
     </div>
   </section>
 </template>
 
 <script setup>
-import samples from '@/data/samples.json'
+import archive from '@/data/sample-archive.json'
+
+const campaign = archive.filter((s) => s.category === 'campaign')
+const total = archive.length
 </script>
 
 <style lang="scss" scoped>
@@ -48,61 +60,66 @@ import samples from '@/data/samples.json'
   h2 { margin-top: 16px; max-width: 11em; }
 }
 
-.grid {
+.campaign {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin: clamp(40px, 5vw, 72px) 0 0;
   padding: 0;
   list-style: none;
-}
 
-/* Offset every other card so the row reads like a lookbook spread. */
-.card:nth-child(even) { margin-top: clamp(24px, 4vw, 64px); }
-
-.ph {
-  aspect-ratio: 3 / 4;
-  border-radius: 4px;
-
-  :deep(img) { transition: transform 1.2s cubic-bezier(.16, 1, .3, 1); }
-}
-
-.card:hover .ph :deep(img) { transform: scale(1.04); }
-
-.meta {
-  margin-top: 14px;
-
-  span {
-    font-size: 11px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--thread);
+  li {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--muslin);
   }
 
-  h3 {
-    margin-top: 6px;
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.15;
+  li:nth-child(2) { margin-top: clamp(24px, 5vw, 80px); }
+
+  /* Anchored to the top: the logo sits there, and the poster's wordmark at
+     the bottom is cropped out whole rather than cut through. */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
   }
 
-  p { margin: 4px 0 0; font-size: 14px; color: var(--thread); }
+  .cap {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(244, 240, 232, .9);
+    font-size: 12px;
+    color: var(--ink);
+  }
 }
 
-.more {
-  display: inline-block;
-  margin-top: 48px;
-  font-size: 15px;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 2px;
-  transition: color .2s, border-color .2s;
+.grid { margin-top: clamp(56px, 7vw, 104px); }
 
-  &:hover { color: var(--selvedge); border-color: var(--selvedge); }
-}
+.more { margin-top: 48px; }
 
 @media (max-width: 900px) {
   .head { grid-template-columns: 1fr; }
-  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  /* Swipe through the campaign plates instead of stacking three tall images. */
+  .campaign {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-right: calc(var(--gutter) * -1);
+    padding-right: var(--gutter);
+
+    li { scroll-snap-align: start; }
+    li:nth-child(2) { margin-top: 0; }
+  }
 }
 </style>

@@ -1,0 +1,370 @@
+[
+  {
+    "id": "floral-print-shirt-dress",
+    "title": "Floral print shirt dress",
+    "category": "dresses",
+    "image": "/samples/floral-print-shirt-dress.webp",
+    "alt": "Floral print shirt dress on a dress form — knit dress manufacturer sample"
+  },
+  {
+    "id": "ditsy-print-tiered-wrap-dress",
+    "title": "Ditsy print tiered wrap dress",
+    "category": "dresses",
+    "image": "/samples/ditsy-print-tiered-wrap-dress.webp",
+    "alt": "Ditsy print tiered wrap dress on a dress form — woven dress made in Vietnam"
+  },
+  {
+    "id": "black-button-front-belted-sheath-dress",
+    "title": "Belted button-front sheath dress",
+    "category": "dresses",
+    "image": "/samples/black-button-front-belted-sheath-dress.webp",
+    "alt": "Belted button-front sheath dress on a dress form — private label dress sample"
+  },
+  {
+    "id": "black-smocked-puff-sleeve-mini-dress",
+    "title": "Smocked puff-sleeve mini dress",
+    "category": "dresses",
+    "image": "/samples/black-smocked-puff-sleeve-mini-dress.webp",
+    "alt": "Smocked puff-sleeve mini dress on a dress form — fashion dress from a Vietnam garment factory"
+  },
+  {
+    "id": "white-camp-collar-shirt",
+    "title": "Camp-collar shirt",
+    "category": "tops",
+    "image": "/samples/white-camp-collar-shirt.webp",
+    "alt": "Camp-collar shirt on a dress form — woven shirt, cut and sew manufacturer Vietnam"
+  },
+  {
+    "id": "heather-blue-tank-and-short-set",
+    "title": "Tank and short set",
+    "category": "active",
+    "image": "/samples/heather-blue-tank-and-short-set.webp",
+    "alt": "Tank and short set on a dress form — activewear set, FOB sportswear manufacturer Vietnam"
+  },
+  {
+    "id": "white-mock-neck-active-top",
+    "title": "Mock-neck active top",
+    "category": "active",
+    "image": "/samples/white-mock-neck-active-top.webp",
+    "alt": "Mock-neck active top on a dress form — performance top from a sportswear factory in Vietnam"
+  },
+  {
+    "id": "ivory-half-zip-long-sleeve-top",
+    "title": "Half-zip long-sleeve top",
+    "category": "active",
+    "image": "/samples/ivory-half-zip-long-sleeve-top.webp",
+    "alt": "Half-zip long-sleeve top on a dress form — golf and tennis top, OEM clothing factory Vietnam"
+  },
+  {
+    "id": "white-perforated-sleeveless-zip-hoodie",
+    "title": "Perforated sleeveless zip hoodie",
+    "category": "active",
+    "image": "/samples/white-perforated-sleeveless-zip-hoodie.webp",
+    "alt": "Perforated sleeveless zip hoodie on a dress form — activewear sample made in Hanoi"
+  },
+  {
+    "id": "ivory-sleeveless-polo-contrast-collar",
+    "title": "Sleeveless polo, contrast collar",
+    "category": "active",
+    "image": "/samples/ivory-sleeveless-polo-contrast-collar.webp",
+    "alt": "Sleeveless polo, contrast collar on a dress form — women’s golf polo, bulk polo shirt manufacturer"
+  },
+  {
+    "id": "ivory-quarter-zip-long-sleeve-top",
+    "title": "Quarter-zip long-sleeve top",
+    "category": "active",
+    "image": "/samples/ivory-quarter-zip-long-sleeve-top.webp",
+    "alt": "Quarter-zip long-sleeve top on a dress form — sportswear sample from a Vietnam apparel manufacturer"
+  },
+  {
+    "id": "white-high-neck-active-tank",
+    "title": "High-neck active tank",
+    "category": "active",
+    "image": "/samples/white-high-neck-active-tank.webp",
+    "alt": "High-neck active tank on a dress form — performance tank, FOB sportswear manufacturer Vietnam"
+  },
+  {
+    "id": "black-elbow-sleeve-fitted-tee",
+    "title": "Elbow-sleeve fitted tee",
+    "category": "tops",
+    "image": "/samples/black-elbow-sleeve-fitted-tee.webp",
+    "alt": "Elbow-sleeve fitted tee on a dress form — jersey top, custom t-shirt factory Vietnam"
+  },
+  {
+    "id": "white-tiered-tennis-skirt",
+    "title": "Tiered tennis skirt",
+    "category": "active",
+    "image": "/samples/white-tiered-tennis-skirt.webp",
+    "alt": "Tiered tennis skirt on a dress form — tennis skirt sample, sportswear factory Vietnam"
+  },
+  {
+    "id": "navy-zip-pocket-skort",
+    "title": "Zip-pocket skort",
+    "category": "active",
+    "image": "/samples/navy-zip-pocket-skort.webp",
+    "alt": "Zip-pocket skort on a dress form — golf skort made by a contract garment manufacturer in Vietnam"
+  },
+  {
+    "id": "pale-blue-sleeveless-zip-polo",
+    "title": "Sleeveless zip polo",
+    "category": "active",
+    "image": "/samples/pale-blue-sleeveless-zip-polo.webp",
+    "alt": "Sleeveless zip polo on a dress form — women’s golf polo from a Vietnam garment factory"
+  },
+  {
+    "id": "white-mesh-tennis-skirt",
+    "title": "Mesh tennis skirt",
+    "category": "active",
+    "image": "/samples/white-mesh-tennis-skirt.webp",
+    "alt": "Mesh tennis skirt on a dress form — tennis skirt with branded waistband, OEM sportswear Vietnam"
+  },
+  {
+    "id": "navy-striped-track-jacket",
+    "title": "Striped track jacket",
+    "category": "jersey",
+    "image": "/samples/navy-striped-track-jacket.webp",
+    "alt": "Striped track jacket on a dress form — track jacket, jacket manufacturer Vietnam"
+  },
+  {
+    "id": "white-tennis-skort",
+    "title": "Tennis skort",
+    "category": "active",
+    "image": "/samples/white-tennis-skort.webp",
+    "alt": "Tennis skort on a dress form — tennis skort sample, cut and sew manufacturer Vietnam"
+  },
+  {
+    "id": "white-raw-hem-knit-shorts",
+    "title": "Raw-hem knit shorts",
+    "category": "active",
+    "image": "/samples/white-raw-hem-knit-shorts.webp",
+    "alt": "Raw-hem knit shorts on a dress form — jersey shorts from a Vietnam apparel manufacturer"
+  },
+  {
+    "id": "white-mesh-zip-hooded-vest",
+    "title": "Mesh zip hooded vest",
+    "category": "active",
+    "image": "/samples/white-mesh-zip-hooded-vest.webp",
+    "alt": "Mesh zip hooded vest on a dress form — activewear vest, private label clothing manufacturer Vietnam"
+  },
+  {
+    "id": "white-halter-rib-tank",
+    "title": "Halter rib tank",
+    "category": "tops",
+    "image": "/samples/white-halter-rib-tank.webp",
+    "alt": "Halter rib tank on a dress form — rib jersey tank, knitwear made in Vietnam"
+  },
+  {
+    "id": "blush-flutter-sleeve-top",
+    "title": "Flutter-sleeve top",
+    "category": "tops",
+    "image": "/samples/blush-flutter-sleeve-top.webp",
+    "alt": "Flutter-sleeve top on a dress form — women’s top from a garment factory in Vietnam"
+  },
+  {
+    "id": "charcoal-hooded-shell-jacket",
+    "title": "Hooded shell jacket",
+    "category": "jersey",
+    "image": "/samples/charcoal-hooded-shell-jacket.webp",
+    "alt": "Hooded shell jacket on a dress form — lightweight shell, outerwear factory Vietnam"
+  },
+  {
+    "id": "grey-marl-sleeveless-hoodie-form",
+    "title": "Sleeveless hoodie",
+    "category": "jersey",
+    "image": "/samples/grey-marl-sleeveless-hoodie-form.webp",
+    "alt": "Sleeveless hoodie on a dress form — fleece hoodie, cut and sew manufacturer Vietnam"
+  },
+  {
+    "id": "ivory-collegiate-graphic-hoodie",
+    "title": "Collegiate graphic hoodie",
+    "category": "jersey",
+    "image": "/samples/ivory-collegiate-graphic-hoodie.webp",
+    "alt": "Collegiate graphic hoodie on a dress form — printed fleece hoodie, custom apparel manufacturer Vietnam"
+  },
+  {
+    "id": "campaign-floral-midi-dress",
+    "title": "Floral midi dress",
+    "category": "campaign",
+    "image": "/samples/campaign-floral-midi-dress.webp",
+    "alt": "Campaign image of a floral midi dress by Wiser Max HN"
+  },
+  {
+    "id": "campaign-paris-graphic-tee",
+    "title": "Paris graphic tee",
+    "category": "campaign",
+    "image": "/samples/campaign-paris-graphic-tee.webp",
+    "alt": "Campaign image of a printed tee by Wiser Max HN"
+  },
+  {
+    "id": "campaign-halter-print-maxi-dress",
+    "title": "Halter print maxi dress",
+    "category": "campaign",
+    "image": "/samples/campaign-halter-print-maxi-dress.webp",
+    "alt": "Campaign image of a halter maxi dress by Wiser Max HN"
+  },
+  {
+    "id": "taupe-pleated-tennis-skirt",
+    "title": "Pleated tennis skirt",
+    "category": "active",
+    "image": "/samples/taupe-pleated-tennis-skirt.webp",
+    "alt": "Pleated tennis skirt on a dress form — pleated tennis skirt, sportswear factory Vietnam"
+  },
+  {
+    "id": "grey-velvet-ruched-dress",
+    "title": "Ruched velvet dress",
+    "category": "dresses",
+    "image": "/samples/grey-velvet-ruched-dress.webp",
+    "alt": "Ruched velvet dress on a dress form — velvet dress, knit dress manufacturer Vietnam"
+  },
+  {
+    "id": "blue-swirl-print-ruched-dress",
+    "title": "Swirl print ruched dress",
+    "category": "dresses",
+    "image": "/samples/blue-swirl-print-ruched-dress.webp",
+    "alt": "Swirl print ruched dress on a dress form — printed jersey dress made in Vietnam"
+  },
+  {
+    "id": "abstract-print-sheath-dress",
+    "title": "Abstract print sheath dress",
+    "category": "dresses",
+    "image": "/samples/abstract-print-sheath-dress.webp",
+    "alt": "Abstract print sheath dress on a dress form — printed sheath dress, private label clothing manufacturer Vietnam"
+  },
+  {
+    "id": "black-velvet-feather-cuff-dress",
+    "title": "Velvet dress, feather cuffs",
+    "category": "dresses",
+    "image": "/samples/black-velvet-feather-cuff-dress.webp",
+    "alt": "Velvet dress, feather cuffs on a dress form — occasion dress from a Vietnam garment factory"
+  },
+  {
+    "id": "white-paris-illustration-tee",
+    "title": "Paris illustration tee",
+    "category": "tops",
+    "image": "/samples/white-paris-illustration-tee.webp",
+    "alt": "Paris illustration tee on a dress form — printed t-shirt, custom t-shirt factory Vietnam"
+  },
+  {
+    "id": "white-heart-graphic-tee",
+    "title": "Heart graphic tee",
+    "category": "tops",
+    "image": "/samples/white-heart-graphic-tee.webp",
+    "alt": "Heart graphic tee on a dress form — graphic tee from a Vietnam apparel manufacturer"
+  },
+  {
+    "id": "navy-character-graphic-tee",
+    "title": "Character graphic tee",
+    "category": "tops",
+    "image": "/samples/navy-character-graphic-tee.webp",
+    "alt": "Character graphic tee on a dress form — printed jersey tee, cut and sew manufacturer Vietnam"
+  },
+  {
+    "id": "black-embellished-graphic-tee",
+    "title": "Embellished graphic tee",
+    "category": "tops",
+    "image": "/samples/black-embellished-graphic-tee.webp",
+    "alt": "Embellished graphic tee on a dress form — embellished t-shirt made in Hanoi, Vietnam"
+  },
+  {
+    "id": "white-flutter-sleeve-logo-top",
+    "title": "Flutter-sleeve logo top",
+    "category": "tops",
+    "image": "/samples/white-flutter-sleeve-logo-top.webp",
+    "alt": "Flutter-sleeve logo top on a dress form — jersey top from a garment factory in Vietnam"
+  },
+  {
+    "id": "sage-watercolour-print-midi-dress",
+    "title": "Watercolour print midi dress",
+    "category": "dresses",
+    "image": "/samples/sage-watercolour-print-midi-dress.webp",
+    "alt": "Watercolour print midi dress on a dress form — printed midi dress, woven dress supplier Vietnam"
+  },
+  {
+    "id": "red-print-halter-maxi-dress",
+    "title": "Halter print maxi dress",
+    "category": "dresses",
+    "image": "/samples/red-print-halter-maxi-dress.webp",
+    "alt": "Halter print maxi dress on a dress form — maxi dress from a Vietnam apparel manufacturer"
+  },
+  {
+    "id": "pink-ruched-sleeveless-top",
+    "title": "Ruched sleeveless top",
+    "category": "tops",
+    "image": "/samples/pink-ruched-sleeveless-top.webp",
+    "alt": "Ruched sleeveless top on a dress form — jersey top, OEM clothing factory Vietnam"
+  },
+  {
+    "id": "white-paris-sketch-tee",
+    "title": "Paris sketch tee",
+    "category": "tops",
+    "image": "/samples/white-paris-sketch-tee.webp",
+    "alt": "Paris sketch tee on a dress form — embellished printed tee, custom t-shirt factory Vietnam"
+  },
+  {
+    "id": "mint-marble-print-ruched-dress",
+    "title": "Marble print ruched dress",
+    "category": "dresses",
+    "image": "/samples/mint-marble-print-ruched-dress.webp",
+    "alt": "Marble print ruched dress on a dress form — printed jersey dress made in Vietnam"
+  },
+  {
+    "id": "marble-print-mock-neck-top",
+    "title": "Marble print mock-neck top",
+    "category": "tops",
+    "image": "/samples/marble-print-mock-neck-top.webp",
+    "alt": "Marble print mock-neck top on a dress form — printed top from a garment factory in Vietnam"
+  },
+  {
+    "id": "black-bow-collar-blouse",
+    "title": "Bow-collar blouse",
+    "category": "tops",
+    "image": "/samples/black-bow-collar-blouse.webp",
+    "alt": "Bow-collar blouse on a dress form — blouse with gingham bow, private label manufacturer Vietnam"
+  },
+  {
+    "id": "black-tee-gingham-bow-collar",
+    "title": "Collared tee, gingham bow",
+    "category": "tops",
+    "image": "/samples/black-tee-gingham-bow-collar.webp",
+    "alt": "Collared tee, gingham bow on a dress form — knit top with collar and bow, made in Vietnam"
+  },
+  {
+    "id": "red-eiffel-graphic-tee",
+    "title": "Eiffel graphic tee",
+    "category": "tops",
+    "image": "/samples/red-eiffel-graphic-tee.webp",
+    "alt": "Eiffel graphic tee on a dress form — printed red tee, custom t-shirt factory Vietnam"
+  },
+  {
+    "id": "raglan-crew",
+    "title": "Raglan crew sweatshirt",
+    "category": "jersey",
+    "image": "/samples/raglan-crew-sweatshirt.webp",
+    "alt": "Raglan crew sweatshirt in ecru French terry worn on a fit model — fashion sample from a Vietnam garment factory",
+    "onModel": true
+  },
+  {
+    "id": "sleeveless-hoodie",
+    "title": "Sleeveless hoodie",
+    "category": "jersey",
+    "image": "/samples/sleeveless-hoodie.webp",
+    "alt": "Sleeveless hoodie in grey marl fleece worn on a fit model — private label clothing manufacturer Vietnam development sample",
+    "onModel": true
+  },
+  {
+    "id": "drawstring-short",
+    "title": "Drawstring short",
+    "category": "jersey",
+    "image": "/samples/french-terry-drawstring-short.webp",
+    "alt": "French terry drawstring short in grey marl worn on a fit model — cut and sew manufacturer Vietnam sample room",
+    "onModel": true
+  },
+  {
+    "id": "lounge-short",
+    "title": "Lounge short",
+    "category": "jersey",
+    "image": "/samples/fleece-lounge-short.webp",
+    "alt": "Women's lounge short in powder-blue brushed fleece worn on a fit model — fashion loungewear sample made in Hanoi, Vietnam",
+    "onModel": true
+  }
+]

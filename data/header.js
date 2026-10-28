@@ -2,6 +2,7 @@
 export const headers = [
   { title: 'Capabilities', key: 'capabilities', url: '/#capabilities' },
   { title: 'Factory', key: 'factory', url: '/#floor' },
+  { title: 'Samples', key: 'samples', url: '/samples' },
   { title: 'Products', key: 'products', url: '/products' },
   { title: 'About', key: 'about_us', url: '/about-us' },
   { title: 'Contact', key: 'contact_us', url: '/contact' },
