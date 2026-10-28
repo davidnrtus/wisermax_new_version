@@ -1,9 +1,9 @@
 <template>
-  <section class="marquee" aria-labelledby="produced-for">
-    <!-- A wall of the floor and the product, drifting sideways. The list is
-         rendered twice so the loop has no seam; the copy is hidden from
-         assistive tech. -->
-    <div class="belt">
+  <section ref="root" class="marquee" aria-labelledby="produced-for">
+    <!-- A wall of the floor and the product, drifting sideways and pushed
+         along by the page scroll. The list is rendered twice so the loop has
+         no seam; the copy is hidden from assistive tech. -->
+    <div ref="belt" class="belt" :class="{ driven }" @mouseenter="hover = true" @mouseleave="hover = false">
       <ul v-for="copy in 2" :key="copy" class="track" :aria-hidden="copy === 2 ? 'true' : undefined">
         <li v-for="s in shots" :key="s.src" :class="s.shape">
           <NuxtImg
@@ -27,7 +27,62 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import clients from '@/data/clients.json'
+
+// The belt used to be a 70s CSS loop, which crawled while the page scrolled
+// past and felt behind the reader. It now drifts slowly on its own and is
+// also carried by the scroll: every pixel scrolled moves it SCROLL_GAIN px.
+const DRIFT = 30 // px per second
+const SCROLL_GAIN = 0.8
+
+const root = ref(null)
+const belt = ref(null)
+const driven = ref(false)
+const hover = ref(false)
+
+let x = 0
+let lastY = 0
+let lastT = 0
+let frame = 0
+let visible = false
+let io = null
+
+function tick(t) {
+  frame = 0
+  if (!visible || !belt.value) return
+  const dt = lastT ? Math.min(t - lastT, 64) / 1000 : 0
+  lastT = t
+  const y = window.scrollY
+  x += (hover.value ? 0 : DRIFT * dt) + (y - lastY) * SCROLL_GAIN
+  lastY = y
+  // Wrap on one copy's width so the loop is seamless in both directions.
+  const loop = belt.value.scrollWidth / 2
+  x = ((x % loop) + loop) % loop
+  belt.value.style.transform = `translate3d(${-x}px,0,0)`
+  frame = requestAnimationFrame(tick)
+}
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  driven.value = true
+  lastY = window.scrollY
+  // Only run while the belt is on screen.
+  io = new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting
+    if (visible && !frame) {
+      lastT = 0
+      lastY = window.scrollY
+      frame = requestAnimationFrame(tick)
+    }
+  })
+  io.observe(root.value)
+})
+
+onBeforeUnmount(() => {
+  io?.disconnect()
+  if (frame) cancelAnimationFrame(frame)
+})
 
 const shots = [
   { src: '/factory/cutting-room.webp', shape: 'tall', alt: 'Cutting room at a garment factory in Vietnam' },
@@ -51,9 +106,13 @@ const shots = [
 .belt {
   display: flex;
   width: max-content;
+  /* Without JS the belt still drifts on a CSS loop. */
   animation: belt 70s linear infinite;
+  will-change: transform;
 
   &:hover { animation-play-state: paused; }
+
+  &.driven { animation: none; }
 }
 
 .track {
