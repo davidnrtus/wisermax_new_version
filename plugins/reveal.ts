@@ -71,12 +71,30 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (enabled) {
       root.classList.add('reveal-on', 'reveal-ready')
 
+      // Which way the page last scrolled. Content can be skipped on the way
+      // down (a nav jump, a reload mid-page, a fast fling) and first meet the
+      // reader on the way back up; rising from below would then move against
+      // the scroll, and a staggered row would leave a hole while the row
+      // above it is already in place. Scrolling up, it simply appears.
+      let lastY = window.scrollY
+      let scrollingUp = false
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY
+        if (y !== lastY) scrollingUp = y < lastY
+        lastY = y
+      }, { passive: true })
+
       revealer = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
             if (!entry.isIntersecting) continue
-            entry.target.classList.add('is-in')
-            revealer!.unobserve(entry.target)
+            const el = entry.target as HTMLElement
+            if (scrollingUp || entry.boundingClientRect.top < (entry.rootBounds?.top ?? 0)) {
+              el.classList.add('reveal-instant')
+              requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('reveal-instant')))
+            }
+            el.classList.add('is-in')
+            revealer!.unobserve(el)
           }
         },
         { rootMargin: '0px 0px -10% 0px', threshold: 0.08 },

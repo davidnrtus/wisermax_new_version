@@ -66,6 +66,10 @@ $reveal-step: 110ms;
   > img { transform: scale(1.25); }
 }
 
+/* Revealed while scrolling up: no transition, see plugins/reveal.ts. */
+.reveal-instant,
+.reveal-instant > * { transition: none !important; }
+
 [data-count] { font-variant-numeric: tabular-nums; }
 
 /* Route change — short cross-fade between pages. */
