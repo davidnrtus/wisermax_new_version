@@ -55,6 +55,25 @@
       </div>
     </section>
 
+    <!-- SAMPLE ROOM — real development samples for this programme, from
+         data/sample-archive.json. -->
+    <section v-if="samples.length" class="band sample-room">
+      <div class="wrap">
+        <div class="sr-head">
+          <div>
+            <div v-reveal:fade class="kicker">From our sample room</div>
+            <h2 v-reveal:blur>{{ samples.length }} {{ data.slug }}'s styles, <em>sewn in Hanoi</em>.</h2>
+          </div>
+          <p v-reveal="1">
+            Development samples cut and sewn in our own sample room, photographed as they come off
+            the table. Tap any piece to see it larger, or ask for a costing on a style like it.
+          </p>
+        </div>
+        <EuSampleGrid :audience="data.slug" :limit="12" expandable />
+        <NuxtLink class="sr-more" to="/samples">See the full sample archive <span aria-hidden="true">→</span></NuxtLink>
+      </div>
+    </section>
+
     <!-- FEATURE BLOCKS -->
     <section class="band features">
       <div class="wrap">
@@ -112,12 +131,17 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+import archive from '@/data/sample-archive.json'
+
+const props = defineProps({
   data: {
     type: Object,
     required: true,
   },
 })
+
+const samples = computed(() => archive.filter((s) => s.for.includes(props.data.slug)))
 
 function mediaClass(count) {
   if (count >= 4) return 'grid-4'
@@ -128,6 +152,34 @@ function mediaClass(count) {
 </script>
 
 <style lang="scss" scoped>
+.sample-room {
+  .sr-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    gap: clamp(24px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(32px, 4vw, 56px);
+
+    h2 { margin-top: 16px; max-width: 13em; }
+    p { margin: 0; color: #4a453d; font-size: 16px; line-height: 1.6; max-width: 34em; }
+  }
+
+  .sr-more {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+
+    &:hover { color: var(--selvedge); border-color: var(--selvedge); }
+  }
+
+  @media (max-width: 900px) {
+    .sr-head { grid-template-columns: 1fr; }
+  }
+}
+
 .pc-hero {
   padding-top: clamp(48px, 6vw, 88px);
   padding-bottom: clamp(48px, 6vw, 88px);

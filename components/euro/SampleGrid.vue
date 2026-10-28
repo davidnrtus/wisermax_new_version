@@ -37,6 +37,10 @@
       </li>
     </TransitionGroup>
 
+    <button v-if="expandable && hidden > 0" type="button" class="btn ghost show-all" @click="expanded = true">
+      Show all {{ filtered.length }} styles <span aria-hidden="true">↓</span>
+    </button>
+
     <dialog ref="dlg" class="viewer" aria-label="Sample viewer" @close="current = -1" @click.self="close">
       <template v-if="item">
         <figure>
@@ -70,6 +74,10 @@ const props = defineProps({
   limit: { type: Number, default: 0 },
   // Campaign images are shown separately on the home page.
   excludeCampaign: { type: Boolean, default: false },
+  // 'women' or 'men': only samples tagged for that programme.
+  audience: { type: String, default: '' },
+  // With a limit, offer a button that reveals the rest in place.
+  expandable: { type: Boolean, default: false },
 })
 
 const LABELS = {
@@ -81,7 +89,9 @@ const LABELS = {
   campaign: 'Campaign',
 }
 
-const source = props.excludeCampaign ? archive.filter((s) => s.category !== 'campaign') : archive
+const source = archive.filter((s) =>
+  !(props.excludeCampaign && s.category === 'campaign')
+  && !(props.audience && !s.for.includes(props.audience)))
 
 // "All" deals the categories out in turn (dress, top, tennis, jersey, …) so
 // the first rows show the range rather than four dresses in a row.
@@ -109,7 +119,10 @@ const categories = computed(() => {
 
 const filter = ref('all')
 const filtered = computed(() => (filter.value === 'all' ? items : items.filter((s) => s.category === filter.value)))
-const shown = computed(() => (props.limit ? filtered.value.slice(0, props.limit) : filtered.value))
+const expanded = ref(false)
+const shown = computed(() =>
+  props.limit && !expanded.value ? filtered.value.slice(0, props.limit) : filtered.value)
+const hidden = computed(() => filtered.value.length - shown.value.length)
 
 const labelOf = (id) => LABELS[id]
 
@@ -238,6 +251,8 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
   line-height: 1.15;
   color: var(--ink);
 }
+
+.show-all { margin-top: 40px; }
 
 /* Filter change: tiles fade and lift into place. */
 .tile-enter-active,
