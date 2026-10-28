@@ -33,8 +33,10 @@ import clients from '@/data/clients.json'
 // The belt used to be a 70s CSS loop, which crawled while the page scrolled
 // past and felt behind the reader. It now drifts slowly on its own and is
 // also carried by the scroll: every pixel scrolled moves it SCROLL_GAIN px.
+// It starts a full screen before it is reached, so it is already moving
+// when it scrolls into view.
 const DRIFT = 30 // px per second
-const SCROLL_GAIN = 0.8
+const SCROLL_GAIN = 0.4
 
 const root = ref(null)
 const belt = ref(null)
@@ -67,7 +69,7 @@ onMounted(() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   driven.value = true
   lastY = window.scrollY
-  // Only run while the belt is on screen.
+  // Run while the belt is on screen or within one screen below it.
   io = new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting
     if (visible && !frame) {
@@ -75,7 +77,7 @@ onMounted(() => {
       lastY = window.scrollY
       frame = requestAnimationFrame(tick)
     }
-  })
+  }, { rootMargin: '0px 0px 100% 0px' })
   io.observe(root.value)
 })
 
