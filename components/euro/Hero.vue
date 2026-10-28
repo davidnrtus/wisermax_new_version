@@ -134,7 +134,7 @@ const columns = [
   flex: 1;
   display: grid;
   /* The gallery takes the narrower share, which keeps its plates small. */
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
   gap: clamp(32px, 5vw, 88px);
   align-items: center;
   margin-top: clamp(20px, 4vh, 48px);
