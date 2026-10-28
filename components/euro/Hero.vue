@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <div class="wrap">
+    <div class="wrap shell">
       <ul class="meta atelier-up" aria-label="Company facts">
         <li>Est. 2014</li>
         <li>Gia Lam, Hanoi</li>
@@ -32,38 +32,28 @@
           </div>
         </div>
 
+        <!-- Nine small plates in three columns, the middle one set lower, each
+             column drifting slowly against its neighbours. -->
         <div class="stage atelier-up delay-1">
-          <!-- Three frames cross-fade on a slow loop. The first is the LCP
-               image and loads eagerly; the others wait. -->
-          <div class="frames">
-            <NuxtImg
-              v-for="(f, i) in frames"
-              :key="f.src"
-              :src="f.src"
-              :alt="f.alt"
-              :class="['frame', `f${i}`]"
-              sizes="sm:100vw md:50vw lg:620px"
-              format="webp"
-              :loading="i === 0 ? 'eager' : 'lazy'"
-              :fetchpriority="i === 0 ? 'high' : undefined"
-            />
+          <div class="gallery">
+            <ul v-for="(col, c) in columns" :key="c" :class="['col', `c${c}`]">
+              <li v-for="s in col" :key="s.src">
+                <NuxtImg
+                  :src="s.src"
+                  :alt="s.alt"
+                  sizes="sm:33vw md:20vw lg:220px"
+                  format="webp"
+                  :loading="s.eager ? 'eager' : 'lazy'"
+                  :fetchpriority="s.eager ? 'high' : undefined"
+                />
+              </li>
+            </ul>
           </div>
 
           <div class="card stat">
             <span class="k">Monthly capacity</span>
             <strong v-count>600,000</strong>
             <span class="u">pieces, own lines</span>
-          </div>
-
-          <div class="card mini">
-            <NuxtImg
-              src="/home/so-sampleroom.jpg"
-              alt="In-house sample room at a Vietnam apparel manufacturer, pattern makers at work"
-              sizes="160px"
-              format="webp"
-              loading="lazy"
-            />
-            <span>Our sample room<br><small>Proto to salesman samples</small></span>
           </div>
         </div>
       </div>
@@ -72,31 +62,43 @@
 </template>
 
 <script setup>
-const frames = [
-  {
-    src: '/samples/raglan-crew-sweatshirt.webp',
-    alt: 'Raglan crew sweatshirt in ecru French terry on a fit model, made by a garment factory in Vietnam',
-  },
-  {
-    src: '/factory/sewing-line-3.webp',
-    alt: 'Sewing line with inline quality checks at Wisermax, a cut and sew manufacturer in Vietnam',
-  },
-  {
-    src: '/samples/sleeveless-hoodie.webp',
-    alt: 'Sleeveless hoodie in grey marl fleece, private label sample from a Vietnam apparel manufacturer',
-  },
+const columns = [
+  [
+    { src: '/samples/campaign-paris-graphic-tee.webp', alt: 'Printed Paris graphic tee, campaign image for a Vietnam apparel manufacturer', eager: true },
+    { src: '/factory/sewing-line-3.webp', alt: 'Sewing line with inline quality checks at a cut and sew manufacturer in Vietnam', eager: true },
+    { src: '/samples/floral-print-shirt-dress.webp', alt: 'Floral print shirt dress on a dress form, knit dress manufacturer sample' },
+  ],
+  [
+    { src: '/home/so-sampleroom.jpg', alt: 'In-house sample room, pattern makers at work in Hanoi', eager: true },
+    { src: '/samples/raglan-crew-sweatshirt.webp', alt: 'Raglan crew sweatshirt in ecru French terry on a fit model, made by a garment factory in Vietnam', eager: true },
+    { src: '/factory/cutting-room.webp', alt: 'Fabric cutting room at a garment factory in Vietnam' },
+  ],
+  [
+    { src: '/samples/campaign-halter-print-maxi-dress.webp', alt: 'Halter print maxi dress, campaign image by Wiser Max HN', eager: true },
+    { src: '/samples/navy-striped-track-jacket.webp', alt: 'Striped track jacket sample, jacket manufacturer Vietnam', eager: true },
+    { src: '/factory/finishing-packing.webp', alt: 'Finishing and packing room, every garment inspected before packing' },
+  ],
 ]
 </script>
 
 <style lang="scss" scoped>
+/* The hero fills exactly the first screen under the 68px sticky header,
+   and type and spacing scale with the viewport height as well as its width
+   so a short laptop screen still shows the buttons. */
 .hero {
-  padding: clamp(28px, 4vw, 48px) 0 clamp(64px, 8vw, 120px);
+  padding: clamp(16px, 2.6vh, 32px) 0 clamp(24px, 4vh, 48px);
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 68px - clamp(16px, 2.6vh, 32px) - clamp(24px, 4vh, 48px));
 }
 
 .meta {
   list-style: none;
   margin: 0;
-  padding: 0 0 18px;
+  padding: 0 0 clamp(12px, 2vh, 18px);
   display: flex;
   flex-wrap: wrap;
   gap: 8px 32px;
@@ -115,84 +117,103 @@ const frames = [
 }
 
 .grid {
+  flex: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 88px);
-  align-items: end;
-  margin-top: clamp(40px, 6vw, 88px);
+  align-items: center;
+  margin-top: clamp(20px, 4vh, 48px);
+  min-height: 0;
 }
 
-.display { max-width: 11ch; }
+.display {
+  max-width: 11ch;
+  font-size: clamp(44px, min(6.8vw, 11vh), 112px);
+}
 
 .eyebrow {
   display: block;
-  margin-bottom: 28px;
+  margin-bottom: clamp(16px, 3vh, 28px);
   font-family: var(--f);
-  font-size: 13px;
+  font-size: clamp(14px, min(1.25vw, 2vh), 18px);
   font-weight: 600;
   font-style: normal;
-  letter-spacing: .18em;
+  letter-spacing: .16em;
   line-height: 1.4;
   text-transform: uppercase;
   color: var(--selvedge);
 }
 
-.lede { margin-top: 36px; max-width: 30em; }
+.lede {
+  margin-top: clamp(18px, 3.4vh, 36px);
+  max-width: 30em;
+  font-size: clamp(16px, min(1.4vw, 2.3vh), 21px);
+}
 
 .cta {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: clamp(20px, 3.4vh, 36px);
 }
 
-/* ---------- image stage ---------- */
+/* ---------- gallery ---------- */
 
 .stage {
   position: relative;
-  aspect-ratio: 4 / 5;
+  align-self: stretch;
+  min-height: 420px;
 }
 
-.frames {
+.gallery {
   position: absolute;
   inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   overflow: hidden;
-  border-radius: 4px;
-  background: var(--muslin);
+  /* Soft top and bottom edges, so plates slide in and out of view. */
+  mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
 }
 
-.frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  animation: frame 18s infinite;
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Taller than the stage, so the offsets and the drift never open a gap
+     at either end on any screen height; plates stretch to share it. */
+  height: 118%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: drift 16s ease-in-out infinite alternate;
+
+  li {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--muslin);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  li:hover img { transform: scale(1.06); }
 }
 
-.f0 { opacity: 1; animation-delay: 0s; }
-.f1 { animation-delay: 6s; }
-.f2 { animation-delay: 12s; }
+/* Staggered start: the middle column sits lower and moves the other way. */
+.c0 { margin-top: -2%; }
+.c1 { margin-top: 10%; animation-direction: alternate-reverse; }
+.c2 { margin-top: -12%; }
 
-/* Each frame holds for ~5s, cross-fades over 1s, and drifts slowly in. */
-@keyframes frame {
-  0% { opacity: 0; transform: scale(1.06); }
-  5% { opacity: 1; }
-  33% { opacity: 1; }
-  39% { opacity: 0; transform: scale(1); }
-  100% { opacity: 0; }
-}
-
-.f0 { animation-name: frame-first; }
-
-/* The first frame starts visible so the LCP paint is not a blank panel. */
-@keyframes frame-first {
-  0% { opacity: 1; transform: scale(1.03); }
-  33% { opacity: 1; }
-  39% { opacity: 0; transform: scale(1); }
-  95% { opacity: 0; transform: scale(1.06); }
-  100% { opacity: 1; }
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-9%); }
 }
 
 .card {
@@ -206,7 +227,7 @@ const frames = [
 
 .stat {
   left: clamp(-56px, -4vw, -20px);
-  bottom: 12%;
+  bottom: 10%;
   padding: 18px 22px;
   display: grid;
   gap: 2px;
@@ -230,39 +251,20 @@ const frames = [
   .u { font-size: 13px; color: var(--thread); }
 }
 
-.mini {
-  right: 16px;
-  top: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 14px 8px 8px;
-  font-size: 13px;
-  line-height: 1.3;
-
-  img {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    border-radius: 2px;
-  }
-
-  small { color: var(--thread); font-size: 12px; }
-}
-
 @media (max-width: 900px) {
+  /* Stacked: no full-screen fit, the gallery follows the copy. */
+  .shell { min-height: 0; }
   .grid { grid-template-columns: 1fr; }
-  .stage { aspect-ratio: 4 / 4.4; }
+  .stage { min-height: 0; height: clamp(360px, 90vw, 560px); }
   .stat { left: 12px; bottom: 12px; }
 }
 
 @media (max-width: 480px) {
   .meta li + li::before { display: none; }
   .meta { gap: 6px 20px; }
-  .mini { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .frame { animation: none; }
+  .col { animation: none; }
 }
 </style>
