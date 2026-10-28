@@ -21,8 +21,9 @@
         </p>
 
         <div v-reveal="3" class="cta">
+          <a class="btn" href="#quote">Fill in the form <span aria-hidden="true">↓</span></a>
           <a
-            class="btn"
+            class="btn ghost"
             :href="`mailto:${info.email_primary}?subject=Tech%20pack%20—%20FOB%20Hai%20Phong`"
           >Email {{ info.email_primary }}</a>
           <a class="btn ghost" :href="`tel:${info.phone_href}`">Call {{ info.phone }}</a>
@@ -30,8 +31,14 @@
       </div>
     </section>
 
+    <!-- TECH PACK FORM — the same form as the home page. #quote is what the
+         header's "Request a quote" button links to. -->
+    <div id="quote" class="quote">
+      <TuRfqSection />
+    </div>
+
     <!-- CONTACT GRID -->
-    <section id="quote" class="band contact-grid">
+    <section class="band contact-grid">
       <div class="wrap">
         <div v-reveal:fade class="kicker">Contact channels</div>
 
@@ -102,7 +109,7 @@
           </div>
           <p v-reveal="1">
             Both codes route straight to the director's phone.
-            For programme quotes, please still send the tech pack by email so
+            For programme quotes, please still send the tech pack through the form or by email so
             it's easier to track.
           </p>
         </div>
@@ -219,6 +226,9 @@ h1 {
   gap: 12px;
   flex-wrap: wrap;
 }
+
+/* Land below the 68px sticky header when jumped to. */
+.quote { scroll-margin-top: 68px; }
 
 .contact-grid {
   .kicker { margin-bottom: 32px; }
