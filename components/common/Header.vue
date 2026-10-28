@@ -204,12 +204,16 @@ watch(() => route.fullPath, () => {
 .fade-enter-active,
 .fade-leave-active { transition: opacity .2s; }
 
-@media (max-width: 820px) {
-  .nav { height: 60px; }
-
+/* Six nav items plus the CTA need ~1040px; below that the wordmark and
+   button wrapped, so the burger takes over earlier than the old 820px. */
+@media (max-width: 1080px) {
   .nav-list,
   .nav-cta { display: none; }
 
   .burger { display: inline-flex; }
+}
+
+@media (max-width: 820px) {
+  .nav { height: 60px; }
 }
 </style>
