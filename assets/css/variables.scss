@@ -1,22 +1,23 @@
-// Wisermax HN — A · Editorial design tokens (SCSS mirror)
+// Wisermax HN — Euro editorial design tokens (SCSS mirror)
 // Runtime styling reads the CSS custom properties in tokens.css.
 // These exist because this file is injected into every SCSS block
 // (see vite.css.preprocessorOptions in nuxt.config.ts).
 
 // Palette
-$paper:    #FBFAF7;   // bleached cotton — main background
-$muslin:   #EFEBE3;   // raw undyed — image placeholders, alt panels
-$thread:   #676B66;   // grey thread — darkened for WCAG AA
-$ink:      #1B1E23;   // deep ink — body text
-$indigo:   #22385C;   // rope-dyed denim — primary brand
-$selvedge: #C1352E;   // the red selvedge line — structural accent only
-$rule:     #D9D4C9;   // dividers
+$paper:    #F4F0E8;   // bleached cotton — main background
+$muslin:   #E9E3D6;   // raw undyed — image placeholders, alt panels
+$thread:   #6B655B;   // grey thread — darkened for WCAG AA
+$ink:      #171512;   // deep ink — body text
+$indigo:   #171512;   // rope-dyed denim — primary brand
+$selvedge: #7E3F20;   // the red selvedge line — structural accent only
+$rule:     #D8D0C1;   // dividers
 
 // Fonts — one family, both axes
 $font: "Archivo", system-ui, sans-serif;
+$serif: "Instrument Serif", "Times New Roman", Georgia, serif;
 
 // Layout
-$maxw: 1320px;
+$maxw: 1360px;
 $gutter: clamp(20px, 4vw, 56px);
 $section-y: clamp(64px, 9vw, 128px);
 

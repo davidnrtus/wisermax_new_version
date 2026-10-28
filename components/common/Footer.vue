@@ -37,6 +37,9 @@
         </ul>
       </div>
 
+      <!-- Oversized wordmark, set like a fashion-house letterhead. -->
+      <p class="wordmark" aria-hidden="true">Wisermax <em>HN</em></p>
+
       <div class="copy">
         <span>{{ info.legal_notice }}</span>
         <span>{{ info.address_full }}</span>
@@ -55,7 +58,8 @@ const mainNav = headers
 <style lang="scss" scoped>
 .site-footer {
   border-top: 1px solid var(--rule);
-  padding: 56px 0 40px;
+  padding: 72px 0 32px;
+  overflow: hidden;
   font-size: 14px;
   color: #3a3e44;
 }
@@ -92,18 +96,30 @@ const mainNav = headers
   margin-bottom: 14px;
 
   b {
-    font-weight: 800;
-    font-stretch: 112%;
-    letter-spacing: .06em;
-    font-size: 17px;
-    text-transform: uppercase;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
     color: var(--ink);
   }
 
   span {
     color: var(--thread);
-    font-size: 13px;
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
   }
+}
+
+.wordmark {
+  margin: 64px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(64px, 16vw, 248px);
+  line-height: .82;
+  letter-spacing: -.035em;
+  color: var(--ink);
+  white-space: nowrap;
+
+  em { color: var(--selvedge); }
 }
 
 .foot-tagline {
@@ -122,7 +138,9 @@ const mainNav = headers
 }
 
 .copy {
-  margin-top: 48px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
   display: flex;
   justify-content: space-between;
   gap: 20px;

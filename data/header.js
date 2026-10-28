@@ -1,5 +1,7 @@
 // Primary navigation shown in the sticky site header
 export const headers = [
+  { title: 'Capabilities', key: 'capabilities', url: '/#capabilities' },
+  { title: 'Factory', key: 'factory', url: '/#floor' },
   { title: 'Products', key: 'products', url: '/products' },
   { title: 'About', key: 'about_us', url: '/about-us' },
   { title: 'Contact', key: 'contact_us', url: '/contact' },

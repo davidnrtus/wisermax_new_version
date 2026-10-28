@@ -1,21 +1,24 @@
 /* ============================================
-   Wisermax HN — design tokens (A · Editorial)
+   Wisermax HN — design tokens (Euro editorial)
    Single source of truth for the CSS custom properties.
    Loaded before global.scss in nuxt.config.ts.
+
+   Variable names are kept from the A · Editorial port so the inner pages
+   pick up the new palette without a rewrite: --indigo is now the primary
+   (near-black ink) and --selvedge the accent (the logo's tobacco brown).
    ============================================ */
 
 :root {
-  --paper:    #FBFAF7;   /* bleached cotton — main background */
-  --muslin:   #EFEBE3;   /* raw undyed — image placeholders, alt panels */
-  --thread:   #676B66;   /* grey thread — secondary text, captions (darkened from the
-                            brief's #8B8F8A, which fails WCAG AA at 3.15:1) */
-  --ink:      #1B1E23;   /* deep ink — body text */
-  --indigo:   #22385C;   /* rope-dyed denim — primary brand, buttons, quality band */
-  --selvedge: #C1352E;   /* the red selvedge line — structural accent only */
-  --rule:     #D9D4C9;   /* dividers */
+  --paper:    #F4F0E8;   /* undyed linen — main background */
+  --muslin:   #E9E3D6;   /* raw canvas — image placeholders, alt panels */
+  --thread:   #6B655B;   /* warm grey — secondary text, captions (AA on paper) */
+  --ink:      #171512;   /* near-black — body text */
+  --indigo:   #171512;   /* primary — buttons, dark bands */
+  --selvedge: #7E3F20;   /* tobacco — the logo colour; italic accents, rules */
+  --rule:     #D8D0C1;   /* dividers */
 
   --f: "Archivo", system-ui, sans-serif;
-  --maxw: 1320px;
-  --gutter: clamp(20px, 4vw, 56px);
+  --serif: "Instrument Serif", "Times New Roman", Georgia, serif;
+  --maxw: 1360px;
+  --gutter: clamp(20px, 4vw, 64px);
 }
-

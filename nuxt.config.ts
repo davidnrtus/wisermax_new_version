@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 const SITE_URL = 'https://www.wisermaxhn.com'
 const SITE_NAME = 'Wisermax HN'
 const DEFAULT_TITLE = 'WISERMAX HN — Garment manufacturer & ODM atelier, Hanoi'
-const DEFAULT_DESCRIPTION = 'A Vietnam apparel manufacturer in Hanoi developing and producing fashion collections for EU and US labels. Full package OEM, ODM and private label — FOB Hai Phong.'
+const DEFAULT_DESCRIPTION = 'Vietnam garment manufacturer in Hanoi making fashion collections for European and US labels. Own sample room and sewing lines. OEM, ODM, FOB Hai Phong.'
 
 // Trau Quy Ward, Gia Lam, Hanoi — approximate office coordinates.
 // Replace with the exact lat/lng once confirmed with the client.
@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     { path: '~/components/common', prefix: 'Tu' },
     { path: '~/components/home', prefix: 'Tu' },
     { path: '~/components/about', prefix: 'Tu' },
+    { path: '~/components/euro', prefix: 'Eu' },
     { path: '~/components', pathPrefix: false },
   ],
 
@@ -95,6 +96,13 @@ export default defineNuxtConfig({
           href: '/fonts/archivo-latin.woff2',
           crossorigin: 'anonymous',
         },
+        // Display serif for headings. One weight, roman + italic.
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap',
+        },
       ],
       script: [
         // Scroll reveal: hide [data-reveal] before first paint so nothing
@@ -109,9 +117,10 @@ export default defineNuxtConfig({
           type: 'application/ld+json',
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
-            // Both Organization and LocalBusiness (subtype ClothingStore) so
-            // Google can surface us in Knowledge Panels and Maps.
-            '@type': ['Organization', 'LocalBusiness', 'ClothingStore'],
+            // Organization + LocalBusiness so Google can surface us in
+            // Knowledge Panels and Maps. Not ClothingStore: that tells Google
+            // we are a retail shop, and buyers search for a manufacturer.
+            '@type': ['Organization', 'LocalBusiness'],
             '@id': `${SITE_URL}/#organization`,
             name: 'Wisermax HN',
             legalName: 'Wiser Max HN Company Limited',

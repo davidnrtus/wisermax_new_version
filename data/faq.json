@@ -1,0 +1,30 @@
+[
+  {
+    "q": "What is your minimum order quantity?",
+    "a": "500 pieces per style, which can be split across colours from 200 pieces each. Development and capsule orders run on the same lines and QA as full programmes."
+  },
+  {
+    "q": "Are you a factory or a trading company?",
+    "a": "We are the factory. Our sample room, cutting room, sewing lines, pressing, finishing and packing are all under one roof in Gia Lam, Hanoi, run by our own supervisors."
+  },
+  {
+    "q": "What do you manufacture?",
+    "a": "Jersey and fleece (tees, polos, sweatshirts, hoodies, shorts), woven fashion (shirts, blouses, dresses, trousers), knit dresses and womenswear, and kidswear for ages 2–14 produced to EN 14682 and CPSIA requirements."
+  },
+  {
+    "q": "How long do sampling and bulk production take?",
+    "a": "Proto and fit samples take 2–3 weeks from an approved brief. Bulk production takes 45–60 days after sample approval, excluding fabric development."
+  },
+  {
+    "q": "Do you work OEM, ODM or private label?",
+    "a": "All three. Send a full tech pack for OEM production, or a sketch or mood board and our sample room develops the pattern, fabric and fit for you."
+  },
+  {
+    "q": "How do you ship to Europe and the US?",
+    "a": "FOB Hai Phong as standard. Sea freight reaches Rotterdam, Hamburg and Antwerp in about 30–35 days, and the US West Coast in about 18–22 days. We also ship door to door through your forwarder."
+  },
+  {
+    "q": "How do you control quality?",
+    "a": "Inline checks on every sewing line, then a final inspection to AQL 1.0 for premium programmes or AQL 2.5 for basics. Every piece is inspected before packing, and third-party inspection is welcome."
+  }
+]

@@ -17,7 +17,7 @@
       <nav aria-label="Primary">
         <ul class="nav-list">
           <li v-for="h in mainNav" :key="h.key">
-            <NuxtLink :to="h.url" active-class="is-active">{{ h.title }}</NuxtLink>
+            <NuxtLink :to="h.url" :active-class="h.url.includes('#') ? '' : 'is-active'">{{ h.title }}</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -72,7 +72,7 @@ watch(() => route.fullPath, () => {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(251, 250, 247, .86);
+  background: rgba(244, 240, 232, .86);
   border-bottom: 1px solid var(--rule);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -107,17 +107,18 @@ watch(() => route.fullPath, () => {
   }
 
   b {
-    font-weight: 800;
-    font-stretch: 112%;
-    letter-spacing: .06em;
-    font-size: 17px;
-    text-transform: uppercase;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -.01em;
     color: var(--ink);
   }
 
-  span {
+  .logo-text > span {
     color: var(--thread);
-    font-size: 13px;
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
   }
 }
 
@@ -129,8 +130,11 @@ watch(() => route.fullPath, () => {
   padding: 0;
 
   a {
-    font-size: 15px;
-    color: #3a3e44;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #4a453d;
     padding: 6px 0;
     border-bottom: 1px solid transparent;
     transition: color .15s, border-color .15s;

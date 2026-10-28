@@ -1,0 +1,34 @@
+[
+  {
+    "id": "eu",
+    "label": "Europe",
+    "title": "Hai Phong to North Europe",
+    "transit": "30–35 days by sea",
+    "note": "Via Singapore and Suez to the main North Sea ports. Door to door through your own forwarder, or ours.",
+    "stops": [
+      { "code": "HPH", "name": "Hai Phong", "x": 6, "origin": true },
+      { "code": "SIN", "name": "Singapore", "x": 22 },
+      { "code": "CMB", "name": "Colombo", "x": 38 },
+      { "code": "SUZ", "name": "Suez", "x": 62 },
+      { "code": "RTM", "name": "Rotterdam", "x": 86, "end": true },
+      { "code": "HAM", "name": "Hamburg", "x": 94, "end": true }
+    ],
+    "ports": ["Rotterdam", "Hamburg", "Antwerp", "Felixstowe"]
+  },
+  {
+    "id": "us",
+    "label": "North America",
+    "title": "Hai Phong to the US and Canada",
+    "transit": "18–30 days by sea",
+    "note": "Transpacific to the West Coast, or via Panama to New York. Air freight for samples and top-ups.",
+    "stops": [
+      { "code": "HPH", "name": "Hai Phong", "x": 6, "origin": true },
+      { "code": "PUS", "name": "Busan", "x": 24 },
+      { "code": "YVR", "name": "Vancouver", "x": 58, "end": true },
+      { "code": "LAX", "name": "Los Angeles", "x": 70, "end": true },
+      { "code": "PTY", "name": "Panama", "x": 82 },
+      { "code": "NYC", "name": "New York", "x": 94, "end": true }
+    ],
+    "ports": ["Los Angeles / Long Beach", "New York", "Vancouver"]
+  }
+]

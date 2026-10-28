@@ -1,5 +1,5 @@
 /* ============================================
-   Wisermax HN — global styles (A · Editorial)
+   Wisermax HN — global styles (Euro editorial)
    Design tokens live in tokens.css, loaded first.
    ============================================ */
 
@@ -75,21 +75,29 @@ h1, h2, h3, h4 {
   color: var(--ink);
 }
 
+/* Display type is a high-contrast serif, set large and tight — the voice of
+   a European fashion house. Italics carry the accent colour. */
 .display {
-  font-weight: 500;
-  font-stretch: 78%;
-  font-size: clamp(44px, 7.2vw, 108px);
-  line-height: .94;
-  letter-spacing: -.025em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 7.4vw, 112px);
+  line-height: .92;
+  letter-spacing: -.02em;
   margin: 0;
 }
 
 h2 {
-  font-weight: 500;
-  font-stretch: 82%;
-  font-size: clamp(32px, 4.2vw, 60px);
-  line-height: 1.02;
-  letter-spacing: -.02em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 4.8vw, 72px);
+  line-height: 1;
+  letter-spacing: -.015em;
+}
+
+.display em,
+h2 em {
+  font-style: italic;
+  color: var(--selvedge);
 }
 
 h3 {
@@ -139,12 +147,12 @@ h3 {
   background: var(--indigo);
   color: #fff;
   border: 1px solid var(--indigo);
-  border-radius: 2px;
-  transition: background .15s, color .15s, border-color .15s;
+  border-radius: 999px;
+  transition: background .2s, color .2s, border-color .2s;
   cursor: pointer;
   text-decoration: none;
 
-  &:hover { background: #1a2c4a; border-color: #1a2c4a; color: #fff; }
+  &:hover { background: var(--selvedge); border-color: var(--selvedge); color: #fff; }
 }
 
 .btn.ghost {
