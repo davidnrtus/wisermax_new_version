@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <!-- Nine small plates in three columns, the middle one set lower, each
+        <!-- Twenty small plates in four columns at staggered heights, each
              column drifting slowly against its neighbours. -->
         <div class="stage atelier-up delay-1">
           <div class="gallery">
@@ -41,7 +41,7 @@
                 <NuxtImg
                   :src="s.src"
                   :alt="s.alt"
-                  sizes="sm:33vw md:20vw lg:220px"
+                  sizes="sm:25vw md:15vw lg:160px"
                   format="webp"
                   :loading="s.eager ? 'eager' : 'lazy'"
                   :fetchpriority="s.eager ? 'high' : undefined"
@@ -62,23 +62,44 @@
 </template>
 
 <script setup>
+import archive from '@/data/sample-archive.json'
+
+const SAMPLE = Object.fromEntries(archive.map((x) => [x.id, x]))
+const sample = (id) => ({ src: SAMPLE[id].image, alt: SAMPLE[id].alt })
+const floor = (file, alt) => ({ src: `/factory/${file}.webp`, alt })
+
+// Four columns of five: garments and campaign shots dealt between the
+// factory floor, so every column reads as "made here".
 const columns = [
   [
-    { src: '/samples/campaign-paris-graphic-tee.webp', alt: 'Printed Paris graphic tee, campaign image for a Vietnam apparel manufacturer', eager: true },
-    { src: '/factory/sewing-line-3.webp', alt: 'Sewing line with inline quality checks at a cut and sew manufacturer in Vietnam', eager: true },
-    { src: '/samples/floral-print-shirt-dress.webp', alt: 'Floral print shirt dress on a dress form, knit dress manufacturer sample' },
+    sample('campaign-paris-graphic-tee'),
+    floor('sewing-line-3', 'Sewing line with inline quality checks at a cut and sew manufacturer in Vietnam'),
+    sample('floral-print-shirt-dress'),
+    sample('white-tiered-tennis-skirt'),
+    floor('pressing', 'Steam pressing on vacuum tables at a garment factory in Vietnam'),
   ],
   [
-    { src: '/home/so-sampleroom.jpg', alt: 'In-house sample room, pattern makers at work in Hanoi', eager: true },
-    { src: '/samples/raglan-crew-sweatshirt.webp', alt: 'Raglan crew sweatshirt in ecru French terry on a fit model, made by a garment factory in Vietnam', eager: true },
-    { src: '/factory/cutting-room.webp', alt: 'Fabric cutting room at a garment factory in Vietnam' },
+    { src: '/home/so-sampleroom.jpg', alt: 'In-house sample room, pattern makers at work in Hanoi' },
+    sample('raglan-crew'),
+    sample('blue-swirl-print-ruched-dress'),
+    floor('trims-store', 'Trims store with labelled cartons of buttons and zips'),
+    sample('red-eiffel-graphic-tee'),
   ],
   [
-    { src: '/samples/campaign-halter-print-maxi-dress.webp', alt: 'Halter print maxi dress, campaign image by Wiser Max HN', eager: true },
-    { src: '/samples/navy-striped-track-jacket.webp', alt: 'Striped track jacket sample, jacket manufacturer Vietnam', eager: true },
-    { src: '/factory/finishing-packing.webp', alt: 'Finishing and packing room, every garment inspected before packing' },
+    sample('campaign-halter-print-maxi-dress'),
+    sample('navy-striped-track-jacket'),
+    floor('cutting-room', 'Fabric cutting room at a garment factory in Vietnam'),
+    sample('black-bow-collar-blouse'),
+    sample('ivory-sleeveless-polo-contrast-collar'),
   ],
-]
+  [
+    sample('campaign-floral-midi-dress'),
+    floor('finishing-packing', 'Finishing and packing room, every garment inspected before packing'),
+    sample('sage-watercolour-print-midi-dress'),
+    sample('heather-blue-tank-and-short-set'),
+    floor('sewing-line-4', 'Sewing line producing a printed fashion style, Vietnam apparel manufacturer'),
+  ],
+].map((col) => col.map((s, row) => ({ ...s, eager: row < 2 })))
 </script>
 
 <style lang="scss" scoped>
@@ -169,8 +190,8 @@ const columns = [
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
   overflow: hidden;
   /* Soft top and bottom edges, so plates slide in and out of view. */
   mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
@@ -179,7 +200,7 @@ const columns = [
 .col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   /* Taller than the stage, so the offsets and the drift never open a gap
      at either end on any screen height; plates stretch to share it. */
   height: 118%;
@@ -208,8 +229,9 @@ const columns = [
 
 /* Staggered start: the middle column sits lower and moves the other way. */
 .c0 { margin-top: -2%; }
-.c1 { margin-top: 10%; animation-direction: alternate-reverse; }
-.c2 { margin-top: -12%; }
+.c1 { margin-top: 12%; animation-direction: alternate-reverse; }
+.c2 { margin-top: -10%; }
+.c3 { margin-top: 6%; animation-direction: alternate-reverse; }
 
 @keyframes drift {
   from { transform: translateY(0); }
