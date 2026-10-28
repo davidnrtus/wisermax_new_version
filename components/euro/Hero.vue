@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <!-- Twenty small plates in four columns at staggered heights, each
+        <!-- Fifteen small plates in three columns at staggered heights, each
              column drifting slowly against its neighbours. -->
         <div class="stage atelier-up delay-1">
           <div class="gallery">
@@ -41,7 +41,7 @@
                 <NuxtImg
                   :src="s.src"
                   :alt="s.alt"
-                  sizes="sm:25vw md:15vw lg:160px"
+                  sizes="sm:33vw md:15vw lg:160px"
                   format="webp"
                   :loading="s.eager ? 'eager' : 'lazy'"
                   :fetchpriority="s.eager ? 'high' : undefined"
@@ -68,7 +68,7 @@ const SAMPLE = Object.fromEntries(archive.map((x) => [x.id, x]))
 const sample = (id) => ({ src: SAMPLE[id].image, alt: SAMPLE[id].alt })
 const floor = (file, alt) => ({ src: `/factory/${file}.webp`, alt })
 
-// Four columns of five: garments and campaign shots dealt between the
+// Three columns of five: garments and campaign shots dealt between the
 // factory floor, so every column reads as "made here".
 const columns = [
   [
@@ -91,13 +91,6 @@ const columns = [
     floor('cutting-room', 'Fabric cutting room at a garment factory in Vietnam'),
     sample('black-bow-collar-blouse'),
     sample('ivory-sleeveless-polo-contrast-collar'),
-  ],
-  [
-    sample('campaign-floral-midi-dress'),
-    floor('finishing-packing', 'Finishing and packing room, every garment inspected before packing'),
-    sample('sage-watercolour-print-midi-dress'),
-    sample('heather-blue-tank-and-short-set'),
-    floor('sewing-line-4', 'Sewing line producing a printed fashion style, Vietnam apparel manufacturer'),
   ],
 ].map((col) => col.map((s, row) => ({ ...s, eager: row < 2 })))
 </script>
@@ -140,7 +133,8 @@ const columns = [
 .grid {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  /* The gallery takes the narrower share, which keeps its plates small. */
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
   gap: clamp(32px, 5vw, 88px);
   align-items: center;
   margin-top: clamp(20px, 4vh, 48px);
@@ -190,7 +184,7 @@ const columns = [
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   overflow: hidden;
   /* Soft top and bottom edges, so plates slide in and out of view. */
@@ -230,8 +224,7 @@ const columns = [
 /* Staggered start: the middle column sits lower and moves the other way. */
 .c0 { margin-top: -2%; }
 .c1 { margin-top: 12%; animation-direction: alternate-reverse; }
-.c2 { margin-top: -10%; }
-.c3 { margin-top: 6%; animation-direction: alternate-reverse; }
+.c2 { margin-top: -12%; }
 
 @keyframes drift {
   from { transform: translateY(0); }
