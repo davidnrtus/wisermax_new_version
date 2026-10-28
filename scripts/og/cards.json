@@ -1,0 +1,38 @@
+{
+  "og-image": {
+    "eyebrow": "Garment manufacturer in Vietnam",
+    "title": "Made in Hanoi.<br><em>Tailored</em> for Europe.",
+    "photos": [
+      "/samples/campaign-paris-graphic-tee.webp", "/factory/sewing-line-3.webp", "/samples/floral-print-shirt-dress.webp",
+      "/home/so-sampleroom.jpg", "/samples/raglan-crew-sweatshirt.webp", "/factory/cutting-room.webp",
+      "/samples/campaign-halter-print-maxi-dress.webp", "/samples/navy-striped-track-jacket.webp", "/factory/finishing-packing.webp"
+    ]
+  },
+  "og/samples": {
+    "eyebrow": "Sample room archive · Hanoi",
+    "title": "52 styles from our <em>sample room</em>.",
+    "photos": [
+      "/samples/blue-swirl-print-ruched-dress.webp", "/samples/white-tiered-tennis-skirt.webp", "/samples/red-eiffel-graphic-tee.webp",
+      "/samples/campaign-floral-midi-dress.webp", "/samples/raglan-crew-sweatshirt.webp", "/samples/black-bow-collar-blouse.webp",
+      "/samples/sage-watercolour-print-midi-dress.webp", "/samples/navy-striped-track-jacket.webp", "/samples/heather-blue-tank-and-short-set.webp"
+    ]
+  },
+  "og/women": {
+    "eyebrow": "Women's clothing manufacturer · Vietnam",
+    "title": "Dresses, tops &amp; <em>activewear</em>, made in Hanoi.",
+    "photos": [
+      "/samples/campaign-halter-print-maxi-dress.webp", "/samples/ivory-sleeveless-polo-contrast-collar.webp", "/samples/floral-print-shirt-dress.webp",
+      "/samples/black-bow-collar-blouse.webp", "/samples/campaign-floral-midi-dress.webp", "/samples/white-tiered-tennis-skirt.webp",
+      "/samples/mint-marble-print-ruched-dress.webp", "/samples/fleece-lounge-short.webp", "/samples/pink-ruched-sleeveless-top.webp"
+    ]
+  },
+  "og/men": {
+    "eyebrow": "Men's clothing manufacturer · Vietnam",
+    "title": "Shirts, jersey &amp; <em>outerwear</em>, made in Hanoi.",
+    "photos": [
+      "/samples/white-camp-collar-shirt.webp", "/factory/sewing-line-2.webp", "/samples/sleeveless-hoodie.webp",
+      "/samples/raglan-crew-sweatshirt.webp", "/samples/charcoal-hooded-shell-jacket.webp", "/factory/pressing.webp",
+      "/samples/navy-striped-track-jacket.webp", "/samples/french-terry-drawstring-short.webp", "/samples/ivory-collegiate-graphic-hoodie.webp"
+    ]
+  }
+}

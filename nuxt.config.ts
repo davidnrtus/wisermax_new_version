@@ -73,14 +73,14 @@ export default defineNuxtConfig({
         { property: 'og:image', content: `${SITE_URL}/og-image.jpg` },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
-        { property: 'og:image:alt', content: 'Wisermax HN production line — Vietnam apparel manufacturer in Hanoi' },
+        { property: 'og:image:alt', content: 'Made in Hanoi, tailored for Europe — Wisermax HN, garment manufacturer in Vietnam' },
         { property: 'og:locale', content: 'en_US' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: DEFAULT_TITLE },
         { name: 'twitter:description', content: DEFAULT_DESCRIPTION },
         { name: 'twitter:image', content: `${SITE_URL}/og-image.jpg` },
-        { name: 'twitter:image:alt', content: 'Wisermax HN production line — Vietnam apparel manufacturer in Hanoi' },
+        { name: 'twitter:image:alt', content: 'Made in Hanoi, tailored for Europe — Wisermax HN, garment manufacturer in Vietnam' },
       ],
       link: [
         // Favicons
@@ -272,7 +272,7 @@ export default defineNuxtConfig({
         loc: '/',
         priority: 1.0,
         changefreq: 'weekly',
-        images: [{ loc: `${SITE_URL}/og-image.jpg`, caption: 'Wisermax HN production line, Hanoi — Vietnam apparel manufacturer' }],
+        images: [{ loc: `${SITE_URL}/og-image.jpg`, caption: 'Made in Hanoi, tailored for Europe — Wisermax HN, garment manufacturer in Vietnam' }],
       },
       { loc: '/about-us',       priority: 0.8, changefreq: 'monthly' },
       { loc: '/products',       priority: 0.9, changefreq: 'weekly' },

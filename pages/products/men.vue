@@ -9,6 +9,9 @@ import ProductCategory from '@/components/products/ProductCategory.vue'
 const title = `Men's clothing manufacturer Vietnam — polos, shirting, suits & jersey | Wisermax HN`
 const description = `Custom t-shirt factory Vietnam, bulk polo shirt manufacturer and woven pants supplier for men's retail programmes — OEM, ODM and private label from a Hanoi garment factory.`
 const url = 'https://www.wisermaxhn.com/products/men'
+// Share card rendered by scripts/og/render.sh
+const image = 'https://www.wisermaxhn.com/og/men.jpg'
+const imageAlt = `Men's shirts, jersey and outerwear samples from Wisermax HN, garment manufacturer in Hanoi, Vietnam`
 
 useHead({
   title,
@@ -17,6 +20,10 @@ useHead({
     { hid: 'og:title', property: 'og:title', content: title },
     { hid: 'og:description', property: 'og:description', content: description },
     { hid: 'og:url', property: 'og:url', content: url },
+    { hid: 'og:image', property: 'og:image', content: image },
+    { hid: 'og:image:alt', property: 'og:image:alt', content: imageAlt },
+    { hid: 'twitter:image', name: 'twitter:image', content: image },
+    { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: imageAlt },
     { hid: 'twitter:title', name: 'twitter:title', content: title },
     { hid: 'twitter:description', name: 'twitter:description', content: description },
   ],

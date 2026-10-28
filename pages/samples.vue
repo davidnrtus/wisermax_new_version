@@ -36,8 +36,10 @@ useAtelierHead({
   title: 'Sample room archive — garment samples from a Vietnam factory | Wisermax HN',
   description: `${archive.length} dresses, tops, activewear and jersey samples developed in our Hanoi sample room. OEM, ODM and private label from 500 pcs, FOB Hai Phong.`,
   path: '/samples',
-  image: 'https://www.wisermaxhn.com/samples/campaign-floral-midi-dress.webp',
-  imageAlt: 'Floral midi dress developed and produced by Wiser Max HN, garment manufacturer in Vietnam',
+  // Share card rendered by scripts/og/render.sh (1200x630; the old portrait
+  // photo was cropped badly by chat apps).
+  image: 'https://www.wisermaxhn.com/og/samples.jpg',
+  imageAlt: 'Dresses, tops, activewear and jersey samples from the Wisermax HN sample room in Hanoi, Vietnam',
 })
 
 useBreadcrumb([

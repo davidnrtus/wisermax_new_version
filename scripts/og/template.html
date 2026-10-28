@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Social share card (Open Graph / Twitter), 1200x630. Rendered to a JPEG
+     by render.sh; the card's text and photos come from cards.json via the
+     URL hash. Photo paths are relative to assets/images. -->
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: #F4F0E8; font-family: Archivo, sans-serif; color: #171512; }
+.card { display: grid; grid-template-columns: 600px 1fr; height: 630px; }
+.copy { padding: 56px 0 52px 64px; display: flex; flex-direction: column; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand svg { width: 30px; height: 28px; fill: #7E3F20; }
+.brand b { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 34px; }
+.brand span { font-size: 13px; letter-spacing: .18em; color: #6B655B; margin-left: 4px; }
+.eyebrow { font-size: 15px; font-weight: 600; letter-spacing: .18em; color: #7E3F20; text-transform: uppercase; margin-bottom: 22px; }
+h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 84px; line-height: .94; letter-spacing: -.02em; }
+h1 em { color: #7E3F20; }
+.foot { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #D8D0C1; padding-top: 18px; margin-right: 24px; font-size: 15px; color: #4a453d; }
+.foot b { color: #171512; font-weight: 600; }
+.gal { overflow: hidden; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding-right: 36px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent); }
+.col { display: flex; flex-direction: column; gap: 10px; height: 118%; }
+.col div { flex: 1; border-radius: 6px; overflow: hidden; background: #E9E3D6; }
+.col img { width: 100%; height: 100%; object-fit: cover; }
+.c0 { margin-top: -30px; } .c1 { margin-top: 40px; } .c2 { margin-top: -70px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="copy">
+    <div class="brand">
+      <svg viewBox="60 45 1690 1580"><path d="M73 944 L161 774 L306 1128 L421 810 L364 642 L548 642 C690.4 475.4 876.4 341.3 1092 290 C881.7 400.3 705.7 585.6 620 808 L737 1072 C877.4 604.3 1235.4 169 1728 60 C1198.8 321.1 982.4 916.9 837 1450 L679 1450 L511 1034 L386 1427 L259 1427 Z"/><path d="M512 1372 C556.3 1903.4 1328.6 1372.8 1462 1074 C1255.3 1285.7 684.1 1789.9 512 1372 Z"/></svg>
+      <b>Wisermax HN</b><span>HANOI</span>
+    </div>
+    <div>
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="title"></h1>
+    </div>
+    <div class="foot"><span>OEM · ODM · Private label<br>FOB Hai Phong · MOQ 500 pcs</span><b>wisermaxhn.com</b></div>
+  </div>
+  <div class="gal" id="gal"></div>
+</div>
+<script>
+  const card = JSON.parse(decodeURIComponent(location.hash.slice(1)))
+  document.getElementById('eyebrow').textContent = card.eyebrow
+  document.getElementById('title').innerHTML = card.title
+  const gal = document.getElementById('gal')
+  for (let c = 0; c < 3; c++) {
+    const col = document.createElement('div')
+    col.className = `col c${c}`
+    for (const src of card.photos.slice(c * 3, c * 3 + 3)) {
+      const cell = document.createElement('div')
+      const img = document.createElement('img')
+      img.src = `../../assets/images${src}`
+      cell.append(img)
+      col.append(cell)
+    }
+    gal.append(col)
+  }
+</script>
+</body>
+</html>
