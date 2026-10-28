@@ -62,6 +62,10 @@ function countUp(el: HTMLElement) {
 export default defineNuxtPlugin((nuxtApp) => {
   let revealer: IntersectionObserver | null = null
   let counter: IntersectionObserver | null = null
+  // Elements already revealed. Vue rewrites the whole class attribute when an
+  // element has a :class binding (e.g. an "active" row), which drops is-in;
+  // the observer has let go by then, so the directive puts it back.
+  const revealed = new WeakSet<Element>()
 
   if (import.meta.client) {
     const root = document.documentElement
@@ -94,6 +98,7 @@ export default defineNuxtPlugin((nuxtApp) => {
               requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('reveal-instant')))
             }
             el.classList.add('is-in')
+            revealed.add(el)
             revealer!.unobserve(el)
           }
         },
@@ -120,6 +125,9 @@ export default defineNuxtPlugin((nuxtApp) => {
       el.setAttribute('data-reveal', variantOf(binding.arg))
       el.style.setProperty('--reveal-i', String(staggerOf(binding.value)))
       revealer?.observe(el)
+    },
+    updated(el: HTMLElement) {
+      if (revealed.has(el)) el.classList.add('is-in')
     },
     unmounted(el: HTMLElement) {
       revealer?.unobserve(el)
